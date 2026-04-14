@@ -1,18 +1,9 @@
 {
   "mcpServers": {
-    "figma": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-figma"],
-      "transport": "http",
-      "url": "https://mcp.figma.com/mcp"
-    },
+
     "stitch": {
       "command": "npx",
       "args": ["-y", "stitch-mcp"]
-    },
-    "pencil": {
-      "command": "npx",
-      "args": ["-y", "pencil-mcp"]
     },
     "github": {
       "command": "npx",
