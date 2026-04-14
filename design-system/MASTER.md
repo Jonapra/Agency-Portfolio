@@ -6,9 +6,8 @@
 
 ---
 
-**Project:** GrowSphere Media
-**Generated:** 2026-04-13 11:17:10
-**Category:** Marketing Agency
+**Project:** 
+**Category:** Professional website making agency 
 
 ---
 
