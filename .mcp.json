@@ -19,6 +19,15 @@
     "playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp"]
+    },
+    "framer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.unframer.co/mcp?id=d55183799f817fb6d4070dd8e9662d48877cbd33768eed8e113c96547e5e53d7&secret=F9fDSUWnLHuhySGXuKr7XCP42vsoCeHS"
+      ],
+      "env": {}
     }
   }
 }
