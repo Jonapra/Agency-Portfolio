@@ -53,7 +53,7 @@
       "source_file": "eslint.config.js",
       "source_location": "L1",
       "id": "eslint_config_js",
-      "community": 10,
+      "community": 9,
       "norm_label": "eslint.config.js"
     },
     {
@@ -62,7 +62,7 @@
       "source_file": "vite.config.js",
       "source_location": "L1",
       "id": "vite_config_js",
-      "community": 11,
+      "community": 10,
       "norm_label": "vite.config.js"
     },
     {
@@ -71,7 +71,7 @@
       "source_file": "src\\App.jsx",
       "source_location": "L1",
       "id": "src_app_jsx",
-      "community": 7,
+      "community": 6,
       "norm_label": "app.jsx"
     },
     {
@@ -80,7 +80,7 @@
       "source_file": "src\\App.jsx",
       "source_location": "L4",
       "id": "app_app",
-      "community": 7,
+      "community": 6,
       "norm_label": "app()"
     },
     {
@@ -89,7 +89,7 @@
       "source_file": "src\\main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 12,
+      "community": 11,
       "norm_label": "main.jsx"
     },
     {
@@ -98,7 +98,7 @@
       "source_file": "src\\components\\Hello.jsx",
       "source_location": "L1",
       "id": "src_components_hello_jsx",
-      "community": 8,
+      "community": 7,
       "norm_label": "hello.jsx"
     },
     {
@@ -107,7 +107,7 @@
       "source_file": "src\\components\\Hello.jsx",
       "source_location": "L3",
       "id": "hello_hello",
-      "community": 8,
+      "community": 7,
       "norm_label": "hello()"
     },
     {
@@ -116,7 +116,7 @@
       "source_file": "src\\lib\\utils.ts",
       "source_location": "L1",
       "id": "src_lib_utils_ts",
-      "community": 9,
+      "community": 8,
       "norm_label": "utils.ts"
     },
     {
@@ -125,7 +125,7 @@
       "source_file": "src\\lib\\utils.ts",
       "source_location": "L4",
       "id": "utils_cn",
-      "community": 9,
+      "community": 8,
       "norm_label": "cn()"
     },
     {
@@ -137,9 +137,9 @@
       "captured_at": null,
       "author": "Ankit Pradhan",
       "contributor": null,
-      "id": "CLAUDE_agencyportfolio",
       "community": 0,
-      "norm_label": "agency portfolio project"
+      "norm_label": "agency portfolio project",
+      "id": "CLAUDE_agencyportfolio"
     },
     {
       "label": "Vite 8 Build Tool",
@@ -150,9 +150,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_vite",
       "community": 0,
-      "norm_label": "vite 8 build tool"
+      "norm_label": "vite 8 build tool",
+      "id": "CLAUDE_vite"
     },
     {
       "label": "React 19",
@@ -163,9 +163,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_react",
       "community": 0,
-      "norm_label": "react 19"
+      "norm_label": "react 19",
+      "id": "CLAUDE_react"
     },
     {
       "label": "Tailwind CSS v4",
@@ -176,9 +176,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_tailwindv4",
       "community": 0,
-      "norm_label": "tailwind css v4"
+      "norm_label": "tailwind css v4",
+      "id": "CLAUDE_tailwindv4"
     },
     {
       "label": "GSAP 3 Animation Library",
@@ -189,9 +189,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_gsap",
       "community": 0,
-      "norm_label": "gsap 3 animation library"
+      "norm_label": "gsap 3 animation library",
+      "id": "CLAUDE_gsap"
     },
     {
       "label": "Framer Motion",
@@ -202,9 +202,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_framermotion",
       "community": 0,
-      "norm_label": "framer motion"
+      "norm_label": "framer motion",
+      "id": "CLAUDE_framermotion"
     },
     {
       "label": "lucide-react Icons",
@@ -215,9 +215,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_lucidereact",
       "community": 0,
-      "norm_label": "lucide-react icons"
+      "norm_label": "lucide-react icons",
+      "id": "CLAUDE_lucidereact"
     },
     {
       "label": "shadcn-style UI Primitives",
@@ -228,9 +228,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_shadcn",
-      "community": 6,
-      "norm_label": "shadcn-style ui primitives"
+      "community": 3,
+      "norm_label": "shadcn-style ui primitives",
+      "id": "CLAUDE_shadcn"
     },
     {
       "label": "@radix-ui/react-slot",
@@ -241,9 +241,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_radixui",
-      "community": 6,
-      "norm_label": "@radix-ui/react-slot"
+      "community": 3,
+      "norm_label": "@radix-ui/react-slot",
+      "id": "CLAUDE_radixui"
     },
     {
       "label": "class-variance-authority",
@@ -254,9 +254,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_cva",
-      "community": 6,
-      "norm_label": "class-variance-authority"
+      "community": 3,
+      "norm_label": "class-variance-authority",
+      "id": "CLAUDE_cva"
     },
     {
       "label": "cn() Helper Utility",
@@ -267,22 +267,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_cn",
-      "community": 6,
-      "norm_label": "cn() helper utility"
-    },
-    {
-      "label": "src/index.css (CSS Theme Tokens)",
-      "file_type": "code",
-      "source_file": "CLAUDE.md",
-      "source_location": "Design System section",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "CLAUDE_srcindexcss",
-      "community": 0,
-      "norm_label": "src/index.css (css theme tokens)"
+      "community": 3,
+      "norm_label": "cn() helper utility",
+      "id": "CLAUDE_cn"
     },
     {
       "label": "Design System (MASTER.md)",
@@ -293,9 +280,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_designsystem",
       "community": 1,
-      "norm_label": "design system (master.md)"
+      "norm_label": "design system (master.md)",
+      "id": "CLAUDE_designsystem"
     },
     {
       "label": "Per-Page Design Overrides (design-system/pages/)",
@@ -306,9 +293,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_pagesoverrides",
       "community": 1,
-      "norm_label": "per-page design overrides (design-system/pages/)"
+      "norm_label": "per-page design overrides (design-system/pages/)",
+      "id": "CLAUDE_pagesoverrides"
     },
     {
       "label": "Skill: ui-ux-pro-max",
@@ -319,9 +306,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_skill_uiuxpromax",
       "community": 0,
-      "norm_label": "skill: ui-ux-pro-max"
+      "norm_label": "skill: ui-ux-pro-max",
+      "id": "CLAUDE_skill_uiuxpromax"
     },
     {
       "label": "Skill: frontend-design",
@@ -332,9 +319,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_skill_frontenddesign",
       "community": 0,
-      "norm_label": "skill: frontend-design"
+      "norm_label": "skill: frontend-design",
+      "id": "CLAUDE_skill_frontenddesign"
     },
     {
       "label": "Skill: emil-design-eng",
@@ -345,9 +332,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_skill_emildesigneng",
       "community": 0,
-      "norm_label": "skill: emil-design-eng"
+      "norm_label": "skill: emil-design-eng",
+      "id": "CLAUDE_skill_emildesigneng"
     },
     {
       "label": "Anti-Patterns (Enforced Rules)",
@@ -358,9 +345,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_antipatterns",
       "community": 1,
-      "norm_label": "anti-patterns (enforced rules)"
+      "norm_label": "anti-patterns (enforced rules)",
+      "id": "CLAUDE_antipatterns"
     },
     {
       "label": "Pre-Delivery Checklist",
@@ -371,9 +358,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_predelivery",
       "community": 1,
-      "norm_label": "pre-delivery checklist"
+      "norm_label": "pre-delivery checklist",
+      "id": "CLAUDE_predelivery"
     },
     {
       "label": "MCP Servers (github, context7, playwright)",
@@ -384,9 +371,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_mcpservers",
       "community": 0,
-      "norm_label": "mcp servers (github, context7, playwright)"
+      "norm_label": "mcp servers (github, context7, playwright)",
+      "id": "CLAUDE_mcpservers"
     },
     {
       "label": "Path Alias @ -> /src",
@@ -397,48 +384,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_pathalias",
-      "community": 3,
-      "norm_label": "path alias @ -> /src"
-    },
-    {
-      "label": "vite.config.js",
-      "file_type": "code",
-      "source_file": "CLAUDE.md",
-      "source_location": "Stack section",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "CLAUDE_viteconfigjs",
-      "community": 3,
-      "norm_label": "vite.config.js"
-    },
-    {
-      "label": "jsconfig.json",
-      "file_type": "code",
-      "source_file": "CLAUDE.md",
-      "source_location": "Stack section",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "CLAUDE_jsconfigjson",
-      "community": 3,
-      "norm_label": "jsconfig.json"
-    },
-    {
-      "label": "src/components/ui/ Directory",
-      "file_type": "code",
-      "source_file": "CLAUDE.md",
-      "source_location": "Component Conventions section",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "CLAUDE_uicomponentsdir",
-      "community": 6,
-      "norm_label": "src/components/ui/ directory"
+      "community": 12,
+      "norm_label": "path alias @ -> /src",
+      "id": "CLAUDE_pathalias"
     },
     {
       "label": "prefers-reduced-motion Accessibility Rule",
@@ -449,9 +397,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_prefersreducedmotion",
       "community": 0,
-      "norm_label": "prefers-reduced-motion accessibility rule"
+      "norm_label": "prefers-reduced-motion accessibility rule",
+      "id": "CLAUDE_prefersreducedmotion"
     },
     {
       "label": "Vite + React Template",
@@ -462,9 +410,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_vitereact",
       "community": 0,
-      "norm_label": "vite + react template"
+      "norm_label": "vite + react template",
+      "id": "README_vitereact"
     },
     {
       "label": "@vitejs/plugin-react (Oxc)",
@@ -475,9 +423,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_pluginreact",
       "community": 0,
-      "norm_label": "@vitejs/plugin-react (oxc)"
+      "norm_label": "@vitejs/plugin-react (oxc)",
+      "id": "README_pluginreact"
     },
     {
       "label": "@vitejs/plugin-react-swc (SWC)",
@@ -488,9 +436,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_pluginreactswc",
       "community": 0,
-      "norm_label": "@vitejs/plugin-react-swc (swc)"
+      "norm_label": "@vitejs/plugin-react-swc (swc)",
+      "id": "README_pluginreactswc"
     },
     {
       "label": "Color Palette Tokens",
@@ -501,9 +449,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorpalette",
       "community": 2,
-      "norm_label": "color palette tokens"
+      "norm_label": "color palette tokens",
+      "id": "MASTER_colorpalette"
     },
     {
       "label": "Primary Color #EC4899",
@@ -514,9 +462,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorprimary",
       "community": 2,
-      "norm_label": "primary color #ec4899"
+      "norm_label": "primary color #ec4899",
+      "id": "MASTER_colorprimary"
     },
     {
       "label": "Secondary Color #F472B6",
@@ -527,9 +475,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorsecondary",
       "community": 2,
-      "norm_label": "secondary color #f472b6"
+      "norm_label": "secondary color #f472b6",
+      "id": "MASTER_colorsecondary"
     },
     {
       "label": "CTA/Accent Color #06B6D4",
@@ -540,9 +488,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorcta",
       "community": 2,
-      "norm_label": "cta/accent color #06b6d4"
+      "norm_label": "cta/accent color #06b6d4",
+      "id": "MASTER_colorcta"
     },
     {
       "label": "Background Color #FDF2F8",
@@ -553,9 +501,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorbg",
       "community": 2,
-      "norm_label": "background color #fdf2f8"
+      "norm_label": "background color #fdf2f8",
+      "id": "MASTER_colorbg"
     },
     {
       "label": "Text Color #831843",
@@ -566,9 +514,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colortext",
       "community": 2,
-      "norm_label": "text color #831843"
+      "norm_label": "text color #831843",
+      "id": "MASTER_colortext"
     },
     {
       "label": "Typography System (Archivo + Space Grotesk)",
@@ -579,9 +527,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_typography",
       "community": 1,
-      "norm_label": "typography system (archivo + space grotesk)"
+      "norm_label": "typography system (archivo + space grotesk)",
+      "id": "MASTER_typography"
     },
     {
       "label": "Archivo Heading Font",
@@ -592,9 +540,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_archivo",
       "community": 1,
-      "norm_label": "archivo heading font"
+      "norm_label": "archivo heading font",
+      "id": "MASTER_archivo"
     },
     {
       "label": "Space Grotesk Body Font",
@@ -605,9 +553,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_spacegrotesk",
       "community": 1,
-      "norm_label": "space grotesk body font"
+      "norm_label": "space grotesk body font",
+      "id": "MASTER_spacegrotesk"
     },
     {
       "label": "Spacing Variable Scale",
@@ -618,9 +566,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_spacing",
       "community": 13,
-      "norm_label": "spacing variable scale"
+      "norm_label": "spacing variable scale",
+      "id": "MASTER_spacing"
     },
     {
       "label": "Shadow Depth Scale",
@@ -631,9 +579,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_shadows",
       "community": 2,
-      "norm_label": "shadow depth scale"
+      "norm_label": "shadow depth scale",
+      "id": "MASTER_shadows"
     },
     {
       "label": "Primary Button Spec",
@@ -644,9 +592,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_btnprimary",
       "community": 2,
-      "norm_label": "primary button spec"
+      "norm_label": "primary button spec",
+      "id": "MASTER_btnprimary"
     },
     {
       "label": "Secondary Button Spec",
@@ -657,9 +605,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_btnsecondary",
       "community": 2,
-      "norm_label": "secondary button spec"
+      "norm_label": "secondary button spec",
+      "id": "MASTER_btnsecondary"
     },
     {
       "label": "Card Component Spec",
@@ -670,9 +618,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_cardspec",
       "community": 2,
-      "norm_label": "card component spec"
+      "norm_label": "card component spec",
+      "id": "MASTER_cardspec"
     },
     {
       "label": "Input Component Spec",
@@ -683,9 +631,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_inputspec",
       "community": 2,
-      "norm_label": "input component spec"
+      "norm_label": "input component spec",
+      "id": "MASTER_inputspec"
     },
     {
       "label": "Modal Component Spec",
@@ -696,9 +644,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_modalspec",
       "community": 2,
-      "norm_label": "modal component spec"
+      "norm_label": "modal component spec",
+      "id": "MASTER_modalspec"
     },
     {
       "label": "Motion-Driven Style",
@@ -709,9 +657,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_motiondriven",
       "community": 1,
-      "norm_label": "motion-driven style"
+      "norm_label": "motion-driven style",
+      "id": "MASTER_motiondriven"
     },
     {
       "label": "Portfolio Grid Page Pattern",
@@ -722,9 +670,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_portfoliogrid",
       "community": 1,
-      "norm_label": "portfolio grid page pattern"
+      "norm_label": "portfolio grid page pattern",
+      "id": "MASTER_portfoliogrid"
     },
     {
       "label": "Section Order: Hero\u00e2\u2020\u2019ProjectGrid\u00e2\u2020\u2019About\u00e2\u2020\u2019Contact",
@@ -735,9 +683,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_sectionorder",
       "community": 1,
-      "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact"
+      "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact",
+      "id": "MASTER_sectionorder"
     },
     {
       "label": "Anti-Patterns (MASTER)",
@@ -748,9 +696,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_antipatterns",
       "community": 1,
-      "norm_label": "anti-patterns (master)"
+      "norm_label": "anti-patterns (master)",
+      "id": "MASTER_antipatterns"
     },
     {
       "label": "Pre-Delivery Checklist (MASTER)",
@@ -761,9 +709,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_predelivery",
       "community": 1,
-      "norm_label": "pre-delivery checklist (master)"
+      "norm_label": "pre-delivery checklist (master)",
+      "id": "MASTER_predelivery"
     },
     {
       "label": "Accessibility Rules (contrast 4.5:1, focus states)",
@@ -774,9 +722,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_a11y",
       "community": 1,
-      "norm_label": "accessibility rules (contrast 4.5:1, focus states)"
+      "norm_label": "accessibility rules (contrast 4.5:1, focus states)",
+      "id": "MASTER_a11y"
     },
     {
       "label": "Google Fonts Import (Archivo + Space Grotesk)",
@@ -787,9 +735,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_googlefonts",
       "community": 1,
-      "norm_label": "google fonts import (archivo + space grotesk)"
+      "norm_label": "google fonts import (archivo + space grotesk)",
+      "id": "MASTER_googlefonts"
     },
     {
       "label": "Graph Report (2026-04-18)",
@@ -800,9 +748,9 @@
       "captured_at": "2026-04-18",
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_report",
       "community": 3,
-      "norm_label": "graph report (2026-04-18)"
+      "norm_label": "graph report (2026-04-18)",
+      "id": "GRAPHREPORT_report"
     },
     {
       "label": "Graph Community 0 (App, App.jsx)",
@@ -813,9 +761,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community0",
       "community": 3,
-      "norm_label": "graph community 0 (app, app.jsx)"
+      "norm_label": "graph community 0 (app, app.jsx)",
+      "id": "GRAPHREPORT_community0"
     },
     {
       "label": "Graph Community 1 (Hello, Hello.jsx)",
@@ -826,9 +774,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community1",
       "community": 3,
-      "norm_label": "graph community 1 (hello, hello.jsx)"
+      "norm_label": "graph community 1 (hello, hello.jsx)",
+      "id": "GRAPHREPORT_community1"
     },
     {
       "label": "Graph Community 2 (utils.ts, cn())",
@@ -839,9 +787,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community2",
       "community": 3,
-      "norm_label": "graph community 2 (utils.ts, cn())"
+      "norm_label": "graph community 2 (utils.ts, cn())",
+      "id": "GRAPHREPORT_community2"
     },
     {
       "label": "Graph Community 3 (eslint.config.js)",
@@ -852,9 +800,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community3",
       "community": 3,
-      "norm_label": "graph community 3 (eslint.config.js)"
+      "norm_label": "graph community 3 (eslint.config.js)",
+      "id": "GRAPHREPORT_community3"
     },
     {
       "label": "Graph Community 4 (vite.config.js)",
@@ -865,9 +813,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community4",
       "community": 3,
-      "norm_label": "graph community 4 (vite.config.js)"
+      "norm_label": "graph community 4 (vite.config.js)",
+      "id": "GRAPHREPORT_community4"
     },
     {
       "label": "Graph Community 5 (main.jsx)",
@@ -878,9 +826,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "GRAPHREPORT_community5",
       "community": 3,
-      "norm_label": "graph community 5 (main.jsx)"
+      "norm_label": "graph community 5 (main.jsx)",
+      "id": "GRAPHREPORT_community5"
     },
     {
       "label": "Rationale: Motion-Driven as Sales Asset",
@@ -891,9 +839,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_rationale_motiondriven",
       "community": 1,
-      "norm_label": "rationale: motion-driven as sales asset"
+      "norm_label": "rationale: motion-driven as sales asset",
+      "id": "MASTER_rationale_motiondriven"
     },
     {
       "label": "Rationale: Design Skill Routing Phases",
@@ -904,9 +852,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_rationale_skillrouting",
       "community": 0,
-      "norm_label": "rationale: design skill routing phases"
+      "norm_label": "rationale: design skill routing phases",
+      "id": "CLAUDE_rationale_skillrouting"
     },
     {
       "label": "Rationale: MASTER.md as Single Source of Truth",
@@ -917,9 +865,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "CLAUDE_rationale_singlesource",
       "community": 1,
-      "norm_label": "rationale: master.md as single source of truth"
+      "norm_label": "rationale: master.md as single source of truth",
+      "id": "CLAUDE_rationale_singlesource"
     },
     {
       "label": "Favicon SVG Icon",
@@ -930,9 +878,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_svg",
       "community": 4,
-      "norm_label": "favicon svg icon"
+      "norm_label": "favicon svg icon",
+      "id": "favicon_svg"
     },
     {
       "label": "Lightning Bolt / Flash Shape",
@@ -943,9 +891,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_lightning_bolt_shape",
       "community": 4,
-      "norm_label": "lightning bolt / flash shape"
+      "norm_label": "lightning bolt / flash shape",
+      "id": "favicon_lightning_bolt_shape"
     },
     {
       "label": "Primary Purple Color (#863bff / #7e14ff)",
@@ -956,9 +904,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_color_purple",
       "community": 4,
-      "norm_label": "primary purple color (#863bff / #7e14ff)"
+      "norm_label": "primary purple color (#863bff / #7e14ff)",
+      "id": "favicon_color_purple"
     },
     {
       "label": "Light Purple / Lavender Color (#ede6ff)",
@@ -969,9 +917,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_color_lightpurple",
       "community": 4,
-      "norm_label": "light purple / lavender color (#ede6ff)"
+      "norm_label": "light purple / lavender color (#ede6ff)",
+      "id": "favicon_color_lightpurple"
     },
     {
       "label": "Cyan / Blue Accent Color (#47bfff)",
@@ -982,9 +930,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_color_cyan",
       "community": 4,
-      "norm_label": "cyan / blue accent color (#47bfff)"
+      "norm_label": "cyan / blue accent color (#47bfff)",
+      "id": "favicon_color_cyan"
     },
     {
       "label": "Gaussian Blur Glow / Radiance Effect",
@@ -995,9 +943,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_glow_effect",
       "community": 4,
-      "norm_label": "gaussian blur glow / radiance effect"
+      "norm_label": "gaussian blur glow / radiance effect",
+      "id": "favicon_glow_effect"
     },
     {
       "label": "Display-P3 Wide Color Gamut",
@@ -1008,9 +956,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "favicon_display_p3",
       "community": 4,
-      "norm_label": "display-p3 wide color gamut"
+      "norm_label": "display-p3 wide color gamut",
+      "id": "favicon_display_p3"
     },
     {
       "label": "Agency Portfolio Brand Identity",
@@ -1021,9 +969,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agency_portfolio_brand",
       "community": 4,
-      "norm_label": "agency portfolio brand identity"
+      "norm_label": "agency portfolio brand identity",
+      "id": "agency_portfolio_brand"
     },
     {
       "label": "icons.svg SVG Sprite Sheet",
@@ -1034,9 +982,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_svg",
       "community": 5,
-      "norm_label": "icons.svg svg sprite sheet"
+      "norm_label": "icons.svg svg sprite sheet",
+      "id": "icons_svg"
     },
     {
       "label": "Bluesky Icon Symbol",
@@ -1047,9 +995,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_bluesky_icon",
       "community": 5,
-      "norm_label": "bluesky icon symbol"
+      "norm_label": "bluesky icon symbol",
+      "id": "icons_bluesky_icon"
     },
     {
       "label": "Discord Icon Symbol",
@@ -1060,9 +1008,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_discord_icon",
       "community": 5,
-      "norm_label": "discord icon symbol"
+      "norm_label": "discord icon symbol",
+      "id": "icons_discord_icon"
     },
     {
       "label": "Documentation Icon Symbol",
@@ -1073,9 +1021,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_documentation_icon",
       "community": 5,
-      "norm_label": "documentation icon symbol"
+      "norm_label": "documentation icon symbol",
+      "id": "icons_documentation_icon"
     },
     {
       "label": "GitHub Icon Symbol",
@@ -1086,9 +1034,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_github_icon",
       "community": 5,
-      "norm_label": "github icon symbol"
+      "norm_label": "github icon symbol",
+      "id": "icons_github_icon"
     },
     {
       "label": "Social/User Icon Symbol",
@@ -1099,9 +1047,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_social_icon",
       "community": 5,
-      "norm_label": "social/user icon symbol"
+      "norm_label": "social/user icon symbol",
+      "id": "icons_social_icon"
     },
     {
       "label": "X (Twitter) Icon Symbol",
@@ -1112,9 +1060,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "icons_x_icon",
       "community": 5,
-      "norm_label": "x (twitter) icon symbol"
+      "norm_label": "x (twitter) icon symbol",
+      "id": "icons_x_icon"
     },
     {
       "label": "Design System MASTER",
@@ -1125,9 +1073,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_system_master",
       "community": 5,
-      "norm_label": "design system master"
+      "norm_label": "design system master",
+      "id": "design_system_master"
     }
   ],
   "links": [
@@ -1258,8 +1206,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "MCP Servers section",
       "weight": 1.0,
-      "_src": "CLAUDE_mcpservers",
-      "_tgt": "CLAUDE_agencyportfolio",
+      "_src": "CLAUDE_agencyportfolio",
+      "_tgt": "CLAUDE_mcpservers",
       "source": "CLAUDE_agencyportfolio",
       "target": "CLAUDE_mcpservers"
     },
@@ -1270,8 +1218,8 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_vitereact",
-      "_tgt": "CLAUDE_vite",
+      "_src": "CLAUDE_vite",
+      "_tgt": "README_vitereact",
       "source": "CLAUDE_vite",
       "target": "README_vitereact"
     },
@@ -1282,8 +1230,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_skill_frontenddesign",
-      "_tgt": "CLAUDE_react",
+      "_src": "CLAUDE_react",
+      "_tgt": "CLAUDE_skill_frontenddesign",
       "source": "CLAUDE_react",
       "target": "CLAUDE_skill_frontenddesign"
     },
@@ -1294,22 +1242,10 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_vitereact",
-      "_tgt": "CLAUDE_react",
+      "_src": "CLAUDE_react",
+      "_tgt": "README_vitereact",
       "source": "CLAUDE_react",
       "target": "README_vitereact"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "Styling section",
-      "weight": 1.0,
-      "_src": "CLAUDE_tailwindv4",
-      "_tgt": "CLAUDE_srcindexcss",
-      "source": "CLAUDE_tailwindv4",
-      "target": "CLAUDE_srcindexcss"
     },
     {
       "relation": "conceptually_related_to",
@@ -1318,8 +1254,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_skill_frontenddesign",
-      "_tgt": "CLAUDE_tailwindv4",
+      "_src": "CLAUDE_tailwindv4",
+      "_tgt": "CLAUDE_skill_frontenddesign",
       "source": "CLAUDE_tailwindv4",
       "target": "CLAUDE_skill_frontenddesign"
     },
@@ -1330,8 +1266,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 0.8,
-      "_src": "CLAUDE_skill_emildesigneng",
-      "_tgt": "CLAUDE_gsap",
+      "_src": "CLAUDE_gsap",
+      "_tgt": "CLAUDE_skill_emildesigneng",
       "source": "CLAUDE_gsap",
       "target": "CLAUDE_skill_emildesigneng"
     },
@@ -1342,8 +1278,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Component Conventions section",
       "weight": 1.0,
-      "_src": "CLAUDE_prefersreducedmotion",
-      "_tgt": "CLAUDE_gsap",
+      "_src": "CLAUDE_gsap",
+      "_tgt": "CLAUDE_prefersreducedmotion",
       "source": "CLAUDE_gsap",
       "target": "CLAUDE_prefersreducedmotion"
     },
@@ -1366,8 +1302,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 0.8,
-      "_src": "CLAUDE_skill_emildesigneng",
-      "_tgt": "CLAUDE_framermotion",
+      "_src": "CLAUDE_framermotion",
+      "_tgt": "CLAUDE_skill_emildesigneng",
       "source": "CLAUDE_framermotion",
       "target": "CLAUDE_skill_emildesigneng"
     },
@@ -1378,8 +1314,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Component Conventions section",
       "weight": 1.0,
-      "_src": "CLAUDE_prefersreducedmotion",
-      "_tgt": "CLAUDE_framermotion",
+      "_src": "CLAUDE_framermotion",
+      "_tgt": "CLAUDE_prefersreducedmotion",
       "source": "CLAUDE_framermotion",
       "target": "CLAUDE_prefersreducedmotion"
     },
@@ -1420,40 +1356,16 @@
       "target": "CLAUDE_cn"
     },
     {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "Component Conventions section",
-      "weight": 1.0,
-      "_src": "CLAUDE_uicomponentsdir",
-      "_tgt": "CLAUDE_shadcn",
-      "source": "CLAUDE_shadcn",
-      "target": "CLAUDE_uicomponentsdir"
-    },
-    {
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "graphify-out/GRAPH_REPORT.md",
       "source_location": "Knowledge Gaps section",
       "weight": 0.9,
-      "_src": "GRAPHREPORT_community2",
-      "_tgt": "CLAUDE_cn",
+      "_src": "CLAUDE_cn",
+      "_tgt": "GRAPHREPORT_community2",
       "source": "CLAUDE_cn",
       "target": "GRAPHREPORT_community2"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "Design System section",
-      "weight": 1.0,
-      "_src": "MASTER_colorpalette",
-      "_tgt": "CLAUDE_srcindexcss",
-      "source": "CLAUDE_srcindexcss",
-      "target": "MASTER_colorpalette"
     },
     {
       "relation": "references",
@@ -1534,8 +1446,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design System section",
       "weight": 1.0,
-      "_src": "CLAUDE_pagesoverrides",
-      "_tgt": "CLAUDE_designsystem",
+      "_src": "CLAUDE_designsystem",
+      "_tgt": "CLAUDE_pagesoverrides",
       "source": "CLAUDE_designsystem",
       "target": "CLAUDE_pagesoverrides"
     },
@@ -1546,8 +1458,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_skill_uiuxpromax",
-      "_tgt": "CLAUDE_designsystem",
+      "_src": "CLAUDE_designsystem",
+      "_tgt": "CLAUDE_skill_uiuxpromax",
       "source": "CLAUDE_designsystem",
       "target": "CLAUDE_skill_uiuxpromax"
     },
@@ -1558,8 +1470,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design System section",
       "weight": 1.0,
-      "_src": "CLAUDE_rationale_singlesource",
-      "_tgt": "CLAUDE_designsystem",
+      "_src": "CLAUDE_designsystem",
+      "_tgt": "CLAUDE_rationale_singlesource",
       "source": "CLAUDE_designsystem",
       "target": "CLAUDE_rationale_singlesource"
     },
@@ -1570,8 +1482,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_rationale_skillrouting",
-      "_tgt": "CLAUDE_skill_uiuxpromax",
+      "_src": "CLAUDE_skill_uiuxpromax",
+      "_tgt": "CLAUDE_rationale_skillrouting",
       "source": "CLAUDE_skill_uiuxpromax",
       "target": "CLAUDE_rationale_skillrouting"
     },
@@ -1582,8 +1494,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_rationale_skillrouting",
-      "_tgt": "CLAUDE_skill_frontenddesign",
+      "_src": "CLAUDE_skill_frontenddesign",
+      "_tgt": "CLAUDE_rationale_skillrouting",
       "source": "CLAUDE_skill_frontenddesign",
       "target": "CLAUDE_rationale_skillrouting"
     },
@@ -1594,8 +1506,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Design Skill Routing section",
       "weight": 1.0,
-      "_src": "CLAUDE_rationale_skillrouting",
-      "_tgt": "CLAUDE_skill_emildesigneng",
+      "_src": "CLAUDE_skill_emildesigneng",
+      "_tgt": "CLAUDE_rationale_skillrouting",
       "source": "CLAUDE_skill_emildesigneng",
       "target": "CLAUDE_rationale_skillrouting"
     },
@@ -1606,8 +1518,8 @@
       "source_file": "CLAUDE.md",
       "source_location": "Anti-Patterns section",
       "weight": 0.95,
-      "_src": "MASTER_antipatterns",
-      "_tgt": "CLAUDE_antipatterns",
+      "_src": "CLAUDE_antipatterns",
+      "_tgt": "MASTER_antipatterns",
       "source": "CLAUDE_antipatterns",
       "target": "MASTER_antipatterns"
     },
@@ -1618,46 +1530,10 @@
       "source_file": "CLAUDE.md",
       "source_location": "Pre-Delivery Checklist section",
       "weight": 0.95,
-      "_src": "MASTER_predelivery",
-      "_tgt": "CLAUDE_predelivery",
+      "_src": "CLAUDE_predelivery",
+      "_tgt": "MASTER_predelivery",
       "source": "CLAUDE_predelivery",
       "target": "MASTER_predelivery"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "Stack section",
-      "weight": 1.0,
-      "_src": "CLAUDE_pathalias",
-      "_tgt": "CLAUDE_viteconfigjs",
-      "source": "CLAUDE_pathalias",
-      "target": "CLAUDE_viteconfigjs"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "Stack section",
-      "weight": 1.0,
-      "_src": "CLAUDE_pathalias",
-      "_tgt": "CLAUDE_jsconfigjson",
-      "source": "CLAUDE_pathalias",
-      "target": "CLAUDE_jsconfigjson"
-    },
-    {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "graphify-out/GRAPH_REPORT.md",
-      "source_location": "Knowledge Gaps section",
-      "weight": 0.9,
-      "_src": "GRAPHREPORT_community4",
-      "_tgt": "CLAUDE_viteconfigjs",
-      "source": "CLAUDE_viteconfigjs",
-      "target": "GRAPHREPORT_community4"
     },
     {
       "relation": "semantically_similar_to",
@@ -1678,8 +1554,8 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_pluginreact",
-      "_tgt": "README_vitereact",
+      "_src": "README_vitereact",
+      "_tgt": "README_pluginreact",
       "source": "README_vitereact",
       "target": "README_pluginreact"
     },
@@ -1690,8 +1566,8 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_pluginreactswc",
-      "_tgt": "README_vitereact",
+      "_src": "README_vitereact",
+      "_tgt": "README_pluginreactswc",
       "source": "README_vitereact",
       "target": "README_pluginreactswc"
     },
@@ -1762,8 +1638,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Buttons section",
       "weight": 1.0,
-      "_src": "MASTER_btnsecondary",
-      "_tgt": "MASTER_colorprimary",
+      "_src": "MASTER_colorprimary",
+      "_tgt": "MASTER_btnsecondary",
       "source": "MASTER_colorprimary",
       "target": "MASTER_btnsecondary"
     },
@@ -1774,8 +1650,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Inputs section",
       "weight": 1.0,
-      "_src": "MASTER_inputspec",
-      "_tgt": "MASTER_colorprimary",
+      "_src": "MASTER_colorprimary",
+      "_tgt": "MASTER_inputspec",
       "source": "MASTER_colorprimary",
       "target": "MASTER_inputspec"
     },
@@ -1786,8 +1662,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Buttons section",
       "weight": 1.0,
-      "_src": "MASTER_btnprimary",
-      "_tgt": "MASTER_colorcta",
+      "_src": "MASTER_colorcta",
+      "_tgt": "MASTER_btnprimary",
       "source": "MASTER_colorcta",
       "target": "MASTER_btnprimary"
     },
@@ -1798,8 +1674,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Cards section",
       "weight": 1.0,
-      "_src": "MASTER_cardspec",
-      "_tgt": "MASTER_colorbg",
+      "_src": "MASTER_colorbg",
+      "_tgt": "MASTER_cardspec",
       "source": "MASTER_colorbg",
       "target": "MASTER_cardspec"
     },
@@ -1846,8 +1722,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Cards section",
       "weight": 1.0,
-      "_src": "MASTER_cardspec",
-      "_tgt": "MASTER_shadows",
+      "_src": "MASTER_shadows",
+      "_tgt": "MASTER_cardspec",
       "source": "MASTER_shadows",
       "target": "MASTER_cardspec"
     },
@@ -1858,8 +1734,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Modals section",
       "weight": 1.0,
-      "_src": "MASTER_modalspec",
-      "_tgt": "MASTER_shadows",
+      "_src": "MASTER_shadows",
+      "_tgt": "MASTER_modalspec",
       "source": "MASTER_shadows",
       "target": "MASTER_modalspec"
     },
@@ -1882,8 +1758,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Style Guidelines section",
       "weight": 1.0,
-      "_src": "MASTER_rationale_motiondriven",
-      "_tgt": "MASTER_motiondriven",
+      "_src": "MASTER_motiondriven",
+      "_tgt": "MASTER_rationale_motiondriven",
       "source": "MASTER_motiondriven",
       "target": "MASTER_rationale_motiondriven"
     },
@@ -2098,8 +1974,8 @@
       "source_file": "public/favicon.svg",
       "source_location": null,
       "weight": 0.85,
-      "_src": "favicon_glow_effect",
-      "_tgt": "favicon_lightning_bolt_shape",
+      "_src": "favicon_lightning_bolt_shape",
+      "_tgt": "favicon_glow_effect",
       "source": "favicon_lightning_bolt_shape",
       "target": "favicon_glow_effect"
     },
@@ -2242,8 +2118,8 @@
       "source_file": "public/icons.svg",
       "source_location": null,
       "weight": 0.7,
-      "_src": "icons_social_icon",
-      "_tgt": "icons_bluesky_icon",
+      "_src": "icons_bluesky_icon",
+      "_tgt": "icons_social_icon",
       "source": "icons_bluesky_icon",
       "target": "icons_social_icon"
     },
@@ -2254,8 +2130,8 @@
       "source_file": "public/icons.svg",
       "source_location": null,
       "weight": 0.8,
-      "_src": "icons_x_icon",
-      "_tgt": "icons_discord_icon",
+      "_src": "icons_discord_icon",
+      "_tgt": "icons_x_icon",
       "source": "icons_discord_icon",
       "target": "icons_x_icon"
     },
