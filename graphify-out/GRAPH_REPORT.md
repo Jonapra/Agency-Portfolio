@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-04-18)
 
 ## Corpus Check
-- 9 files · ~3,985 words
+- 9 files · ~3,974 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 13 nodes · 4 edges · 9 communities detected
+- 14 nodes · 5 edges · 9 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -66,19 +66,19 @@ Nodes (0):
 ## Knowledge Gaps
 - **Thin community `Community 0`** (2 nodes): `App()`, `App.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 1`** (2 nodes): `MenuToggleIcon()`, `menu-toggle-icon.tsx`
+- **Thin community `Community 1`** (2 nodes): `Button()`, `button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 2`** (2 nodes): `use-scroll.ts`, `useScroll()`
+- **Thin community `Community 2`** (2 nodes): `MenuToggleIcon()`, `menu-toggle-icon.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 3`** (2 nodes): `utils.ts`, `cn()`
+- **Thin community `Community 3`** (2 nodes): `use-scroll.ts`, `useScroll()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 4`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 4`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 5`** (1 nodes): `vite.config.js`
+- **Thin community `Community 5`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 6`** (1 nodes): `main.jsx`
+- **Thin community `Community 6`** (1 nodes): `vite.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 7`** (1 nodes): `button.tsx`
+- **Thin community `Community 7`** (1 nodes): `main.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 8`** (1 nodes): `header-2.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

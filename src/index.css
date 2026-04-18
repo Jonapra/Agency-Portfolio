@@ -17,6 +17,12 @@
   --color-accent: #fce7f3;
   --color-accent-foreground: var(--color-text);
   --color-primary-foreground: #ffffff;
+  --color-secondary-foreground: #831843;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-input: #fbcfe8;
+  --color-ring: #EC4899;
+  --color-ring-offset-background: #FDF2F8;
 }
 
 @layer base {
