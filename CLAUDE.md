@@ -4,26 +4,27 @@ Marketing + portfolio site for a web-design agency that builds websites for clie
 
 ## Stack
 
-- **Build:** Vite 8, React 19, JavaScript + TypeScript (`.tsx` for shadcn-style UI, `.jsx` for page code).
-- **Styling:** Tailwind v4 (`@tailwindcss/vite`, CSS-first `@theme` block in `src/index.css`). No `tailwind.config.js` — tokens are declared in CSS.
-- **Components:** shadcn-style primitives under `src/components/ui/`, built on `@radix-ui/react-slot`, `class-variance-authority`, `clsx`, `tailwind-merge`. Compose via the `cn()` helper in `src/lib/utils.ts`.
-- **Icons:** `lucide-react` only. No emoji icons.
-- **Motion:** GSAP 3 (+ `@gsap/react` for `useGSAP`) for scroll-linked, timeline, and polish work. Framer Motion for declarative component-level animation (enter/exit, layout). Pick one per component — don't mix on the same element.
-- **Path alias:** `@` → `/src` (configured in `vite.config.js` and `jsconfig.json`).
+- **Build:** Vite 5 (SWC), React 18.3.1, strictly TypeScript (`.tsx`, `.ts`).
+- **Styling:** Tailwind v3. Configured via `tailwind.config.ts` and `postcss.config.js`. (Note: The previous Tailwind v4 CSS-first paradigm is no longer, so rely firmly on the config file for tokens).
+- **Components:** shadcn-style primitives built on Radix UI. Compose via the `cn()` helper in `src/lib/utils.ts` (using `clsx` and `tailwind-merge`).
+- **Icons:** `lucide-react`. No emoji icons.
+- **Motion:** GSAP 3 (+ `@gsap/react` for `useGSAP`) and Framer Motion.
+- **Path alias:** `@` → `/src` (configured in `vite.config.ts` and `tsconfig.json` / `tsconfig.app.json`).
 
 ## Commands
 
 - `npm run dev` — Vite dev server
 - `npm run build` — production build
+- `npm run build:dev` — Vite development build
 - `npm run preview` — preview built output
-- `npm run lint` — ESLint 9
+- `npm run lint` — ESLint
 
 ## Design System — Single Source of Truth
 
 **`design-system/MASTER.md` is authoritative.** Read it before writing any UI. It defines:
 
-- Color tokens (Primary `#EC4899`, Secondary `#F472B6`, CTA `#06B6D4`, Background `#FDF2F8`, Text `#831843`)
-- Typography (Archivo headings, Space Grotesk body)
+- Color tokens — brand scale: `ink` (dark text), `ink-2`, `ink-3`, `cream` (light bg), `cream-2`, `bone`, `signal` (accent/CTA), `signal-2`, `mute`, `mute-2`. Resolved via HSL CSS variables in `src/index.css`.
+- Typography — `font-serif` (Instrument Serif), `font-sans` (Geist), `font-mono` (JetBrains Mono)
 - Spacing / shadow scales
 - Component specs (buttons, cards, inputs, modals)
 - Overall style: **Motion-Driven**, pattern: **Portfolio Grid** (Hero → Project Grid → About → Contact)
@@ -31,7 +32,7 @@ Marketing + portfolio site for a web-design agency that builds websites for clie
 
 **Per-page overrides** live in `design-system/pages/[page-name].md`. If a page file exists, it **overrides** MASTER for that page. Always check `pages/` first when building a specific route.
 
-Tokens are exposed as Tailwind v4 CSS variables in `src/index.css` (`--color-primary`, `--font-heading`, etc.). Use the Tailwind utility (`bg-primary`, `font-heading`) — never hardcode hex or font names in JSX.
+Tokens are defined in `tailwind.config.ts`. Use Tailwind utilities (`bg-primary`, `font-heading`) — never hardcode hex or font names in JSX.
 
 ## Design Skill Routing (avoid collision)
 

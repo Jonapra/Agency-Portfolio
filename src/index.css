@@ -1,63 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-@theme {
-  --color-primary: #EC4899;
-  --color-secondary: #F472B6;
-  --color-cta: #06B6D4;
-  --color-background: #FDF2F8;
-  --color-text: #831843;
-  --font-sans: "Space Grotesk", sans-serif;
-  --font-heading: "Archivo", sans-serif;
-  
-  /* Missing Shadcn tokens mapped */
-  --color-foreground: var(--color-text);
-  --color-border: #fbcfe8;
-  --color-muted: #fce7f3;
-  --color-accent: #fce7f3;
-  --color-accent-foreground: var(--color-text);
-  --color-primary-foreground: #ffffff;
-  --color-secondary-foreground: #831843;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #ffffff;
-  --color-input: #fbcfe8;
-  --color-ring: #EC4899;
-  --color-ring-offset-background: #FDF2F8;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   AGITON — DESIGN SYSTEM
+   All colors HSL. All custom tokens defined here.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Brand surface tokens (dark theme is default) */
+    --background: 240 6% 5%;          /* #0A0A0B ink */
+    --foreground: 39 36% 92%;         /* #F2EDE4 cream */
+
+    --ink: 240 6% 5%;
+    --ink-2: 240 6% 9%;               /* #141417 */
+    --ink-3: 240 7% 12%;              /* #1C1C21 */
+    --cream: 39 36% 92%;
+    --cream-2: 38 30% 87%;            /* #E8E1D3 */
+    --bone: 41 50% 97%;               /* #FBF8F2 */
+
+    --signal: 17 100% 56%;            /* #FF5A1F */
+    --signal-2: 17 100% 64%;          /* #FF7A45 */
+
+    --mute: 240 4% 56%;               /* #8A8A92 */
+    --mute-2: 42 9% 75%;              /* #C4C1B9 */
+
+    /* Shadcn aliases mapped to brand */
+    --card: 240 6% 9%;
+    --card-foreground: 39 36% 92%;
+    --popover: 240 6% 9%;
+    --popover-foreground: 39 36% 92%;
+    --primary: 17 100% 56%;
+    --primary-foreground: 240 6% 5%;
+    --secondary: 240 7% 12%;
+    --secondary-foreground: 39 36% 92%;
+    --muted: 240 7% 12%;
+    --muted-foreground: 240 4% 56%;
+    --accent: 17 100% 56%;
+    --accent-foreground: 240 6% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 39 36% 92%;
+    --border: 0 0% 100%;              /* used with /10 etc */
+    --input: 240 7% 12%;
+    --ring: 17 100% 56%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 6% 5%;
+    --sidebar-foreground: 39 36% 92%;
+    --sidebar-primary: 17 100% 56%;
+    --sidebar-primary-foreground: 240 6% 5%;
+    --sidebar-accent: 240 7% 12%;
+    --sidebar-accent-foreground: 39 36% 92%;
+    --sidebar-border: 240 7% 14%;
+    --sidebar-ring: 17 100% 56%;
+  }
+
+  .light {
+    --background: 39 36% 92%;
+    --foreground: 240 6% 5%;
+    --card: 41 50% 97%;
+    --card-foreground: 240 6% 5%;
+    --popover: 41 50% 97%;
+    --popover-foreground: 240 6% 5%;
+    --primary: 17 100% 50%;
+    --primary-foreground: 39 36% 92%;
+    --secondary: 38 30% 87%;
+    --secondary-foreground: 240 6% 5%;
+    --muted: 38 30% 87%;
+    --muted-foreground: 240 5% 40%;
+    --accent: 17 100% 50%;
+    --accent-foreground: 39 36% 92%;
+    --border: 240 6% 5%;
+    --input: 38 30% 87%;
+    --signal: 17 100% 50%;
+  }
 }
 
 @layer base {
+  * { @apply border-border; }
   body {
-    @apply bg-[var(--color-background)] text-[var(--color-text)] font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+  ::selection { background: hsl(var(--signal)); color: hsl(var(--ink)); }
+}
+
+@layer components {
+  .font-display { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.02em; }
+  .italic-display { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .font-mono-ui { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  .h-eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 500; font-size: 11px; line-height: 1;
+    letter-spacing: 0.16em; text-transform: uppercase;
+  }
+
+  .h-display {
+    font-size: clamp(48px, 11vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+  .h-section {
+    font-size: clamp(36px, 6.2vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .marquee-huge {
+    font-size: clamp(80px, 16vw, 260px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+
+  .plate {
+    border: 1px solid hsl(var(--foreground) / 0.08);
+  }
+  .light .plate { border-color: hsl(var(--ink) / 0.1); }
+
+  .pill {
+    display: inline-flex; align-items: center;
+    border: 1px solid currentColor; border-radius: 9999px;
+    padding: 0.35rem 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500; font-size: 10.5px; line-height: 1;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  .u-link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.35s ease;
+  }
+  .u-link:hover { background-size: 100% 1px; }
+
+  .num { font-variant-numeric: tabular-nums; }
+
+  .dash-rule {
+    background-image: linear-gradient(to right, currentColor 60%, transparent 40%);
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+
+  .halo {
+    position: absolute; border-radius: 9999px;
+    filter: blur(90px); opacity: .55; pointer-events: none;
+  }
+
+  .grain-overlay::before {
+    content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>");
+    mix-blend-mode: overlay;
   }
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+@layer utilities {
+  .text-signal { color: hsl(var(--signal)); }
+  .bg-signal { background-color: hsl(var(--signal)); }
+  .bg-signal-2 { background-color: hsl(var(--signal-2)); }
+  .text-mute { color: hsl(var(--mute)); }
+  .text-mute-2 { color: hsl(var(--mute-2)); }
+  .bg-ink { background-color: hsl(var(--ink)); }
+  .bg-ink-2 { background-color: hsl(var(--ink-2)); }
+  .bg-cream { background-color: hsl(var(--cream)); }
+  .text-ink { color: hsl(var(--ink)); }
+  .text-cream { color: hsl(var(--cream)); }
+  .border-signal { border-color: hsl(var(--signal)); }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
+/* Marquee animation */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 38s linear infinite; }
+.marquee-track.reverse { animation-direction: reverse; animation-duration: 46s; }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
+/* Slow spin */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 22s linear infinite; transform-origin: center; }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+/* Project card hover */
+.proj-img { transition: transform 1.2s cubic-bezier(.2,.8,.2,1), filter .6s; }
+.proj-card:hover .proj-img { transform: scale(1.05); filter: saturate(1.1); }
+.proj-card .proj-arrow { transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.proj-card:hover .proj-arrow { transform: translate(6px, -6px) rotate(-8deg); }
+
+/* Custom cursor */
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0; pointer-events: none; z-index: 80;
+  transform: translate(-50%, -50%); mix-blend-mode: difference;
+}
+.cursor-dot { width: 6px; height: 6px; background: #fff; border-radius: 9999px; }
+.cursor-ring {
+  width: 34px; height: 34px; border: 1px solid #fff; border-radius: 9999px;
+  transition: width .2s, height .2s, background .2s, border-color .2s;
+}
+.cursor-ring.hover { width: 72px; height: 72px; background: hsl(var(--signal) / 0.9); border-color: transparent; }
+.cursor-ring.view { width: 96px; height: 96px; background: hsl(var(--signal)); border-color: transparent; }
+@media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+
+/* FAQ details */
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon { transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details .faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.2,.8,.2,1); }
+details[open] .faq-body { grid-template-rows: 1fr; }
+details .faq-inner { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .spin-slow { animation: none; }
 }
