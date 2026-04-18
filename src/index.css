@@ -9,6 +9,14 @@
   --color-text: #831843;
   --font-sans: "Space Grotesk", sans-serif;
   --font-heading: "Archivo", sans-serif;
+  
+  /* Missing Shadcn tokens mapped */
+  --color-foreground: var(--color-text);
+  --color-border: #fbcfe8;
+  --color-muted: #fce7f3;
+  --color-accent: #fce7f3;
+  --color-accent-foreground: var(--color-text);
+  --color-primary-foreground: #ffffff;
 }
 
 @layer base {
