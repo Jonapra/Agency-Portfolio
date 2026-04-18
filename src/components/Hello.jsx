@@ -14,7 +14,7 @@ const Hello = () => {
             </span>
           </span>
           <span className="pl-6 text-orange-400 group-hover:text-orange-300 transition duration-200 text-xl font-medium">
-            Agency Portfolio
+            This is an Agency Website
           </span>
         </div>
       </div>
