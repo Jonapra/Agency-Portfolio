@@ -8,7 +8,7 @@ export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
 
   return (
-    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden">
+    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden text-cream">
       {/* Ambient gradient field */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-ink">
         {/* Mesh gradient — orange bottom-left, indigo top-right */}
@@ -50,7 +50,7 @@ export const Hero = () => {
         {/* Big headline */}
         <h1 className="h-display font-display mb-10 flex flex-col items-start">
           <SplitLine><SplitText text="We Build" /></SplitLine>
-          <div className="flex items-center gap-6 md:gap-10">
+          <div className="flex items-center gap-3 md:gap-5">
             <Reveal delay={0.45}>
               <GooeyText
                 texts={["Modern", "Stunning", "Beautiful", "Awesome"]}
@@ -100,7 +100,7 @@ export const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
-            className="md:col-span-7 relative overflow-hidden rounded-lg plate aspect-[16/10] group"
+            className="md:col-span-7 relative overflow-hidden rounded-lg border border-white/10 aspect-[16/10] group"
             data-cursor="view"
           >
             <div
@@ -129,7 +129,7 @@ export const Hero = () => {
           </motion.div>
 
           <div className="md:col-span-5 flex flex-col gap-6">
-            <Reveal className="plate rounded-lg p-6 flex-1">
+            <Reveal className="border border-white/10 rounded-lg p-6 flex-1">
               <div>
                 <div className="h-eyebrow text-mute mb-3">A word from Anya at Flint</div>
                 <p className="font-display text-2xl md:text-3xl leading-tight">
@@ -143,15 +143,15 @@ export const Hero = () => {
             </Reveal>
 
             <div className="grid grid-cols-3 gap-6">
-              <Reveal delay={0.05} className="plate rounded-lg p-5">
+              <Reveal delay={0.05} className="border border-white/10 rounded-lg p-5">
                 <div className="num font-display text-5xl">47</div>
                 <div className="h-eyebrow text-mute mt-2">Brands shipped</div>
               </Reveal>
-              <Reveal delay={0.1} className="plate rounded-lg p-5">
+              <Reveal delay={0.1} className="border border-white/10 rounded-lg p-5">
                 <div className="num font-display text-5xl">8<span className="text-signal italic-display">y</span></div>
                 <div className="h-eyebrow text-mute mt-2">In practice</div>
               </Reveal>
-              <Reveal delay={0.15} className="plate rounded-lg p-5">
+              <Reveal delay={0.15} className="border border-white/10 rounded-lg p-5">
                 <div className="num font-display text-5xl">96<span className="italic-display text-signal">%</span></div>
                 <div className="h-eyebrow text-mute mt-2">Retain · re‑hire</div>
               </Reveal>
