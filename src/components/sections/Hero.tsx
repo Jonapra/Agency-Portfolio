@@ -7,14 +7,14 @@ export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
 
   return (
-    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-36 pb-16 overflow-hidden">
+    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden">
       {/* Halos */}
       <div className="halo" style={{ width: 520, height: 520, background: "hsl(var(--signal))", left: -180, top: "55%", opacity: 0.22 }} />
       <div className="halo" style={{ width: 420, height: 420, background: "#2A1F8A", right: -120, top: "10%", opacity: 0.22 }} />
 
       <div className="mx-auto max-w-[1600px] relative">
         {/* Top meta row */}
-        <div className="flex items-center justify-between mb-16 md:mb-24">
+        <div className="flex items-center justify-between mb-8 md:mb-12">
           <Reveal className="flex items-center gap-3">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-signal opacity-75 animate-ping" />
@@ -22,7 +22,7 @@ export const Hero = () => {
             </span>
             <span className="h-eyebrow">Booking Q3 · 2 slots</span>
           </Reveal>
-          <Reveal delay={0.16} className="h-eyebrow hidden md:block">Studio · Est. 2019 · Lisbon / Remote</Reveal>
+          <Reveal delay={0.16} className="h-eyebrow hidden md:block">Studio · Remote</Reveal>
         </div>
 
         {/* Big headline */}
@@ -39,7 +39,7 @@ export const Hero = () => {
         <div className="grid md:grid-cols-12 gap-8 items-end">
           <Reveal delay={0.16} className="md:col-span-5">
             <p className="text-lg md:text-xl text-mute-2 max-w-md">
-              A senior studio of eight. We build identity systems, interfaces and websites for founders who refuse to blend in — and the teams that back them.
+               We build identity systems, interfaces and websites for founders who refuse to blend in — and the teams that back them.
             </p>
           </Reveal>
 
