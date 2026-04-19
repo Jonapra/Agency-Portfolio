@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-04-19)
 
 ## Corpus Check
-- 46 files · ~50,208 words
+- 46 files · ~50,684 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 328 nodes · 384 edges · 55 communities detected
+- 329 nodes · 385 edges · 55 communities detected
 - Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
@@ -178,7 +178,7 @@ Cohesion: 0.67
 Nodes (0): 
 
 ### Community 20 - "Community 20"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 21 - "Community 21"
@@ -320,13 +320,11 @@ Nodes (1): Spacing Variable Scale
 ## Knowledge Gaps
 - **59 isolated node(s):** `cli.py - Command-line interface for the Claude Code usage dashboard.  Commands`, `Extract --projects-dir value from argument list.`, `dashboard.py - Local web dashboard served on localhost:8080.`, `scanner.py - Scans Claude Code JSONL transcript files and stores data in SQLite.`, `Derive a friendly project name from cwd path.` (+54 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 20`** (2 nodes): `Footer()`, `Footer.tsx`
+- **Thin community `Community 21`** (2 nodes): `Footer()`, `Footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (2 nodes): `Layout()`, `Layout.tsx`
+- **Thin community `Community 22`** (2 nodes): `Layout()`, `Layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (2 nodes): `Logo()`, `Logo.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (2 nodes): `handleScroll()`, `Navbar.tsx`
+- **Thin community `Community 23`** (2 nodes): `Logo()`, `Logo.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 24`** (2 nodes): `Reveal()`, `Reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

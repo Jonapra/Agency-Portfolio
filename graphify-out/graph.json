@@ -1862,7 +1862,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L1",
       "id": "src_components_footer_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "footer.tsx"
     },
     {
@@ -1871,7 +1871,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L4",
       "id": "footer_footer",
-      "community": 20,
+      "community": 21,
       "norm_label": "footer()"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L1",
       "id": "src_components_layout_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "layout.tsx"
     },
     {
@@ -1889,7 +1889,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L10",
       "id": "layout_layout",
-      "community": 21,
+      "community": 22,
       "norm_label": "layout()"
     },
     {
@@ -1898,7 +1898,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L1",
       "id": "src_components_logo_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "logo.tsx"
     },
     {
@@ -1907,7 +1907,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L3",
       "id": "logo_logo",
-      "community": 22,
+      "community": 23,
       "norm_label": "logo()"
     },
     {
@@ -1916,17 +1916,26 @@
       "source_file": "src\\components\\Navbar.tsx",
       "source_location": "L1",
       "id": "src_components_navbar_tsx",
-      "community": 23,
+      "community": 19,
       "norm_label": "navbar.tsx"
     },
     {
       "label": "handleScroll()",
       "file_type": "code",
       "source_file": "src\\components\\Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "id": "navbar_handlescroll",
-      "community": 23,
+      "community": 19,
       "norm_label": "handlescroll()"
+    },
+    {
+      "label": "onKey()",
+      "file_type": "code",
+      "source_file": "src\\components\\Navbar.tsx",
+      "source_location": "L34",
+      "id": "navbar_onkey",
+      "community": 19,
+      "norm_label": "onkey()"
     },
     {
       "label": "NavLink.tsx",
@@ -1961,7 +1970,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L1",
       "id": "src_components_splitheading_tsx",
-      "community": 19,
+      "community": 20,
       "norm_label": "splitheading.tsx"
     },
     {
@@ -1970,7 +1979,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L12",
       "id": "splitheading_splittext",
-      "community": 19,
+      "community": 20,
       "norm_label": "splittext()"
     },
     {
@@ -1979,7 +1988,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L32",
       "id": "splitheading_splitline",
-      "community": 19,
+      "community": 20,
       "norm_label": "splitline()"
     },
     {
@@ -6585,12 +6594,24 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src\\components\\Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "src_components_navbar_tsx",
       "_tgt": "navbar_handlescroll",
       "source": "src_components_navbar_tsx",
       "target": "navbar_handlescroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\Navbar.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "src_components_navbar_tsx",
+      "_tgt": "navbar_onkey",
+      "source": "src_components_navbar_tsx",
+      "target": "navbar_onkey",
       "confidence_score": 1.0
     },
     {

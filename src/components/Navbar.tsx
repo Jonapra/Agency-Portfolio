@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { NavLink as RRNavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { useMagnetic } from "@/hooks/useMagnetic";
@@ -51,7 +50,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
 
           <nav className="hidden md:flex items-center gap-9 text-sm">
             {NAV_LINKS.map(l => (
-              <RRNavLink key={l.href} to={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</RRNavLink>
+              <a key={l.href} href={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</a>
             ))}
           </nav>
 
@@ -155,19 +154,19 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
             <nav className="flex flex-col gap-2">
               {NAV_LINKS.map((l, i) => (
                 <motion.div key={l.href} variants={itemVariants} className="overflow-hidden">
-                  <RRNavLink
-                    to={`${anchorPrefix}${l.href}`}
+                  <a
+                    href={`${anchorPrefix}${l.href}`}
                     onClick={onClose}
-                    className="group relative block font-serif text-[clamp(2.75rem,12vw,5rem)] leading-[1.05] tracking-tight text-cream hover:text-signal transition-colors duration-300"
+                    className="group relative block font-serif text-[clamp(2.75rem,12vw,5rem)] leading-[1.05] tracking-tight text-cream transition-colors duration-300"
                   >
                     <span className="inline-flex items-baseline gap-4">
                       <span className="text-xs font-mono tracking-[0.2em] text-mute align-top pt-3">0{i + 1}</span>
                       <span className="relative">
                         {l.label}
-                        <span className="absolute left-0 -bottom-1 h-px w-0 bg-signal transition-[width] duration-500 ease-out group-hover:w-full" />
+                        <span className="absolute left-0 -bottom-1 h-px w-0 bg-cream transition-[width] duration-500 ease-out group-hover:w-full" />
                       </span>
                     </span>
-                  </RRNavLink>
+                  </a>
                 </motion.div>
               ))}
             </nav>
