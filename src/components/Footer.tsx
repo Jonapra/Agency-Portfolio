@@ -21,8 +21,8 @@ export const Footer = () => (
           <div className="h-eyebrow text-mute mb-4">Studio</div>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="u-link">About</a></li>
-            <li><a href="/#process" className="u-link">Process</a></li>
-            <li><a href="/#journal" className="u-link">Journal</a></li>
+            <li><a href="/#work" className="u-link">Projects</a></li>
+            <li><a href="/#journal" className="u-link">Blogs</a></li>
             <li><a href="#" className="u-link">Careers</a></li>
           </ul>
         </Reveal>

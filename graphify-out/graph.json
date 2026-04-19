@@ -53,7 +53,7 @@
       "source_file": "eslint.config.js",
       "source_location": "L1",
       "id": "eslint_config_js",
-      "community": 31,
+      "community": 34,
       "norm_label": "eslint.config.js"
     },
     {
@@ -62,7 +62,7 @@
       "source_file": "postcss.config.js",
       "source_location": "L1",
       "id": "postcss_config_js",
-      "community": 32,
+      "community": 35,
       "norm_label": "postcss.config.js"
     },
     {
@@ -71,7 +71,7 @@
       "source_file": "tailwind.config.ts",
       "source_location": "L1",
       "id": "tailwind_config_ts",
-      "community": 33,
+      "community": 36,
       "norm_label": "tailwind.config.ts"
     },
     {
@@ -80,7 +80,7 @@
       "source_file": "vite.config.ts",
       "source_location": "L1",
       "id": "vite_config_ts",
-      "community": 34,
+      "community": 37,
       "norm_label": "vite.config.ts"
     },
     {
@@ -413,7 +413,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L1",
       "id": "claude_usage_tests_test_cli_py",
-      "community": 2,
+      "community": 3,
       "norm_label": "test_cli.py"
     },
     {
@@ -422,7 +422,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L7",
       "id": "test_cli_testgetpricing",
-      "community": 2,
+      "community": 7,
       "norm_label": "testgetpricing"
     },
     {
@@ -431,7 +431,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L8",
       "id": "test_cli_testgetpricing_test_exact_model_match",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_exact_model_match()"
     },
     {
@@ -440,7 +440,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L13",
       "id": "test_cli_testgetpricing_test_all_known_models_have_pricing",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_all_known_models_have_pricing()"
     },
     {
@@ -449,7 +449,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L21",
       "id": "test_cli_testgetpricing_test_prefix_match",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_prefix_match()"
     },
     {
@@ -458,7 +458,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L27",
       "id": "test_cli_testgetpricing_test_substring_match_opus",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_substring_match_opus()"
     },
     {
@@ -467,7 +467,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L32",
       "id": "test_cli_testgetpricing_test_substring_match_sonnet",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_substring_match_sonnet()"
     },
     {
@@ -476,7 +476,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L37",
       "id": "test_cli_testgetpricing_test_substring_match_haiku",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_substring_match_haiku()"
     },
     {
@@ -485,7 +485,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L42",
       "id": "test_cli_testgetpricing_test_substring_match_case_insensitive",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_substring_match_case_insensitive()"
     },
     {
@@ -494,7 +494,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L46",
       "id": "test_cli_testgetpricing_test_prefix_takes_precedence_over_substring",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_prefix_takes_precedence_over_substring()"
     },
     {
@@ -503,7 +503,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L52",
       "id": "test_cli_testgetpricing_test_unknown_model_returns_none",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_unknown_model_returns_none()"
     },
     {
@@ -512,7 +512,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L57",
       "id": "test_cli_testgetpricing_test_none_model_returns_none",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_none_model_returns_none()"
     },
     {
@@ -521,7 +521,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L60",
       "id": "test_cli_testgetpricing_test_empty_string_returns_none",
-      "community": 2,
+      "community": 7,
       "norm_label": ".test_empty_string_returns_none()"
     },
     {
@@ -530,7 +530,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L64",
       "id": "test_cli_testcalccost",
-      "community": 2,
+      "community": 3,
       "norm_label": "testcalccost"
     },
     {
@@ -539,7 +539,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L65",
       "id": "test_cli_testcalccost_test_basic_cost_calculation",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_basic_cost_calculation()"
     },
     {
@@ -548,7 +548,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L70",
       "id": "test_cli_testcalccost_test_output_tokens",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_output_tokens()"
     },
     {
@@ -557,7 +557,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L75",
       "id": "test_cli_testcalccost_test_cache_read_discount",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_cache_read_discount()"
     },
     {
@@ -566,7 +566,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L81",
       "id": "test_cli_testcalccost_test_cache_creation_premium",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_cache_creation_premium()"
     },
     {
@@ -575,7 +575,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L87",
       "id": "test_cli_testcalccost_test_combined_cost",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_combined_cost()"
     },
     {
@@ -584,7 +584,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L99",
       "id": "test_cli_testcalccost_test_zero_tokens",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_zero_tokens()"
     },
     {
@@ -593,7 +593,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L103",
       "id": "test_cli_testcalccost_test_unknown_model_costs_zero",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_unknown_model_costs_zero()"
     },
     {
@@ -602,7 +602,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L107",
       "id": "test_cli_testcalccost_test_non_anthropic_model_costs_zero",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_non_anthropic_model_costs_zero()"
     },
     {
@@ -611,7 +611,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L112",
       "id": "test_cli_testfmt",
-      "community": 2,
+      "community": 3,
       "norm_label": "testfmt"
     },
     {
@@ -620,7 +620,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L113",
       "id": "test_cli_testfmt_test_millions",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_millions()"
     },
     {
@@ -629,7 +629,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L117",
       "id": "test_cli_testfmt_test_thousands",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_thousands()"
     },
     {
@@ -638,7 +638,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L121",
       "id": "test_cli_testfmt_test_small_numbers",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_small_numbers()"
     },
     {
@@ -647,7 +647,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L126",
       "id": "test_cli_testfmtcost",
-      "community": 2,
+      "community": 3,
       "norm_label": "testfmtcost"
     },
     {
@@ -656,7 +656,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L127",
       "id": "test_cli_testfmtcost_test_formatting",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_formatting()"
     },
     {
@@ -665,7 +665,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L133",
       "id": "test_cli_testpricingconsistency",
-      "community": 2,
+      "community": 3,
       "norm_label": "testpricingconsistency"
     },
     {
@@ -674,7 +674,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L136",
       "id": "test_cli_testpricingconsistency_test_opus_pricing",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_opus_pricing()"
     },
     {
@@ -683,7 +683,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L142",
       "id": "test_cli_testpricingconsistency_test_sonnet_pricing",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_sonnet_pricing()"
     },
     {
@@ -692,7 +692,7 @@
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L148",
       "id": "test_cli_testpricingconsistency_test_haiku_pricing",
-      "community": 2,
+      "community": 3,
       "norm_label": ".test_haiku_pricing()"
     },
     {
@@ -700,7 +700,7 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L1",
-      "community": 2,
+      "community": 3,
       "norm_label": "tests for cli.py - pricing, formatting, and cost calculation.",
       "id": "test_cli_rationale_1"
     },
@@ -709,7 +709,7 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L134",
-      "community": 2,
+      "community": 3,
       "norm_label": "ensure cli pricing matches known anthropic api rates.",
       "id": "test_cli_rationale_134"
     },
@@ -728,7 +728,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L21",
       "id": "test_dashboard_testgetdashboarddata",
-      "community": 1,
+      "community": 10,
       "norm_label": "testgetdashboarddata"
     },
     {
@@ -737,7 +737,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L22",
       "id": "test_dashboard_testgetdashboarddata_setup",
-      "community": 1,
+      "community": 10,
       "norm_label": ".setup()"
     },
     {
@@ -746,7 +746,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L49",
       "id": "test_dashboard_testgetdashboarddata_teardown",
-      "community": 1,
+      "community": 10,
       "norm_label": ".teardown()"
     },
     {
@@ -755,7 +755,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L52",
       "id": "test_dashboard_testgetdashboarddata_test_returns_valid_structure",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_returns_valid_structure()"
     },
     {
@@ -764,7 +764,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L59",
       "id": "test_dashboard_testgetdashboarddata_test_models_populated",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_models_populated()"
     },
     {
@@ -773,7 +773,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L63",
       "id": "test_dashboard_testgetdashboarddata_test_sessions_populated",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_sessions_populated()"
     },
     {
@@ -782,7 +782,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L71",
       "id": "test_dashboard_testgetdashboarddata_test_daily_by_model_populated",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_daily_by_model_populated()"
     },
     {
@@ -791,7 +791,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L79",
       "id": "test_dashboard_testgetdashboarddata_test_missing_db_returns_error",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_missing_db_returns_error()"
     },
     {
@@ -800,7 +800,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L83",
       "id": "test_dashboard_testgetdashboarddata_test_session_id_truncated",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_session_id_truncated()"
     },
     {
@@ -809,7 +809,7 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L88",
       "id": "test_dashboard_testgetdashboarddata_test_session_duration_calculated",
-      "community": 1,
+      "community": 10,
       "norm_label": ".test_session_duration_calculated()"
     },
     {
@@ -1043,7 +1043,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L16",
       "id": "test_scanner_testprojectnamefromcwd",
-      "community": 9,
+      "community": 11,
       "norm_label": "testprojectnamefromcwd"
     },
     {
@@ -1052,7 +1052,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L17",
       "id": "test_scanner_testprojectnamefromcwd_test_two_components",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_two_components()"
     },
     {
@@ -1061,7 +1061,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L20",
       "id": "test_scanner_testprojectnamefromcwd_test_deep_path",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_deep_path()"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L23",
       "id": "test_scanner_testprojectnamefromcwd_test_single_component",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_single_component()"
     },
     {
@@ -1079,7 +1079,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L26",
       "id": "test_scanner_testprojectnamefromcwd_test_windows_path",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_windows_path()"
     },
     {
@@ -1088,7 +1088,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L29",
       "id": "test_scanner_testprojectnamefromcwd_test_trailing_slash",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_trailing_slash()"
     },
     {
@@ -1097,7 +1097,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L32",
       "id": "test_scanner_testprojectnamefromcwd_test_empty_string",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_empty_string()"
     },
     {
@@ -1106,7 +1106,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L35",
       "id": "test_scanner_testprojectnamefromcwd_test_none",
-      "community": 9,
+      "community": 11,
       "norm_label": ".test_none()"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L329",
       "id": "test_scanner_testaggregatesessions",
-      "community": 16,
+      "community": 18,
       "norm_label": "testaggregatesessions"
     },
     {
@@ -1349,7 +1349,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L330",
       "id": "test_scanner_testaggregatesessions_test_aggregation",
-      "community": 16,
+      "community": 18,
       "norm_label": ".test_aggregation()"
     },
     {
@@ -1358,7 +1358,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L347",
       "id": "test_scanner_testaggregatesessions_test_empty_turns",
-      "community": 16,
+      "community": 18,
       "norm_label": ".test_empty_turns()"
     },
     {
@@ -1367,7 +1367,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L357",
       "id": "test_scanner_testdatabaseoperations",
-      "community": 10,
+      "community": 12,
       "norm_label": "testdatabaseoperations"
     },
     {
@@ -1376,7 +1376,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L358",
       "id": "test_scanner_testdatabaseoperations_setup",
-      "community": 10,
+      "community": 12,
       "norm_label": ".setup()"
     },
     {
@@ -1385,7 +1385,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L365",
       "id": "test_scanner_testdatabaseoperations_teardown",
-      "community": 10,
+      "community": 12,
       "norm_label": ".teardown()"
     },
     {
@@ -1394,7 +1394,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L369",
       "id": "test_scanner_testdatabaseoperations_test_init_db_creates_tables",
-      "community": 10,
+      "community": 12,
       "norm_label": ".test_init_db_creates_tables()"
     },
     {
@@ -1403,7 +1403,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L378",
       "id": "test_scanner_testdatabaseoperations_test_init_db_is_idempotent",
-      "community": 10,
+      "community": 12,
       "norm_label": ".test_init_db_is_idempotent()"
     },
     {
@@ -1412,7 +1412,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L383",
       "id": "test_scanner_testdatabaseoperations_test_upsert_new_session",
-      "community": 10,
+      "community": 12,
       "norm_label": ".test_upsert_new_session()"
     },
     {
@@ -1421,7 +1421,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L399",
       "id": "test_scanner_testdatabaseoperations_test_upsert_updates_existing_session",
-      "community": 10,
+      "community": 12,
       "norm_label": ".test_upsert_updates_existing_session()"
     },
     {
@@ -1430,7 +1430,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L418",
       "id": "test_scanner_testdatabaseoperations_test_insert_turns",
-      "community": 10,
+      "community": 12,
       "norm_label": ".test_insert_turns()"
     },
     {
@@ -1439,7 +1439,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L431",
       "id": "test_scanner_testscanintegration",
-      "community": 11,
+      "community": 13,
       "norm_label": "testscanintegration"
     },
     {
@@ -1448,7 +1448,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L434",
       "id": "test_scanner_testscanintegration_setup",
-      "community": 11,
+      "community": 13,
       "norm_label": ".setup()"
     },
     {
@@ -1457,7 +1457,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L440",
       "id": "test_scanner_testscanintegration_write_project_jsonl",
-      "community": 11,
+      "community": 13,
       "norm_label": "._write_project_jsonl()"
     },
     {
@@ -1466,7 +1466,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L455",
       "id": "test_scanner_testscanintegration_test_scan_new_files",
-      "community": 11,
+      "community": 13,
       "norm_label": ".test_scan_new_files()"
     },
     {
@@ -1475,7 +1475,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L462",
       "id": "test_scanner_testscanintegration_test_scan_is_incremental",
-      "community": 11,
+      "community": 13,
       "norm_label": ".test_scan_is_incremental()"
     },
     {
@@ -1484,7 +1484,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L470",
       "id": "test_scanner_testscanintegration_test_scan_empty_directory",
-      "community": 11,
+      "community": 13,
       "norm_label": ".test_scan_empty_directory()"
     },
     {
@@ -1493,7 +1493,7 @@
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L475",
       "id": "test_scanner_testscanintegration_test_scan_multiple_files",
-      "community": 11,
+      "community": 13,
       "norm_label": ".test_scan_multiple_files()"
     },
     {
@@ -1726,7 +1726,7 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L432",
-      "community": 11,
+      "community": 13,
       "norm_label": "integration test: create fake jsonl files and run scan().",
       "id": "test_scanner_rationale_432"
     },
@@ -1808,7 +1808,7 @@
       "source_file": "claude-usage\\tests\\__init__.py",
       "source_location": "L1",
       "id": "claude_usage_tests_init_py",
-      "community": 35,
+      "community": 38,
       "norm_label": "__init__.py"
     },
     {
@@ -1817,7 +1817,7 @@
       "source_file": "src\\App.tsx",
       "source_location": "L1",
       "id": "src_app_tsx",
-      "community": 15,
+      "community": 17,
       "norm_label": "app.tsx"
     },
     {
@@ -1826,7 +1826,7 @@
       "source_file": "src\\App.tsx",
       "source_location": "L12",
       "id": "app_app",
-      "community": 15,
+      "community": 17,
       "norm_label": "app()"
     },
     {
@@ -1835,7 +1835,7 @@
       "source_file": "src\\main.tsx",
       "source_location": "L1",
       "id": "src_main_tsx",
-      "community": 15,
+      "community": 17,
       "norm_label": "main.tsx"
     },
     {
@@ -1844,7 +1844,7 @@
       "source_file": "src\\vite-env.d.ts",
       "source_location": "L1",
       "id": "src_vite_env_d_ts",
-      "community": 36,
+      "community": 39,
       "norm_label": "vite-env.d.ts"
     },
     {
@@ -1853,7 +1853,7 @@
       "source_file": "src\\components\\Cursor.tsx",
       "source_location": "L1",
       "id": "src_components_cursor_tsx",
-      "community": 37,
+      "community": 40,
       "norm_label": "cursor.tsx"
     },
     {
@@ -1862,7 +1862,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L1",
       "id": "src_components_footer_tsx",
-      "community": 18,
+      "community": 20,
       "norm_label": "footer.tsx"
     },
     {
@@ -1871,7 +1871,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L4",
       "id": "footer_footer",
-      "community": 18,
+      "community": 20,
       "norm_label": "footer()"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L1",
       "id": "src_components_layout_tsx",
-      "community": 19,
+      "community": 21,
       "norm_label": "layout.tsx"
     },
     {
@@ -1889,7 +1889,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L10",
       "id": "layout_layout",
-      "community": 19,
+      "community": 21,
       "norm_label": "layout()"
     },
     {
@@ -1898,7 +1898,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L1",
       "id": "src_components_logo_tsx",
-      "community": 20,
+      "community": 22,
       "norm_label": "logo.tsx"
     },
     {
@@ -1907,7 +1907,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L3",
       "id": "logo_logo",
-      "community": 20,
+      "community": 22,
       "norm_label": "logo()"
     },
     {
@@ -1916,8 +1916,17 @@
       "source_file": "src\\components\\Navbar.tsx",
       "source_location": "L1",
       "id": "src_components_navbar_tsx",
-      "community": 38,
+      "community": 23,
       "norm_label": "navbar.tsx"
+    },
+    {
+      "label": "handleScroll()",
+      "file_type": "code",
+      "source_file": "src\\components\\Navbar.tsx",
+      "source_location": "L18",
+      "id": "navbar_handlescroll",
+      "community": 23,
+      "norm_label": "handlescroll()"
     },
     {
       "label": "NavLink.tsx",
@@ -1925,7 +1934,7 @@
       "source_file": "src\\components\\NavLink.tsx",
       "source_location": "L1",
       "id": "src_components_navlink_tsx",
-      "community": 39,
+      "community": 41,
       "norm_label": "navlink.tsx"
     },
     {
@@ -1934,7 +1943,7 @@
       "source_file": "src\\components\\Reveal.tsx",
       "source_location": "L1",
       "id": "src_components_reveal_tsx",
-      "community": 21,
+      "community": 24,
       "norm_label": "reveal.tsx"
     },
     {
@@ -1943,7 +1952,7 @@
       "source_file": "src\\components\\Reveal.tsx",
       "source_location": "L12",
       "id": "reveal_reveal",
-      "community": 21,
+      "community": 24,
       "norm_label": "reveal()"
     },
     {
@@ -1952,7 +1961,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L1",
       "id": "src_components_splitheading_tsx",
-      "community": 17,
+      "community": 19,
       "norm_label": "splitheading.tsx"
     },
     {
@@ -1961,7 +1970,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L12",
       "id": "splitheading_splittext",
-      "community": 17,
+      "community": 19,
       "norm_label": "splittext()"
     },
     {
@@ -1970,7 +1979,7 @@
       "source_file": "src\\components\\SplitHeading.tsx",
       "source_location": "L32",
       "id": "splitheading_splitline",
-      "community": 17,
+      "community": 19,
       "norm_label": "splitline()"
     },
     {
@@ -1979,7 +1988,7 @@
       "source_file": "src\\components\\sections\\CTA.tsx",
       "source_location": "L1",
       "id": "src_components_sections_cta_tsx",
-      "community": 22,
+      "community": 25,
       "norm_label": "cta.tsx"
     },
     {
@@ -1988,7 +1997,7 @@
       "source_file": "src\\components\\sections\\CTA.tsx",
       "source_location": "L5",
       "id": "cta_cta",
-      "community": 22,
+      "community": 25,
       "norm_label": "cta()"
     },
     {
@@ -1997,7 +2006,7 @@
       "source_file": "src\\components\\sections\\FAQ.tsx",
       "source_location": "L1",
       "id": "src_components_sections_faq_tsx",
-      "community": 40,
+      "community": 42,
       "norm_label": "faq.tsx"
     },
     {
@@ -2006,7 +2015,7 @@
       "source_file": "src\\components\\sections\\Hero.tsx",
       "source_location": "L1",
       "id": "src_components_sections_hero_tsx",
-      "community": 41,
+      "community": 43,
       "norm_label": "hero.tsx"
     },
     {
@@ -2015,7 +2024,7 @@
       "source_file": "src\\components\\sections\\Journal.tsx",
       "source_location": "L1",
       "id": "src_components_sections_journal_tsx",
-      "community": 42,
+      "community": 44,
       "norm_label": "journal.tsx"
     },
     {
@@ -2024,7 +2033,7 @@
       "source_file": "src\\components\\sections\\Marquee.tsx",
       "source_location": "L1",
       "id": "src_components_sections_marquee_tsx",
-      "community": 23,
+      "community": 26,
       "norm_label": "marquee.tsx"
     },
     {
@@ -2033,7 +2042,7 @@
       "source_file": "src\\components\\sections\\Marquee.tsx",
       "source_location": "L2",
       "id": "marquee_marquee",
-      "community": 23,
+      "community": 26,
       "norm_label": "marquee()"
     },
     {
@@ -2042,7 +2051,7 @@
       "source_file": "src\\components\\sections\\Pricing.tsx",
       "source_location": "L1",
       "id": "src_components_sections_pricing_tsx",
-      "community": 43,
+      "community": 45,
       "norm_label": "pricing.tsx"
     },
     {
@@ -2051,7 +2060,7 @@
       "source_file": "src\\components\\sections\\Process.tsx",
       "source_location": "L1",
       "id": "src_components_sections_process_tsx",
-      "community": 24,
+      "community": 27,
       "norm_label": "process.tsx"
     },
     {
@@ -2060,7 +2069,7 @@
       "source_file": "src\\components\\sections\\Process.tsx",
       "source_location": "L4",
       "id": "process_process",
-      "community": 24,
+      "community": 27,
       "norm_label": "process()"
     },
     {
@@ -2069,7 +2078,7 @@
       "source_file": "src\\components\\sections\\Services.tsx",
       "source_location": "L1",
       "id": "src_components_sections_services_tsx",
-      "community": 44,
+      "community": 46,
       "norm_label": "services.tsx"
     },
     {
@@ -2078,7 +2087,7 @@
       "source_file": "src\\components\\sections\\Testimonials.tsx",
       "source_location": "L1",
       "id": "src_components_sections_testimonials_tsx",
-      "community": 45,
+      "community": 47,
       "norm_label": "testimonials.tsx"
     },
     {
@@ -2087,7 +2096,7 @@
       "source_file": "src\\components\\sections\\Work.tsx",
       "source_location": "L1",
       "id": "src_components_sections_work_tsx",
-      "community": 46,
+      "community": 48,
       "norm_label": "work.tsx"
     },
     {
@@ -2096,7 +2105,7 @@
       "source_file": "src\\components\\ui\\gooey-text-morphing.tsx",
       "source_location": "L1",
       "id": "src_components_ui_gooey_text_morphing_tsx",
-      "community": 25,
+      "community": 28,
       "norm_label": "gooey-text-morphing.tsx"
     },
     {
@@ -2105,7 +2114,7 @@
       "source_file": "src\\components\\ui\\gooey-text-morphing.tsx",
       "source_location": "L14",
       "id": "gooey_text_morphing_gooeytext",
-      "community": 25,
+      "community": 28,
       "norm_label": "gooeytext()"
     },
     {
@@ -2114,7 +2123,7 @@
       "source_file": "src\\components\\ui\\sonner.tsx",
       "source_location": "L1",
       "id": "src_components_ui_sonner_tsx",
-      "community": 26,
+      "community": 29,
       "norm_label": "sonner.tsx"
     },
     {
@@ -2123,7 +2132,7 @@
       "source_file": "src\\components\\ui\\sonner.tsx",
       "source_location": "L6",
       "id": "sonner_toaster",
-      "community": 26,
+      "community": 29,
       "norm_label": "toaster()"
     },
     {
@@ -2132,7 +2141,7 @@
       "source_file": "src\\components\\ui\\toast.tsx",
       "source_location": "L1",
       "id": "src_components_ui_toast_tsx",
-      "community": 47,
+      "community": 49,
       "norm_label": "toast.tsx"
     },
     {
@@ -2141,7 +2150,7 @@
       "source_file": "src\\components\\ui\\toaster.tsx",
       "source_location": "L1",
       "id": "src_components_ui_toaster_tsx",
-      "community": 27,
+      "community": 30,
       "norm_label": "toaster.tsx"
     },
     {
@@ -2150,7 +2159,7 @@
       "source_file": "src\\components\\ui\\toaster.tsx",
       "source_location": "L4",
       "id": "toaster_toaster",
-      "community": 27,
+      "community": 30,
       "norm_label": "toaster()"
     },
     {
@@ -2159,7 +2168,7 @@
       "source_file": "src\\components\\ui\\tooltip.tsx",
       "source_location": "L1",
       "id": "src_components_ui_tooltip_tsx",
-      "community": 48,
+      "community": 50,
       "norm_label": "tooltip.tsx"
     },
     {
@@ -2168,7 +2177,7 @@
       "source_file": "src\\components\\ui\\use-toast.ts",
       "source_location": "L1",
       "id": "src_components_ui_use_toast_ts",
-      "community": 49,
+      "community": 51,
       "norm_label": "use-toast.ts"
     },
     {
@@ -2177,7 +2186,7 @@
       "source_file": "src\\constants\\site.ts",
       "source_location": "L1",
       "id": "src_constants_site_ts",
-      "community": 50,
+      "community": 52,
       "norm_label": "site.ts"
     },
     {
@@ -2186,7 +2195,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L1",
       "id": "src_hooks_use_toast_ts",
-      "community": 14,
+      "community": 16,
       "norm_label": "use-toast.ts"
     },
     {
@@ -2195,7 +2204,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L24",
       "id": "use_toast_genid",
-      "community": 14,
+      "community": 16,
       "norm_label": "genid()"
     },
     {
@@ -2204,7 +2213,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L55",
       "id": "use_toast_addtoremovequeue",
-      "community": 14,
+      "community": 16,
       "norm_label": "addtoremovequeue()"
     },
     {
@@ -2213,7 +2222,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L71",
       "id": "use_toast_reducer",
-      "community": 14,
+      "community": 16,
       "norm_label": "reducer()"
     },
     {
@@ -2222,7 +2231,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L128",
       "id": "use_toast_dispatch",
-      "community": 14,
+      "community": 16,
       "norm_label": "dispatch()"
     },
     {
@@ -2231,7 +2240,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L137",
       "id": "use_toast_toast",
-      "community": 14,
+      "community": 16,
       "norm_label": "toast()"
     },
     {
@@ -2240,7 +2249,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L166",
       "id": "use_toast_usetoast",
-      "community": 14,
+      "community": 16,
       "norm_label": "usetoast()"
     },
     {
@@ -2249,7 +2258,7 @@
       "source_file": "src\\hooks\\useCustomCursor.ts",
       "source_location": "L1",
       "id": "src_hooks_usecustomcursor_ts",
-      "community": 28,
+      "community": 31,
       "norm_label": "usecustomcursor.ts"
     },
     {
@@ -2258,7 +2267,7 @@
       "source_file": "src\\hooks\\useCustomCursor.ts",
       "source_location": "L7",
       "id": "usecustomcursor_usecustomcursor",
-      "community": 28,
+      "community": 31,
       "norm_label": "usecustomcursor()"
     },
     {
@@ -2267,7 +2276,7 @@
       "source_file": "src\\hooks\\useMagnetic.ts",
       "source_location": "L1",
       "id": "src_hooks_usemagnetic_ts",
-      "community": 29,
+      "community": 32,
       "norm_label": "usemagnetic.ts"
     },
     {
@@ -2276,7 +2285,7 @@
       "source_file": "src\\hooks\\useMagnetic.ts",
       "source_location": "L7",
       "id": "usemagnetic_usemagnetic",
-      "community": 29,
+      "community": 32,
       "norm_label": "usemagnetic()"
     },
     {
@@ -2285,7 +2294,7 @@
       "source_file": "src\\lib\\utils.ts",
       "source_location": "L1",
       "id": "src_lib_utils_ts",
-      "community": 30,
+      "community": 33,
       "norm_label": "utils.ts"
     },
     {
@@ -2294,7 +2303,7 @@
       "source_file": "src\\lib\\utils.ts",
       "source_location": "L4",
       "id": "utils_cn",
-      "community": 30,
+      "community": 33,
       "norm_label": "cn()"
     },
     {
@@ -2303,7 +2312,7 @@
       "source_file": "src\\pages\\Index.tsx",
       "source_location": "L1",
       "id": "src_pages_index_tsx",
-      "community": 15,
+      "community": 17,
       "norm_label": "index.tsx"
     },
     {
@@ -2312,7 +2321,7 @@
       "source_file": "src\\pages\\NotFound.tsx",
       "source_location": "L1",
       "id": "src_pages_notfound_tsx",
-      "community": 15,
+      "community": 17,
       "norm_label": "notfound.tsx"
     },
     {
@@ -2321,7 +2330,7 @@
       "source_file": "src\\pages\\NotFound.tsx",
       "source_location": "L4",
       "id": "notfound_notfound",
-      "community": 15,
+      "community": 17,
       "norm_label": "notfound()"
     },
     {
@@ -2330,7 +2339,7 @@
       "source_file": "src\\pages\\Project.tsx",
       "source_location": "L1",
       "id": "src_pages_project_tsx",
-      "community": 15,
+      "community": 17,
       "norm_label": "project.tsx"
     },
     {
@@ -2342,7 +2351,7 @@
       "captured_at": null,
       "author": "Ankit Pradhan",
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "agency portfolio project",
       "id": "CLAUDE_agencyportfolio"
     },
@@ -2355,7 +2364,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "vite 8 build tool",
       "id": "CLAUDE_vite"
     },
@@ -2368,7 +2377,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "react 19",
       "id": "CLAUDE_react"
     },
@@ -2381,7 +2390,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "tailwind css v4",
       "id": "CLAUDE_tailwindv4"
     },
@@ -2394,7 +2403,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "gsap 3 animation library",
       "id": "CLAUDE_gsap"
     },
@@ -2407,7 +2416,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "framer motion",
       "id": "CLAUDE_framermotion"
     },
@@ -2420,7 +2429,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "lucide-react icons",
       "id": "CLAUDE_lucidereact"
     },
@@ -2433,7 +2442,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "shadcn-style ui primitives",
       "id": "CLAUDE_shadcn"
     },
@@ -2446,7 +2455,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "@radix-ui/react-slot",
       "id": "CLAUDE_radixui"
     },
@@ -2459,7 +2468,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "class-variance-authority",
       "id": "CLAUDE_cva"
     },
@@ -2472,7 +2481,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "cn() helper utility",
       "id": "CLAUDE_cn"
     },
@@ -2485,7 +2494,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "design system (master.md)",
       "id": "CLAUDE_designsystem"
     },
@@ -2498,7 +2507,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "per-page design overrides (design-system/pages/)",
       "id": "CLAUDE_pagesoverrides"
     },
@@ -2511,7 +2520,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "skill: ui-ux-pro-max",
       "id": "CLAUDE_skill_uiuxpromax"
     },
@@ -2524,7 +2533,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "skill: frontend-design",
       "id": "CLAUDE_skill_frontenddesign"
     },
@@ -2537,7 +2546,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "skill: emil-design-eng",
       "id": "CLAUDE_skill_emildesigneng"
     },
@@ -2550,7 +2559,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "anti-patterns (enforced rules)",
       "id": "CLAUDE_antipatterns"
     },
@@ -2563,7 +2572,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "pre-delivery checklist",
       "id": "CLAUDE_predelivery"
     },
@@ -2576,7 +2585,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "mcp servers (github, context7, playwright)",
       "id": "CLAUDE_mcpservers"
     },
@@ -2589,7 +2598,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 51,
+      "community": 53,
       "norm_label": "path alias @ -> /src",
       "id": "CLAUDE_pathalias"
     },
@@ -2602,7 +2611,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "prefers-reduced-motion accessibility rule",
       "id": "CLAUDE_prefersreducedmotion"
     },
@@ -2615,7 +2624,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "vite + react template",
       "id": "README_vitereact"
     },
@@ -2628,7 +2637,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "@vitejs/plugin-react (oxc)",
       "id": "README_pluginreact"
     },
@@ -2641,7 +2650,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "@vitejs/plugin-react-swc (swc)",
       "id": "README_pluginreactswc"
     },
@@ -2654,7 +2663,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "color palette tokens",
       "id": "MASTER_colorpalette"
     },
@@ -2667,7 +2676,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "primary color #ec4899",
       "id": "MASTER_colorprimary"
     },
@@ -2680,7 +2689,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "secondary color #f472b6",
       "id": "MASTER_colorsecondary"
     },
@@ -2693,7 +2702,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "cta/accent color #06b6d4",
       "id": "MASTER_colorcta"
     },
@@ -2706,7 +2715,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "background color #fdf2f8",
       "id": "MASTER_colorbg"
     },
@@ -2719,7 +2728,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "text color #831843",
       "id": "MASTER_colortext"
     },
@@ -2732,7 +2741,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "typography system (archivo + space grotesk)",
       "id": "MASTER_typography"
     },
@@ -2745,7 +2754,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "archivo heading font",
       "id": "MASTER_archivo"
     },
@@ -2758,7 +2767,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "space grotesk body font",
       "id": "MASTER_spacegrotesk"
     },
@@ -2771,7 +2780,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 52,
+      "community": 54,
       "norm_label": "spacing variable scale",
       "id": "MASTER_spacing"
     },
@@ -2784,7 +2793,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "shadow depth scale",
       "id": "MASTER_shadows"
     },
@@ -2797,7 +2806,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "primary button spec",
       "id": "MASTER_btnprimary"
     },
@@ -2810,7 +2819,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "secondary button spec",
       "id": "MASTER_btnsecondary"
     },
@@ -2823,7 +2832,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "card component spec",
       "id": "MASTER_cardspec"
     },
@@ -2836,7 +2845,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "input component spec",
       "id": "MASTER_inputspec"
     },
@@ -2849,7 +2858,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "modal component spec",
       "id": "MASTER_modalspec"
     },
@@ -2862,7 +2871,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "motion-driven style",
       "id": "MASTER_motiondriven"
     },
@@ -2875,7 +2884,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "portfolio grid page pattern",
       "id": "MASTER_portfoliogrid"
     },
@@ -2888,7 +2897,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact",
       "id": "MASTER_sectionorder"
     },
@@ -2901,7 +2910,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "anti-patterns (master)",
       "id": "MASTER_antipatterns"
     },
@@ -2914,7 +2923,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "pre-delivery checklist (master)",
       "id": "MASTER_predelivery"
     },
@@ -2927,7 +2936,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "accessibility rules (contrast 4.5:1, focus states)",
       "id": "MASTER_a11y"
     },
@@ -2940,7 +2949,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "google fonts import (archivo + space grotesk)",
       "id": "MASTER_googlefonts"
     },
@@ -2953,7 +2962,7 @@
       "captured_at": "2026-04-18",
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph report (2026-04-18)",
       "id": "GRAPHREPORT_report"
     },
@@ -2966,7 +2975,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 0 (app, app.jsx)",
       "id": "GRAPHREPORT_community0"
     },
@@ -2979,7 +2988,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 1 (hello, hello.jsx)",
       "id": "GRAPHREPORT_community1"
     },
@@ -2992,7 +3001,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 2 (utils.ts, cn())",
       "id": "GRAPHREPORT_community2"
     },
@@ -3005,7 +3014,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 3 (eslint.config.js)",
       "id": "GRAPHREPORT_community3"
     },
@@ -3018,7 +3027,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 4 (vite.config.js)",
       "id": "GRAPHREPORT_community4"
     },
@@ -3031,7 +3040,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "graph community 5 (main.jsx)",
       "id": "GRAPHREPORT_community5"
     },
@@ -3044,7 +3053,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "rationale: motion-driven as sales asset",
       "id": "MASTER_rationale_motiondriven"
     },
@@ -3057,7 +3066,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "rationale: design skill routing phases",
       "id": "CLAUDE_rationale_skillrouting"
     },
@@ -3070,7 +3079,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "rationale: master.md as single source of truth",
       "id": "CLAUDE_rationale_singlesource"
     },
@@ -3083,7 +3092,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "favicon svg icon",
       "id": "favicon_svg"
     },
@@ -3096,7 +3105,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "lightning bolt / flash shape",
       "id": "favicon_lightning_bolt_shape"
     },
@@ -3109,7 +3118,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "primary purple color (#863bff / #7e14ff)",
       "id": "favicon_color_purple"
     },
@@ -3122,7 +3131,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "light purple / lavender color (#ede6ff)",
       "id": "favicon_color_lightpurple"
     },
@@ -3135,7 +3144,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "cyan / blue accent color (#47bfff)",
       "id": "favicon_color_cyan"
     },
@@ -3148,7 +3157,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "gaussian blur glow / radiance effect",
       "id": "favicon_glow_effect"
     },
@@ -3161,7 +3170,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "display-p3 wide color gamut",
       "id": "favicon_display_p3"
     },
@@ -3174,7 +3183,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "agency portfolio brand identity",
       "id": "agency_portfolio_brand"
     },
@@ -3187,7 +3196,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "icons.svg svg sprite sheet",
       "id": "icons_svg"
     },
@@ -3200,7 +3209,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "bluesky icon symbol",
       "id": "icons_bluesky_icon"
     },
@@ -3213,7 +3222,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "discord icon symbol",
       "id": "icons_discord_icon"
     },
@@ -3226,7 +3235,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "documentation icon symbol",
       "id": "icons_documentation_icon"
     },
@@ -3239,7 +3248,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "github icon symbol",
       "id": "icons_github_icon"
     },
@@ -3252,7 +3261,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "social/user icon symbol",
       "id": "icons_social_icon"
     },
@@ -3265,7 +3274,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "x (twitter) icon symbol",
       "id": "icons_x_icon"
     },
@@ -3278,7 +3287,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "design system master",
       "id": "design_system_master"
     }
@@ -6570,6 +6579,18 @@
       "_tgt": "logo_logo",
       "source": "src_components_logo_tsx",
       "target": "logo_logo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\Navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "src_components_navbar_tsx",
+      "_tgt": "navbar_handlescroll",
+      "source": "src_components_navbar_tsx",
+      "target": "navbar_handlescroll",
       "confidence_score": 1.0
     },
     {
