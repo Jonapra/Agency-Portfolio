@@ -196,18 +196,18 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\cli.py",
       "source_location": "L1",
-      "id": "cli_rationale_1",
       "community": 4,
-      "norm_label": "cli.py - command-line interface for the claude code usage dashboard.  commands"
+      "norm_label": "cli.py - command-line interface for the claude code usage dashboard.  commands",
+      "id": "cli_rationale_1"
     },
     {
       "label": "Extract --projects-dir value from argument list.",
       "file_type": "rationale",
       "source_file": "claude-usage\\cli.py",
       "source_location": "L306",
-      "id": "cli_rationale_306",
       "community": 4,
-      "norm_label": "extract --projects-dir value from argument list."
+      "norm_label": "extract --projects-dir value from argument list.",
+      "id": "cli_rationale_306"
     },
     {
       "label": "dashboard.py",
@@ -286,9 +286,9 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\dashboard.py",
       "source_location": "L1",
-      "id": "dashboard_rationale_1",
       "community": 1,
-      "norm_label": "dashboard.py - local web dashboard served on localhost:8080."
+      "norm_label": "dashboard.py - local web dashboard served on localhost:8080.",
+      "id": "dashboard_rationale_1"
     },
     {
       "label": "scanner.py",
@@ -376,36 +376,36 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\scanner.py",
       "source_location": "L1",
-      "id": "scanner_rationale_1",
       "community": 5,
-      "norm_label": "scanner.py - scans claude code jsonl transcript files and stores data in sqlite."
+      "norm_label": "scanner.py - scans claude code jsonl transcript files and stores data in sqlite.",
+      "id": "scanner_rationale_1"
     },
     {
       "label": "Derive a friendly project name from cwd path.",
       "file_type": "rationale",
       "source_file": "claude-usage\\scanner.py",
       "source_location": "L78",
-      "id": "scanner_rationale_78",
       "community": 5,
-      "norm_label": "derive a friendly project name from cwd path."
+      "norm_label": "derive a friendly project name from cwd path.",
+      "id": "scanner_rationale_78"
     },
     {
       "label": "Parse a JSONL file and return (session_metas, turns, line_count).      Dedupli",
       "file_type": "rationale",
       "source_file": "claude-usage\\scanner.py",
       "source_location": "L89",
-      "id": "scanner_rationale_89",
       "community": 5,
-      "norm_label": "parse a jsonl file and return (session_metas, turns, line_count).      dedupli"
+      "norm_label": "parse a jsonl file and return (session_metas, turns, line_count).      dedupli",
+      "id": "scanner_rationale_89"
     },
     {
       "label": "Aggregate turn data back into session-level stats.",
       "file_type": "rationale",
       "source_file": "claude-usage\\scanner.py",
       "source_location": "L194",
-      "id": "scanner_rationale_194",
       "community": 5,
-      "norm_label": "aggregate turn data back into session-level stats."
+      "norm_label": "aggregate turn data back into session-level stats.",
+      "id": "scanner_rationale_194"
     },
     {
       "label": "test_cli.py",
@@ -700,18 +700,18 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L1",
-      "id": "test_cli_rationale_1",
       "community": 2,
-      "norm_label": "tests for cli.py - pricing, formatting, and cost calculation."
+      "norm_label": "tests for cli.py - pricing, formatting, and cost calculation.",
+      "id": "test_cli_rationale_1"
     },
     {
       "label": "Ensure CLI pricing matches known Anthropic API rates.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_cli.py",
       "source_location": "L134",
-      "id": "test_cli_rationale_134",
       "community": 2,
-      "norm_label": "ensure cli pricing matches known anthropic api rates."
+      "norm_label": "ensure cli pricing matches known anthropic api rates.",
+      "id": "test_cli_rationale_134"
     },
     {
       "label": "test_dashboard.py",
@@ -970,63 +970,63 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L1",
-      "id": "test_dashboard_rationale_1",
       "community": 1,
-      "norm_label": "tests for dashboard.py - api endpoint and data retrieval."
+      "norm_label": "tests for dashboard.py - api endpoint and data retrieval.",
+      "id": "test_dashboard_rationale_1"
     },
     {
       "label": "Integration test: start server and make HTTP requests.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L96",
-      "id": "test_dashboard_rationale_96",
       "community": 1,
-      "norm_label": "integration test: start server and make http requests."
+      "norm_label": "integration test: start server and make http requests.",
+      "id": "test_dashboard_rationale_96"
     },
     {
       "label": "Verify XSS protection is present (PR #10).",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L151",
-      "id": "test_dashboard_rationale_151",
       "community": 1,
-      "norm_label": "verify xss protection is present (pr #10)."
+      "norm_label": "verify xss protection is present (pr #10).",
+      "id": "test_dashboard_rationale_151"
     },
     {
       "label": "Verify getPricing falls back to substring match for unknown models.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L158",
-      "id": "test_dashboard_rationale_158",
       "community": 1,
-      "norm_label": "verify getpricing falls back to substring match for unknown models."
+      "norm_label": "verify getpricing falls back to substring match for unknown models.",
+      "id": "test_dashboard_rationale_158"
     },
     {
       "label": "Verify getPricing returns null for non-Anthropic models.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L164",
-      "id": "test_dashboard_rationale_164",
       "community": 1,
-      "norm_label": "verify getpricing returns null for non-anthropic models."
+      "norm_label": "verify getpricing returns null for non-anthropic models.",
+      "id": "test_dashboard_rationale_164"
     },
     {
       "label": "Verify CLI and dashboard pricing tables stay in sync.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L169",
-      "id": "test_dashboard_rationale_169",
       "community": 1,
-      "norm_label": "verify cli and dashboard pricing tables stay in sync."
+      "norm_label": "verify cli and dashboard pricing tables stay in sync.",
+      "id": "test_dashboard_rationale_169"
     },
     {
       "label": "Extract pricing values from the dashboard JS PRICING object.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L172",
-      "id": "test_dashboard_rationale_172",
       "community": 1,
-      "norm_label": "extract pricing values from the dashboard js pricing object."
+      "norm_label": "extract pricing values from the dashboard js pricing object.",
+      "id": "test_dashboard_rationale_172"
     },
     {
       "label": "test_scanner.py",
@@ -1636,171 +1636,171 @@
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L1",
-      "id": "test_scanner_rationale_1",
       "community": 0,
-      "norm_label": "tests for scanner.py - jsonl parsing, db operations, and scanning."
+      "norm_label": "tests for scanner.py - jsonl parsing, db operations, and scanning.",
+      "id": "test_scanner_rationale_1"
     },
     {
       "label": "Test deduplication of streaming events by message.id.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L169",
-      "id": "test_scanner_rationale_169",
       "community": 0,
-      "norm_label": "test deduplication of streaming events by message.id."
+      "norm_label": "test deduplication of streaming events by message.id.",
+      "id": "test_scanner_rationale_169"
     },
     {
       "label": "Multiple records with same message.id should produce one turn.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L182",
-      "id": "test_scanner_rationale_182",
       "community": 0,
-      "norm_label": "multiple records with same message.id should produce one turn."
+      "norm_label": "multiple records with same message.id should produce one turn.",
+      "id": "test_scanner_rationale_182"
     },
     {
       "label": "Records with different message.id are separate turns.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L199",
-      "id": "test_scanner_rationale_199",
       "community": 0,
-      "norm_label": "records with different message.id are separate turns."
+      "norm_label": "records with different message.id are separate turns.",
+      "id": "test_scanner_rationale_199"
     },
     {
       "label": "Records without message.id are kept as-is (no dedup).",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L208",
-      "id": "test_scanner_rationale_208",
       "community": 0,
-      "norm_label": "records without message.id are kept as-is (no dedup)."
+      "norm_label": "records without message.id are kept as-is (no dedup).",
+      "id": "test_scanner_rationale_208"
     },
     {
       "label": "Mix of records with and without message.id.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L217",
-      "id": "test_scanner_rationale_217",
       "community": 0,
-      "norm_label": "mix of records with and without message.id."
+      "norm_label": "mix of records with and without message.id.",
+      "id": "test_scanner_rationale_217"
     },
     {
       "label": "Integration test: dedup across scan cycles.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L230",
-      "id": "test_scanner_rationale_230",
       "community": 0,
-      "norm_label": "integration test: dedup across scan cycles."
+      "norm_label": "integration test: dedup across scan cycles.",
+      "id": "test_scanner_rationale_230"
     },
     {
       "label": "3 streaming events for 2 messages should produce 2 turns.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L240",
-      "id": "test_scanner_rationale_240",
       "community": 0,
-      "norm_label": "3 streaming events for 2 messages should produce 2 turns."
+      "norm_label": "3 streaming events for 2 messages should produce 2 turns.",
+      "id": "test_scanner_rationale_240"
     },
     {
       "label": "Re-scanning a file shouldn't create duplicate turns for same message_id.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L270",
-      "id": "test_scanner_rationale_270",
       "community": 0,
-      "norm_label": "re-scanning a file shouldn't create duplicate turns for same message_id."
+      "norm_label": "re-scanning a file shouldn't create duplicate turns for same message_id.",
+      "id": "test_scanner_rationale_270"
     },
     {
       "label": "Existing DBs without message_id column should be upgraded.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L299",
-      "id": "test_scanner_rationale_299",
       "community": 0,
-      "norm_label": "existing dbs without message_id column should be upgraded."
+      "norm_label": "existing dbs without message_id column should be upgraded.",
+      "id": "test_scanner_rationale_299"
     },
     {
       "label": "Integration test: create fake JSONL files and run scan().",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L432",
-      "id": "test_scanner_rationale_432",
       "community": 11,
-      "norm_label": "integration test: create fake jsonl files and run scan()."
+      "norm_label": "integration test: create fake jsonl files and run scan().",
+      "id": "test_scanner_rationale_432"
     },
     {
       "label": "Test that updating a file only processes new lines (no double reads).",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L485",
-      "id": "test_scanner_rationale_485",
       "community": 6,
-      "norm_label": "test that updating a file only processes new lines (no double reads)."
+      "norm_label": "test that updating a file only processes new lines (no double reads).",
+      "id": "test_scanner_rationale_485"
     },
     {
       "label": "Growing a file must add only new turns, not re-insert old ones.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L515",
-      "id": "test_scanner_rationale_515",
       "community": 6,
-      "norm_label": "growing a file must add only new turns, not re-insert old ones."
+      "norm_label": "growing a file must add only new turns, not re-insert old ones.",
+      "id": "test_scanner_rationale_515"
     },
     {
       "label": "Session totals should reflect all turns, not double-count.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L531",
-      "id": "test_scanner_rationale_531",
       "community": 6,
-      "norm_label": "session totals should reflect all turns, not double-count."
+      "norm_label": "session totals should reflect all turns, not double-count.",
+      "id": "test_scanner_rationale_531"
     },
     {
       "label": "Last timestamp should advance after file grows.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L549",
-      "id": "test_scanner_rationale_549",
       "community": 6,
-      "norm_label": "last timestamp should advance after file grows."
+      "norm_label": "last timestamp should advance after file grows.",
+      "id": "test_scanner_rationale_549"
     },
     {
       "label": "If mtime changes but line count doesn't grow, skip the file.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L563",
-      "id": "test_scanner_rationale_563",
       "community": 6,
-      "norm_label": "if mtime changes but line count doesn't grow, skip the file."
+      "norm_label": "if mtime changes but line count doesn't grow, skip the file.",
+      "id": "test_scanner_rationale_563"
     },
     {
       "label": "Test that session totals are correct when the same session spans multiple files.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L579",
-      "id": "test_scanner_rationale_579",
       "community": 0,
-      "norm_label": "test that session totals are correct when the same session spans multiple files."
+      "norm_label": "test that session totals are correct when the same session spans multiple files.",
+      "id": "test_scanner_rationale_579"
     },
     {
       "label": "Same session in 2 files with duplicate message_ids should not inflate totals.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L588",
-      "id": "test_scanner_rationale_588",
       "community": 0,
-      "norm_label": "same session in 2 files with duplicate message_ids should not inflate totals."
+      "norm_label": "same session in 2 files with duplicate message_ids should not inflate totals.",
+      "id": "test_scanner_rationale_588"
     },
     {
       "label": "Test that parse_jsonl_file returns correct line count.",
       "file_type": "rationale",
       "source_file": "claude-usage\\tests\\test_scanner.py",
       "source_location": "L626",
-      "id": "test_scanner_rationale_626",
       "community": 0,
-      "norm_label": "test that parse_jsonl_file returns correct line count."
+      "norm_label": "test that parse_jsonl_file returns correct line count.",
+      "id": "test_scanner_rationale_626"
     },
     {
       "label": "__init__.py",
@@ -3698,11 +3698,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_testgetdashboarddata",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_testgetdashboarddata",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_testgetdashboarddata",
-      "confidence_score": 0.5
+      "target": "test_dashboard_testgetdashboarddata"
     },
     {
       "relation": "uses",
@@ -3710,11 +3710,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_testdashboardhttp",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_testdashboardhttp",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_testdashboardhttp",
-      "confidence_score": 0.5
+      "target": "test_dashboard_testdashboardhttp"
     },
     {
       "relation": "uses",
@@ -3722,11 +3722,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_testhtmltemplate",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_testhtmltemplate",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_testhtmltemplate",
-      "confidence_score": 0.5
+      "target": "test_dashboard_testhtmltemplate"
     },
     {
       "relation": "uses",
@@ -3734,11 +3734,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_testpricingparity",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_testpricingparity",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_testpricingparity",
-      "confidence_score": 0.5
+      "target": "test_dashboard_testpricingparity"
     },
     {
       "relation": "uses",
@@ -3746,11 +3746,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_1",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_1",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_1",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_1"
     },
     {
       "relation": "uses",
@@ -3758,11 +3758,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_96",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_96",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_96",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_96"
     },
     {
       "relation": "uses",
@@ -3770,11 +3770,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_151",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_151",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_151",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_151"
     },
     {
       "relation": "uses",
@@ -3782,11 +3782,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_158",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_158",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_158",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_158"
     },
     {
       "relation": "uses",
@@ -3794,11 +3794,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_164",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_164",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_164",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_164"
     },
     {
       "relation": "uses",
@@ -3806,11 +3806,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_169",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_169",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_169",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_169"
     },
     {
       "relation": "uses",
@@ -3818,11 +3818,11 @@
       "source_file": "claude-usage\\tests\\test_dashboard.py",
       "source_location": "L13",
       "weight": 0.8,
-      "_src": "test_dashboard_rationale_172",
-      "_tgt": "dashboard_dashboardhandler",
+      "_src": "dashboard_dashboardhandler",
+      "_tgt": "test_dashboard_rationale_172",
+      "confidence_score": 0.5,
       "source": "dashboard_dashboardhandler",
-      "target": "test_dashboard_rationale_172",
-      "confidence_score": 0.5
+      "target": "test_dashboard_rationale_172"
     },
     {
       "relation": "contains",

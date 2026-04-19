@@ -11,7 +11,14 @@ interface NavbarProps {
 
 export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [theme, setTheme] = useState<"dark" | "light">(() => (localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
+  const [isScrolled, setIsScrolled] = useState(false);
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.18);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -20,8 +27,11 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
     localStorage.setItem("agiton-theme", theme);
   }, [theme]);
 
+  // If we are at the top of the page (Hero section), we want light text because the hero is always dark.
+  const isOverDark = !isScrolled;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5">
+    <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 transition-colors duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b border-foreground/5" : ""} ${isOverDark ? "text-cream" : "text-foreground"}`}>
       <div className="mx-auto max-w-[1600px] flex items-center justify-between">
         <Logo />
 
@@ -35,7 +45,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
           <button
             onClick={() => setTheme(t => (t === "dark" ? "light" : "dark"))}
             aria-label="Toggle theme"
-            className="rounded-full w-9 h-9 grid place-items-center border border-foreground/10 hover:bg-foreground/5 transition"
+            className="rounded-full w-9 h-9 grid place-items-center border border-current/10 hover:bg-current/5 transition"
           >
             {theme === "dark" ? (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
