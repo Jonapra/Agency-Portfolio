@@ -10,27 +10,28 @@ export const Hero = () => {
   return (
     <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden">
       {/* Ambient gradient field */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* Base mesh — soft orange bloom bottom-left, indigo top-right, warm core */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-ink">
+        {/* Mesh gradient — orange bottom-left, indigo top-right */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(80% 65% at 10% 95%, rgba(255,90,31,0.80) 0%, transparent 60%),
-              radial-gradient(60% 55% at 88% 5%,  rgba(42,31,138,0.85) 0%, transparent 58%),
-              radial-gradient(50% 40% at 50% 50%, rgba(42,31,138,0.20) 0%, transparent 70%),
-              linear-gradient(160deg, #0A0A0B 0%, #0E0509 100%)
+              radial-gradient(ellipse 85% 70% at 0% 100%,  rgba(255,90,31,0.70)  0%, transparent 55%),
+              radial-gradient(ellipse 65% 60% at 100% 0%,  rgba(42,31,138,0.80)  0%, transparent 58%),
+              radial-gradient(ellipse 55% 45% at 25% 75%,  rgba(200,55,15,0.35)  0%, transparent 50%),
+              radial-gradient(ellipse 40% 35% at 80% 20%,  rgba(60,40,160,0.30)  0%, transparent 45%)
             `,
           }}
         />
-        {/* Soft blooms with slow drift */}
-        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 800, height: 800, background: "#FF5A1F", left: -300, top: "48%", opacity: 0.38 }} />
-        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 600, height: 600, background: "#2A1F8A", right: -200, top: "0%", opacity: 0.55 }} />
-        {/* Vignette — keeps text readable */}
+        {/* Soft drifting halos for depth */}
+        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 760, height: 760, background: "#FF5A1F", left: -280, top: "42%", opacity: 0.32 }} />
+        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 620, height: 620, background: "#2A1F8A", right: -200, top: "-5%", opacity: 0.48 }} />
+        {/* Edge-only vignette — keeps gradient visible, darkens corners */}
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(110% 75% at 50% 45%, transparent 35%, hsl(var(--ink) / 0.60) 100%)" }}
+          style={{ background: "radial-gradient(ellipse 85% 80% at 50% 50%, transparent 45%, hsl(var(--ink) / 0.55) 100%)" }}
         />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ink to-transparent" />
       </div>
 
       <div className="mx-auto max-w-[1600px] relative">
