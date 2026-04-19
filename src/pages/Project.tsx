@@ -143,7 +143,7 @@ const Project = () => {
   const nextProject = PROJECTS.find(p => p.slug === c.next.slug) ?? PROJECTS[1];
 
   return (
-    <Layout>
+    <Layout anchorPrefix="/">
       {/* HERO */}
       <section className="relative px-6 md:px-10 pt-36 pb-16">
         <div className="mx-auto max-w-[1600px]">
