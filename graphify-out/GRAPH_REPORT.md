@@ -1,7 +1,7 @@
-# Graph Report - D:\Agency-Portfolio  (2026-04-19)
+# Graph Report - .  (2026-04-19)
 
 ## Corpus Check
-- 55 files · ~50,675 words
+- 46 files · ~50,467 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -311,11 +311,11 @@ Nodes (0):
 
 ### Community 53 - "Community 53"
 Cohesion: 1.0
-Nodes (1): Spacing Variable Scale
+Nodes (0): 
 
 ### Community 54 - "Community 54"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Spacing Variable Scale
 
 ## Knowledge Gaps
 - **51 isolated node(s):** `cli.py - Command-line interface for the Claude Code usage dashboard.  Commands`, `Extract --projects-dir value from argument list.`, `dashboard.py - Local web dashboard served on localhost:8080.`, `scanner.py - Scans Claude Code JSONL transcript files and stores data in SQLite.`, `Derive a friendly project name from cwd path.` (+46 more)
@@ -346,43 +346,61 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 34`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (1 nodes): `postcss.config.js`
+- **Thin community `Community 35`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 36`** (1 nodes): `tailwind.config.ts`
+- **Thin community `Community 36`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 37`** (1 nodes): `tailwind.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (1 nodes): `__init__.py`
+- **Thin community `Community 38`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (1 nodes): `vite-env.d.ts`
+- **Thin community `Community 39`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 40`** (1 nodes): `Cursor.tsx`
+- **Thin community `Community 40`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (1 nodes): `NavLink.tsx`
+- **Thin community `Community 41`** (1 nodes): `Cursor.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (1 nodes): `FAQ.tsx`
+- **Thin community `Community 42`** (1 nodes): `NavLink.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 43`** (1 nodes): `Hero.tsx`
+- **Thin community `Community 43`** (1 nodes): `FAQ.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 44`** (1 nodes): `Journal.tsx`
+- **Thin community `Community 44`** (1 nodes): `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 45`** (1 nodes): `Journal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (1 nodes): `Services.tsx`
+- **Thin community `Community 46`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (1 nodes): `Testimonials.tsx`
+- **Thin community `Community 47`** (1 nodes): `Services.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (1 nodes): `Work.tsx`
+- **Thin community `Community 48`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 49`** (1 nodes): `toast.tsx`
+- **Thin community `Community 49`** (1 nodes): `Work.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (1 nodes): `tooltip.tsx`
+- **Thin community `Community 50`** (1 nodes): `toast.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (1 nodes): `use-toast.ts`
+- **Thin community `Community 51`** (1 nodes): `tooltip.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (1 nodes): `site.ts`
+- **Thin community `Community 52`** (1 nodes): `use-toast.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `Spacing Variable Scale`
+- **Thin community `Community 53`** (1 nodes): `site.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 54`** (1 nodes): `Spacing Variable Scale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `_make_assistant_record()` connect `Community 0` to `Community 10`, `Community 5`?**
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `TestScanIncrementalUpdate` connect `Community 5` to `Community 0`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Are the 11 inferred relationships involving `DashboardHandler` (e.g. with `TestGetDashboardData` and `TestDashboardHTTP`) actually correct?**
+  _`DashboardHandler` has 11 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `cli.py - Command-line interface for the Claude Code usage dashboard.  Commands`, `Extract --projects-dir value from argument list.`, `dashboard.py - Local web dashboard served on localhost:8080.` to the rest of the system?**
+  _51 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
