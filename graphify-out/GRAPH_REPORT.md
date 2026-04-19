@@ -1,12 +1,12 @@
 # Graph Report - .  (2026-04-19)
 
 ## Corpus Check
-- 39 files · ~15,406 words
+- 46 files · ~49,681 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 135 nodes · 117 edges · 43 communities detected
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.8)
+- 327 nodes · 383 edges · 53 communities detected
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -53,22 +53,30 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Design System (MASTER.md)` - 10 edges
-2. `Agency Portfolio Project` - 8 edges
-3. `Favicon SVG Icon` - 7 edges
-4. `icons.svg SVG Sprite Sheet` - 7 edges
-5. `Color Palette Tokens` - 6 edges
-6. `Graph Report (2026-04-18)` - 6 edges
-7. `GSAP 3 Animation Library` - 4 edges
-8. `Framer Motion` - 4 edges
-9. `Vite + React Template` - 4 edges
-10. `Typography System (Archivo + Space Grotesk)` - 4 edges
+1. `_make_assistant_record()` - 18 edges
+2. `DashboardHandler` - 16 edges
+3. `TestGetPricing` - 12 edges
+4. `TestGetDashboardData` - 11 edges
+5. `TestParseJsonlFile` - 11 edges
+6. `Design System (MASTER.md)` - 10 edges
+7. `TestCalcCost` - 9 edges
+8. `_make_user_record()` - 9 edges
+9. `TestScanIncrementalUpdate` - 9 edges
+10. `scan()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `prefers-reduced-motion Accessibility Rule` --semantically_similar_to--> `Accessibility Rules (contrast 4.5:1, focus states)`  [INFERRED] [semantically similar]
-  CLAUDE.md → design-system/MASTER.md
 - `icons.svg SVG Sprite Sheet` --rationale_for--> `Design System MASTER`  [INFERRED]
   public/icons.svg → design-system/MASTER.md
 - `cn() Helper Utility` --semantically_similar_to--> `Graph Community 2 (utils.ts, cn())`  [INFERRED] [semantically similar]
@@ -76,6 +84,8 @@
 - `Anti-Patterns (Enforced Rules)` --semantically_similar_to--> `Anti-Patterns (MASTER)`  [INFERRED] [semantically similar]
   CLAUDE.md → design-system/MASTER.md
 - `Pre-Delivery Checklist` --semantically_similar_to--> `Pre-Delivery Checklist (MASTER)`  [INFERRED] [semantically similar]
+  CLAUDE.md → design-system/MASTER.md
+- `prefers-reduced-motion Accessibility Rule` --semantically_similar_to--> `Accessibility Rules (contrast 4.5:1, focus states)`  [INFERRED] [semantically similar]
   CLAUDE.md → design-system/MASTER.md
 
 ## Hyperedges (group relationships)
@@ -86,75 +96,75 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.17
-Nodes (16): Agency Portfolio Project, Framer Motion, GSAP 3 Animation Library, lucide-react Icons, MCP Servers (github, context7, playwright), prefers-reduced-motion Accessibility Rule, Rationale: Design Skill Routing Phases, React 19 (+8 more)
+Cohesion: 0.07
+Nodes (20): _make_assistant_record(), _make_user_record(), Tests for scanner.py - JSONL parsing, DB operations, and scanning., Test deduplication of streaming events by message.id., Multiple records with same message.id should produce one turn., Records with different message.id are separate turns., Records without message.id are kept as-is (no dedup)., Mix of records with and without message.id. (+12 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.14
-Nodes (16): Anti-Patterns (Enforced Rules), Design System (MASTER.md), Per-Page Design Overrides (design-system/pages/), Pre-Delivery Checklist, Rationale: MASTER.md as Single Source of Truth, Accessibility Rules (contrast 4.5:1, focus states), Anti-Patterns (MASTER), Archivo Heading Font (+8 more)
+Cohesion: 0.06
+Nodes (15): BaseHTTPRequestHandler, DashboardHandler, get_dashboard_data(), dashboard.py - Local web dashboard served on localhost:8080., Tests for dashboard.py - API endpoint and data retrieval., Verify XSS protection is present (PR #10)., Verify getPricing falls back to substring match for unknown models., Verify getPricing returns null for non-Anthropic models. (+7 more)
 
 ### Community 2 - "Community 2"
+Cohesion: 0.06
+Nodes (7): Tests for cli.py - pricing, formatting, and cost calculation., Ensure CLI pricing matches known Anthropic API rates., TestCalcCost, TestFmt, TestFmtCost, TestGetPricing, TestPricingConsistency
+
+### Community 3 - "Community 3"
+Cohesion: 0.08
+Nodes (32): Agency Portfolio Project, Anti-Patterns (Enforced Rules), Design System (MASTER.md), Framer Motion, GSAP 3 Animation Library, lucide-react Icons, MCP Servers (github, context7, playwright), Per-Page Design Overrides (design-system/pages/) (+24 more)
+
+### Community 4 - "Community 4"
+Cohesion: 0.27
+Nodes (13): calc_cost(), cmd_dashboard(), cmd_scan(), cmd_stats(), cmd_today(), fmt(), fmt_cost(), get_pricing() (+5 more)
+
+### Community 5 - "Community 5"
+Cohesion: 0.26
+Nodes (12): aggregate_sessions(), get_db(), init_db(), insert_turns(), parse_jsonl_file(), project_name_from_cwd(), scanner.py - Scans Claude Code JSONL transcript files and stores data in SQLite., Aggregate turn data back into session-level stats. (+4 more)
+
+### Community 6 - "Community 6"
+Cohesion: 0.24
+Nodes (6): Test that updating a file only processes new lines (no double reads)., Growing a file must add only new turns, not re-insert old ones., Session totals should reflect all turns, not double-count., Last timestamp should advance after file grows., If mtime changes but line count doesn't grow, skip the file., TestScanIncrementalUpdate
+
+### Community 7 - "Community 7"
 Cohesion: 0.17
 Nodes (12): Primary Button Spec, Secondary Button Spec, Card Component Spec, Background Color #FDF2F8, CTA/Accent Color #06B6D4, Color Palette Tokens, Primary Color #EC4899, Secondary Color #F472B6 (+4 more)
 
-### Community 3 - "Community 3"
+### Community 8 - "Community 8"
 Cohesion: 0.18
 Nodes (11): cn() Helper Utility, class-variance-authority, @radix-ui/react-slot, shadcn-style UI Primitives, Graph Community 0 (App, App.jsx), Graph Community 1 (Hello, Hello.jsx), Graph Community 2 (utils.ts, cn()), Graph Community 3 (eslint.config.js) (+3 more)
 
-### Community 4 - "Community 4"
+### Community 9 - "Community 9"
+Cohesion: 0.25
+Nodes (1): TestProjectNameFromCwd
+
+### Community 10 - "Community 10"
+Cohesion: 0.25
+Nodes (1): TestDatabaseOperations
+
+### Community 11 - "Community 11"
+Cohesion: 0.36
+Nodes (2): Integration test: create fake JSONL files and run scan()., TestScanIntegration
+
+### Community 12 - "Community 12"
 Cohesion: 0.39
 Nodes (8): Agency Portfolio Brand Identity, Cyan / Blue Accent Color (#47bfff), Light Purple / Lavender Color (#ede6ff), Primary Purple Color (#863bff / #7e14ff), Display-P3 Wide Color Gamut, Gaussian Blur Glow / Radiance Effect, Lightning Bolt / Flash Shape, Favicon SVG Icon
 
-### Community 5 - "Community 5"
+### Community 13 - "Community 13"
 Cohesion: 0.43
 Nodes (8): Design System MASTER, Bluesky Icon Symbol, Discord Icon Symbol, Documentation Icon Symbol, GitHub Icon Symbol, Social/User Icon Symbol, icons.svg SVG Sprite Sheet, X (Twitter) Icon Symbol
 
-### Community 6 - "Community 6"
+### Community 14 - "Community 14"
 Cohesion: 0.48
 Nodes (5): addToRemoveQueue(), dispatch(), genId(), reducer(), toast()
 
-### Community 7 - "Community 7"
+### Community 15 - "Community 15"
 Cohesion: 0.29
 Nodes (0): 
 
-### Community 8 - "Community 8"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 9 - "Community 9"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 10 - "Community 10"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 11 - "Community 11"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 12 - "Community 12"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 13 - "Community 13"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 14 - "Community 14"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 15 - "Community 15"
-Cohesion: 1.0
-Nodes (0): 
-
 ### Community 16 - "Community 16"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (1): TestAggregateSessions
 
 ### Community 17 - "Community 17"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 18 - "Community 18"
@@ -251,94 +261,140 @@ Nodes (0):
 
 ### Community 41 - "Community 41"
 Cohesion: 1.0
-Nodes (1): Path Alias @ -> /src
+Nodes (0): 
 
 ### Community 42 - "Community 42"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 43 - "Community 43"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 44 - "Community 44"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 45 - "Community 45"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 46 - "Community 46"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 47 - "Community 47"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 48 - "Community 48"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 49 - "Community 49"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 50 - "Community 50"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 51 - "Community 51"
+Cohesion: 1.0
+Nodes (1): Path Alias @ -> /src
+
+### Community 52 - "Community 52"
 Cohesion: 1.0
 Nodes (1): Spacing Variable Scale
 
 ## Knowledge Gaps
-- **31 isolated node(s):** `lucide-react Icons`, `@radix-ui/react-slot`, `class-variance-authority`, `Per-Page Design Overrides (design-system/pages/)`, `Anti-Patterns (Enforced Rules)` (+26 more)
+- **59 isolated node(s):** `cli.py - Command-line interface for the Claude Code usage dashboard.  Commands`, `Extract --projects-dir value from argument list.`, `dashboard.py - Local web dashboard served on localhost:8080.`, `scanner.py - Scans Claude Code JSONL transcript files and stores data in SQLite.`, `Derive a friendly project name from cwd path.` (+54 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 9`** (2 nodes): `Footer()`, `Footer.tsx`
+- **Thin community `Community 18`** (2 nodes): `Footer()`, `Footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (2 nodes): `Layout()`, `Layout.tsx`
+- **Thin community `Community 19`** (2 nodes): `Layout()`, `Layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (2 nodes): `Logo()`, `Logo.tsx`
+- **Thin community `Community 20`** (2 nodes): `Logo()`, `Logo.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (2 nodes): `Reveal()`, `Reveal.tsx`
+- **Thin community `Community 21`** (2 nodes): `Reveal()`, `Reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (2 nodes): `CTA()`, `CTA.tsx`
+- **Thin community `Community 22`** (2 nodes): `CTA()`, `CTA.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (2 nodes): `Marquee()`, `Marquee.tsx`
+- **Thin community `Community 23`** (2 nodes): `Marquee()`, `Marquee.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 15`** (2 nodes): `Process()`, `Process.tsx`
+- **Thin community `Community 24`** (2 nodes): `Process()`, `Process.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
+- **Thin community `Community 25`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (2 nodes): `Toaster()`, `sonner.tsx`
+- **Thin community `Community 26`** (2 nodes): `Toaster()`, `sonner.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (2 nodes): `toaster.tsx`, `Toaster()`
+- **Thin community `Community 27`** (2 nodes): `toaster.tsx`, `Toaster()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
+- **Thin community `Community 28`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (2 nodes): `useMagnetic.ts`, `useMagnetic()`
+- **Thin community `Community 29`** (2 nodes): `useMagnetic.ts`, `useMagnetic()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (2 nodes): `utils.ts`, `cn()`
+- **Thin community `Community 30`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 31`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (1 nodes): `postcss.config.js`
+- **Thin community `Community 32`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (1 nodes): `tailwind.config.ts`
+- **Thin community `Community 33`** (1 nodes): `tailwind.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 34`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `vite-env.d.ts`
+- **Thin community `Community 35`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `Cursor.tsx`
+- **Thin community `Community 36`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `Navbar.tsx`
+- **Thin community `Community 37`** (1 nodes): `Cursor.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `NavLink.tsx`
+- **Thin community `Community 38`** (1 nodes): `Navbar.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `FAQ.tsx`
+- **Thin community `Community 39`** (1 nodes): `NavLink.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `Hero.tsx`
+- **Thin community `Community 40`** (1 nodes): `FAQ.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `Journal.tsx`
+- **Thin community `Community 41`** (1 nodes): `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 42`** (1 nodes): `Journal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (1 nodes): `Services.tsx`
+- **Thin community `Community 43`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (1 nodes): `Testimonials.tsx`
+- **Thin community `Community 44`** (1 nodes): `Services.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 36`** (1 nodes): `Work.tsx`
+- **Thin community `Community 45`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (1 nodes): `toast.tsx`
+- **Thin community `Community 46`** (1 nodes): `Work.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (1 nodes): `tooltip.tsx`
+- **Thin community `Community 47`** (1 nodes): `toast.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (1 nodes): `use-toast.ts`
+- **Thin community `Community 48`** (1 nodes): `tooltip.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 40`** (1 nodes): `site.ts`
+- **Thin community `Community 49`** (1 nodes): `use-toast.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (1 nodes): `Path Alias @ -> /src`
+- **Thin community `Community 50`** (1 nodes): `site.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (1 nodes): `Spacing Variable Scale`
+- **Thin community `Community 51`** (1 nodes): `Path Alias @ -> /src`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 52`** (1 nodes): `Spacing Variable Scale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Design System (MASTER.md)` connect `Community 1` to `Community 0`, `Community 2`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
-- **Why does `Color Palette Tokens` connect `Community 2` to `Community 1`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
-- **Why does `Agency Portfolio Project` connect `Community 0` to `Community 1`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **What connects `lucide-react Icons`, `@radix-ui/react-slot`, `class-variance-authority` to the rest of the system?**
-  _31 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `_make_assistant_record()` connect `Community 0` to `Community 11`, `Community 6`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `Design System (MASTER.md)` connect `Community 3` to `Community 7`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Are the 11 inferred relationships involving `DashboardHandler` (e.g. with `TestGetDashboardData` and `TestDashboardHTTP`) actually correct?**
+  _`DashboardHandler` has 11 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `cli.py - Command-line interface for the Claude Code usage dashboard.  Commands`, `Extract --projects-dir value from argument list.`, `dashboard.py - Local web dashboard served on localhost:8080.` to the rest of the system?**
+  _59 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.14 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
