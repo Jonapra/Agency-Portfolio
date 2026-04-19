@@ -16,21 +16,20 @@ export const Hero = () => {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(60% 55% at 12% 88%, hsl(17 100% 56% / 0.32), transparent 62%),
-              radial-gradient(55% 50% at 88% 8%, hsl(243 63% 34% / 0.55), transparent 65%),
-              radial-gradient(45% 40% at 70% 60%, hsl(17 100% 64% / 0.10), transparent 70%),
-              radial-gradient(80% 60% at 50% 0%, hsl(265 55% 22% / 0.35), transparent 60%)
+              radial-gradient(80% 65% at 10% 95%, rgba(255,90,31,0.80) 0%, transparent 60%),
+              radial-gradient(60% 55% at 88% 5%,  rgba(42,31,138,0.85) 0%, transparent 58%),
+              radial-gradient(50% 40% at 50% 50%, rgba(42,31,138,0.20) 0%, transparent 70%),
+              linear-gradient(160deg, #0A0A0B 0%, #0E0509 100%)
             `,
           }}
         />
-        {/* Concentrated blooms with slow drift */}
-        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 640, height: 640, background: "hsl(var(--signal))", left: -220, top: "52%", opacity: 0.30 }} />
-        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 520, height: 520, background: "#2A1F8A", right: -160, top: "4%", opacity: 0.42 }} />
-        <div className="halo animate-halo-drift-c motion-reduce:animate-none" style={{ width: 360, height: 360, background: "hsl(var(--signal-2))", left: "48%", top: "-10%", opacity: 0.16 }} />
-        {/* Edge vignette to anchor content */}
+        {/* Soft blooms with slow drift */}
+        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 800, height: 800, background: "#FF5A1F", left: -300, top: "48%", opacity: 0.38 }} />
+        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 600, height: 600, background: "#2A1F8A", right: -200, top: "0%", opacity: 0.55 }} />
+        {/* Vignette — keeps text readable */}
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(120% 80% at 50% 45%, transparent 45%, hsl(var(--ink) / 0.55) 100%)" }}
+          style={{ background: "radial-gradient(110% 75% at 50% 45%, transparent 35%, hsl(var(--ink) / 0.60) 100%)" }}
         />
       </div>
 
@@ -51,7 +50,7 @@ export const Hero = () => {
         <h1 className="h-display font-display mb-10 flex flex-col items-start">
           <SplitLine><SplitText text="We Build" /></SplitLine>
           <div className="flex items-center gap-6 md:gap-10">
-            <Reveal delay={0.25}>
+            <Reveal delay={0.45}>
               <GooeyText
                 texts={["Modern", "Stunning", "Beautiful", "Awesome"]}
                 morphTime={1}

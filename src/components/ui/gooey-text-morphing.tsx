@@ -27,6 +27,12 @@ export function GooeyText({
     let morph = 0;
     let cooldown = cooldownTime;
 
+    // Initialize text content so that doCooldown shows the first word immediately
+    if (text1Ref.current && text2Ref.current) {
+      text1Ref.current.textContent = texts[texts.length - 1];
+      text2Ref.current.textContent = texts[0];
+    }
+
     const setMorph = (fraction: number) => {
       if (text1Ref.current && text2Ref.current) {
         text2Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
