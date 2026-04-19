@@ -27,12 +27,12 @@ export const Hero = () => {
 
         {/* Big headline */}
         <h1 className="h-display font-display mb-10">
-          <SplitLine><SplitText text="We design" /></SplitLine>
+          <SplitLine><SplitText text="We Build" /></SplitLine>
           <SplitLine>
-            <SplitText text="brands" italic className="text-signal" delay={0.25} />
-            <SplitText text=" that move" delay={0.45} />
+            <SplitText text="Modern" italic className="text-signal" delay={0.25} />
+            <SplitText text=" Website" delay={0.45} />
           </SplitLine>
-          <SplitLine><SplitText text="ambitious people." delay={0.7} /></SplitLine>
+          <SplitLine><SplitText text="that works." delay={0.7} /></SplitLine>
         </h1>
 
         {/* Sub grid */}
