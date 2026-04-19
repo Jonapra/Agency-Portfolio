@@ -112,7 +112,7 @@ export function GooeyText({
 
       <div
         className="relative flex items-center justify-start w-full h-full"
-        style={{ filter: "url(#threshold)" }}
+        style={{ filter: "url(#threshold)", padding: "0.15em 0.25em", margin: "-0.15em -0.25em" }}
       >
         {/* Invisible placeholder to reserve exact space of the longest word */}
         <span className={cn("invisible select-none inline-block", textClassName)}>

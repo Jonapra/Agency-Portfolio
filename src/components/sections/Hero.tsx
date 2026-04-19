@@ -9,9 +9,30 @@ export const Hero = () => {
 
   return (
     <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden">
-      {/* Halos */}
-      <div className="halo" style={{ width: 520, height: 520, background: "hsl(var(--signal))", left: -180, top: "55%", opacity: 0.22 }} />
-      <div className="halo" style={{ width: 420, height: 420, background: "#2A1F8A", right: -120, top: "10%", opacity: 0.22 }} />
+      {/* Ambient gradient field */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        {/* Base mesh — soft orange bloom bottom-left, indigo top-right, warm core */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(60% 55% at 12% 88%, hsl(17 100% 56% / 0.32), transparent 62%),
+              radial-gradient(55% 50% at 88% 8%, hsl(243 63% 34% / 0.55), transparent 65%),
+              radial-gradient(45% 40% at 70% 60%, hsl(17 100% 64% / 0.10), transparent 70%),
+              radial-gradient(80% 60% at 50% 0%, hsl(265 55% 22% / 0.35), transparent 60%)
+            `,
+          }}
+        />
+        {/* Concentrated blooms with slow drift */}
+        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 640, height: 640, background: "hsl(var(--signal))", left: -220, top: "52%", opacity: 0.30 }} />
+        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 520, height: 520, background: "#2A1F8A", right: -160, top: "4%", opacity: 0.42 }} />
+        <div className="halo animate-halo-drift-c motion-reduce:animate-none" style={{ width: 360, height: 360, background: "hsl(var(--signal-2))", left: "48%", top: "-10%", opacity: 0.16 }} />
+        {/* Edge vignette to anchor content */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(120% 80% at 50% 45%, transparent 45%, hsl(var(--ink) / 0.55) 100%)" }}
+        />
+      </div>
 
       <div className="mx-auto max-w-[1600px] relative">
         {/* Top meta row */}
@@ -29,19 +50,21 @@ export const Hero = () => {
         {/* Big headline */}
         <h1 className="h-display font-display mb-10 flex flex-col items-start">
           <SplitLine><SplitText text="We Build" /></SplitLine>
-          <div className="flex items-center inline-flex">
+          <div className="flex items-center gap-6 md:gap-10">
             <Reveal delay={0.25}>
-              <GooeyText 
-                texts={["Modern", "Stunning", "Beautiful", "Awesome"]} 
+              <GooeyText
+                texts={["Modern", "Stunning", "Beautiful", "Awesome"]}
                 morphTime={1}
                 cooldownTime={1.5}
-                className="relative mr-4"
+                className="relative"
                 textClassName="text-signal italic-display whitespace-nowrap"
               />
             </Reveal>
             <SplitLine><SplitText text="Websites" delay={0.45} /></SplitLine>
           </div>
-          <SplitLine><SplitText text="that works." delay={0.7} /></SplitLine>
+          <div className="mt-3 md:mt-5">
+            <SplitLine><SplitText text="that works." delay={0.7} /></SplitLine>
+          </div>
         </h1>
 
         {/* Sub grid */}

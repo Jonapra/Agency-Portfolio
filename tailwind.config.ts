@@ -55,10 +55,25 @@ export default {
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
         "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "halo-drift-a": {
+          "0%, 100%": { transform: "translate3d(0,0,0) scale(1)" },
+          "50%":       { transform: "translate3d(40px,-24px,0) scale(1.08)" },
+        },
+        "halo-drift-b": {
+          "0%, 100%": { transform: "translate3d(0,0,0) scale(1)" },
+          "50%":       { transform: "translate3d(-30px,28px,0) scale(1.06)" },
+        },
+        "halo-drift-c": {
+          "0%, 100%": { transform: "translate3d(0,0,0) scale(1)", opacity: "0.16" },
+          "50%":       { transform: "translate3d(-20px,18px,0) scale(1.12)", opacity: "0.22" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "halo-drift-a": "halo-drift-a 16s ease-in-out infinite",
+        "halo-drift-b": "halo-drift-b 22s ease-in-out infinite",
+        "halo-drift-c": "halo-drift-c 19s ease-in-out infinite",
       },
     },
   },

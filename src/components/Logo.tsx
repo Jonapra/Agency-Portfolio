@@ -7,6 +7,5 @@ export const Logo = ({ small = false }: { small?: boolean }) => (
       <circle cx="14" cy="14" r="4" fill="hsl(var(--signal))" />
     </svg>
     <span className="font-display text-2xl">Agiton</span>
-    <span className="italic-display text-signal text-xl leading-none ml-0.5">*</span>
   </Link>
 );
