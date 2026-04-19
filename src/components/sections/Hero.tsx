@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "../Reveal";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
@@ -26,12 +27,20 @@ export const Hero = () => {
         </div>
 
         {/* Big headline */}
-        <h1 className="h-display font-display mb-10">
+        <h1 className="h-display font-display mb-10 flex flex-col items-start">
           <SplitLine><SplitText text="We Build" /></SplitLine>
-          <SplitLine>
-            <SplitText text="Modern" italic className="text-signal" delay={0.25} />
-            <SplitText text=" Website" delay={0.45} />
-          </SplitLine>
+          <div className="flex items-center inline-flex">
+            <Reveal delay={0.25}>
+              <GooeyText 
+                texts={["Modern", "Stunning", "Beautiful", "Awesome"]} 
+                morphTime={1}
+                cooldownTime={1.5}
+                className="relative mr-4"
+                textClassName="text-signal italic-display whitespace-nowrap"
+              />
+            </Reveal>
+            <SplitLine><SplitText text="Websites" delay={0.45} /></SplitLine>
+          </div>
           <SplitLine><SplitText text="that works." delay={0.7} /></SplitLine>
         </h1>
 
