@@ -12,7 +12,7 @@ interface Props {
 export const SplitText = ({ text, className = "", italic = false, delay = 0 }: Props) => {
   const chars = [...text];
   return (
-    <span className={`inline-block overflow-hidden align-top leading-[1.02] ${italic ? "italic-display" : ""} ${className}`}>
+    <span className={`inline-block overflow-hidden align-top leading-[1.02] pr-[0.1em] ${italic ? "italic-display" : ""} ${className}`}>
       {chars.map((ch, i) => (
         <motion.span
           key={i}
@@ -30,5 +30,5 @@ export const SplitText = ({ text, className = "", italic = false, delay = 0 }: P
 
 interface LineProps { children: ReactNode; }
 export const SplitLine = ({ children }: LineProps) => (
-  <span className="block overflow-hidden">{children}</span>
+  <span className="block overflow-hidden pr-2">{children}</span>
 );
