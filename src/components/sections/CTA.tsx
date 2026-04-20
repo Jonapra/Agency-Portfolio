@@ -25,7 +25,7 @@ export const CTA = () => {
                 <a href="#" className="u-link text-base">Or book a 20‑min intro →</a>
               </div>
             </Reveal>
-            <Reveal delay={0.24}><div className="mt-14 h-eyebrow text-mute">Currently booking · Q3 2026 · 2 of 4 slots open</div></Reveal>
+            <div delay={0.24}><div className="mt-14 h-eyebrow text-mute">Currently booking ·  slots open</div></div>
           </div>
         </div>
       </div>
