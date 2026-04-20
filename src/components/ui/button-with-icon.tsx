@@ -19,8 +19,8 @@ export function ButtonWithIcon({ text, className, href, ...props }: ButtonWithIc
         {...props}
       >
         <span className="relative z-10 transition-all duration-500">{text}</span>
-        <div className="absolute right-1 top-1 bottom-1 aspect-square bg-ink text-cream rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-          <ArrowUpRight size={16} />
+        <div className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-ink text-cream rounded-full flex items-center justify-center transition-[right] duration-500 group-hover:right-[calc(100%-44px)]">
+          <ArrowUpRight size={16} className="transition-transform duration-500 group-hover:rotate-45" />
         </div>
       </Button>
     </div>

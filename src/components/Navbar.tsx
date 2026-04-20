@@ -174,14 +174,13 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
               ))}
             </nav>
 
-            <motion.div variants={itemVariants} className="mt-14 overflow-hidden">
-                <a href={`${anchorPrefix}#contact`} onClick={onClose}>
-                  <ButtonWithIcon 
-                    text="Start a project" 
-                    variant="default" 
-                    className="bg-signal text-ink w-full justify-between"
-                  />
-                </a>
+            <motion.div variants={itemVariants} className="mt-14">
+              <a href={`${anchorPrefix}#contact`} onClick={onClose}>
+                <ButtonWithIcon
+                  text="Start a project"
+                  className="bg-signal text-ink"
+                />
+              </a>
             </motion.div>
           </div>
 
