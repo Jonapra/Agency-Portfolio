@@ -1,7 +1,8 @@
-# Graph Report - .  (2026-04-20)
+# Graph Report - D:\Agency-Portfolio  (2026-04-20)
 
 ## Corpus Check
-- Corpus is ~14,311 words - fits in a single context window. You may not need a graph.
+- 43 files · ~14,403 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 99 nodes · 57 edges · 46 communities detected
@@ -9,52 +10,52 @@
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Component Specs|Component Specs]]
-- [[_COMMUNITY_Toast State Machine|Toast State Machine]]
-- [[_COMMUNITY_App Routes|App Routes]]
-- [[_COMMUNITY_Typography System|Typography System]]
-- [[_COMMUNITY_Design Patterns|Design Patterns]]
-- [[_COMMUNITY_Navbar|Navbar]]
-- [[_COMMUNITY_Split Heading|Split Heading]]
-- [[_COMMUNITY_Vite Config|Vite Config]]
-- [[_COMMUNITY_Accessibility Rules|Accessibility Rules]]
-- [[_COMMUNITY_Footer|Footer]]
-- [[_COMMUNITY_Layout|Layout]]
-- [[_COMMUNITY_Logo|Logo]]
-- [[_COMMUNITY_Reveal Animation|Reveal Animation]]
-- [[_COMMUNITY_CTA Section|CTA Section]]
-- [[_COMMUNITY_Hero Section|Hero Section]]
-- [[_COMMUNITY_Marquee Section|Marquee Section]]
-- [[_COMMUNITY_Process Section|Process Section]]
-- [[_COMMUNITY_Button With Icon|Button With Icon]]
-- [[_COMMUNITY_Gooey Text|Gooey Text]]
-- [[_COMMUNITY_Mail Button|Mail Button]]
-- [[_COMMUNITY_Sonner Toast|Sonner Toast]]
-- [[_COMMUNITY_Toaster|Toaster]]
-- [[_COMMUNITY_Custom Cursor Hook|Custom Cursor Hook]]
-- [[_COMMUNITY_Magnetic Hook|Magnetic Hook]]
-- [[_COMMUNITY_Utils|Utils]]
-- [[_COMMUNITY_ESLint Config|ESLint Config]]
-- [[_COMMUNITY_PostCSS Config|PostCSS Config]]
-- [[_COMMUNITY_Tailwind Config|Tailwind Config]]
-- [[_COMMUNITY_Vite Config File|Vite Config File]]
-- [[_COMMUNITY_Vite Env Types|Vite Env Types]]
-- [[_COMMUNITY_Cursor Component|Cursor Component]]
-- [[_COMMUNITY_NavLink|NavLink]]
-- [[_COMMUNITY_FAQ Section|FAQ Section]]
-- [[_COMMUNITY_Journal Section|Journal Section]]
-- [[_COMMUNITY_Pricing Section|Pricing Section]]
-- [[_COMMUNITY_Services Section|Services Section]]
-- [[_COMMUNITY_Testimonials Section|Testimonials Section]]
-- [[_COMMUNITY_Work Section|Work Section]]
-- [[_COMMUNITY_Book A Call Button|Book A Call Button]]
-- [[_COMMUNITY_Button Primitive|Button Primitive]]
-- [[_COMMUNITY_Toast Primitive|Toast Primitive]]
-- [[_COMMUNITY_Tooltip Primitive|Tooltip Primitive]]
-- [[_COMMUNITY_Toast Hook|Toast Hook]]
-- [[_COMMUNITY_Site Constants|Site Constants]]
-- [[_COMMUNITY_Spacing Scale|Spacing Scale]]
-- [[_COMMUNITY_Design System Master|Design System Master]]
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
+- [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Color Palette Tokens` - 5 edges
@@ -73,266 +74,266 @@
 
 ## Communities
 
-### Community 0 - "Component Specs"
+### Community 0 - "Community 0"
 Cohesion: 0.17
 Nodes (12): Primary Button Spec, Secondary Button Spec, Card Component Spec, Background Color #FDF2F8, CTA/Accent Color #06B6D4, Color Palette Tokens, Primary Color #EC4899, Secondary Color #F472B6 (+4 more)
 
-### Community 1 - "Toast State Machine"
+### Community 1 - "Community 1"
 Cohesion: 0.48
 Nodes (5): addToRemoveQueue(), dispatch(), genId(), reducer(), toast()
 
-### Community 2 - "App Routes"
+### Community 2 - "Community 2"
 Cohesion: 0.29
 Nodes (0): 
 
-### Community 3 - "Typography System"
+### Community 3 - "Community 3"
 Cohesion: 0.5
 Nodes (4): Archivo Heading Font, Google Fonts Import (Archivo + Space Grotesk), Space Grotesk Body Font, Typography System (Archivo + Space Grotesk)
 
-### Community 4 - "Design Patterns"
+### Community 4 - "Community 4"
 Cohesion: 0.5
 Nodes (4): Motion-Driven Style, Portfolio Grid Page Pattern, Rationale: Motion-Driven as Sales Asset, Section Order: Heroâ†’ProjectGridâ†’Aboutâ†’Contact
 
-### Community 5 - "Navbar"
+### Community 5 - "Community 5"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 6 - "Split Heading"
+### Community 6 - "Community 6"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 7 - "Vite Config"
+### Community 7 - "Community 7"
 Cohesion: 0.67
 Nodes (3): @vitejs/plugin-react (Oxc), @vitejs/plugin-react-swc (SWC), Vite + React Template
 
-### Community 8 - "Accessibility Rules"
+### Community 8 - "Community 8"
 Cohesion: 0.67
 Nodes (3): Accessibility Rules (contrast 4.5:1, focus states), Anti-Patterns (MASTER), Pre-Delivery Checklist (MASTER)
 
-### Community 9 - "Footer"
+### Community 9 - "Community 9"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 10 - "Layout"
+### Community 10 - "Community 10"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 11 - "Logo"
+### Community 11 - "Community 11"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 12 - "Reveal Animation"
+### Community 12 - "Community 12"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 13 - "CTA Section"
+### Community 13 - "Community 13"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 14 - "Hero Section"
+### Community 14 - "Community 14"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 15 - "Marquee Section"
+### Community 15 - "Community 15"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 16 - "Process Section"
+### Community 16 - "Community 16"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 17 - "Button With Icon"
+### Community 17 - "Community 17"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 18 - "Gooey Text"
+### Community 18 - "Community 18"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 19 - "Mail Button"
+### Community 19 - "Community 19"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 20 - "Sonner Toast"
+### Community 20 - "Community 20"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 21 - "Toaster"
+### Community 21 - "Community 21"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 22 - "Custom Cursor Hook"
+### Community 22 - "Community 22"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 23 - "Magnetic Hook"
+### Community 23 - "Community 23"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 24 - "Utils"
+### Community 24 - "Community 24"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 25 - "ESLint Config"
+### Community 25 - "Community 25"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 26 - "PostCSS Config"
+### Community 26 - "Community 26"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 27 - "Tailwind Config"
+### Community 27 - "Community 27"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 28 - "Vite Config File"
+### Community 28 - "Community 28"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 29 - "Vite Env Types"
+### Community 29 - "Community 29"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 30 - "Cursor Component"
+### Community 30 - "Community 30"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 31 - "NavLink"
+### Community 31 - "Community 31"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 32 - "FAQ Section"
+### Community 32 - "Community 32"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 33 - "Journal Section"
+### Community 33 - "Community 33"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 34 - "Pricing Section"
+### Community 34 - "Community 34"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 35 - "Services Section"
+### Community 35 - "Community 35"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 36 - "Testimonials Section"
+### Community 36 - "Community 36"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 37 - "Work Section"
+### Community 37 - "Community 37"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 38 - "Book A Call Button"
+### Community 38 - "Community 38"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 39 - "Button Primitive"
+### Community 39 - "Community 39"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 40 - "Toast Primitive"
+### Community 40 - "Community 40"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 41 - "Tooltip Primitive"
+### Community 41 - "Community 41"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 42 - "Toast Hook"
+### Community 42 - "Community 42"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 43 - "Site Constants"
+### Community 43 - "Community 43"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 44 - "Spacing Scale"
+### Community 44 - "Community 44"
 Cohesion: 1.0
 Nodes (1): Spacing Variable Scale
 
-### Community 45 - "Design System Master"
+### Community 45 - "Community 45"
 Cohesion: 1.0
 Nodes (1): Design System MASTER
 
 ## Knowledge Gaps
 - **17 isolated node(s):** `@vitejs/plugin-react (Oxc)`, `@vitejs/plugin-react-swc (SWC)`, `Secondary Color #F472B6`, `Text Color #831843`, `Archivo Heading Font` (+12 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Footer`** (2 nodes): `Footer()`, `Footer.tsx`
+- **Thin community `Community 9`** (2 nodes): `Footer()`, `Footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Layout`** (2 nodes): `Layout()`, `Layout.tsx`
+- **Thin community `Community 10`** (2 nodes): `Layout()`, `Layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Logo`** (2 nodes): `Logo()`, `Logo.tsx`
+- **Thin community `Community 11`** (2 nodes): `Logo()`, `Logo.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Reveal Animation`** (2 nodes): `Reveal()`, `Reveal.tsx`
+- **Thin community `Community 12`** (2 nodes): `Reveal()`, `Reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `CTA Section`** (2 nodes): `CTA()`, `CTA.tsx`
+- **Thin community `Community 13`** (2 nodes): `CTA()`, `CTA.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Hero Section`** (2 nodes): `Hero()`, `Hero.tsx`
+- **Thin community `Community 14`** (2 nodes): `Hero()`, `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Marquee Section`** (2 nodes): `Marquee()`, `Marquee.tsx`
+- **Thin community `Community 15`** (2 nodes): `Marquee()`, `Marquee.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Process Section`** (2 nodes): `Process()`, `Process.tsx`
+- **Thin community `Community 16`** (2 nodes): `Process()`, `Process.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Button With Icon`** (2 nodes): `ButtonWithIcon()`, `button-with-icon.tsx`
+- **Thin community `Community 17`** (2 nodes): `ButtonWithIcon()`, `button-with-icon.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Gooey Text`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
+- **Thin community `Community 18`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Mail Button`** (2 nodes): `MailButton()`, `mail-button.tsx`
+- **Thin community `Community 19`** (2 nodes): `MailButton()`, `mail-button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Sonner Toast`** (2 nodes): `Toaster()`, `sonner.tsx`
+- **Thin community `Community 20`** (2 nodes): `Toaster()`, `sonner.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Toaster`** (2 nodes): `toaster.tsx`, `Toaster()`
+- **Thin community `Community 21`** (2 nodes): `toaster.tsx`, `Toaster()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Custom Cursor Hook`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
+- **Thin community `Community 22`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Magnetic Hook`** (2 nodes): `useMagnetic.ts`, `useMagnetic()`
+- **Thin community `Community 23`** (2 nodes): `useMagnetic.ts`, `useMagnetic()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Utils`** (2 nodes): `utils.ts`, `cn()`
+- **Thin community `Community 24`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ESLint Config`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 25`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `PostCSS Config`** (1 nodes): `postcss.config.js`
+- **Thin community `Community 26`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Tailwind Config`** (1 nodes): `tailwind.config.ts`
+- **Thin community `Community 27`** (1 nodes): `tailwind.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Vite Config File`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 28`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Vite Env Types`** (1 nodes): `vite-env.d.ts`
+- **Thin community `Community 29`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Cursor Component`** (1 nodes): `Cursor.tsx`
+- **Thin community `Community 30`** (1 nodes): `Cursor.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `NavLink`** (1 nodes): `NavLink.tsx`
+- **Thin community `Community 31`** (1 nodes): `NavLink.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `FAQ Section`** (1 nodes): `FAQ.tsx`
+- **Thin community `Community 32`** (1 nodes): `FAQ.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Journal Section`** (1 nodes): `Journal.tsx`
+- **Thin community `Community 33`** (1 nodes): `Journal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Pricing Section`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 34`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Services Section`** (1 nodes): `Services.tsx`
+- **Thin community `Community 35`** (1 nodes): `Services.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Testimonials Section`** (1 nodes): `Testimonials.tsx`
+- **Thin community `Community 36`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Work Section`** (1 nodes): `Work.tsx`
+- **Thin community `Community 37`** (1 nodes): `Work.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Book A Call Button`** (1 nodes): `book-a-call-button.tsx`
+- **Thin community `Community 38`** (1 nodes): `book-a-call-button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Button Primitive`** (1 nodes): `button.tsx`
+- **Thin community `Community 39`** (1 nodes): `button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Toast Primitive`** (1 nodes): `toast.tsx`
+- **Thin community `Community 40`** (1 nodes): `toast.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Tooltip Primitive`** (1 nodes): `tooltip.tsx`
+- **Thin community `Community 41`** (1 nodes): `tooltip.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Toast Hook`** (1 nodes): `use-toast.ts`
+- **Thin community `Community 42`** (1 nodes): `use-toast.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Site Constants`** (1 nodes): `site.ts`
+- **Thin community `Community 43`** (1 nodes): `site.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Spacing Scale`** (1 nodes): `Spacing Variable Scale`
+- **Thin community `Community 44`** (1 nodes): `Spacing Variable Scale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Design System Master`** (1 nodes): `Design System MASTER`
+- **Thin community `Community 45`** (1 nodes): `Design System MASTER`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

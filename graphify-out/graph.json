@@ -651,9 +651,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_vitereact",
       "community": 7,
-      "norm_label": "vite + react template"
+      "norm_label": "vite + react template",
+      "id": "README_vitereact"
     },
     {
       "label": "@vitejs/plugin-react (Oxc)",
@@ -664,9 +664,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_pluginreact",
       "community": 7,
-      "norm_label": "@vitejs/plugin-react (oxc)"
+      "norm_label": "@vitejs/plugin-react (oxc)",
+      "id": "README_pluginreact"
     },
     {
       "label": "@vitejs/plugin-react-swc (SWC)",
@@ -677,9 +677,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "README_pluginreactswc",
       "community": 7,
-      "norm_label": "@vitejs/plugin-react-swc (swc)"
+      "norm_label": "@vitejs/plugin-react-swc (swc)",
+      "id": "README_pluginreactswc"
     },
     {
       "label": "Color Palette Tokens",
@@ -690,9 +690,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorpalette",
       "community": 0,
-      "norm_label": "color palette tokens"
+      "norm_label": "color palette tokens",
+      "id": "MASTER_colorpalette"
     },
     {
       "label": "Primary Color #EC4899",
@@ -703,9 +703,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorprimary",
       "community": 0,
-      "norm_label": "primary color #ec4899"
+      "norm_label": "primary color #ec4899",
+      "id": "MASTER_colorprimary"
     },
     {
       "label": "Secondary Color #F472B6",
@@ -716,9 +716,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorsecondary",
       "community": 0,
-      "norm_label": "secondary color #f472b6"
+      "norm_label": "secondary color #f472b6",
+      "id": "MASTER_colorsecondary"
     },
     {
       "label": "CTA/Accent Color #06B6D4",
@@ -729,9 +729,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorcta",
       "community": 0,
-      "norm_label": "cta/accent color #06b6d4"
+      "norm_label": "cta/accent color #06b6d4",
+      "id": "MASTER_colorcta"
     },
     {
       "label": "Background Color #FDF2F8",
@@ -742,9 +742,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colorbg",
       "community": 0,
-      "norm_label": "background color #fdf2f8"
+      "norm_label": "background color #fdf2f8",
+      "id": "MASTER_colorbg"
     },
     {
       "label": "Text Color #831843",
@@ -755,9 +755,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_colortext",
       "community": 0,
-      "norm_label": "text color #831843"
+      "norm_label": "text color #831843",
+      "id": "MASTER_colortext"
     },
     {
       "label": "Typography System (Archivo + Space Grotesk)",
@@ -768,9 +768,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_typography",
       "community": 3,
-      "norm_label": "typography system (archivo + space grotesk)"
+      "norm_label": "typography system (archivo + space grotesk)",
+      "id": "MASTER_typography"
     },
     {
       "label": "Archivo Heading Font",
@@ -781,9 +781,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_archivo",
       "community": 3,
-      "norm_label": "archivo heading font"
+      "norm_label": "archivo heading font",
+      "id": "MASTER_archivo"
     },
     {
       "label": "Space Grotesk Body Font",
@@ -794,9 +794,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_spacegrotesk",
       "community": 3,
-      "norm_label": "space grotesk body font"
+      "norm_label": "space grotesk body font",
+      "id": "MASTER_spacegrotesk"
     },
     {
       "label": "Spacing Variable Scale",
@@ -807,9 +807,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_spacing",
       "community": 44,
-      "norm_label": "spacing variable scale"
+      "norm_label": "spacing variable scale",
+      "id": "MASTER_spacing"
     },
     {
       "label": "Shadow Depth Scale",
@@ -820,9 +820,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_shadows",
       "community": 0,
-      "norm_label": "shadow depth scale"
+      "norm_label": "shadow depth scale",
+      "id": "MASTER_shadows"
     },
     {
       "label": "Primary Button Spec",
@@ -833,9 +833,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_btnprimary",
       "community": 0,
-      "norm_label": "primary button spec"
+      "norm_label": "primary button spec",
+      "id": "MASTER_btnprimary"
     },
     {
       "label": "Secondary Button Spec",
@@ -846,9 +846,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_btnsecondary",
       "community": 0,
-      "norm_label": "secondary button spec"
+      "norm_label": "secondary button spec",
+      "id": "MASTER_btnsecondary"
     },
     {
       "label": "Card Component Spec",
@@ -859,9 +859,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_cardspec",
       "community": 0,
-      "norm_label": "card component spec"
+      "norm_label": "card component spec",
+      "id": "MASTER_cardspec"
     },
     {
       "label": "Input Component Spec",
@@ -872,9 +872,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_inputspec",
       "community": 0,
-      "norm_label": "input component spec"
+      "norm_label": "input component spec",
+      "id": "MASTER_inputspec"
     },
     {
       "label": "Modal Component Spec",
@@ -885,9 +885,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_modalspec",
       "community": 0,
-      "norm_label": "modal component spec"
+      "norm_label": "modal component spec",
+      "id": "MASTER_modalspec"
     },
     {
       "label": "Motion-Driven Style",
@@ -898,9 +898,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_motiondriven",
       "community": 4,
-      "norm_label": "motion-driven style"
+      "norm_label": "motion-driven style",
+      "id": "MASTER_motiondriven"
     },
     {
       "label": "Portfolio Grid Page Pattern",
@@ -911,9 +911,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_portfoliogrid",
       "community": 4,
-      "norm_label": "portfolio grid page pattern"
+      "norm_label": "portfolio grid page pattern",
+      "id": "MASTER_portfoliogrid"
     },
     {
       "label": "Section Order: Hero\u00e2\u2020\u2019ProjectGrid\u00e2\u2020\u2019About\u00e2\u2020\u2019Contact",
@@ -924,9 +924,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_sectionorder",
       "community": 4,
-      "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact"
+      "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact",
+      "id": "MASTER_sectionorder"
     },
     {
       "label": "Anti-Patterns (MASTER)",
@@ -937,9 +937,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_antipatterns",
       "community": 8,
-      "norm_label": "anti-patterns (master)"
+      "norm_label": "anti-patterns (master)",
+      "id": "MASTER_antipatterns"
     },
     {
       "label": "Pre-Delivery Checklist (MASTER)",
@@ -950,9 +950,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_predelivery",
       "community": 8,
-      "norm_label": "pre-delivery checklist (master)"
+      "norm_label": "pre-delivery checklist (master)",
+      "id": "MASTER_predelivery"
     },
     {
       "label": "Accessibility Rules (contrast 4.5:1, focus states)",
@@ -963,9 +963,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_a11y",
       "community": 8,
-      "norm_label": "accessibility rules (contrast 4.5:1, focus states)"
+      "norm_label": "accessibility rules (contrast 4.5:1, focus states)",
+      "id": "MASTER_a11y"
     },
     {
       "label": "Google Fonts Import (Archivo + Space Grotesk)",
@@ -976,9 +976,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_googlefonts",
       "community": 3,
-      "norm_label": "google fonts import (archivo + space grotesk)"
+      "norm_label": "google fonts import (archivo + space grotesk)",
+      "id": "MASTER_googlefonts"
     },
     {
       "label": "Rationale: Motion-Driven as Sales Asset",
@@ -989,9 +989,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "MASTER_rationale_motiondriven",
       "community": 4,
-      "norm_label": "rationale: motion-driven as sales asset"
+      "norm_label": "rationale: motion-driven as sales asset",
+      "id": "MASTER_rationale_motiondriven"
     },
     {
       "label": "Design System MASTER",
@@ -1002,9 +1002,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_system_master",
       "community": 45,
-      "norm_label": "design system master"
+      "norm_label": "design system master",
+      "id": "design_system_master"
     }
   ],
   "links": [
@@ -1447,8 +1447,8 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_pluginreact",
-      "_tgt": "README_vitereact",
+      "_src": "README_vitereact",
+      "_tgt": "README_pluginreact",
       "source": "README_vitereact",
       "target": "README_pluginreact"
     },
@@ -1459,8 +1459,8 @@
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "README_pluginreactswc",
-      "_tgt": "README_vitereact",
+      "_src": "README_vitereact",
+      "_tgt": "README_pluginreactswc",
       "source": "README_vitereact",
       "target": "README_pluginreactswc"
     },
@@ -1531,8 +1531,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Buttons section",
       "weight": 1.0,
-      "_src": "MASTER_btnsecondary",
-      "_tgt": "MASTER_colorprimary",
+      "_src": "MASTER_colorprimary",
+      "_tgt": "MASTER_btnsecondary",
       "source": "MASTER_colorprimary",
       "target": "MASTER_btnsecondary"
     },
@@ -1543,8 +1543,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Inputs section",
       "weight": 1.0,
-      "_src": "MASTER_inputspec",
-      "_tgt": "MASTER_colorprimary",
+      "_src": "MASTER_colorprimary",
+      "_tgt": "MASTER_inputspec",
       "source": "MASTER_colorprimary",
       "target": "MASTER_inputspec"
     },
@@ -1555,8 +1555,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Buttons section",
       "weight": 1.0,
-      "_src": "MASTER_btnprimary",
-      "_tgt": "MASTER_colorcta",
+      "_src": "MASTER_colorcta",
+      "_tgt": "MASTER_btnprimary",
       "source": "MASTER_colorcta",
       "target": "MASTER_btnprimary"
     },
@@ -1567,8 +1567,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Cards section",
       "weight": 1.0,
-      "_src": "MASTER_cardspec",
-      "_tgt": "MASTER_colorbg",
+      "_src": "MASTER_colorbg",
+      "_tgt": "MASTER_cardspec",
       "source": "MASTER_colorbg",
       "target": "MASTER_cardspec"
     },
@@ -1615,8 +1615,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Cards section",
       "weight": 1.0,
-      "_src": "MASTER_cardspec",
-      "_tgt": "MASTER_shadows",
+      "_src": "MASTER_shadows",
+      "_tgt": "MASTER_cardspec",
       "source": "MASTER_shadows",
       "target": "MASTER_cardspec"
     },
@@ -1627,8 +1627,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Modals section",
       "weight": 1.0,
-      "_src": "MASTER_modalspec",
-      "_tgt": "MASTER_shadows",
+      "_src": "MASTER_shadows",
+      "_tgt": "MASTER_modalspec",
       "source": "MASTER_shadows",
       "target": "MASTER_modalspec"
     },
@@ -1651,8 +1651,8 @@
       "source_file": "design-system/MASTER.md",
       "source_location": "Style Guidelines section",
       "weight": 1.0,
-      "_src": "MASTER_rationale_motiondriven",
-      "_tgt": "MASTER_motiondriven",
+      "_src": "MASTER_motiondriven",
+      "_tgt": "MASTER_rationale_motiondriven",
       "source": "MASTER_motiondriven",
       "target": "MASTER_rationale_motiondriven"
     },
