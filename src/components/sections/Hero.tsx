@@ -3,6 +3,7 @@ import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { BookACallButton } from "@/components/ui/book-a-call-button";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
@@ -83,11 +84,7 @@ export const Hero = () => {
                   className="bg-signal text-bold"
                 />
               </a>
-              <ButtonWithIcon
-                text="Book a call"
-                href="#contact"
-                className="bg-signal text-ink"
-              />
+              <BookACallButton href="#contact" />
             </div>
           </motion.div>
         </div>

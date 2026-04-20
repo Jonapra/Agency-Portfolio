@@ -2,6 +2,7 @@ import { Reveal } from "../Reveal";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { BRAND } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { BookACallButton } from "@/components/ui/book-a-call-button";
 
 export const CTA = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
@@ -25,11 +26,7 @@ export const CTA = () => {
                     className="bg-signal text-ink text-base h-11 md:h-14"
                   />
                 </a>
-                <ButtonWithIcon
-                  text="Book a 20‑min Call"
-                  href="#contact"
-                  className="bg-signal text-ink text-base h-11 md:h-14"
-                />
+                <BookACallButton href="#contact" />
               </div>
             </Reveal>
             <div className="mt-14 h-eyebrow text-mute">Currently     Available · slots open</div>
