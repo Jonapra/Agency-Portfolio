@@ -37,10 +37,10 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SERVICES = [
-  ["01", "Brand Identity", "Naming, wordmarks, systems, guidelines — and the discipline to actually ship them.", "Strategy · Naming · Identity · Guidelines"],
-  ["02", "Websites", "Editorial, product and portfolio sites. Designed by us, built on Framer or Next.js.", "UX · Art direction · Build · CMS"],
-  ["03", "Product UI", "Interfaces that survive first contact with a roadmap. Systems your eng team will thank you for.", "Audit · Flows · Design system · Handoff"],
-  ["04", "Motion & Direction", "Launch films, social loops, title work. Used sparingly, to devastating effect.", "Direction · Storyboard · Animation · Sound"],
+  ["01", "Brand Identity", "We dig into who you are, what you stand for, and where you're headed — then design a visual system that fits your brand like it was always meant to look this way.", "Strategy · Naming · Identity · Guidelines"],
+  ["02", "Product Design", "UI/UX built around your users. We present the designs, walk through them together, and keep refining until every screen feels exactly right.", "UX · UI · Prototyping · Handoff"],
+  ["03", "Website", "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard.", "Architecture · Build · CMS · Launch"],
+  ["04", "Performance", "We don't hand off and disappear. SEO, speed, and post-launch support — we stay invested in how your site actually performs.", "SEO · Analytics · Speed · Retention"],
 ] as const;
 
 export const PROCESS_STEPS = [
