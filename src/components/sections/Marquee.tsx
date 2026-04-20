@@ -2,11 +2,10 @@
 export const Marquee = () => {
   const Group = () => (
     <div className="flex items-center gap-10 px-8 marquee-huge font-display">
-      <span>Brand systems</span><span className="italic-display text-signal">—</span>
+      <span>UI UX Design</span><span className="italic-display text-signal">—</span>
       <span>Websites</span><span className="italic-display text-signal">—</span>
-      <span>Product UI</span><span className="italic-display text-signal">—</span>
-      <span>Editorial</span><span className="italic-display text-signal">—</span>
-      <span>Motion</span><span className="italic-display text-signal">—</span>
+      <span>AI Automations</span><span className="italic-display text-signal">—</span>
+      <span>Brand Identity</span><span className="italic-display text-signal">—</span>
     </div>
   );
   return (

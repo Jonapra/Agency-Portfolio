@@ -219,5 +219,5 @@ details[open] .faq-body { grid-template-rows: 1fr; }
 details .faq-inner { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track, .spin-slow { animation: none; }
+  .spin-slow { animation: none; }
 }

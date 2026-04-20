@@ -66,7 +66,7 @@ export const Hero = () => {
         </h1>
 
         {/* Sub row: copy + CTAs */}
-        <div className="grid md:grid-cols-12 gap-6 md:gap-6 lg:gap-8 items-start md:items-center">
+        <div className=" grid md:grid-cols-12 gap-6 md:gap-6 lg:gap-8 items-start md:items-center">
           <motion.div 
             className="md:col-span-6"
             {...fadeIn}
