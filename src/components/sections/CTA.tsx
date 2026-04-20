@@ -1,6 +1,7 @@
 import { Reveal } from "../Reveal";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { BRAND } from "@/constants/site";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 export const CTA = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
@@ -22,7 +23,12 @@ export const CTA = () => {
                   {BRAND.email}
                   <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
                 </a>
-                <a href="#" className="u-link text-base">Or book a 20‑min intro →</a>
+                <ButtonWithIcon
+                  text="Book a 20‑min Call"
+                  href="#"
+                  variant="outline"
+                  className="text-base h-14"
+                />
               </div>
             </Reveal>
             <div className="mt-14 h-eyebrow text-mute">Currently booking · slots open</div>
