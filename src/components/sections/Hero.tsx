@@ -17,13 +17,16 @@ export const Hero = () => {
   };
 
   return (
-    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-10 overflow-hidden hero-section-text flex flex-col">
+    <section
+      id="top"
+      className="relative min-h-[100svh] md:min-h-[90vh] lg:min-h-screen px-6 md:px-10 pt-28 md:pt-32 pb-10 overflow-hidden hero-section-text flex flex-col"
+    >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
 
       <div className="mx-auto max-w-[1600px] relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
         <motion.div 
-          className="flex items-center justify-between mb-10 md:mb-14"
+          className="flex items-center justify-between mb-10 md:mb-12 lg:mb-14"
           {...fadeIn}
         >
           <div className="flex items-center gap-3">
@@ -37,7 +40,13 @@ export const Hero = () => {
         </motion.div>
 
         {/* Headline — synchronized timing */}
-        <h1 className="font-display mb-8 flex flex-col items-start" style={{ fontSize: "clamp(40px, 8vw, 132px)", lineHeight: 0.95, letterSpacing: "-0.035em" }}>
+        <h1
+          className="font-display mb-8 flex flex-col items-start text-[40px] md:text-[92px] lg:text-[clamp(40px,8vw,132px)]"
+          style={{
+            lineHeight: 0.95,
+            letterSpacing: "-0.035em",
+          }}
+        >
           <SplitLine><SplitText text="We Build" /></SplitLine>
           <div className="flex items-center gap-3 md:gap-5">
             <div className="relative">
@@ -57,13 +66,13 @@ export const Hero = () => {
         </h1>
 
         {/* Sub row: copy + CTAs */}
-        <div className="grid md:grid-cols-12 gap-8 items-start">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-6 lg:gap-8 items-start md:items-center">
           <motion.div 
             className="md:col-span-6"
             {...fadeIn}
             transition={{ ...fadeIn.transition, delay: 0.2 }}
           >
-            <p className="text-base md:text-lg text-mute-2 max-w-xl">
+            <p className="text-base md:text-base lg:text-lg text-mute-2 max-w-xl">
               We build identity systems, interfaces and websites for founders who refuse to blend in — and the teams that back them.
             </p>
           </motion.div>
@@ -73,14 +82,14 @@ export const Hero = () => {
             {...fadeIn}
             transition={{ ...fadeIn.transition, delay: 0.3 }}
           >
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-nowrap items-center gap-3">
               <a
                 ref={ctaRef}
                 href="#work"
                 className="inline-block"
               >
                 <ButtonWithIcon 
-                  text="See Our Works"
+                  text="Projects"
                   className="bg-signal text-bold"
                 />
               </a>
@@ -90,13 +99,13 @@ export const Hero = () => {
         </div>
 
         {/* Bottom row: inline social proof */}
-        <div className="mt-auto pt-16 md:pt-20">
+        <div className="mt-auto pt-12 md:pt-14 lg:pt-20">
           <motion.div 
             className="border-t border-current/15 pt-6 grid md:grid-cols-12 gap-6 items-end"
             {...fadeIn}
             transition={{ ...fadeIn.transition, delay: 0.4 }}
           >
-            <div className="md:col-span-6 flex items-end gap-8 md:gap-12">
+            <div className="md:col-span-6 flex items-end gap-8 md:gap-10 lg:gap-12">
               <div>
                 <div className="num font-display text-3xl md:text-4xl leading-none">10+</div>
                 <div className="h-eyebrow text-mute mt-2">Websites shipped</div>
@@ -112,8 +121,8 @@ export const Hero = () => {
             </div>
 
             <div className="md:col-span-6 md:text-right">
-              <div className="h-eyebrow text-mute mb-1">Currently</div>
-              <div className="italic-display text-xl md:text-2xl">Crafting Veldt, a new dining identity.</div>
+              <div className="h-eyebrow text-mute mb-1">Achivements</div>
+              <div className="italic-display text-lg md:text-xl lg:text-2xl">We are proud to say we have 100% client Satisfaction rate.</div>
             </div>
           </motion.div>
         </div>
@@ -121,4 +130,3 @@ export const Hero = () => {
     </section>
   );
 };
-
