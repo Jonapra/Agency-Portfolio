@@ -1,5 +1,6 @@
 import { Reveal } from "../Reveal";
 import { PLANS } from "@/constants/site";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 export const Pricing = () => (
   <section id="pricing" className="relative px-6 md:px-10 py-12 md:py-20">
@@ -31,10 +32,14 @@ export const Pricing = () => (
                 </li>
               ))}
             </ul>
-            <a href="#contact" className={`mt-10 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm border transition ${o.hi ? "bg-ink text-cream border-ink" : "border-current hover:bg-signal hover:text-ink hover:border-signal"}`}>
-              Start here
-              <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
-            </a>
+            <div className="mt-10">
+              <ButtonWithIcon
+                text="Start here"
+                href="#contact"
+                variant="default"
+                className={o.hi ? "bg-ink text-cream" : "bg-signal text-ink"}
+              />
+            </div>
           </Reveal>
         ))}
       </div>

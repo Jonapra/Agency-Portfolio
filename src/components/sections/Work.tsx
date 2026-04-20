@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../Reveal";
 import { PROJECTS, type Project } from "@/constants/site";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 const ProjectArt = ({ p }: { p: Project }) => {
   if (p.title === "Veldt")
@@ -99,9 +100,12 @@ export const Work = () => (
       </div>
 
       <div className="mt-16 flex justify-center">
-        <a href="#" className="inline-flex items-center gap-3 rounded-full px-6 py-3.5 border border-current text-sm hover:bg-signal hover:text-ink hover:border-signal transition">
-          See the full archive
-          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
+        <a href="#">
+          <ButtonWithIcon 
+            text="See the full archive" 
+            variant="default" 
+            className="bg-signal text-ink" 
+          />
         </a>
       </div>
     </div>

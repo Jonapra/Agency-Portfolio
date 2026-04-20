@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { NAV_LINKS } from "@/constants/site";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 interface NavbarProps {
   /** When true, anchor links route to "/#section" so they jump from any page. */
@@ -70,14 +71,15 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
               )}
             </button>
-            <a
-              ref={ctaRef}
-              href={`${anchorPrefix}#contact`}
-              className="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm bg-signal text-ink hover:bg-signal-2 transition-colors"
-            >
-              Start a project
-              <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
-            </a>
+            <div className="hidden sm:block">
+              <a ref={ctaRef} href={`${anchorPrefix}#contact`}>
+                <ButtonWithIcon 
+                  text="Start a project" 
+                  variant="default" 
+                  className="bg-signal text-ink h-10 ps-4 pe-10"
+                />
+              </a>
+            </div>
 
             <button
               onClick={() => setMenuOpen(o => !o)}
@@ -174,14 +176,13 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
             </nav>
 
             <motion.div variants={itemVariants} className="mt-14 overflow-hidden">
-              <a
-                href={`${anchorPrefix}#contact`}
-                onClick={onClose}
-                className="inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm bg-signal text-ink hover:bg-signal-2 transition-colors"
-              >
-                Start a project
-                <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
-              </a>
+                <a href={`${anchorPrefix}#contact`} onClick={onClose}>
+                  <ButtonWithIcon 
+                    text="Start a project" 
+                    variant="default" 
+                    className="bg-signal text-ink w-full justify-between h-14 px-6"
+                  />
+                </a>
             </motion.div>
           </div>
 

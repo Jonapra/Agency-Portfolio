@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { PROJECTS } from "@/constants/site";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 interface CaseContent {
   slug: string;
@@ -329,7 +330,15 @@ const Project = () => {
             <div className="h-eyebrow text-mute mb-3">Next case</div>
             <div className="font-display text-5xl">{c.next.title}<span className="italic-display text-signal">.</span></div>
             <p className="text-mute-2 mt-3">{c.next.sub}</p>
-            <Link to={`/projects/${c.next.slug}`} className="mt-8 inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm border border-current hover:bg-signal hover:text-ink hover:border-signal transition">Read the case →</Link>
+            <div className="mt-8">
+              <Link to={`/projects/${c.next.slug}`}>
+                <ButtonWithIcon 
+                  text="Read the case" 
+                  variant="default" 
+                  className="bg-signal text-ink"
+                />
+              </Link>
+            </div>
           </div>
           <Link to={`/projects/${c.next.slug}`} className="md:col-span-8 block relative overflow-hidden rounded-lg plate aspect-[16/9] group">
             <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" style={{ background: `radial-gradient(700px 400px at 30% 80%, ${nextProject.c1}55, transparent 60%), linear-gradient(135deg, ${nextProject.c2}, #05080C)` }} />

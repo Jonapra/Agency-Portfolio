@@ -23,14 +23,14 @@ export const CTA = () => {
                   <ButtonWithIcon 
                     text={BRAND.email}
                     variant="default"
-                    className="bg-signal text-ink hover:bg-signal-2 text-base h-11 md:h-14"
+                    className="bg-signal text-ink text-base h-11 md:h-14"
                   />
                 </a>
                 <ButtonWithIcon
                   text="Book a 20‑min Call"
                   href="#"
                   variant="default"
-                  className="bg-signal text-ink hover:bg-signal-2 text-base h-14"
+                  className="bg-signal text-ink text-base h-14"
                 />
               </div>
             </Reveal>

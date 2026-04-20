@@ -81,14 +81,14 @@ export const Hero = () => {
                 <ButtonWithIcon 
                   text="See selected work"
                   variant="default"
-                  className="bg-signal text-ink hover:bg-signal-2"
+                  className="bg-signal text-ink"
                 />
               </a>
               <ButtonWithIcon
                 text="Book a call"
                 href="#contact"
                 variant="default"
-                className="bg-signal text-ink hover:bg-signal-2"
+                className="bg-signal text-ink"
               />
             </div>
           </motion.div>
