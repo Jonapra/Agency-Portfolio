@@ -2,7 +2,7 @@ import { Reveal } from "../Reveal";
 import { JOURNAL } from "@/constants/site";
 
 export const Journal = () => (
-  <section id="journal" className="relative px-6 md:px-10 py-28 md:py-40">
+  <section id="journal" className="relative px-6 md:px-10 py-12 md:py-20">
     <div className="mx-auto max-w-[1600px]">
       <div className="grid md:grid-cols-12 gap-10 mb-14">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 07 · Journal</div></div>

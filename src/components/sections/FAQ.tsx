@@ -2,7 +2,7 @@ import { Reveal } from "../Reveal";
 import { FAQ_ITEMS } from "@/constants/site";
 
 export const FAQ = () => (
-  <section id="faq" className="relative px-6 md:px-10 py-28 md:py-40">
+  <section id="faq" className="relative px-6 md:px-10 py-12 md:py-20">
     <div className="mx-auto max-w-[1600px] grid md:grid-cols-12 gap-10">
       <aside className="md:col-span-4 md:sticky md:top-28 self-start">
         <div className="h-eyebrow text-mute mb-3">§ 08 · FAQ</div>
