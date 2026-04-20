@@ -65,17 +65,17 @@
     --card-foreground: 240 6% 5%;
     --popover: 41 50% 97%;
     --popover-foreground: 240 6% 5%;
-    --primary: 17 100% 50%;
+    --primary: 17 100% 56%;
     --primary-foreground: 39 36% 92%;
     --secondary: 38 30% 87%;
     --secondary-foreground: 240 6% 5%;
     --muted: 38 30% 87%;
     --muted-foreground: 240 5% 40%;
-    --accent: 17 100% 50%;
+    --accent: 17 100% 56%;
     --accent-foreground: 39 36% 92%;
     --border: 240 6% 5%;
     --input: 38 30% 87%;
-    --signal: 17 100% 50%;
+    --signal: 17 100% 56%;
     --mute: 240 5% 40%;
     --mute-2: 40 10% 45%;
   }
