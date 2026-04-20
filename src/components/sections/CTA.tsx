@@ -4,7 +4,7 @@ import { BRAND } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 export const CTA = () => {
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
+  const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   return (
     <section id="contact" className="relative px-6 md:px-10 py-12 md:py-20">
       <div className="mx-auto max-w-[1600px]">

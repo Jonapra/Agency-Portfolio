@@ -14,7 +14,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [theme, setTheme] = useState<"dark" | "light">(() => (localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0.18);
+  const ctaRef = useMagnetic<HTMLAnchorElement>(0);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);

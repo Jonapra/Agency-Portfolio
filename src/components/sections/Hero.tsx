@@ -5,8 +5,8 @@ import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 export const Hero = () => {
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
-  const ctaRef2 = useMagnetic<HTMLAnchorElement>(0.18);
+  const ctaRef = useMagnetic<HTMLAnchorElement>(0);
+  const ctaRef2 = useMagnetic<HTMLAnchorElement>(0);
 
   // Fade-in animation for non-text elements to appear with the headline
   const fadeIn = {
