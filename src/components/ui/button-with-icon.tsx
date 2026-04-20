@@ -2,12 +2,13 @@ import { Button, ButtonProps } from "@/components/ui/button"
 import { ArrowUpRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type ButtonWithIconProps = ButtonProps & {
+type ButtonWithIconProps = Omit<ButtonProps, "variant"> & {
   text: string
+  href?: string
 }
 
-export function ButtonWithIcon({ text, className, ...props }: ButtonWithIconProps) {
-  return (
+export function ButtonWithIcon({ text, className, href, ...props }: ButtonWithIconProps) {
+  const inner = (
     <div className={cn("rounded-full overflow-hidden h-12 group relative w-fit", className)}>
       <Button
         variant="ghost"
@@ -24,4 +25,7 @@ export function ButtonWithIcon({ text, className, ...props }: ButtonWithIconProp
       </Button>
     </div>
   )
+
+  if (href) return <a href={href}>{inner}</a>
+  return inner
 }

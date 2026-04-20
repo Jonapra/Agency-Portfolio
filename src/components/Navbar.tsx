@@ -75,7 +75,6 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
               <a ref={ctaRef} href={`${anchorPrefix}#contact`}>
                 <ButtonWithIcon 
                   text="Start a project" 
-                  variant="default" 
                   className="bg-signal text-ink h-10"
                 />
               </a>

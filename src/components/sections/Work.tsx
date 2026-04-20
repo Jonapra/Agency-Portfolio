@@ -103,8 +103,7 @@ export const Work = () => (
         <a href="#">
           <ButtonWithIcon 
             text="See the full archive" 
-            variant="default" 
-            className="bg-signal text-ink" 
+            className="bg-signal text-ink"
           />
         </a>
       </div>

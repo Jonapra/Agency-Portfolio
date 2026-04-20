@@ -36,7 +36,6 @@ export const Pricing = () => (
               <ButtonWithIcon
                 text="Start here"
                 href="#contact"
-                variant="default"
                 className={o.hi ? "bg-ink text-cream" : "bg-signal text-ink"}
               />
             </div>

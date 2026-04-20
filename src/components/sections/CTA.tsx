@@ -22,15 +22,13 @@ export const CTA = () => {
                 <a ref={ctaRef} href={`mailto:${BRAND.email}`} className="inline-block">
                   <ButtonWithIcon 
                     text={BRAND.email}
-                    variant="default"
                     className="bg-signal text-ink text-base h-11 md:h-14"
                   />
                 </a>
                 <ButtonWithIcon
                   text="Book a 20‑min Call"
-                  href="#"
-                  variant="default"
-                  className="bg-signal text-ink text-base h-14"
+                  href="#contact"
+                  className="bg-signal text-ink text-base h-11 md:h-14"
                 />
               </div>
             </Reveal>

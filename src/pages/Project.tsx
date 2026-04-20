@@ -334,7 +334,6 @@ const Project = () => {
               <Link to={`/projects/${c.next.slug}`}>
                 <ButtonWithIcon 
                   text="Read the case" 
-                  variant="default" 
                   className="bg-signal text-ink"
                 />
               </Link>

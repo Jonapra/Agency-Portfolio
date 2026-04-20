@@ -80,13 +80,12 @@ export const Hero = () => {
               >
                 <ButtonWithIcon 
                   text="See selected work"
-                  variant="default"
                   className="bg-signal text-ink"
                 />
               </a>
               <ButtonWithIcon
                 text="Book a call"
-                variant="default"
+                href="#contact"
                 className="bg-signal text-ink"
               />
             </div>
