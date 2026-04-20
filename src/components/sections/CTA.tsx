@@ -1,11 +1,9 @@
 import { Reveal } from "../Reveal";
-import { useMagnetic } from "@/hooks/useMagnetic";
 import { BRAND } from "@/constants/site";
-import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
+import { MailButton } from "@/components/ui/mail-button";
 
 export const CTA = () => {
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   return (
     <section id="contact" className="relative px-6 md:px-10 py-12 md:py-20">
       <div className="mx-auto max-w-[1600px]">
@@ -20,12 +18,7 @@ export const CTA = () => {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a ref={ctaRef} href={`mailto:${BRAND.email}`} className="inline-block">
-                  <ButtonWithIcon 
-                    text={BRAND.email}
-                    className="bg-signal text-ink text-base h-11 md:h-14"
-                  />
-                </a>
+                <MailButton email={BRAND.email} />
                 <BookACallButton href="#contact" />
               </div>
             </Reveal>

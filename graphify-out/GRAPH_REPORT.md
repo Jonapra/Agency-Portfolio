@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-04-20)
 
 ## Corpus Check
-- 48 files · ~50,732 words
+- 49 files · ~50,925 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 306 nodes · 348 edges · 57 communities detected
+- 307 nodes · 348 edges · 58 communities detected
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.64)
 - Token cost: 0 input · 0 output
 
@@ -67,6 +67,7 @@
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `_make_assistant_record()` - 18 edges
@@ -325,6 +326,10 @@ Nodes (0):
 
 ### Community 56 - "Community 56"
 Cohesion: 1.0
+Nodes (0): 
+
+### Community 57 - "Community 57"
+Cohesion: 1.0
 Nodes (1): Spacing Variable Scale
 
 ## Knowledge Gaps
@@ -388,24 +393,26 @@ Nodes (1): Spacing Variable Scale
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 50`** (1 nodes): `Work.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (1 nodes): `button.tsx`
+- **Thin community `Community 51`** (1 nodes): `book-a-call-button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (1 nodes): `toast.tsx`
+- **Thin community `Community 52`** (1 nodes): `button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `tooltip.tsx`
+- **Thin community `Community 53`** (1 nodes): `toast.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `use-toast.ts`
+- **Thin community `Community 54`** (1 nodes): `tooltip.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 55`** (1 nodes): `site.ts`
+- **Thin community `Community 55`** (1 nodes): `use-toast.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 56`** (1 nodes): `Spacing Variable Scale`
+- **Thin community `Community 56`** (1 nodes): `site.ts`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 57`** (1 nodes): `Spacing Variable Scale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `_make_assistant_record()` connect `Community 0` to `Community 10`, `Community 5`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `TestScanIncrementalUpdate` connect `Community 5` to `Community 0`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 11 inferred relationships involving `DashboardHandler` (e.g. with `TestGetDashboardData` and `TestDashboardHTTP`) actually correct?**
