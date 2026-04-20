@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils"
 type ButtonWithIconProps = Omit<ButtonProps, "variant"> & {
   text: string
   href?: string
+  textClassName?: string
 }
 
-export function ButtonWithIcon({ text, className, href, ...props }: ButtonWithIconProps) {
+export function ButtonWithIcon({ text, className, href, textClassName, ...props }: ButtonWithIconProps) {
   const inner = (
     <div className={cn("rounded-full overflow-hidden h-12 group relative w-fit", className)}>
       <Button
@@ -18,7 +19,7 @@ export function ButtonWithIcon({ text, className, href, ...props }: ButtonWithIc
         )}
         {...props}
       >
-        <span className="relative z-10 transition-all duration-500">{text}</span>
+        <span className={cn("relative z-10 transition-all duration-500", textClassName)}>{text}</span>
         <div className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-ink text-cream rounded-full flex items-center justify-center transition-[right] duration-500 group-hover:right-[calc(100%-44px)]">
           <ArrowUpRight size={16} className="transition-transform duration-500 group-hover:rotate-45" />
         </div>

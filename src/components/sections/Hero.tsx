@@ -79,8 +79,8 @@ export const Hero = () => {
                 className="inline-block"
               >
                 <ButtonWithIcon 
-                  text="See selected work"
-                  className="bg-signal text-ink"
+                  text="See Our Works"
+                  className="bg-signal text-bold"
                 />
               </a>
               <ButtonWithIcon
