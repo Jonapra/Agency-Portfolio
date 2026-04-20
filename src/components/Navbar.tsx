@@ -39,8 +39,8 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
     };
   }, [menuOpen]);
 
-  // If we are at the top of the page (Hero section), we want light text because the hero is always dark.
-  const isOverDark = !isScrolled || menuOpen;
+  // Hero is only dark when theme is dark — in light mode hero has no gradient/dark bg.
+  const isOverDark = theme === "dark" && (!isScrolled || menuOpen);
 
   return (
     <>

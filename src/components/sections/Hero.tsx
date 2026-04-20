@@ -8,30 +8,17 @@ export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
 
   return (
-    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden text-cream">
+    <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden hero-section-text">
       {/* Ambient gradient field */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-ink">
-        {/* Mesh gradient — orange bottom-left, indigo top-right */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse 85% 70% at 0% 100%,  rgba(255,90,31,0.70)  0%, transparent 55%),
-              radial-gradient(ellipse 65% 60% at 100% 0%,  rgba(42,31,138,0.80)  0%, transparent 58%),
-              radial-gradient(ellipse 55% 45% at 25% 75%,  rgba(200,55,15,0.35)  0%, transparent 50%),
-              radial-gradient(ellipse 40% 35% at 80% 20%,  rgba(60,40,160,0.30)  0%, transparent 45%)
-            `,
-          }}
-        />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" style={{ backgroundColor: 'hsl(var(--background))' }}>
+        {/* Mesh gradient — adapts per theme */}
+        <div className="hero-mesh absolute inset-0" />
         {/* Soft drifting halos for depth */}
-        <div className="halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 760, height: 760, background: "#FF5A1F", left: -280, top: "42%", opacity: 0.32 }} />
-        <div className="halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 620, height: 620, background: "#2A1F8A", right: -200, top: "-5%", opacity: 0.48 }} />
-        {/* Edge-only vignette — keeps gradient visible, darkens corners */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 85% 80% at 50% 50%, transparent 45%, hsl(var(--ink) / 0.55) 100%)" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ink to-transparent" />
+        <div className="halo hero-halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 760, height: 760, background: "#FF5A1F", left: -280, top: "42%", opacity: 0.32 }} />
+        <div className="halo hero-halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 620, height: 620, background: "#5A0C4B", right: -200, top: "-5%", opacity: 0.52 }} />
+        {/* Edge-only vignette — keeps gradient visible, softens corners */}
+        <div className="hero-vignette absolute inset-0" />
+        <div className="hero-bottom-fade absolute bottom-0 left-0 right-0 h-40" />
       </div>
 
       <div className="mx-auto max-w-[1600px] relative">
@@ -106,8 +93,8 @@ export const Hero = () => {
             <div
               className="absolute inset-0 proj-img"
               style={{
-                background: `radial-gradient(1000px 400px at 30% 80%, rgba(255,90,31,.75), transparent 60%),
-                             radial-gradient(600px 400px at 80% 20%, rgba(42,31,138,.7), transparent 55%),
+                background: `radial-gradient(1000px 400px at 30% 80%, rgba(255,90,31,.80), transparent 60%),
+                             radial-gradient(600px 400px at 80% 20%, rgba(90,12,75,.75), transparent 55%),
                              linear-gradient(135deg,#141417,#0A0A0B)`,
               }}
             />
@@ -144,11 +131,11 @@ export const Hero = () => {
 
             <div className="grid grid-cols-3 gap-6">
               <Reveal delay={0.05} className="border border-white/10 rounded-lg p-5">
-                <div className="num font-display text-5xl">47</div>
-                <div className="h-eyebrow text-mute mt-2">Brands shipped</div>
+                <div className="num font-display text-5xl">10+</div>
+                <div className="h-eyebrow text-mute mt-2">Websites shipped</div>
               </Reveal>
               <Reveal delay={0.1} className="border border-white/10 rounded-lg p-5">
-                <div className="num font-display text-5xl">8<span className="text-signal italic-display">y</span></div>
+                <div className="num font-display text-5xl">4<span className="text-signal italic-display">y</span></div>
                 <div className="h-eyebrow text-mute mt-2">In practice</div>
               </Reveal>
               <Reveal delay={0.15} className="border border-white/10 rounded-lg p-5">
