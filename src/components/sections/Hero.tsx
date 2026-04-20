@@ -143,7 +143,6 @@ export const Hero = () => {
             <span className="inline-block w-10 h-px bg-current" />
             Scroll to wander
           </div>
-          <div className="h-eyebrow text-mute">01 / 12</div>
         </div>
       </div>
     </section>
