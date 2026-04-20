@@ -34,7 +34,7 @@ export const CTA = () => {
                 />
               </div>
             </Reveal>
-            <div className="mt-14 h-eyebrow text-mute">Currently booking · slots open</div>
+            <div className="mt-14 h-eyebrow text-mute">Currently     Available · slots open</div>
           </div>
         </div>
       </div>
