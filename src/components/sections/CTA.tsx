@@ -5,7 +5,7 @@ import { BRAND } from "@/constants/site";
 export const CTA = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
   return (
-    <section id="contact" className="relative px-6 md:px-10 py-28 md:py-40">
+    <section id="contact" className="relative px-6 md:px-10 py-12 md:py-20">
       <div className="mx-auto max-w-[1600px]">
         <div className="relative overflow-hidden rounded-2xl plate p-10 md:p-20 text-center">
           <div className="halo" style={{ width: 800, height: 800, background: "hsl(var(--signal))", left: "50%", top: "50%", transform: "translate(-50%, -50%)", opacity: 0.22 }} />
@@ -25,7 +25,7 @@ export const CTA = () => {
                 <a href="#" className="u-link text-base">Or book a 20‑min intro →</a>
               </div>
             </Reveal>
-            <div delay={0.24}><div className="mt-14 h-eyebrow text-mute">Currently booking ·  slots open</div></div>
+            <div className="mt-14 h-eyebrow text-mute">Currently booking · slots open</div>
           </div>
         </div>
       </div>
