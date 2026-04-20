@@ -4,7 +4,7 @@
       "command": "npx",
       "args": ["-y", "@context7/mcp"]
     },
-    "playwright": {
+    "_playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp"]
     }

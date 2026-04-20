@@ -1,0 +1,5 @@
+# Exclude Python tooling - not part of the React app
+claude-usage/
+
+# Exclude generated outputs
+graphify-out/
