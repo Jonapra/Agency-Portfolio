@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
+import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
@@ -80,14 +81,11 @@ export const Hero = () => {
                 See selected work
                 <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
               </a>
-              <a
-                ref={ctaRef2}
+              <ButtonWithIcon
+                text="Book a call"
                 href="#contact"
-                className="inline-flex items-center gap-2.5 rounded-full px-6 py-3 border border-current/30 text-sm font-medium hover:bg-current/5 transition-colors"
-              >
-                Book a call
-                <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
-              </a>
+                variant="outline"
+              />
             </div>
           </motion.div>
         </div>
