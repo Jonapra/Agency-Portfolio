@@ -86,7 +86,6 @@ export const Hero = () => {
               </a>
               <ButtonWithIcon
                 text="Book a call"
-                href="#contact"
                 variant="default"
                 className="bg-signal text-ink"
               />

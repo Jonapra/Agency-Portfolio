@@ -76,7 +76,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 <ButtonWithIcon 
                   text="Start a project" 
                   variant="default" 
-                  className="bg-signal text-ink h-10 ps-4 pe-10"
+                  className="bg-signal text-ink h-10"
                 />
               </a>
             </div>
@@ -180,7 +180,7 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
                   <ButtonWithIcon 
                     text="Start a project" 
                     variant="default" 
-                    className="bg-signal text-ink w-full justify-between h-14 px-6"
+                    className="bg-signal text-ink w-full justify-between"
                   />
                 </a>
             </motion.div>
