@@ -9,17 +9,8 @@ export const Hero = () => {
 
   return (
     <section id="top" className="relative min-h-screen px-6 md:px-10 pt-28 pb-16 overflow-hidden hero-section-text">
-      {/* Ambient gradient field */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" style={{ backgroundColor: 'hsl(var(--background))' }}>
-        {/* Mesh gradient — adapts per theme */}
-        <div className="hero-mesh absolute inset-0" />
-        {/* Soft drifting halos for depth */}
-        <div className="halo hero-halo animate-halo-drift-a motion-reduce:animate-none" style={{ width: 760, height: 760, background: "#FF5A1F", left: -280, top: "42%", opacity: 0.32 }} />
-        <div className="halo hero-halo animate-halo-drift-b motion-reduce:animate-none" style={{ width: 620, height: 620, background: "#5A0C4B", right: -200, top: "-5%", opacity: 0.52 }} />
-        {/* Edge-only vignette — keeps gradient visible, softens corners */}
-        <div className="hero-vignette absolute inset-0" />
-        <div className="hero-bottom-fade absolute bottom-0 left-0 right-0 h-40" />
-      </div>
+      {/* Solid background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
 
       <div className="mx-auto max-w-[1600px] relative">
         {/* Top meta row */}

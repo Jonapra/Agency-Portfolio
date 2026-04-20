@@ -174,26 +174,9 @@
   .border-signal { border-color: hsl(var(--signal)); }
 }
 
-/* Hero section text + ambient gradient — adapts per theme */
+/* Hero section text — adapts per theme */
 .hero-section-text { color: hsl(var(--cream)); }
 .light .hero-section-text { color: hsl(var(--ink)); }
-.hero-mesh {
-  background:
-    radial-gradient(ellipse 85% 70% at 0% 100%,  rgba(255,90,31,0.75)  0%, transparent 55%),
-    radial-gradient(ellipse 65% 60% at 100% 0%,  rgba(90,12,75,0.82)   0%, transparent 58%),
-    radial-gradient(ellipse 55% 45% at 25% 75%,  rgba(200,55,15,0.35)  0%, transparent 50%),
-    radial-gradient(ellipse 40% 35% at 80% 20%,  rgba(70,10,60,0.32)   0%, transparent 45%);
-}
-.light .hero-mesh { display: none; }
-.light .hero-halo { display: none; }
-.hero-vignette {
-  background: radial-gradient(ellipse 85% 80% at 50% 50%, transparent 45%, hsl(var(--ink) / 0.55) 100%);
-}
-.light .hero-vignette { display: none; }
-.hero-bottom-fade {
-  background: linear-gradient(to top, hsl(var(--ink)), transparent);
-}
-.light .hero-bottom-fade { display: none; }
 
 /* Marquee animation */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
