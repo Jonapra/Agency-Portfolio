@@ -76,15 +76,19 @@ export const Hero = () => {
               <a
                 ref={ctaRef}
                 href="#work"
-                className="inline-flex items-center gap-2.5 rounded-full px-6 py-3 bg-signal text-ink text-sm font-medium hover:bg-signal-2 transition-colors"
+                className="inline-block"
               >
-                See selected work
-                <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
+                <ButtonWithIcon 
+                  text="See selected work"
+                  variant="default"
+                  className="bg-signal text-ink hover:bg-signal-2"
+                />
               </a>
               <ButtonWithIcon
                 text="Book a call"
                 href="#contact"
-                variant="outline"
+                variant="default"
+                className="bg-signal text-ink hover:bg-signal-2"
               />
             </div>
           </motion.div>

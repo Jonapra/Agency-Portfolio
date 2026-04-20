@@ -19,15 +19,18 @@ export const CTA = () => {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a ref={ctaRef} href={`mailto:${BRAND.email}`} className="inline-flex items-center gap-3 rounded-full px-7 py-4 bg-signal text-ink text-base font-medium hover:bg-signal-2 transition">
-                  {BRAND.email}
-                  <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 12 L12 2 M5 2 H12 V9" stroke="currentColor" strokeWidth="1.6" fill="none" /></svg>
+                <a ref={ctaRef} href={`mailto:${BRAND.email}`} className="inline-block">
+                  <ButtonWithIcon 
+                    text={BRAND.email}
+                    variant="default"
+                    className="bg-signal text-ink hover:bg-signal-2 text-base h-11 md:h-14"
+                  />
                 </a>
                 <ButtonWithIcon
                   text="Book a 20‑min Call"
                   href="#"
-                  variant="outline"
-                  className="text-base h-14"
+                  variant="default"
+                  className="bg-signal text-ink hover:bg-signal-2 text-base h-14"
                 />
               </div>
             </Reveal>

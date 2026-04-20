@@ -2004,7 +2004,7 @@
       "label": "CTA()",
       "file_type": "code",
       "source_file": "src\\components\\sections\\CTA.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "cta_cta",
       "community": 26,
       "norm_label": "cta()"
@@ -6343,7 +6343,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src\\components\\sections\\CTA.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "src_components_sections_cta_tsx",
       "_tgt": "cta_cta",
