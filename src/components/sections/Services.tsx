@@ -16,7 +16,7 @@ export const Services = () => (
           <Reveal key={n} delay={i * 0.05}>
             <a href="#work" className="group grid md:grid-cols-12 gap-6 py-8 md:py-10 items-center">
               <div className="md:col-span-1 h-eyebrow text-mute">{n}</div>
-              <div className="md:col-span-4">
+              <div data-cursor="view" className="md:col-span-4 cursor-pointer">
                 <div className="font-display text-3xl md:text-5xl leading-none group-hover:text-signal transition-colors">{t}</div>
               </div>
               <div className="md:col-span-4 text-mute-2 max-w-md">{d}</div>
