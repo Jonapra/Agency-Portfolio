@@ -54,13 +54,20 @@ export const Process = () => {
         {/* Timeline */}
         <div ref={timelineRef} className="relative">
 
-          {/* Vertical line — desktop only, aligned to dot column (col 3 of 12) */}
+          {/* Vertical line — mobile: left rail at dot center; desktop: aligned to col 3 */}
+          {/* Mobile line */}
+          <div className="md:hidden pointer-events-none absolute top-4 bottom-4 left-[20px] w-[2px]" aria-hidden>
+            <div className="absolute inset-0 bg-foreground/15 rounded-full" />
+            <div
+              className="absolute top-0 w-[2px] bg-signal rounded-full shadow-[0_0_10px_hsl(var(--signal)/0.5)] transition-[height] duration-150 ease-out"
+              style={{ height: `${progress * 100}%` }}
+            />
+          </div>
+          {/* Desktop line */}
           <div className="hidden md:block pointer-events-none absolute inset-y-0 left-0 right-0">
             <div className="relative h-full grid grid-cols-12 gap-x-8">
               <div className="col-start-3 flex justify-center relative">
-                {/* Base line */}
                 <div className="absolute top-6 bottom-6 w-[2px] bg-foreground/15 rounded-full" />
-                {/* Progress fill */}
                 <div
                   className="absolute top-6 w-[2px] bg-signal rounded-full shadow-[0_0_12px_hsl(var(--signal)/0.6)] transition-[height] duration-150 ease-out"
                   style={{ height: `calc(${progress * 100}% - 48px * ${progress})` }}
@@ -124,14 +131,16 @@ const StepRow = ({ index, step, label, title, desc, isLast }: StepRowProps) => {
     <Reveal delay={index * 0.08}>
       <div
         ref={rowRef}
-        className="grid grid-cols-[40px_1fr] md:grid-cols-12 gap-x-5 md:gap-x-8 items-center group"
+        className="grid grid-cols-[40px_1fr] md:grid-cols-12 gap-x-7 md:gap-x-8 items-center group"
       >
-        {/* Left label — desktop only */}
-        <div className="hidden md:block md:col-span-2 text-right pr-2">
-          <div className="font-display italic-display text-2xl md:text-[28px] lg:text-[32px] text-foreground/85 leading-tight whitespace-nowrap">
+        {/* Left label — lg+ only (too narrow on md) */}
+        <div className="hidden lg:block md:col-span-2 text-right pr-2 overflow-hidden">
+          <div className="font-display italic-display text-xl lg:text-[26px] xl:text-[30px] text-foreground/85 leading-tight">
             {label}
           </div>
         </div>
+        {/* Spacer col on md where label is hidden */}
+        <div className="hidden md:block lg:hidden md:col-span-2" aria-hidden />
 
         {/* Dot column */}
         <div className="md:col-span-1 flex justify-center relative">
@@ -177,8 +186,8 @@ const StepRow = ({ index, step, label, title, desc, isLast }: StepRowProps) => {
           </div>
         </div>
 
-        {/* Mobile image */}
-        <div className="md:hidden col-start-2 mt-5 max-w-[180px]">
+        {/* Mobile image — full width in content col */}
+        <div className="md:hidden col-start-2 mt-5 w-full">
           <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center">
             <span className="h-eyebrow text-mute/50 tracking-[0.2em]">0{index + 1}</span>
           </div>
