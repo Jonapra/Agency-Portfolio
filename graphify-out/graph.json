@@ -276,16 +276,16 @@
     {
       "label": "Marquee.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Marquee.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Marquee.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_marquee_tsx",
+      "id": "d_agency_portfolio_src_components_sections_marquee_tsx",
       "community": 16,
       "norm_label": "marquee.tsx"
     },
     {
       "label": "Marquee()",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Marquee.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Marquee.tsx",
       "source_location": "L2",
       "id": "marquee_marquee",
       "community": 16,
@@ -322,7 +322,7 @@
       "label": "check()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L113",
+      "source_location": "L111",
       "id": "process_check",
       "community": 7,
       "norm_label": "check()"
@@ -1200,12 +1200,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\sections\\Marquee.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Marquee.tsx",
       "source_location": "L2",
       "weight": 1.0,
-      "_src": "src_components_sections_marquee_tsx",
+      "_src": "d_agency_portfolio_src_components_sections_marquee_tsx",
       "_tgt": "marquee_marquee",
-      "source": "src_components_sections_marquee_tsx",
+      "source": "d_agency_portfolio_src_components_sections_marquee_tsx",
       "target": "marquee_marquee",
       "confidence_score": 1.0
     },
@@ -1225,7 +1225,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L113",
+      "source_location": "L111",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_process_tsx",
       "_tgt": "process_check",
