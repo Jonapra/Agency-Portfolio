@@ -1,11 +1,11 @@
-# Graph Report - D:\Agency-Portfolio  (2026-04-20)
+# Graph Report - D:\Agency-Portfolio  (2026-04-21)
 
 ## Corpus Check
-- 43 files · ~14,403 words
+- 43 files · ~14,981 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 99 nodes · 57 edges · 46 communities detected
+- 100 nodes · 58 edges · 46 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -104,15 +104,15 @@ Nodes (0):
 
 ### Community 7 - "Community 7"
 Cohesion: 0.67
-Nodes (3): @vitejs/plugin-react (Oxc), @vitejs/plugin-react-swc (SWC), Vite + React Template
+Nodes (0): 
 
 ### Community 8 - "Community 8"
 Cohesion: 0.67
-Nodes (3): Accessibility Rules (contrast 4.5:1, focus states), Anti-Patterns (MASTER), Pre-Delivery Checklist (MASTER)
+Nodes (3): @vitejs/plugin-react (Oxc), @vitejs/plugin-react-swc (SWC), Vite + React Template
 
 ### Community 9 - "Community 9"
-Cohesion: 1.0
-Nodes (0): 
+Cohesion: 0.67
+Nodes (3): Accessibility Rules (contrast 4.5:1, focus states), Anti-Patterns (MASTER), Pre-Delivery Checklist (MASTER)
 
 ### Community 10 - "Community 10"
 Cohesion: 1.0
@@ -261,21 +261,19 @@ Nodes (1): Design System MASTER
 ## Knowledge Gaps
 - **17 isolated node(s):** `@vitejs/plugin-react (Oxc)`, `@vitejs/plugin-react-swc (SWC)`, `Secondary Color #F472B6`, `Text Color #831843`, `Archivo Heading Font` (+12 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 9`** (2 nodes): `Footer()`, `Footer.tsx`
+- **Thin community `Community 10`** (2 nodes): `Footer()`, `Footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (2 nodes): `Layout()`, `Layout.tsx`
+- **Thin community `Community 11`** (2 nodes): `Layout()`, `Layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (2 nodes): `Logo()`, `Logo.tsx`
+- **Thin community `Community 12`** (2 nodes): `Logo()`, `Logo.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (2 nodes): `Reveal()`, `Reveal.tsx`
+- **Thin community `Community 13`** (2 nodes): `Reveal()`, `Reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (2 nodes): `CTA()`, `CTA.tsx`
+- **Thin community `Community 14`** (2 nodes): `CTA()`, `CTA.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (2 nodes): `Hero()`, `Hero.tsx`
+- **Thin community `Community 15`** (2 nodes): `Hero()`, `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 15`** (2 nodes): `Marquee()`, `Marquee.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (2 nodes): `Process.tsx`, `Process()`
+- **Thin community `Community 16`** (2 nodes): `Marquee()`, `Marquee.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 17`** (2 nodes): `ButtonWithIcon()`, `button-with-icon.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

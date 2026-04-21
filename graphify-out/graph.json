@@ -90,7 +90,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L1",
       "id": "src_components_footer_tsx",
-      "community": 9,
+      "community": 10,
       "norm_label": "footer.tsx"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "src\\components\\Footer.tsx",
       "source_location": "L4",
       "id": "footer_footer",
-      "community": 9,
+      "community": 10,
       "norm_label": "footer()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L1",
       "id": "src_components_layout_tsx",
-      "community": 10,
+      "community": 11,
       "norm_label": "layout.tsx"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "src\\components\\Layout.tsx",
       "source_location": "L10",
       "id": "layout_layout",
-      "community": 10,
+      "community": 11,
       "norm_label": "layout()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L1",
       "id": "src_components_logo_tsx",
-      "community": 11,
+      "community": 12,
       "norm_label": "logo.tsx"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "src\\components\\Logo.tsx",
       "source_location": "L3",
       "id": "logo_logo",
-      "community": 11,
+      "community": 12,
       "norm_label": "logo()"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "src\\components\\Reveal.tsx",
       "source_location": "L1",
       "id": "src_components_reveal_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "reveal.tsx"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "src\\components\\Reveal.tsx",
       "source_location": "L12",
       "id": "reveal_reveal",
-      "community": 12,
+      "community": 13,
       "norm_label": "reveal()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "src\\components\\sections\\CTA.tsx",
       "source_location": "L1",
       "id": "src_components_sections_cta_tsx",
-      "community": 13,
+      "community": 14,
       "norm_label": "cta.tsx"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "src\\components\\sections\\CTA.tsx",
       "source_location": "L6",
       "id": "cta_cta",
-      "community": 13,
+      "community": 14,
       "norm_label": "cta()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "src\\components\\sections\\Hero.tsx",
       "source_location": "L1",
       "id": "src_components_sections_hero_tsx",
-      "community": 14,
+      "community": 15,
       "norm_label": "hero.tsx"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "src\\components\\sections\\Hero.tsx",
       "source_location": "L8",
       "id": "hero_hero",
-      "community": 14,
+      "community": 15,
       "norm_label": "hero()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "src\\components\\sections\\Marquee.tsx",
       "source_location": "L1",
       "id": "src_components_sections_marquee_tsx",
-      "community": 15,
+      "community": 16,
       "norm_label": "marquee.tsx"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "src\\components\\sections\\Marquee.tsx",
       "source_location": "L2",
       "id": "marquee_marquee",
-      "community": 15,
+      "community": 16,
       "norm_label": "marquee()"
     },
     {
@@ -306,17 +306,26 @@
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_components_sections_process_tsx",
-      "community": 16,
+      "community": 7,
       "norm_label": "process.tsx"
     },
     {
-      "label": "Process()",
+      "label": "handleScroll()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L4",
-      "id": "process_process",
-      "community": 16,
-      "norm_label": "process()"
+      "source_location": "L11",
+      "id": "process_handlescroll",
+      "community": 7,
+      "norm_label": "handlescroll()"
+    },
+    {
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
+      "source_location": "L106",
+      "id": "process_check",
+      "community": 7,
+      "norm_label": "check()"
     },
     {
       "label": "Services.tsx",
@@ -483,9 +492,9 @@
     {
       "label": "site.ts",
       "file_type": "code",
-      "source_file": "src\\constants\\site.ts",
+      "source_file": "D:\\Agency-Portfolio\\src\\constants\\site.ts",
       "source_location": "L1",
-      "id": "src_constants_site_ts",
+      "id": "d_agency_portfolio_src_constants_site_ts",
       "community": 43,
       "norm_label": "site.ts"
     },
@@ -651,7 +660,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "vite + react template",
       "id": "README_vitereact"
     },
@@ -664,7 +673,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "@vitejs/plugin-react (oxc)",
       "id": "README_pluginreact"
     },
@@ -677,7 +686,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "@vitejs/plugin-react-swc (swc)",
       "id": "README_pluginreactswc"
     },
@@ -937,7 +946,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "anti-patterns (master)",
       "id": "MASTER_antipatterns"
     },
@@ -950,7 +959,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "pre-delivery checklist (master)",
       "id": "MASTER_predelivery"
     },
@@ -963,7 +972,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "accessibility rules (contrast 4.5:1, focus states)",
       "id": "MASTER_a11y"
     },
@@ -1204,12 +1213,24 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L4",
+      "source_location": "L11",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_process_tsx",
-      "_tgt": "process_process",
+      "_tgt": "process_handlescroll",
       "source": "d_agency_portfolio_src_components_sections_process_tsx",
-      "target": "process_process",
+      "target": "process_handlescroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_components_sections_process_tsx",
+      "_tgt": "process_check",
+      "source": "d_agency_portfolio_src_components_sections_process_tsx",
+      "target": "process_check",
       "confidence_score": 1.0
     },
     {
