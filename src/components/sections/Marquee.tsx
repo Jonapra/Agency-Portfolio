@@ -11,7 +11,7 @@ export const Marquee = () => {
   return (
     <section className="relative py-14 md:py-20 overflow-hidden border-y border-foreground/5">
       <div className="flex whitespace-nowrap marquee-track" style={{ width: "max-content" }}>
-        <Group /><Group />
+        <Group /><Group /><Group /><Group />
       </div>
     </section>
   );

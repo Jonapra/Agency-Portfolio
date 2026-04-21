@@ -322,7 +322,7 @@
       "label": "check()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L106",
+      "source_location": "L113",
       "id": "process_check",
       "community": 7,
       "norm_label": "check()"
@@ -1225,7 +1225,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L106",
+      "source_location": "L113",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_process_tsx",
       "_tgt": "process_check",

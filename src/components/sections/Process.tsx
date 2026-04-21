@@ -85,7 +85,6 @@ export const Process = () => {
                 label={label}
                 title={title}
                 desc={desc}
-                isLast={i === PROCESS_STEPS.length - 1}
               />
             ))}
           </div>
@@ -102,10 +101,9 @@ interface StepRowProps {
   label: string;
   title: string;
   desc: string;
-  isLast: boolean;
 }
 
-const StepRow = ({ index, step, label, title, desc, isLast }: StepRowProps) => {
+const StepRow = ({ index, step, label, title, desc }: StepRowProps) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [reached, setReached] = useState(false);
 
@@ -125,7 +123,7 @@ const StepRow = ({ index, step, label, title, desc, isLast }: StepRowProps) => {
     };
   }, []);
 
-  const dotActive = !isLast && reached;
+  const dotActive = reached;
 
   return (
     <Reveal delay={index * 0.08}>
