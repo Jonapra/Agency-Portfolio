@@ -170,8 +170,8 @@ const StepRow = ({ index, step, label, title, desc }: StepRowProps) => {
             {desc}
           </p>
 
-          {/* Mobile: phase label */}
-          <div className="md:hidden mt-4 font-display italic-display text-lg text-foreground/60">
+          {/* Mobile + iPad: phase label below desc (hidden on lg+ where left col shows it) */}
+          <div className="lg:hidden mt-4 font-display italic-display text-lg text-foreground/60">
             {label}
           </div>
         </div>
