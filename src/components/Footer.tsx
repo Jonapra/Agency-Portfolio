@@ -22,7 +22,7 @@ export const Footer = () => (
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="u-link">About</a></li>
             <li><a href="/#work" className="u-link">Projects</a></li>
-            <li><a href="/#journal" className="u-link">Blogs</a></li>
+            <li><a href="/#process" className="u-link">Process</a></li>
             <li><a href="#" className="u-link">Careers</a></li>
           </ul>
         </Reveal>
