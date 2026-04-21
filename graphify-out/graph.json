@@ -87,16 +87,16 @@
     {
       "label": "Footer.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\Footer.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\Footer.tsx",
       "source_location": "L1",
-      "id": "src_components_footer_tsx",
+      "id": "d_agency_portfolio_src_components_footer_tsx",
       "community": 10,
       "norm_label": "footer.tsx"
     },
     {
       "label": "Footer()",
       "file_type": "code",
-      "source_file": "src\\components\\Footer.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\Footer.tsx",
       "source_location": "L4",
       "id": "footer_footer",
       "community": 10,
@@ -1098,12 +1098,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\Footer.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\Footer.tsx",
       "source_location": "L4",
       "weight": 1.0,
-      "_src": "src_components_footer_tsx",
+      "_src": "d_agency_portfolio_src_components_footer_tsx",
       "_tgt": "footer_footer",
-      "source": "src_components_footer_tsx",
+      "source": "d_agency_portfolio_src_components_footer_tsx",
       "target": "footer_footer",
       "confidence_score": 1.0
     },

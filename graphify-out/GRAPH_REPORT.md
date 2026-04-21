@@ -266,7 +266,7 @@ Nodes (1): Design System MASTER
 ## Knowledge Gaps
 - **17 isolated node(s):** `@vitejs/plugin-react (Oxc)`, `@vitejs/plugin-react-swc (SWC)`, `Secondary Color #F472B6`, `Text Color #831843`, `Archivo Heading Font` (+12 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 10`** (2 nodes): `Footer()`, `Footer.tsx`
+- **Thin community `Community 10`** (2 nodes): `Footer.tsx`, `Footer()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 11`** (2 nodes): `Layout()`, `Layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
