@@ -30,7 +30,7 @@ export const Process = () => {
 
   return (
     <section id="process" className="relative px-6 md:px-10 py-16 md:py-28">
-      <div className="mx-auto max-w-[1600px]">
+      <div className="mx-auto max-w-4xl">
 
         {/* Header */}
         <div className="mb-20 md:mb-28 max-w-4xl mx-auto text-center">
@@ -171,14 +171,14 @@ const StepRow = ({ index, step, label, title, desc, isLast }: StepRowProps) => {
 
         {/* Image — right side */}
         <div className="hidden md:flex md:col-span-5 justify-end">
-          <div className="w-full max-w-[420px] lg:max-w-[480px] aspect-[16/10] rounded-2xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.55),0_6px_20px_-10px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_26px_60px_-20px_rgba(0,0,0,0.7)] flex items-center justify-center relative">
+          <div className="w-full max-w-[220px] lg:max-w-[260px] aspect-[16/10] rounded-2xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.55),0_6px_20px_-10px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_26px_60px_-20px_rgba(0,0,0,0.7)] flex items-center justify-center relative">
             <span className="h-eyebrow text-mute/50 tracking-[0.2em]">0{index + 1}</span>
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
 
         {/* Mobile image */}
-        <div className="md:hidden col-start-2 mt-5 max-w-[280px]">
+        <div className="md:hidden col-start-2 mt-5 max-w-[180px]">
           <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center">
             <span className="h-eyebrow text-mute/50 tracking-[0.2em]">0{index + 1}</span>
           </div>
