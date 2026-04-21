@@ -44,10 +44,9 @@ export const SERVICES = [
 ] as const;
 
 export const PROCESS_STEPS = [
-  ["Week 1", "Immersion", "We read every deck, interview every stakeholder, walk every floor. You'll be surprised what we find."],
-  ["Week 2–3", "Direction", "Three distinct territories, each defensible, each uncomfortable in the right way."],
-  ["Week 4–6", "Make", "We design the system and everything it touches — in parallel, in full fidelity."],
-  ["Week 7+", "Ship & hold", "We stay on hand for launch and the six weeks after. That's where brands are won or lost."],
+  ["Step 1", "Discover", "Get The Strategy Right", "We start by learning exactly what you want to build and who it is for. This makes sure we don't waste time designing things your customers won't actually use."],
+  ["Step 2", "Design & Build", "Build Without The Back-And-Forth", "Our designers and developers work as one team from the start. This stops the usual \u201chandoff\u201d mess and makes sure the final product looks and works exactly like the plan."],
+  ["Step 3", "Launch & Scale", "Keep The Product Growing", "We don't just ship it and leave. We stay on board to fix bugs, add new features, and improve the design based on how people are actually using the app."],
 ] as const;
 
 export interface Plan {

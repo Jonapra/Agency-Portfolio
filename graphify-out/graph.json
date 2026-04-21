@@ -303,16 +303,16 @@
     {
       "label": "Process.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Process.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_process_tsx",
+      "id": "d_agency_portfolio_src_components_sections_process_tsx",
       "community": 16,
       "norm_label": "process.tsx"
     },
     {
       "label": "Process()",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Process.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
       "source_location": "L4",
       "id": "process_process",
       "community": 16,
@@ -1203,12 +1203,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\sections\\Process.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
       "source_location": "L4",
       "weight": 1.0,
-      "_src": "src_components_sections_process_tsx",
+      "_src": "d_agency_portfolio_src_components_sections_process_tsx",
       "_tgt": "process_process",
-      "source": "src_components_sections_process_tsx",
+      "source": "d_agency_portfolio_src_components_sections_process_tsx",
       "target": "process_process",
       "confidence_score": 1.0
     },
