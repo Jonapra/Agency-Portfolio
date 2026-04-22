@@ -1,11 +1,11 @@
 # Graph Report - D:\Agency-Portfolio  (2026-04-22)
 
 ## Corpus Check
-- 45 files · ~16,428 words
+- 45 files · ~16,397 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 104 nodes · 61 edges · 47 communities detected
+- 105 nodes · 62 edges · 47 communities detected
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -275,39 +275,39 @@ Nodes (1): Design System MASTER
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 15`** (2 nodes): `Reveal()`, `Reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (2 nodes): `CTA()`, `CTA.tsx`
+- **Thin community `Community 16`** (2 nodes): `StepIllustration.tsx`, `DiscoverSVG()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (2 nodes): `ServiceIcon.tsx`, `ServiceIcon()`
+- **Thin community `Community 17`** (2 nodes): `CTA()`, `CTA.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (2 nodes): `ButtonWithIcon()`, `button-with-icon.tsx`
+- **Thin community `Community 18`** (2 nodes): `ServiceIcon.tsx`, `ServiceIcon()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
+- **Thin community `Community 19`** (2 nodes): `ButtonWithIcon()`, `button-with-icon.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (2 nodes): `MailButton()`, `mail-button.tsx`
+- **Thin community `Community 20`** (2 nodes): `GooeyText()`, `gooey-text-morphing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (2 nodes): `Toaster()`, `sonner.tsx`
+- **Thin community `Community 21`** (2 nodes): `MailButton()`, `mail-button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (2 nodes): `toaster.tsx`, `Toaster()`
+- **Thin community `Community 22`** (2 nodes): `Toaster()`, `sonner.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
+- **Thin community `Community 23`** (2 nodes): `toaster.tsx`, `Toaster()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (2 nodes): `utils.ts`, `cn()`
+- **Thin community `Community 24`** (2 nodes): `useCustomCursor.ts`, `useCustomCursor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 25`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `postcss.config.js`
+- **Thin community `Community 26`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `tailwind.config.ts`
+- **Thin community `Community 27`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 28`** (1 nodes): `tailwind.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `vite-env.d.ts`
+- **Thin community `Community 29`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `Cursor.tsx`
+- **Thin community `Community 30`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `NavLink.tsx`
+- **Thin community `Community 31`** (1 nodes): `Cursor.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `StepIllustration.tsx`
+- **Thin community `Community 32`** (1 nodes): `NavLink.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 33`** (1 nodes): `FAQ.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

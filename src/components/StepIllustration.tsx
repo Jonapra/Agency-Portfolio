@@ -7,52 +7,49 @@ const FG       = "hsl(var(--foreground))";
 
 /* =========================================================
    STEP 1 — DISCOVER / Strategy
+   Centered strategy map: signal hub + 5 connected nodes.
 ========================================================= */
 const DiscoverSVG = () => (
   <svg viewBox="0 0 400 260" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
-      <radialGradient id="d-bg" cx="50%" cy="50%" r="60%">
-        <stop offset="0%"   stopColor="#FF5A1F" stopOpacity="0.22" />
+      <radialGradient id="d-bg" cx="50%" cy="50%" r="55%">
+        <stop offset="0%"   stopColor="#FF5A1F" stopOpacity="0.2" />
         <stop offset="100%" stopColor="#FF5A1F" stopOpacity="0" />
       </radialGradient>
-      <linearGradient id="d-stroke" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%"   stopColor="#FF5A1F" />
-        <stop offset="100%" stopColor="#ff9d7a" />
-      </linearGradient>
     </defs>
 
-    <circle cx="200" cy="130" r="110" fill="url(#d-bg)" className="anim-pulse-glow" />
+    {/* Central glow */}
+    <circle cx="200" cy="130" r="100" fill="url(#d-bg)" className="anim-pulse-glow" />
 
-    <g stroke="url(#d-stroke)" fill="none" strokeWidth="2" opacity="0.85">
-      <circle cx="200" cy="130" r="80" />
-      <circle cx="200" cy="130" r="55" />
-      <circle cx="200" cy="130" r="30" />
-      <circle cx="200" cy="130" r="8" fill="#FF5A1F" stroke="none" />
-    </g>
+    {/* Solid guide ring */}
+    <circle cx="200" cy="130" r="86" fill="none" stroke="#FF5A1F" strokeOpacity="0.1" strokeWidth="1" />
 
+    {/* Rotating dashed orbit */}
     <g className="anim-rotate-slow" style={{ transformOrigin: "200px 130px" }}>
-      <circle cx="200" cy="130" r="95" fill="none"
-        stroke="#FF5A1F" strokeOpacity="0.55" strokeWidth="1.5" strokeDasharray="4 8" />
+      <circle cx="200" cy="130" r="86" fill="none"
+        stroke="#FF5A1F" strokeOpacity="0.4" strokeWidth="1.2" strokeDasharray="3 7" />
     </g>
 
-    <g className="anim-rotate-slow" style={{ transformOrigin: "200px 130px" }}>
-      <circle cx="295" cy="130" r="5" fill="#ff9d7a" />
-      <circle cx="105" cy="130" r="4" fill="#FF5A1F" />
-      <circle cx="200" cy="35"  r="4" fill="#ffcfbe" />
+    {/* Dashed spokes from center to each node — purely signal orange, no white */}
+    <g stroke="#FF5A1F" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="3 5" fill="none">
+      <line x1="200" y1="130" x2="200" y2="48" />
+      <line x1="200" y1="130" x2="276" y2="106" />
+      <line x1="200" y1="130" x2="247" y2="193" />
+      <line x1="200" y1="130" x2="153" y2="193" />
+      <line x1="200" y1="130" x2="124" y2="106" />
     </g>
 
-    <g className="anim-float-mid">
-      {/* magnifier lens */}
-      <circle cx="240" cy="100" r="34"
-        fill="#FF5A1F" fillOpacity="0.07"
-        stroke="url(#d-stroke)" strokeWidth="3" />
-      <line x1="265" y1="125" x2="295" y2="155"
-        stroke="url(#d-stroke)" strokeWidth="5" strokeLinecap="round" />
-      {/* lens highlight — flips with theme */}
-      <path d="M220 90 Q230 82 240 90"
-        style={{ stroke: FG }} strokeOpacity="0.35" strokeWidth="2"
-        fill="none" strokeLinecap="round" />
-    </g>
+    {/* Five satellite nodes (pentagon, r=86 from center) */}
+    <circle cx="200" cy="44"  r="7" fill="#FF5A1F"  className="anim-pulse-glow"  style={{ animationDelay: "0s" }} />
+    <circle cx="276" cy="106" r="6" fill="#ff9d7a"  className="anim-float-slow"  style={{ animationDelay: "0.5s" }} />
+    <circle cx="247" cy="193" r="6" fill="#FF5A1F"  className="anim-pulse-glow"  style={{ animationDelay: "1.1s" }} />
+    <circle cx="153" cy="193" r="6" fill="#ff9d7a"  className="anim-float-mid"   style={{ animationDelay: "0.3s" }} />
+    <circle cx="124" cy="106" r="7" fill="#FF5A1F"  className="anim-float-slow"  style={{ animationDelay: "0.8s" }} />
+
+    {/* Center hub */}
+    <circle cx="200" cy="130" r="18" fill="#FF5A1F" fillOpacity="0.12" />
+    <circle cx="200" cy="130" r="9"  fill="#FF5A1F" className="anim-pulse-glow" />
+    <circle cx="200" cy="130" r="3.5" fill="#ffcfbe" />
   </svg>
 );
 
