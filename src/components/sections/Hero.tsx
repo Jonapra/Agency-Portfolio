@@ -19,14 +19,14 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-[90vh] lg:min-h-screen px-6 md:px-10 pt-28 md:pt-32 pb-10 overflow-hidden hero-section-text flex flex-col"
+      className="relative min-h-[100svh] md:min-h-[90vh] lg:min-h-screen lg:max-h-[900px] xl:max-h-[960px] 2xl:max-h-[1080px] px-6 md:px-10 pt-24 md:pt-28 lg:pt-32 2xl:pt-36 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
 
       <div className="mx-auto max-w-[1600px] relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
         <motion.div 
-          className="flex items-center justify-between mb-10 md:mb-12 lg:mb-14"
+          className="flex items-center justify-between mb-8 md:mb-10 lg:mb-12 2xl:mb-14"
           {...fadeIn}
         >
           <div className="flex items-center gap-3">
@@ -41,7 +41,7 @@ export const Hero = () => {
 
         {/* Headline — synchronized timing */}
         <h1
-          className="font-display mb-8 flex flex-col items-start text-[40px] md:text-[92px] lg:text-[clamp(40px,8vw,132px)]"
+          className="font-display mb-6 md:mb-8 2xl:mb-10 flex flex-col items-start text-[40px] md:text-[92px] lg:text-[clamp(40px,8vw,132px)] 2xl:text-[160px]"
           style={{
             lineHeight: 0.95,
             letterSpacing: "-0.035em",
@@ -99,13 +99,13 @@ export const Hero = () => {
         </div>
 
         {/* Bottom row: inline social proof */}
-        <div className="mt-auto pt-12 md:pt-14 lg:pt-20">
+        <div className="mt-auto pt-10 md:pt-12 lg:pt-16 2xl:pt-20">
           <motion.div 
-            className="border-t border-current/15 pt-6 grid md:grid-cols-12 gap-6 items-end"
+            className="border-t border-current/15 pt-5 md:pt-6 lg:pt-8 2xl:pt-6 grid md:grid-cols-12 gap-6 items-end"
             {...fadeIn}
             transition={{ ...fadeIn.transition, delay: 0.4 }}
           >
-            <div className="md:col-span-6 flex items-end gap-8 md:gap-10 lg:gap-12">
+            <div className="md:col-span-6 flex items-end gap-6 md:gap-8 lg:gap-10 2xl:gap-12">
               <div>
                 <div className="num font-display text-3xl md:text-4xl leading-none">10<span className="text-signal font-bold ">+</span></div>
                 <div className="h-eyebrow text-mute mt-2">Websites shipped</div>
