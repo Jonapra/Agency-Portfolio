@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { PROCESS_STEPS } from "@/constants/site";
+import StepIllustration from "../StepIllustration";
 
 export const Process = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -80,6 +81,7 @@ export const Process = () => {
             {PROCESS_STEPS.map(([step, label, title, desc], i) => (
               <StepRow
                 key={step}
+                id={i + 1}
                 index={i}
                 step={step}
                 label={label}
@@ -96,6 +98,7 @@ export const Process = () => {
 };
 
 interface StepRowProps {
+  id: number;
   index: number;
   step: string;
   label: string;
@@ -103,7 +106,7 @@ interface StepRowProps {
   desc: string;
 }
 
-const StepRow = ({ index, step, label, title, desc }: StepRowProps) => {
+const StepRow = ({ id, index, step, label, title, desc }: StepRowProps) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [reached, setReached] = useState(false);
 
@@ -176,18 +179,18 @@ const StepRow = ({ index, step, label, title, desc }: StepRowProps) => {
           </div>
         </div>
 
-        {/* Image — right side */}
+        {/* Illustration — right side */}
         <div className="hidden md:flex md:col-span-5 justify-end">
-          <div className="w-full max-w-[220px] lg:max-w-[260px] aspect-[16/10] rounded-2xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.55),0_6px_20px_-10px_rgba(0,0,0,0.35)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_26px_60px_-20px_rgba(0,0,0,0.7)] flex items-center justify-center relative">
-            <span className="h-eyebrow text-mute/50 tracking-[0.2em]">0{index + 1}</span>
+          <div className="w-full max-w-[220px] lg:max-w-[260px] aspect-[16/10] rounded-2xl overflow-hidden border border-foreground/[0.12] bg-gradient-to-br from-foreground/[0.05] via-signal/[0.06] to-foreground/[0.03] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.6),0_6px_20px_-10px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_26px_60px_-20px_rgba(0,0,0,0.75)] flex items-center justify-center relative p-2">
+            <StepIllustration id={id} />
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
 
-        {/* Mobile image — full width in content col */}
+        {/* Mobile illustration — full width in content col */}
         <div className="md:hidden col-start-2 mt-5 w-full">
-          <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-foreground/10 bg-gradient-to-br from-foreground/[0.06] via-signal/[0.08] to-foreground/[0.03] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center">
-            <span className="h-eyebrow text-mute/50 tracking-[0.2em]">0{index + 1}</span>
+          <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-foreground/[0.12] bg-gradient-to-br from-foreground/[0.05] via-signal/[0.06] to-foreground/[0.03] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center p-2">
+            <StepIllustration id={id} />
           </div>
         </div>
 
