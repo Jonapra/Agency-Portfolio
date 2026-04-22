@@ -3,7 +3,8 @@
     "allow": [
       "mcp___playwright__browser_take_screenshot",
       "mcp___playwright__browser_evaluate",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "mcp__playwright__browser_evaluate"
     ]
   }
 }
