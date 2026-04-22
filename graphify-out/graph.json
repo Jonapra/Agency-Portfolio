@@ -220,6 +220,15 @@
       "norm_label": "splitline()"
     },
     {
+      "label": "StepIllustration.tsx",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\StepIllustration.tsx",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_components_stepillustration_tsx",
+      "community": 32,
+      "norm_label": "stepillustration.tsx"
+    },
+    {
       "label": "CTA.tsx",
       "file_type": "code",
       "source_file": "src\\components\\sections\\CTA.tsx",
@@ -243,7 +252,7 @@
       "source_file": "src\\components\\sections\\FAQ.tsx",
       "source_location": "L1",
       "id": "src_components_sections_faq_tsx",
-      "community": 32,
+      "community": 33,
       "norm_label": "faq.tsx"
     },
     {
@@ -270,7 +279,7 @@
       "source_file": "src\\components\\sections\\Journal.tsx",
       "source_location": "L1",
       "id": "src_components_sections_journal_tsx",
-      "community": 33,
+      "community": 34,
       "norm_label": "journal.tsx"
     },
     {
@@ -306,7 +315,7 @@
       "source_file": "src\\components\\sections\\Pricing.tsx",
       "source_location": "L1",
       "id": "src_components_sections_pricing_tsx",
-      "community": 34,
+      "community": 35,
       "norm_label": "pricing.tsx"
     },
     {
@@ -322,7 +331,7 @@
       "label": "handleScroll()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "id": "process_handlescroll",
       "community": 9,
       "norm_label": "handlescroll()"
@@ -331,7 +340,7 @@
       "label": "check()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L111",
+      "source_location": "L114",
       "id": "process_check",
       "community": 9,
       "norm_label": "check()"
@@ -360,7 +369,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Services.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_components_sections_services_tsx",
-      "community": 35,
+      "community": 36,
       "norm_label": "services.tsx"
     },
     {
@@ -369,7 +378,7 @@
       "source_file": "src\\components\\sections\\Testimonials.tsx",
       "source_location": "L1",
       "id": "src_components_sections_testimonials_tsx",
-      "community": 36,
+      "community": 37,
       "norm_label": "testimonials.tsx"
     },
     {
@@ -378,7 +387,7 @@
       "source_file": "src\\components\\sections\\Work.tsx",
       "source_location": "L1",
       "id": "src_components_sections_work_tsx",
-      "community": 37,
+      "community": 38,
       "norm_label": "work.tsx"
     },
     {
@@ -387,7 +396,7 @@
       "source_file": "src\\components\\ui\\book-a-call-button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_book_a_call_button_tsx",
-      "community": 38,
+      "community": 39,
       "norm_label": "book-a-call-button.tsx"
     },
     {
@@ -414,7 +423,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_button_tsx",
-      "community": 39,
+      "community": 40,
       "norm_label": "button.tsx"
     },
     {
@@ -477,7 +486,7 @@
       "source_file": "src\\components\\ui\\toast.tsx",
       "source_location": "L1",
       "id": "src_components_ui_toast_tsx",
-      "community": 40,
+      "community": 41,
       "norm_label": "toast.tsx"
     },
     {
@@ -504,7 +513,7 @@
       "source_file": "src\\components\\ui\\tooltip.tsx",
       "source_location": "L1",
       "id": "src_components_ui_tooltip_tsx",
-      "community": 41,
+      "community": 42,
       "norm_label": "tooltip.tsx"
     },
     {
@@ -513,7 +522,7 @@
       "source_file": "src\\components\\ui\\use-toast.ts",
       "source_location": "L1",
       "id": "src_components_ui_use_toast_ts",
-      "community": 42,
+      "community": 43,
       "norm_label": "use-toast.ts"
     },
     {
@@ -522,7 +531,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\constants\\site.ts",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_constants_site_ts",
-      "community": 43,
+      "community": 44,
       "norm_label": "site.ts"
     },
     {
@@ -843,7 +852,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 44,
+      "community": 45,
       "norm_label": "spacing variable scale",
       "id": "MASTER_spacing"
     },
@@ -1038,7 +1047,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 45,
+      "community": 46,
       "norm_label": "design system master",
       "id": "design_system_master"
     }
@@ -1264,7 +1273,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_process_tsx",
       "_tgt": "process_handlescroll",
@@ -1276,7 +1285,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L111",
+      "source_location": "L114",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_process_tsx",
       "_tgt": "process_check",
