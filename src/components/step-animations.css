@@ -1,0 +1,41 @@
+/* =========================================================
+   Step Illustration Animations
+   Dedicated file for Process section SVG movements.
+   All animations use transform/opacity for GPU performance.
+========================================================= */
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes float-mid {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -40; }
+}
+
+@keyframes rotate-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bar-grow {
+  0%   { transform: scaleY(0.3); }
+  50%  { transform: scaleY(1);   }
+  100% { transform: scaleY(0.6); }
+}
+
+.anim-float-slow  { animation: float-slow 4s ease-in-out infinite; }
+.anim-float-mid   { animation: float-mid 3.5s ease-in-out infinite; }
+.anim-pulse-glow  { animation: pulse-glow 2.8s ease-in-out infinite; transform-origin: center; }
+.anim-dash-flow   { animation: dash-flow 2.5s linear infinite; }
+.anim-rotate-slow { animation: rotate-slow 20s linear infinite; transform-origin: center; }
+.anim-bar-grow    { animation: bar-grow 2.4s ease-in-out infinite; transform-origin: bottom; }

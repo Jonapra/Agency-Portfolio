@@ -1,152 +1,208 @@
 import React from "react";
+import "./step-animations.css";
 
-// hsl(var(--...)) via inline style — the only way CSS vars resolve in SVG fill/stroke attrs
-const INK      = "hsl(var(--ink))";
-const INK3     = "hsl(var(--ink-3))";
-const FG       = "hsl(var(--foreground))";
+
+const SIG  = "#FF5A1F";
+const SIG2 = "#ff9d7a";
+const SIGL = "#ffcfbe";
+const FG   = "hsl(var(--foreground))";
+const INK3 = "hsl(var(--ink-3))";
 
 /* =========================================================
    STEP 1 — DISCOVER / Strategy
-   Centered strategy map: signal hub + 5 connected nodes.
+   Radar sweep scanning a discovery field of data nodes.
+   The highlighted target = the strategic insight found.
 ========================================================= */
 const DiscoverSVG = () => (
   <svg viewBox="0 0 400 260" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="d-bg" cx="50%" cy="50%" r="55%">
-        <stop offset="0%"   stopColor="#FF5A1F" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="#FF5A1F" stopOpacity="0" />
-      </radialGradient>
-    </defs>
+    {/* Concentric rings */}
+    <circle cx="200" cy="130" r="45"  fill="none" stroke={SIG} strokeOpacity="0.18" strokeWidth="0.8" />
+    <circle cx="200" cy="130" r="80"  fill="none" stroke={SIG} strokeOpacity="0.11" strokeWidth="0.8" strokeDasharray="4 6" />
+    <circle cx="200" cy="130" r="112" fill="none" stroke={SIG} strokeOpacity="0.06" strokeWidth="0.8" strokeDasharray="2 8" />
 
-    {/* Central glow */}
-    <circle cx="200" cy="130" r="100" fill="url(#d-bg)" className="anim-pulse-glow" />
+    {/* Crosshair */}
+    <line x1="55"  y1="130" x2="345" y2="130" style={{ stroke: FG }} strokeOpacity="0.1" strokeWidth="0.8" strokeDasharray="2 6" />
+    <line x1="200" y1="12"  x2="200" y2="248" style={{ stroke: FG }} strokeOpacity="0.1" strokeWidth="0.8" strokeDasharray="2 6" />
 
-    {/* Solid guide ring */}
-    <circle cx="200" cy="130" r="86" fill="none" stroke="#FF5A1F" strokeOpacity="0.1" strokeWidth="1" />
+    {/* Cardinal ticks on r=80 ring */}
+    <line x1="200" y1="44"  x2="200" y2="56"  stroke={SIG} strokeOpacity="0.45" strokeWidth="1.5" />
+    <line x1="200" y1="204" x2="200" y2="216" stroke={SIG} strokeOpacity="0.45" strokeWidth="1.5" />
+    <line x1="114" y1="130" x2="126" y2="130" stroke={SIG} strokeOpacity="0.45" strokeWidth="1.5" />
+    <line x1="274" y1="130" x2="286" y2="130" stroke={SIG} strokeOpacity="0.45" strokeWidth="1.5" />
 
-    {/* Rotating dashed orbit */}
+    {/* Rotating radar sweep — wedge from center, 60° arc at r=90 */}
     <g className="anim-rotate-slow" style={{ transformOrigin: "200px 130px" }}>
-      <circle cx="200" cy="130" r="86" fill="none"
-        stroke="#FF5A1F" strokeOpacity="0.4" strokeWidth="1.2" strokeDasharray="3 7" />
+      <path d="M200,130 L200,40 A90,90 0 0,1 278,85 Z" fill={SIG} fillOpacity="0.1" />
+      <line x1="200" y1="130" x2="200" y2="40" stroke={SIG} strokeOpacity="0.65" strokeWidth="1.5" />
     </g>
 
-    {/* Dashed spokes from center to each node — purely signal orange, no white */}
-    <g stroke="#FF5A1F" strokeOpacity="0.35" strokeWidth="1.2" strokeDasharray="3 5" fill="none">
-      <line x1="200" y1="130" x2="200" y2="48" />
-      <line x1="200" y1="130" x2="276" y2="106" />
-      <line x1="200" y1="130" x2="247" y2="193" />
-      <line x1="200" y1="130" x2="153" y2="193" />
-      <line x1="200" y1="130" x2="124" y2="106" />
-    </g>
+    {/* Scattered field nodes */}
+    <circle cx="152" cy="68"  r="4"   fill={SIG}  fillOpacity="0.45" className="anim-float-slow" style={{ animationDelay: "0.6s" }} />
+    <circle cx="258" cy="175" r="3.5" fill={SIG}  fillOpacity="0.38" className="anim-float-mid"  style={{ animationDelay: "0.9s" }} />
+    <circle cx="142" cy="172" r="3"   fill={SIG2} fillOpacity="0.5"  className="anim-float-slow" style={{ animationDelay: "0.3s" }} />
+    <circle cx="308" cy="118" r="4"   fill={SIG}  fillOpacity="0.42" className="anim-float-mid"  style={{ animationDelay: "1.4s" }} />
+    <circle cx="175" cy="58"  r="3"   fill={SIG2} fillOpacity="0.45" className="anim-float-slow" style={{ animationDelay: "0.2s" }} />
+    <circle cx="108" cy="152" r="2.5" fill={SIG2} fillOpacity="0.38" className="anim-float-mid"  style={{ animationDelay: "1.1s" }} />
 
-    {/* Five satellite nodes (pentagon, r=86 from center) */}
-    <circle cx="200" cy="44"  r="7" fill="#FF5A1F"  className="anim-pulse-glow"  style={{ animationDelay: "0s" }} />
-    <circle cx="276" cy="106" r="6" fill="#ff9d7a"  className="anim-float-slow"  style={{ animationDelay: "0.5s" }} />
-    <circle cx="247" cy="193" r="6" fill="#FF5A1F"  className="anim-pulse-glow"  style={{ animationDelay: "1.1s" }} />
-    <circle cx="153" cy="193" r="6" fill="#ff9d7a"  className="anim-float-mid"   style={{ animationDelay: "0.3s" }} />
-    <circle cx="124" cy="106" r="7" fill="#FF5A1F"  className="anim-float-slow"  style={{ animationDelay: "0.8s" }} />
+    {/* Target — acquired insight */}
+    <circle cx="265" cy="72" r="18"  fill={SIG} fillOpacity="0.08" className="anim-pulse-glow" />
+    <circle cx="265" cy="72" r="11"  fill="none" stroke={SIG} strokeOpacity="0.5" strokeWidth="1.2" />
+    <circle cx="265" cy="72" r="5.5" fill={SIG} className="anim-pulse-glow" style={{ animationDelay: "0.4s" }} />
+    <circle cx="265" cy="72" r="2.5" fill={SIGL} />
+
+    {/* Annotation bars beside target */}
+    <rect x="280" y="67" width="30" height="3.5" rx="1.5" fill={SIG} fillOpacity="0.7" />
+    <rect x="280" y="74" width="22" height="3"   rx="1.5" fill={SIG} fillOpacity="0.35" />
 
     {/* Center hub */}
-    <circle cx="200" cy="130" r="18" fill="#FF5A1F" fillOpacity="0.12" />
-    <circle cx="200" cy="130" r="9"  fill="#FF5A1F" className="anim-pulse-glow" />
-    <circle cx="200" cy="130" r="3.5" fill="#ffcfbe" />
+    <circle cx="200" cy="130" r="5"   fill={SIG} fillOpacity="0.85" />
+    <circle cx="200" cy="130" r="2.5" fill={SIGL} />
   </svg>
 );
 
 /* =========================================================
    STEP 2 — DESIGN & BUILD
+   Three component chips (left) assembling into a live
+   page canvas (right) via flowing dashed connectors.
 ========================================================= */
 const BuildSVG = () => (
   <svg viewBox="0 0 400 260" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="b-accent" x1="0" x2="1">
-        <stop offset="0%"   stopColor="#FF5A1F" />
-        <stop offset="100%" stopColor="#ffaa88" />
-      </linearGradient>
-    </defs>
+    {/* Page canvas */}
+    <rect x="150" y="20" width="220" height="220" rx="10"
+      style={{ fill: INK3 }}
+      stroke={SIG} strokeOpacity="0.35" strokeWidth="1" />
+    <circle cx="167" cy="37" r="3.5" fill={SIG} fillOpacity="0.8" />
+    <circle cx="180" cy="37" r="3.5" fill={SIG} fillOpacity="0.45" />
+    <circle cx="193" cy="37" r="3.5" fill={SIG} fillOpacity="0.2" />
+    <rect x="202" y="31" width="145" height="11" rx="5.5" fill="#ffffff" fillOpacity="0.05" />
 
-    <g className="anim-float-slow">
-      {/* desktop window — dark ink panel, looks intentional in both modes */}
-      <rect x="70" y="50" width="220" height="140" rx="10"
-        style={{ fill: INK3 }}
-        stroke="#FF5A1F" strokeOpacity="0.55" strokeWidth="1.2" />
-      <circle cx="85"  cy="65" r="3" fill="#FF5A1F" />
-      <circle cx="96"  cy="65" r="3" fill="#FF5A1F" opacity="0.6" />
-      <circle cx="107" cy="65" r="3" fill="#FF5A1F" opacity="0.3" />
-      <rect x="85" y="85"  width="90"  height="6" rx="3" fill="#FF5A1F" opacity="0.85" />
-      <rect x="85" y="100" width="140" height="6" rx="3" fill="#ffffff" opacity="0.22" />
-      <rect x="85" y="115" width="110" height="6" rx="3" fill="#ffffff" opacity="0.22" />
-      <rect x="85" y="130" width="70"  height="6" rx="3" fill="#FF5A1F" opacity="0.55" />
-      <rect x="85" y="145" width="130" height="6" rx="3" fill="#ffffff" opacity="0.18" />
-      <rect x="85" y="160" width="60"  height="6" rx="3" fill="#ffffff" opacity="0.18" />
+    {/* Canvas: nav */}
+    <rect x="160" y="52" width="200" height="5"  rx="2.5" fill="#ffffff" fillOpacity="0.07" />
+    <rect x="160" y="52" width="48"  height="5"  rx="2.5" fill={SIG}    fillOpacity="0.65" />
+
+    {/* Canvas: hero */}
+    <rect x="160" y="64" width="200" height="62" rx="5" fill="#ffffff" fillOpacity="0.04" />
+    <rect x="168" y="73" width="100" height="7.5" rx="3"   fill={SIG} fillOpacity="0.85" />
+    <rect x="168" y="86" width="72"  height="4.5" rx="2"   fill="#ffffff" fillOpacity="0.24" />
+    <rect x="168" y="95" width="55"  height="4"   rx="2"   fill="#ffffff" fillOpacity="0.17" />
+    <rect x="168" y="107" width="52" height="11"  rx="5.5" fill={SIG} fillOpacity="0.8" />
+
+    {/* Canvas: feature cards */}
+    <rect x="160" y="135" width="58" height="45" rx="5" fill="#ffffff" fillOpacity="0.05" stroke={SIG} strokeOpacity="0.28" strokeWidth="0.8" />
+    <rect x="229" y="135" width="58" height="45" rx="5" fill="#ffffff" fillOpacity="0.05" stroke={SIG} strokeOpacity="0.2"  strokeWidth="0.8" />
+    <rect x="298" y="135" width="58" height="45" rx="5" fill="#ffffff" fillOpacity="0.05" stroke={SIG} strokeOpacity="0.14" strokeWidth="0.8" />
+    <rect x="168" y="149" width="40" height="4.5" rx="2" fill={SIG}  fillOpacity="0.65" />
+    <rect x="168" y="158" width="30" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.2" />
+    <rect x="237" y="149" width="40" height="4.5" rx="2" fill={SIG}  fillOpacity="0.45" />
+    <rect x="237" y="158" width="25" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.2" />
+    <rect x="306" y="149" width="40" height="4.5" rx="2" fill={SIG}  fillOpacity="0.35" />
+    <rect x="306" y="158" width="28" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.2" />
+
+    {/* Canvas: CTA */}
+    <rect x="185" y="192" width="130" height="32" rx="8" fill={SIG} fillOpacity="0.14" stroke={SIG} strokeOpacity="0.48" strokeWidth="1" />
+    <rect x="210" y="204" width="80"  height="6.5" rx="3" fill={SIG} fillOpacity="0.75" />
+
+    {/* Chip: Nav component */}
+    <g className="anim-float-slow" style={{ animationDelay: "0s" }}>
+      <rect x="15" y="35" width="110" height="24" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.5" strokeWidth="0.9" />
+      <rect x="24" y="43" width="22" height="4"   rx="2" fill={SIG}    fillOpacity="0.8" />
+      <rect x="52" y="43" width="15" height="4"   rx="2" fill="#ffffff" fillOpacity="0.28" />
+      <rect x="73" y="43" width="15" height="4"   rx="2" fill="#ffffff" fillOpacity="0.22" />
+      <rect x="94" y="43" width="15" height="4"   rx="2" fill="#ffffff" fillOpacity="0.18" />
     </g>
 
-    <g className="anim-float-mid">
-      <rect x="230" y="90" width="110" height="150" rx="14"
-        style={{ fill: INK }}
-        stroke="url(#b-accent)" strokeWidth="1.5" />
-      <rect x="245" y="108" width="80" height="40" rx="6" fill="#FF5A1F" opacity="0.9" />
-      <rect x="245" y="158" width="80" height="8"  rx="4" fill="#ffffff" opacity="0.28" />
-      <rect x="245" y="174" width="60" height="8"  rx="4" fill="#ffffff" opacity="0.22" />
-      <rect x="245" y="200" width="80" height="22" rx="6"
-        fill="#ffffff" fillOpacity="0.08"
-        stroke="#FF5A1F" strokeOpacity="0.6" strokeWidth="1" />
+    {/* Chip: Hero component */}
+    <g className="anim-float-mid" style={{ animationDelay: "0.7s" }}>
+      <rect x="15" y="82" width="110" height="58" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.44" strokeWidth="0.9" />
+      <rect x="24" y="93"  width="58" height="6"   rx="2.5" fill={SIG}    fillOpacity="0.85" />
+      <rect x="24" y="104" width="42" height="4"   rx="2"   fill="#ffffff" fillOpacity="0.24" />
+      <rect x="24" y="113" width="35" height="4"   rx="2"   fill="#ffffff" fillOpacity="0.18" />
+      <rect x="24" y="124" width="32" height="9"   rx="4.5" fill={SIG}    fillOpacity="0.75" />
     </g>
 
-    <path d="M180 120 C 210 120, 210 160, 250 160"
-      stroke="#FF5A1F" strokeWidth="1.5" fill="none"
-      strokeDasharray="4 6" className="anim-dash-flow" />
+    {/* Chip: Card component */}
+    <g className="anim-float-slow" style={{ animationDelay: "1.3s" }}>
+      <rect x="15" y="160" width="110" height="58" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.38" strokeWidth="0.9" />
+      <rect x="24" y="172" width="90"  height="18"  rx="3"   fill={SIG}    fillOpacity="0.13" />
+      <rect x="24" y="196" width="58"  height="4.5" rx="2"   fill={SIG}    fillOpacity="0.7" />
+      <rect x="24" y="205" width="42"  height="3.5" rx="2"   fill="#ffffff" fillOpacity="0.22" />
+    </g>
+
+    {/* Flow connectors */}
+    <path d="M125,47 C138,47 140,55 150,55"   stroke={SIG} strokeOpacity="0.4" strokeWidth="1" fill="none" strokeDasharray="3 4" className="anim-dash-flow" />
+    <path d="M125,111 C140,111 142,97 150,95"  stroke={SIG} strokeOpacity="0.4" strokeWidth="1" fill="none" strokeDasharray="3 4" className="anim-dash-flow" style={{ animationDelay: "0.5s" }} />
+    <path d="M125,189 C140,189 142,162 150,160" stroke={SIG} strokeOpacity="0.4" strokeWidth="1" fill="none" strokeDasharray="3 4" className="anim-dash-flow" style={{ animationDelay: "1s" }} />
   </svg>
 );
 
 /* =========================================================
    STEP 3 — LAUNCH & SCALE
+   KPI card row + area chart with upward trend line.
 ========================================================= */
 const ScaleSVG = () => (
   <svg viewBox="0 0 400 260" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
-      <linearGradient id="s-rocket" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="0%"   stopColor="#ffcfbe" />
-        <stop offset="100%" stopColor="#FF5A1F" />
-      </linearGradient>
-      <linearGradient id="s-flame" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="0%"   stopColor="#FF5A1F" />
-        <stop offset="100%" stopColor="#ffdd55" stopOpacity="0" />
+      <linearGradient id="s-area" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%"   stopColor="#FF5A1F" stopOpacity="0.28" />
+        <stop offset="100%" stopColor="#FF5A1F" stopOpacity="0.02" />
       </linearGradient>
     </defs>
 
-    <g transform="translate(240, 120)">
-      <rect x="0"  y="40" width="18" height="80"  rx="3" fill="#FF5A1F" opacity="0.45" className="anim-bar-grow" style={{ animationDelay: "0s" }} />
-      <rect x="28" y="20" width="18" height="100" rx="3" fill="#FF5A1F" opacity="0.7"  className="anim-bar-grow" style={{ animationDelay: "0.3s" }} />
-      <rect x="56" y="0"  width="18" height="120" rx="3" fill="#FF5A1F"                className="anim-bar-grow" style={{ animationDelay: "0.6s" }} />
-      <rect x="84" y="30" width="18" height="90"  rx="3" fill="#ff9d7a"                className="anim-bar-grow" style={{ animationDelay: "0.9s" }} />
-      {/* trend line + dot — theme-aware so visible in light mode */}
-      <path d="M5 65 L33 45 L61 20 L89 45"
-        style={{ stroke: FG }} strokeOpacity="0.8" strokeWidth="2.5"
-        fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="89" cy="45" r="5" style={{ fill: FG }} className="anim-pulse-glow" />
-    </g>
+    {/* KPI cards */}
+    <rect x="20"  y="15" width="100" height="52" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.32" strokeWidth="0.9" />
+    <rect x="150" y="15" width="100" height="52" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.24" strokeWidth="0.9" />
+    <rect x="280" y="15" width="100" height="52" rx="7" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.18" strokeWidth="0.9" />
 
-    <g className="anim-float-mid" style={{ transformOrigin: "120px 130px" }}>
-      <path d="M110 185 Q120 220 130 185 Q125 205 120 210 Q115 205 110 185 Z"
-        fill="url(#s-flame)" className="anim-pulse-glow" />
-      <path d="M120 60 C 145 85, 145 145, 130 185 L 110 185 C 95 145, 95 85, 120 60 Z"
-        fill="url(#s-rocket)"
-        style={{ stroke: FG }} strokeOpacity="0.25" strokeWidth="1" />
-      {/* window — dark ink porthole */}
-      <circle cx="120" cy="105" r="10"
-        style={{ fill: INK, stroke: FG }} strokeOpacity="0.65" strokeWidth="1.5" />
-      <circle cx="117" cy="102" r="3" fill="#ffffff" opacity="0.75" />
-      <path d="M100 165 L85  185 L105 180 Z" fill="#FF5A1F" opacity="0.95" />
-      <path d="M140 165 L155 185 L135 180 Z" fill="#FF5A1F" opacity="0.95" />
-      <line x1="120" y1="75" x2="120" y2="170"
-        style={{ stroke: FG }} strokeOpacity="0.2" strokeWidth="1" />
-    </g>
+    <rect x="30"  y="26" width="38" height="4"   rx="2" fill={SIG}    fillOpacity="0.5" />
+    <rect x="30"  y="35" width="58" height="8"   rx="3" fill={SIG}    fillOpacity="0.85" />
+    <rect x="30"  y="49" width="28" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.18" />
+    <rect x="62"  y="49" width="20" height="3.5" rx="2" fill={SIG}    fillOpacity="0.55" />
 
-    <circle cx="70"  cy="90"  r="2"   fill="#FF5A1F" className="anim-float-slow" />
-    <circle cx="60"  cy="140" r="1.5" fill="#ff9d7a" className="anim-float-mid" />
-    <circle cx="180" cy="70"  r="2"   fill="#ffcfbe" className="anim-float-slow" />
-    <circle cx="190" cy="150" r="1.5" fill="#FF5A1F" className="anim-float-mid" />
+    <rect x="160" y="26" width="32" height="4"   rx="2" fill={SIG}    fillOpacity="0.5" />
+    <rect x="160" y="35" width="50" height="8"   rx="3" fill={SIG}    fillOpacity="0.68" />
+    <rect x="160" y="49" width="55" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.18" />
+
+    <rect x="290" y="26" width="25" height="4"   rx="2" fill={SIG}    fillOpacity="0.5" />
+    <rect x="290" y="35" width="52" height="8"   rx="3" fill={SIG}    fillOpacity="0.55" />
+    <rect x="290" y="49" width="42" height="3.5" rx="2" fill="#ffffff" fillOpacity="0.18" />
+
+    {/* Chart grid */}
+    <line x1="35" y1="108" x2="380" y2="108" style={{ stroke: FG }} strokeOpacity="0.07" strokeWidth="0.8" strokeDasharray="3 5" />
+    <line x1="35" y1="143" x2="380" y2="143" style={{ stroke: FG }} strokeOpacity="0.07" strokeWidth="0.8" strokeDasharray="3 5" />
+    <line x1="35" y1="178" x2="380" y2="178" style={{ stroke: FG }} strokeOpacity="0.07" strokeWidth="0.8" strokeDasharray="3 5" />
+    <line x1="35" y1="213" x2="380" y2="213" style={{ stroke: FG }} strokeOpacity="0.07" strokeWidth="0.8" strokeDasharray="3 5" />
+
+    {/* Area fill */}
+    <path
+      d="M35,215 C65,212 78,203 100,200 C122,197 135,182 158,178 C181,174 194,158 218,153 C242,148 258,130 282,124 C306,118 322,108 348,100 C362,96 372,90 385,88 L385,228 L35,228 Z"
+      fill="url(#s-area)"
+    />
+
+    {/* Trend line */}
+    <path
+      d="M35,215 C65,212 78,203 100,200 C122,197 135,182 158,178 C181,174 194,158 218,153 C242,148 258,130 282,124 C306,118 322,108 348,100 C362,96 372,90 385,88"
+      stroke={SIG} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
+    />
+
+    {/* Data dots */}
+    <circle cx="100" cy="200" r="2.5" fill={SIG} fillOpacity="0.75" />
+    <circle cx="158" cy="178" r="2.5" fill={SIG} fillOpacity="0.75" />
+    <circle cx="218" cy="153" r="2.5" fill={SIG} fillOpacity="0.75" />
+    <circle cx="282" cy="124" r="2.5" fill={SIG} fillOpacity="0.75" />
+    <circle cx="348" cy="100" r="2.5" fill={SIG} fillOpacity="0.75" />
+
+    {/* Live / current point */}
+    <circle cx="385" cy="88" r="12"  fill={SIG} fillOpacity="0.12" className="anim-pulse-glow" />
+    <circle cx="385" cy="88" r="5.5" fill={SIG} fillOpacity="0.9" />
+    <circle cx="385" cy="88" r="2.5" fill={SIGL} />
+
+    {/* Tooltip above last point */}
+    <rect x="325" y="66" width="52" height="17" rx="4" style={{ fill: INK3 }} stroke={SIG} strokeOpacity="0.42" strokeWidth="0.8" />
+    <rect x="331" y="71" width="30" height="4"  rx="2" fill={SIG}    fillOpacity="0.8" />
+    <rect x="331" y="78" width="20" height="3"  rx="1.5" fill="#ffffff" fillOpacity="0.22" />
+
+    {/* X axis */}
+    <line x1="35" y1="228" x2="385" y2="228" style={{ stroke: FG }} strokeOpacity="0.15" strokeWidth="0.8" />
   </svg>
 );
 
