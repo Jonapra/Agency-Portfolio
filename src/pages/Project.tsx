@@ -225,83 +225,147 @@ const Project = () => {
             </div>
           </Reveal>
           <div className="grid md:grid-cols-12 gap-5">
-            <Reveal className="md:col-span-8">
-              <div className="relative overflow-hidden rounded-lg plate aspect-[16/10] group">
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(800px 400px at 30% 20%, ${current.c1}55, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
+            {/* Phone — left, tall portrait */}
+            <Reveal className="md:col-span-5">
+              <div className="relative overflow-hidden rounded-lg plate aspect-[9/16] group">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(400px 600px at 50% 60%, ${current.c1}55, transparent 60%), linear-gradient(160deg, ${current.c2}, #06060a)` }} />
                 <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <div className="h-eyebrow text-white/40 mb-3">Shot 01 · Hero</div>
-                    <div className="italic-display text-white/30" style={{ fontSize: "clamp(40px,6vw,80px)", lineHeight: 0.9 }}>
-                      Image placeholder
+                  <div className="text-center px-6">
+                    <div className="h-eyebrow text-white/40 mb-3">Phone · 9:16</div>
+                    <div className="italic-display text-white/30 text-3xl leading-tight">Image<br />placeholder</div>
+                  </div>
+                </div>
+                <div className="absolute left-4 top-4"><span className="pill text-white/70">9 : 16</span></div>
+              </div>
+            </Reveal>
+            {/* Tablet + Laptop — right, stacked */}
+            <div className="md:col-span-7 flex flex-col gap-5">
+              <Reveal delay={0.08}>
+                <div className="relative overflow-hidden rounded-lg plate aspect-[4/3] group">
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(600px 300px at 60% 40%, ${current.c1}44, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
+                  <div className="absolute inset-0 grid place-items-center">
+                    <div className="text-center">
+                      <div className="h-eyebrow text-white/40 mb-2">Tablet · 4:3</div>
+                      <div className="italic-display text-white/25 text-2xl">Placeholder</div>
                     </div>
                   </div>
+                  <div className="absolute left-4 top-4"><span className="pill text-white/70">4 : 3</span></div>
                 </div>
-                <div className="absolute left-5 top-5"><span className="pill text-white/70">16 : 10</span></div>
-              </div>
-            </Reveal>
-            <Reveal className="md:col-span-4" delay={0.1}>
-              <div className="relative overflow-hidden rounded-lg plate aspect-[4/3] h-full group">
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(500px 250px at 70% 30%, ${current.c1}44, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <div className="h-eyebrow text-white/40 mb-2">Shot 02</div>
-                    <div className="italic-display text-white/25 text-2xl">Placeholder</div>
+              </Reveal>
+              <Reveal delay={0.14}>
+                <div className="relative overflow-hidden rounded-lg plate aspect-[16/10] group">
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(700px 350px at 30% 60%, ${current.c1}44, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
+                  <div className="absolute inset-0 grid place-items-center">
+                    <div className="text-center">
+                      <div className="h-eyebrow text-white/40 mb-2">Laptop · 16:10</div>
+                      <div className="italic-display text-white/25 text-2xl">Placeholder</div>
+                    </div>
                   </div>
+                  <div className="absolute left-4 top-4"><span className="pill text-white/70">16 : 10</span></div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="px-6 md:px-10 py-16">
-        <div className="mx-auto max-w-[1600px] grid md:grid-cols-4 gap-6">
-          {c.stats.map((s, i) => (
-            <Reveal key={i} delay={i * 0.06} className="plate rounded-lg p-7">
-              <div className="font-display text-6xl">{s.v}</div>
-              <div className="h-eyebrow text-mute mt-3">{s.l}</div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* PROBLEM */}
+      {/* CHALLENGES */}
       <section className="px-6 md:px-10 py-24">
         <div className="mx-auto max-w-[1600px]">
-          <Reveal>
-            <div className="h-eyebrow text-mute mb-6">§ 02 · The problem</div>
-          </Reveal>
+          <div className="grid md:grid-cols-12 gap-10 mb-10">
+            <div className="md:col-span-3">
+              <Reveal><div className="h-eyebrow text-mute mb-3">§ 02 · Challenges</div></Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="font-display text-4xl md:text-5xl leading-tight">
+                  What we <span className="italic-display text-signal">had to solve.</span>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1} className="md:col-span-9 flex items-end">
+              <p className="text-mute-2 text-base md:text-lg leading-relaxed max-w-[700px]">
+                Every project starts with a real constraint. Here is the challenge Agiton took on.
+              </p>
+            </Reveal>
+          </div>
           <Reveal>
             <div className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
               <div className="absolute left-0 top-10 bottom-10 w-[2px] bg-signal/70 hidden md:block" />
+              <div className="h-eyebrow text-signal mb-6">The Agiton challenge was —</div>
               <p className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1100px]">{c.problem}</p>
             </div>
           </Reveal>
         </div>
       </section>
 
-
-      {/* PULLQUOTE */}
+      {/* SOLUTION */}
       <section className="px-6 md:px-10 py-24">
         <div className="mx-auto max-w-[1600px]">
           <Reveal>
-            <div className="h-eyebrow text-mute mb-6">§ 03 · In their words</div>
+            <div className="h-eyebrow text-mute mb-12">§ 03 · Our approach</div>
           </Reveal>
-          <Reveal>
-            <figure className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
-              <svg width="48" height="48" viewBox="0 0 22 22" className="text-signal mb-8 opacity-90" fill="currentColor">
-                <path d="M0 12 C0 6 3 2 9 0 L10 3 C6 5 5 7 5 10 H9 V22 H0 Z M13 12 C13 6 16 2 22 0 L22 3 C18 5 17 7 17 10 H22 V22 H13 Z" />
-              </svg>
-              <blockquote className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1200px]">{c.pull.q}</blockquote>
-              <figcaption className="mt-10 pt-6 border-t border-foreground/10 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-signal/20 grid place-items-center font-display text-signal text-lg">
-                  {c.pull.n.charAt(0)}
+          <div className="divide-y divide-foreground/8">
+            {c.solution.map((s, i) => (
+              <Reveal key={s.t} delay={i * 0.07}>
+                <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 items-start">
+                  <div className="md:col-span-1">
+                    <span className="font-mono-ui text-sm text-signal">0{i + 1}</span>
+                  </div>
+                  <div className="md:col-span-3">
+                    <h3 className="font-display text-2xl md:text-3xl leading-tight">{s.t}</h3>
+                  </div>
+                  <div className="md:col-span-7 md:col-start-5">
+                    <p className="text-mute-2 leading-relaxed text-base md:text-lg">{s.d}</p>
+                  </div>
                 </div>
-                <div className="h-eyebrow text-mute-2">{c.pull.n}</div>
-              </figcaption>
-            </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OUTCOME */}
+      <section className="px-6 md:px-10 py-24">
+        <div className="mx-auto max-w-[1600px]">
+          <Reveal>
+            <div className="h-eyebrow text-mute mb-10">§ 04 · Outcome</div>
           </Reveal>
+          <div className="grid md:grid-cols-12 gap-8 items-start">
+            <Reveal className="md:col-span-5">
+              <div className="relative overflow-hidden rounded-xl plate aspect-[4/5] group">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(600px 400px at 40% 60%, ${current.c1}66, transparent 60%), linear-gradient(160deg, ${current.c2}, #06060a)` }} />
+                <div className="absolute inset-0 grid place-items-center">
+                  <div className="text-center px-6">
+                    <div className="h-eyebrow text-white/40 mb-3">Outcome visual</div>
+                    <div className="italic-display text-white/25 text-3xl leading-tight">Image<br />placeholder</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <div className="md:col-span-7 flex flex-col gap-5">
+              <div className="grid grid-cols-2 gap-5">
+                {c.stats.map((s, i) => (
+                  <Reveal key={i} delay={i * 0.07} className="plate rounded-xl p-7 md:p-8">
+                    <div className="font-display text-5xl md:text-6xl">{s.v}</div>
+                    <div className="h-eyebrow text-mute mt-3">{s.l}</div>
+                  </Reveal>
+                ))}
+              </div>
+              <Reveal delay={0.3}>
+                <figure className="plate rounded-xl p-8 md:p-10">
+                  <svg width="32" height="32" viewBox="0 0 22 22" className="text-signal mb-5 opacity-90" fill="currentColor">
+                    <path d="M0 12 C0 6 3 2 9 0 L10 3 C6 5 5 7 5 10 H9 V22 H0 Z M13 12 C13 6 16 2 22 0 L22 3 C18 5 17 7 17 10 H22 V22 H13 Z" />
+                  </svg>
+                  <blockquote className="font-display text-xl md:text-2xl leading-[1.2]">{c.pull.q}</blockquote>
+                  <figcaption className="mt-6 pt-5 border-t border-foreground/10 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-signal/20 grid place-items-center font-display text-signal text-sm shrink-0">
+                      {c.pull.n.charAt(0)}
+                    </div>
+                    <div className="h-eyebrow text-mute-2">{c.pull.n}</div>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -310,7 +374,8 @@ const Project = () => {
         <div className="mx-auto max-w-[1600px]">
           <div className="grid md:grid-cols-12 gap-10 mb-12">
             <div className="md:col-span-4">
-              <div className="h-eyebrow text-mute mb-3">§ 04 · Tools & Stack</div>
+              <div className="h-eyebrow text-mute mb-3">§ 05 · Tools & Stack</div>
+
               <Reveal>
                 <h2 className="font-display text-4xl md:text-5xl leading-tight">
                   What we <span className="italic-display text-signal">worked with.</span>
@@ -323,7 +388,6 @@ const Project = () => {
               </p>
             </Reveal>
           </div>
-
           <div className="grid md:grid-cols-3 gap-5">
             <Reveal delay={0.05}>
               <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
@@ -338,7 +402,6 @@ const Project = () => {
                 </div>
               </div>
             </Reveal>
-
             <Reveal delay={0.1}>
               <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-6">
@@ -355,7 +418,6 @@ const Project = () => {
                 </div>
               </div>
             </Reveal>
-
             <Reveal delay={0.15}>
               <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-6">
@@ -394,7 +456,8 @@ const Project = () => {
         <div className="mx-auto max-w-[1600px]">
           <div className="grid md:grid-cols-12 gap-10 mb-12 items-end">
             <div className="md:col-span-8">
-              <div className="h-eyebrow text-mute mb-3">§ 05 · Other work</div>
+              <div className="h-eyebrow text-mute mb-3">§ 06 · Other work</div>
+
               <Reveal>
                 <h2 className="font-display text-4xl md:text-5xl leading-tight">
                   More <span className="italic-display text-signal">receipts.</span>
@@ -405,7 +468,6 @@ const Project = () => {
               <Link to="/#work" className="u-link h-eyebrow text-mute">View all projects →</Link>
             </div>
           </div>
-
           <div className="grid md:grid-cols-3 gap-6">
             {otherProjects.map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.06}>
@@ -442,6 +504,7 @@ const Project = () => {
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };
