@@ -270,7 +270,7 @@ const Project = () => {
       </section>
 
       {/* CHALLENGES */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-12">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid md:grid-cols-12 gap-10 mb-10">
             <div className="md:col-span-3">
@@ -290,15 +290,15 @@ const Project = () => {
           <Reveal>
             <div className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
               <div className="absolute left-0 top-10 bottom-10 w-[2px] bg-signal/70 hidden md:block" />
-              <div className="h-eyebrow text-signal font-bold mb-6">The Agiton challenge was —</div>
-              <p className="font-display text-3xl md:text-5xl lg:text-6xl leading-[1.1] max-w-[1100px] font-medium">{c.problem}</p>
+              <h3 className="font-display text-xl md:text-2xl text-signal mb-8">The Agiton challenge was —</h3>
+              <p className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1100px]">{c.problem}</p>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* SOLUTION */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-12">
         <div className="mx-auto max-w-[1600px]">
           <Reveal>
             <div className="h-eyebrow text-mute mb-12">§ 03 · Our approach</div>
@@ -324,7 +324,7 @@ const Project = () => {
       </section>
 
       {/* OUTCOME */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-12">
         <div className="mx-auto max-w-[1600px]">
           <Reveal>
             <div className="h-eyebrow text-mute mb-10">§ 04 · Outcome</div>
@@ -370,7 +370,7 @@ const Project = () => {
       </section>
 
       {/* TOOLS */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-12">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid md:grid-cols-12 gap-10 mb-12">
             <div className="md:col-span-4">
@@ -452,7 +452,7 @@ const Project = () => {
       </section>
 
       {/* MORE PROJECTS */}
-      <section className="px-6 md:px-10 py-24">
+      <section className="px-6 md:px-10 py-12">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid md:grid-cols-12 gap-10 mb-12 items-end">
             <div className="md:col-span-8">
