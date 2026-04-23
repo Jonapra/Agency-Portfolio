@@ -215,53 +215,6 @@ const Project = () => {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="px-6 md:px-10 py-10">
-        <div className="mx-auto max-w-[1600px] grid md:grid-cols-12 gap-6">
-          <Reveal className="md:col-span-7 plate rounded-lg overflow-hidden aspect-[4/3] relative">
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,#3d2712,#0a0a0b)" }} />
-            <div className="absolute inset-0 grid place-items-center p-10 text-center">
-              <div>
-                <div className="h-eyebrow text-signal mb-4">Wordmark · Primary</div>
-                <div className="italic-display text-white" style={{ fontSize: "clamp(72px,10vw,180px)", lineHeight: 0.9 }}>
-                  {c.title.replace("—", "")}<span className="not-italic font-display text-signal">◐</span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1} className="md:col-span-5 plate rounded-lg overflow-hidden aspect-[4/3] relative">
-            <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 50% 60%, hsl(var(--signal)), #0a0a0b 70%)" }} />
-            <div className="absolute inset-0 grid place-items-center">
-              <svg viewBox="0 0 200 200" className="w-2/3">
-                <g stroke="hsl(var(--cream))" fill="none" strokeWidth="1">
-                  <circle cx="100" cy="100" r="78" /><circle cx="100" cy="100" r="54" /><circle cx="100" cy="100" r="30" />
-                </g>
-                <text x="100" y="20" fill="currentColor" fontFamily="JetBrains Mono" fontSize="7" textAnchor="middle" letterSpacing="2" className="text-cream">{c.title.replace("—", "").toUpperCase()} · 2026</text>
-              </svg>
-            </div>
-          </Reveal>
-          <Reveal className="md:col-span-5 plate rounded-lg overflow-hidden aspect-[4/3] relative">
-            <div className="absolute inset-0 bg-cream" />
-            <div className="absolute inset-0 p-10 text-ink flex flex-col justify-between">
-              <div className="h-eyebrow">Menu · Summer</div>
-              <div>
-                <div className="italic-display text-5xl">Tarragon, raw beet,<br />a little smoke.</div>
-                <div className="h-eyebrow mt-4 opacity-60">€22 · Plates 01–12</div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1} className="md:col-span-7 plate rounded-lg overflow-hidden aspect-[4/3] relative">
-            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,#FF5A1F,#C23E10)" }} />
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-ink text-center">
-                <div className="h-eyebrow mb-6 opacity-70">Color · Signal Orange</div>
-                <div className="font-display" style={{ fontSize: "clamp(72px,9vw,160px)", lineHeight: 0.9 }}>#FF5A1F</div>
-                <div className="h-eyebrow mt-4 opacity-70">Paint · Print · Uniform</div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* PULLQUOTE */}
       <section className="px-6 md:px-10 py-28">
@@ -273,21 +226,6 @@ const Project = () => {
             <blockquote className="font-display text-3xl md:text-5xl leading-[1.1]">{c.pull.q}</blockquote>
           </Reveal>
           <div className="mt-8 h-eyebrow text-mute">{c.pull.n}</div>
-        </div>
-      </section>
-
-      {/* FULL BLEED */}
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="relative overflow-hidden rounded-lg plate aspect-[21/9]">
-            <div className="absolute inset-0" style={{ background: "conic-gradient(from 200deg at 50% 60%, #FF5A1F, #3d2712, #0a0a0b, #FF5A1F)" }} />
-            <div className="absolute inset-0 grid place-items-center text-center">
-              <div>
-                <div className="h-eyebrow text-white/70 mb-4">Season 01 · Launch film still</div>
-                <div className="italic-display text-white" style={{ fontSize: "clamp(60px,10vw,160px)", lineHeight: 0.9 }}>A garden,<br />overheard.</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
