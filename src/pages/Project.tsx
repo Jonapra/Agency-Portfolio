@@ -186,7 +186,7 @@ const Project = () => {
                 </div>
               </Reveal>
               <Reveal>
-                <h1 className="font-display leading-[0.92]" style={{ fontSize: "clamp(60px,11vw,180px)", letterSpacing: "-0.04em" }}>
+                <h1 className="font-display leading-[0.92]" style={{ fontSize: "clamp(50px,10vw,130px)", letterSpacing: "-0.04em" }}>
                   {c.title}<br />
                   <span className="italic-display text-signal">{c.italicLine}</span><br />
                   {c.trail}
