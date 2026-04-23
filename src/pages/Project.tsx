@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { PROJECTS } from "@/constants/site";
-import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
 interface CaseContent {
   slug: string;
@@ -19,7 +18,9 @@ interface CaseContent {
   problem: React.ReactNode;
   stats: { v: string; l: string }[];
   pull: { q: React.ReactNode; n: string };
-  shipped: { t: string; d: string }[];
+  solution: { t: string; d: string }[];
+  tools: { design: string[]; colors: string[]; stack: string[] };
+  images: string[];
   next: { slug: string; title: string; sub: string };
 }
 
@@ -44,12 +45,17 @@ const cases: Record<string, CaseContent> = {
       { v: "01", l: "Michelin nod, pending" },
     ],
     pull: { q: <>We asked for a brand. They gave us <span className="italic-display text-signal">a way of speaking</span> — one that outlived the launch and started showing up in the way we write emails.</>, n: "Rui Madeira · Founder, Veldt" },
-    shipped: [
-      { t: "Identity system", d: "Wordmark, secondary marks, 14 typographic lockups, motion kit." },
-      { t: "Menu program", d: "Summer + autumn menus, signage, a typographic license that survives chefs." },
-      { t: "Site (Framer)", d: "One pager, three rooms, live reservation feed. Shipped in six weeks." },
-      { t: "Uniform", d: "Apron, tote, card. Produced in Porto with Têxteis do Cávado." },
+    solution: [
+      { t: "Brand Direction", d: "We stripped back two years of rustic-restaurant clichés and built from the soil up — agricultural typefaces, a muted earthy palette that felt earned, not applied." },
+      { t: "Identity System", d: "A wordmark that works at 8pt on a receipt and at 8 metres on signage. Fourteen typographic lockups, a secondary mark, and a motion kit." },
+      { t: "Digital Presence", d: "A Framer site built around the reservation flow — one pager, three rooms, live availability. Shipped in six weeks." },
     ],
+    tools: {
+      design: ["Figma", "Framer", "Illustrator", "After Effects"],
+      colors: ["#FF5A1F", "#2A1F0F", "#F2EDE4", "#1A1207"],
+      stack: ["Framer", "Webflow", "GSAP"],
+    },
+    images: [],
     next: { slug: "flint-os", title: "Flint OS.", sub: "Private equity, made legible." },
   },
   "flint-os": {
@@ -72,12 +78,17 @@ const cases: Record<string, CaseContent> = {
       { v: "92", l: "Net Promoter Score" },
     ],
     pull: { q: <>They gave our partners a vocabulary, not a logo. <span className="italic-display text-signal">Six months later</span> our LPs are using it back to us in calls.</>, n: "Anya Beaumont · CEO, Flint Capital" },
-    shipped: [
-      { t: "Brand identity", d: "Wordmark, type system, motion principles, and a 12-page guide." },
-      { t: "Investor site", d: "Next.js, MDX-driven, with a quietly programmable case-study layer." },
-      { t: "Flint OS", d: "An internal portfolio dashboard for the operating team. Used daily." },
-      { t: "Pitch system", d: "Keynote + Figma libraries the partners actually open." },
+    solution: [
+      { t: "Brand System", d: "A crisp institutional type system with motion principles that signal precision over personality — LP trust in eight seconds, built to survive a quarterly report." },
+      { t: "Product Design", d: "Flint OS: an internal dashboard used daily by the operating team to track portfolio companies, designed around real workflows not hypothetical ones." },
+      { t: "Investor Site", d: "Next.js, MDX-driven, with a programmable case-study layer the partners update without touching code." },
     ],
+    tools: {
+      design: ["Figma", "Notion", "Pitch", "Principle"],
+      colors: ["#0E1E3A", "#2A5FFF", "#05080C", "#F2EDE4"],
+      stack: ["Next.js", "MDX", "Vercel", "TypeScript"],
+    },
+    images: [],
     next: { slug: "veldt", title: "Veldt◐", sub: "A restaurant with a garden problem." },
   },
   paperbound: {
@@ -100,12 +111,17 @@ const cases: Record<string, CaseContent> = {
       { v: "07", l: "Awards in launch quarter" },
     ],
     pull: { q: <>For the first time, our spine looks like our mission. <span className="italic-display text-signal">Quiet, exact,</span> and impossible to mistake for someone else's.</>, n: "Iona Reith · Editor, Paperbound" },
-    shipped: [
-      { t: "Editorial identity", d: "A custom serif, three secondary lockups, an issue-numbering system." },
-      { t: "Print templates", d: "Cover, interior and supplement masters in InDesign + Affinity." },
-      { t: "Web archive", d: "A searchable, generous reading experience — built on Astro." },
-      { t: "Subscription kit", d: "Welcome card, bookmark, and a quietly proud envelope." },
+    solution: [
+      { t: "Editorial Identity", d: "A custom serif, three secondary lockups, and an issue-numbering system designed to outlast any single editor and unify eight years of scattered covers." },
+      { t: "Print System", d: "Cover, interior, and supplement masters in InDesign + Affinity — built to survive hand-off across editors and seasons without losing the voice." },
+      { t: "Web Archive", d: "A searchable Astro site with a generous reading experience, built to grow over decades without CMS lock-in or replatform risk." },
     ],
+    tools: {
+      design: ["Figma", "InDesign", "Affinity", "Glyphs"],
+      colors: ["#F2EDE4", "#E8E1D3", "#1A1207", "#FF5A1F"],
+      stack: ["Astro", "Netlify", "Sanity"],
+    },
+    images: [],
     next: { slug: "aero-90", title: "Aero/90", sub: "A launch film for the fastest bike of 1990, in 2026." },
   },
   "aero-90": {
@@ -128,12 +144,17 @@ const cases: Record<string, CaseContent> = {
       { v: "01", l: "Cannes shortlist" },
     ],
     pull: { q: <>They watched 30 hours of 1990 race footage before drawing a line. The film <span className="italic-display text-signal">feels like the bike</span> — and that's the point.</>, n: "Marco Frigo · Founder, Aero Cicli" },
-    shipped: [
-      { t: "Brand revival", d: "A redrawn wordmark, race numerals, and a livery system for 2026." },
-      { t: "Launch film", d: "90 seconds, shot on 16mm, scored to a single cello line." },
-      { t: "Site", d: "A one-page configurator, in three languages, built on Framer." },
-      { t: "Sound identity", d: "A six-note motif that survived being put on hold." },
+    solution: [
+      { t: "Brand Revival", d: "A redrawn wordmark, race numerals, and a full livery system. Respects the 1990 engineering without the nostalgia — archive find that arrived this morning." },
+      { t: "Launch Film", d: "90 seconds, shot on 16mm, scored to a single cello line. 1.2M views in week one. Sold the first production run in 14 days." },
+      { t: "Sound Identity", d: "A six-note motif that survived being put on hold, a client rebrand, and three rounds of feedback. Ended up in the brand guidelines as a canonical asset." },
     ],
+    tools: {
+      design: ["Figma", "After Effects", "DaVinci", "Cinema 4D"],
+      colors: ["#1A1D22", "#FF5A1F", "#0A0A0B", "#C4C1B9"],
+      stack: ["Framer", "Vimeo", "WebGL"],
+    },
+    images: [],
     next: { slug: "paperbound", title: "Paperbound.", sub: "An independent press gets louder." },
   },
 };
@@ -141,7 +162,8 @@ const cases: Record<string, CaseContent> = {
 const Project = () => {
   const { slug = "veldt" } = useParams();
   const c = cases[slug] ?? cases.veldt;
-  const nextProject = PROJECTS.find(p => p.slug === c.next.slug) ?? PROJECTS[1];
+  const current = PROJECTS.find(p => p.slug === c.slug) ?? PROJECTS[0];
+  const otherProjects = PROJECTS.filter(p => p.slug !== c.slug);
 
   return (
     <Layout anchorPrefix="/">
@@ -193,6 +215,45 @@ const Project = () => {
         </div>
       </section>
 
+      {/* PROJECT IMAGES */}
+      <section className="px-6 md:px-10 pb-8">
+        <div className="mx-auto max-w-[1600px]">
+          <Reveal>
+            <div className="flex items-end justify-between mb-8">
+              <div className="h-eyebrow text-mute">§ 01 · Snapshots</div>
+              <div className="h-eyebrow text-mute hidden md:block">{current.meta}</div>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-12 gap-5">
+            <Reveal className="md:col-span-8">
+              <div className="relative overflow-hidden rounded-lg plate aspect-[16/10] group">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(800px 400px at 30% 20%, ${current.c1}55, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
+                <div className="absolute inset-0 grid place-items-center">
+                  <div className="text-center">
+                    <div className="h-eyebrow text-white/40 mb-3">Shot 01 · Hero</div>
+                    <div className="italic-display text-white/30" style={{ fontSize: "clamp(40px,6vw,80px)", lineHeight: 0.9 }}>
+                      Image placeholder
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-5 top-5"><span className="pill text-white/70">16 : 10</span></div>
+              </div>
+            </Reveal>
+            <Reveal className="md:col-span-4" delay={0.1}>
+              <div className="relative overflow-hidden rounded-lg plate aspect-[4/3] h-full group">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]" style={{ background: `radial-gradient(500px 250px at 70% 30%, ${current.c1}44, transparent 60%), linear-gradient(135deg, ${current.c2}, #06060a)` }} />
+                <div className="absolute inset-0 grid place-items-center">
+                  <div className="text-center">
+                    <div className="h-eyebrow text-white/40 mb-2">Shot 02</div>
+                    <div className="italic-display text-white/25 text-2xl">Placeholder</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* STATS */}
       <section className="px-6 md:px-10 py-16">
         <div className="mx-auto max-w-[1600px] grid md:grid-cols-4 gap-6">
@@ -206,43 +267,108 @@ const Project = () => {
       </section>
 
       {/* PROBLEM */}
-      <section className="px-6 md:px-10 py-28">
-        <div className="mx-auto max-w-[1600px] grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-3"><div className="h-eyebrow text-mute">§ 01 · The problem</div></div>
-          <Reveal className="md:col-span-9">
-            <p className="font-display text-3xl md:text-5xl leading-[1.1]">{c.problem}</p>
+      <section className="px-6 md:px-10 py-24">
+        <div className="mx-auto max-w-[1600px]">
+          <Reveal>
+            <div className="h-eyebrow text-mute mb-6">§ 02 · The problem</div>
+          </Reveal>
+          <Reveal>
+            <div className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
+              <div className="absolute left-0 top-10 bottom-10 w-[2px] bg-signal/70 hidden md:block" />
+              <p className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1100px]">{c.problem}</p>
+            </div>
           </Reveal>
         </div>
       </section>
 
 
       {/* PULLQUOTE */}
-      <section className="px-6 md:px-10 py-28">
-        <div className="mx-auto max-w-[1200px] text-center">
-          <svg width="30" height="30" viewBox="0 0 22 22" className="text-signal mx-auto mb-8" fill="currentColor">
-            <path d="M0 12 C0 6 3 2 9 0 L10 3 C6 5 5 7 5 10 H9 V22 H0 Z M13 12 C13 6 16 2 22 0 L22 3 C18 5 17 7 17 10 H22 V22 H13 Z" />
-          </svg>
+      <section className="px-6 md:px-10 py-24">
+        <div className="mx-auto max-w-[1600px]">
           <Reveal>
-            <blockquote className="font-display text-3xl md:text-5xl leading-[1.1]">{c.pull.q}</blockquote>
+            <div className="h-eyebrow text-mute mb-6">§ 03 · In their words</div>
           </Reveal>
-          <div className="mt-8 h-eyebrow text-mute">{c.pull.n}</div>
+          <Reveal>
+            <figure className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
+              <svg width="48" height="48" viewBox="0 0 22 22" className="text-signal mb-8 opacity-90" fill="currentColor">
+                <path d="M0 12 C0 6 3 2 9 0 L10 3 C6 5 5 7 5 10 H9 V22 H0 Z M13 12 C13 6 16 2 22 0 L22 3 C18 5 17 7 17 10 H22 V22 H13 Z" />
+              </svg>
+              <blockquote className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1200px]">{c.pull.q}</blockquote>
+              <figcaption className="mt-10 pt-6 border-t border-foreground/10 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-signal/20 grid place-items-center font-display text-signal text-lg">
+                  {c.pull.n.charAt(0)}
+                </div>
+                <div className="h-eyebrow text-mute-2">{c.pull.n}</div>
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </section>
 
-      {/* SHIPPED */}
-      <section className="px-6 md:px-10 py-28">
-        <div className="mx-auto max-w-[1600px] grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-3">
-            <div className="h-eyebrow text-mute mb-3">§ 02 · Shipped</div>
-            <Reveal><h2 className="font-display text-4xl md:text-5xl leading-tight">What we <span className="italic-display text-signal">handed over.</span></h2></Reveal>
-          </div>
-          <div className="md:col-span-9 grid sm:grid-cols-2 gap-6">
-            {c.shipped.map((s, i) => (
-              <Reveal key={s.t} delay={i * 0.06} className="plate rounded-lg p-7">
-                <div className="font-display text-2xl mb-2">{s.t}</div>
-                <p className="text-sm text-mute-2 leading-relaxed">{s.d}</p>
+      {/* TOOLS */}
+      <section className="px-6 md:px-10 py-24">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="grid md:grid-cols-12 gap-10 mb-12">
+            <div className="md:col-span-4">
+              <div className="h-eyebrow text-mute mb-3">§ 04 · Tools & Stack</div>
+              <Reveal>
+                <h2 className="font-display text-4xl md:text-5xl leading-tight">
+                  What we <span className="italic-display text-signal">worked with.</span>
+                </h2>
               </Reveal>
-            ))}
+            </div>
+            <Reveal delay={0.1} className="md:col-span-8 flex items-end">
+              <p className="text-mute-2 text-base md:text-lg leading-relaxed max-w-[620px]">
+                The toolkit, palette, and stack behind this build — what we drew with, what we shipped on.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            <Reveal delay={0.05}>
+              <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="h-eyebrow text-mute">Design tools</div>
+                  <span className="font-mono-ui text-xs text-signal">01</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {c.tools.design.map(t => (
+                    <span key={t} className="pill border border-foreground/15 text-foreground/80">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="h-eyebrow text-mute">Color palette</div>
+                  <span className="font-mono-ui text-xs text-signal">02</span>
+                </div>
+                <div className="grid grid-cols-4 gap-3 mt-auto">
+                  {c.tools.colors.map(hex => (
+                    <div key={hex} className="flex flex-col gap-2">
+                      <div className="aspect-square rounded-md border border-foreground/10" style={{ background: hex }} />
+                      <div className="font-mono-ui text-[10px] text-mute-2 uppercase tracking-wider">{hex}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="plate rounded-xl p-7 md:p-8 h-full flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="h-eyebrow text-mute">Tech stack</div>
+                  <span className="font-mono-ui text-xs text-signal">03</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {c.tools.stack.map(t => (
+                    <span key={t} className="pill border border-signal/30 text-signal">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -263,30 +389,57 @@ const Project = () => {
         </div>
       </section>
 
-      {/* NEXT */}
-      <section className="px-6 md:px-10 py-28">
-        <div className="mx-auto max-w-[1600px] grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-4">
-            <div className="h-eyebrow text-mute mb-3">Next case</div>
-            <div className="font-display text-5xl">{c.next.title}<span className="italic-display text-signal">.</span></div>
-            <p className="text-mute-2 mt-3">{c.next.sub}</p>
-            <div className="mt-8">
-              <Link to={`/projects/${c.next.slug}`}>
-                <ButtonWithIcon 
-                  text="Read the case" 
-                  className="bg-signal text-ink"
-                />
-              </Link>
+      {/* MORE PROJECTS */}
+      <section className="px-6 md:px-10 py-24">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="grid md:grid-cols-12 gap-10 mb-12 items-end">
+            <div className="md:col-span-8">
+              <div className="h-eyebrow text-mute mb-3">§ 05 · Other work</div>
+              <Reveal>
+                <h2 className="font-display text-4xl md:text-5xl leading-tight">
+                  More <span className="italic-display text-signal">receipts.</span>
+                </h2>
+              </Reveal>
+            </div>
+            <div className="md:col-span-4 md:text-right">
+              <Link to="/#work" className="u-link h-eyebrow text-mute">View all projects →</Link>
             </div>
           </div>
-          <Link to={`/projects/${c.next.slug}`} className="md:col-span-8 block relative overflow-hidden rounded-lg plate aspect-[16/9] group">
-            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" style={{ background: `radial-gradient(700px 400px at 30% 80%, ${nextProject.c1}55, transparent 60%), linear-gradient(135deg, ${nextProject.c2}, #05080C)` }} />
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="italic-display text-white/90" style={{ fontSize: "clamp(60px,10vw,160px)", lineHeight: 0.9 }}>
-                {c.next.title}
-              </div>
-            </div>
-          </Link>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {otherProjects.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.06}>
+                <Link to={`/projects/${p.slug}`} className="proj-card group block" data-cursor="view">
+                  <div
+                    className={`relative overflow-hidden rounded-lg plate aspect-[4/3] ${p.invert ? "bg-cream" : ""}`}
+                    style={!p.invert ? { background: `radial-gradient(500px 250px at 30% 70%, ${p.c1}66, transparent 60%), linear-gradient(135deg, ${p.c2}, #06060a)` } : { background: `linear-gradient(135deg, ${p.c1}, ${p.c2})` }}
+                  >
+                    <div className="absolute left-4 top-4">
+                      <span className={`pill ${p.invert ? "text-ink" : "text-white/80"}`}>{p.tag}</span>
+                    </div>
+                    <div className="absolute inset-0 grid place-items-center">
+                      <div className={`italic-display ${p.invert ? "text-ink/80" : "text-white/85"}`} style={{ fontSize: "clamp(36px,5vw,64px)", lineHeight: 0.9 }}>
+                        {p.title}
+                      </div>
+                    </div>
+                    <div className="absolute right-4 bottom-4 proj-arrow">
+                      <svg width="34" height="34" viewBox="0 0 42 42" className={p.invert ? "text-ink" : "text-white"}>
+                        <circle cx="21" cy="21" r="20" fill="none" stroke="currentColor" strokeOpacity=".4" />
+                        <path d="M15 27 L27 15 M19 15 H27 V23" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-end justify-between">
+                    <div>
+                      <div className="font-display text-2xl">{p.title}</div>
+                      <div className="text-mute-2 text-xs mt-1">{p.sub}</div>
+                    </div>
+                    <div className="h-eyebrow text-mute text-right">{p.year}</div>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>
