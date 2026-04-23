@@ -248,16 +248,18 @@ const Project = () => {
       </section>
 
       {/* MARQUEE */}
-      <section className="py-12 overflow-hidden border-y border-foreground/10">
-        <div className="flex whitespace-nowrap marquee-track" style={{ width: "max-content" }}>
-          {[0, 1].map(k => (
-            <div key={k} className="flex items-center gap-10 px-8 font-display italic-display" style={{ fontSize: "clamp(60px,12vw,180px)", lineHeight: 0.9 }}>
-              <span>{c.title.replace("—", "")} 2026</span>
-              <span className="text-signal">◐</span>
-              <span>Next case →</span>
-              <span className="text-signal">◐</span>
-            </div>
-          ))}
+      <section className="py-12 border-y border-foreground/10">
+        <div className="mx-auto max-w-[1600px] overflow-hidden">
+          <div className="flex w-max marquee-track" style={{ animationDuration: "20s" }}>
+            {[0, 1].map(k => (
+              <div key={k} className="flex items-center gap-10 px-8 font-display italic-display" style={{ fontSize: "clamp(60px,12vw,180px)", lineHeight: 0.9 }}>
+                <span>{c.title.replace("—", "")} 2026</span>
+                <span className="text-signal">◐</span>
+                <span>Next case →</span>
+                <span className="text-signal">◐</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

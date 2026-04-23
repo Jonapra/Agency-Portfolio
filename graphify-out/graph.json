@@ -45,7 +45,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_app_tsx",
-      "community": 5,
+      "community": 2,
       "norm_label": "app.tsx"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
       "source_location": "L13",
       "id": "app_scrollmanager",
-      "community": 5,
+      "community": 2,
       "norm_label": "scrollmanager()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
       "source_location": "L61",
       "id": "app_app",
-      "community": 5,
+      "community": 2,
       "norm_label": "app()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Hero.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_components_sections_hero_tsx",
-      "community": 2,
+      "community": 3,
       "norm_label": "hero.tsx"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Hero.tsx",
       "source_location": "L8",
       "id": "hero_hero",
-      "community": 2,
+      "community": 3,
       "norm_label": "hero()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "src\\hooks\\useMagnetic.ts",
       "source_location": "L1",
       "id": "src_hooks_usemagnetic_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "usemagnetic.ts"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "src\\hooks\\useMagnetic.ts",
       "source_location": "L7",
       "id": "usemagnetic_usemagnetic",
-      "community": 2,
+      "community": 3,
       "norm_label": "usemagnetic()"
     },
     {
@@ -690,10 +690,10 @@
     {
       "label": "Project.tsx",
       "file_type": "code",
-      "source_file": "src\\pages\\Project.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\pages\\Project.tsx",
       "source_location": "L1",
-      "id": "src_pages_project_tsx",
-      "community": 48,
+      "id": "d_agency_portfolio_src_pages_project_tsx",
+      "community": 2,
       "norm_label": "project.tsx"
     },
     {
@@ -822,7 +822,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 4,
       "norm_label": "typography system (archivo + space grotesk)",
       "id": "MASTER_typography"
     },
@@ -835,7 +835,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 4,
       "norm_label": "archivo heading font",
       "id": "MASTER_archivo"
     },
@@ -848,7 +848,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 4,
       "norm_label": "space grotesk body font",
       "id": "MASTER_spacegrotesk"
     },
@@ -861,7 +861,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 49,
+      "community": 48,
       "norm_label": "spacing variable scale",
       "id": "MASTER_spacing"
     },
@@ -952,7 +952,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 5,
       "norm_label": "motion-driven style",
       "id": "MASTER_motiondriven"
     },
@@ -965,7 +965,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 5,
       "norm_label": "portfolio grid page pattern",
       "id": "MASTER_portfoliogrid"
     },
@@ -978,7 +978,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 5,
       "norm_label": "section order: heroa\u2020\u2019projectgrida\u2020\u2019abouta\u2020\u2019contact",
       "id": "MASTER_sectionorder"
     },
@@ -1030,7 +1030,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 4,
       "norm_label": "google fonts import (archivo + space grotesk)",
       "id": "MASTER_googlefonts"
     },
@@ -1043,7 +1043,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 5,
       "norm_label": "rationale: motion-driven as sales asset",
       "id": "MASTER_rationale_motiondriven"
     },
@@ -1056,12 +1056,24 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 50,
+      "community": 49,
       "norm_label": "design system master",
       "id": "design_system_master"
     }
   ],
   "links": [
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_app_tsx",
+      "_tgt": "d_agency_portfolio_src_pages_project_tsx",
+      "source": "d_agency_portfolio_src_app_tsx",
+      "target": "d_agency_portfolio_src_pages_project_tsx",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
