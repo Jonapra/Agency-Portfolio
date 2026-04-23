@@ -28,8 +28,8 @@ const cases: Record<string, CaseContent> = {
   veldt: {
     slug: "veldt",
     title: "Veldt—",
-    italicLine: "a restaurant",
-    trail: "with a garden problem.",
+    italicLine: "a DentalClinic",
+    trail: "with no Online Presecnce.",
     intro: "When Veldt opened a third location on a former mushroom farm, the brand had to carry the stink of the soil without smelling like a theme.",
     client: "Veldt Restaurants · Porto",
     timeline: "Jan – Mar 2026",
@@ -178,13 +178,8 @@ const Project = () => {
             </nav>
           </Reveal>
 
-          <div className="grid md:grid-cols-12 gap-10 items-end mb-14">
-            <div className="md:col-span-8">
-              <Reveal>
-                <div className="flex items-center gap-3 mb-8">
-                  {c.tags.map(t => <span key={t} className="pill">{t}</span>)}
-                </div>
-              </Reveal>
+          <div className="grid md:grid-cols-2 gap-10 items-end mb-14">
+            <div className="md:col-span-1">
               <Reveal>
                 <h1 className="font-display leading-[0.92]" style={{ fontSize: "clamp(50px,10vw,130px)", letterSpacing: "-0.04em" }}>
                   {c.title}<br />
@@ -193,8 +188,8 @@ const Project = () => {
                 </h1>
               </Reveal>
             </div>
-            <Reveal delay={0.16} className="md:col-span-4 space-y-6">
-              <p className="font-display text-2xl md:text-4xl text-foreground font-medium leading-[1.1]">{c.intro}</p>
+            <Reveal delay={0.16} className="md:col-span-1 space-y-6">
+              <p className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground font-medium leading-[1.1]">{c.intro}</p>
               <div className="grid grid-cols-2 gap-6 pt-4 border-t border-foreground/10">
                 <div><div className="h-eyebrow text-mute mb-1">Client</div><div>{c.client}</div></div>
                 <div><div className="h-eyebrow text-mute mb-1">Timeline</div><div>{c.timeline}</div></div>
