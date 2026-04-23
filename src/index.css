@@ -26,7 +26,7 @@
     --signal-2: 17 100% 64%;          /* #FF7A45 */
 
     --mute: 240 4% 56%;               /* #8A8A92 */
-    --mute-2: 42 9% 75%;              /* #C4C1B9 */
+    --mute-2: 42 9% 60%;              /* Darkened from 75% for better visibility */
 
     /* Shadcn aliases mapped to brand */
     --card: 240 6% 9%;
@@ -76,8 +76,8 @@
     --border: 240 6% 5%;
     --input: 38 30% 87%;
     --signal: 17 100% 56%;
-    --mute: 240 5% 40%;
-    --mute-2: 40 10% 45%;
+    --mute: 240 5% 35%;
+    --mute-2: 40 10% 30%;
   }
 }
 

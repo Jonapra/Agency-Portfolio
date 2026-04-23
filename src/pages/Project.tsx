@@ -194,7 +194,7 @@ const Project = () => {
               </Reveal>
             </div>
             <Reveal delay={0.16} className="md:col-span-4 space-y-6">
-              <p className="text-lg text-mute-2 leading-relaxed">{c.intro}</p>
+              <p className="font-display text-2xl md:text-4xl text-foreground font-medium leading-[1.1]">{c.intro}</p>
               <div className="grid grid-cols-2 gap-6 pt-4 border-t border-foreground/10">
                 <div><div className="h-eyebrow text-mute mb-1">Client</div><div>{c.client}</div></div>
                 <div><div className="h-eyebrow text-mute mb-1">Timeline</div><div>{c.timeline}</div></div>
@@ -290,8 +290,8 @@ const Project = () => {
           <Reveal>
             <div className="relative plate rounded-xl p-10 md:p-16 lg:p-20 overflow-hidden">
               <div className="absolute left-0 top-10 bottom-10 w-[2px] bg-signal/70 hidden md:block" />
-              <div className="h-eyebrow text-signal mb-6">The Agiton challenge was —</div>
-              <p className="font-display text-2xl md:text-4xl lg:text-5xl leading-[1.15] max-w-[1100px]">{c.problem}</p>
+              <div className="h-eyebrow text-signal font-bold mb-6">The Agiton challenge was —</div>
+              <p className="font-display text-3xl md:text-5xl lg:text-6xl leading-[1.1] max-w-[1100px] font-medium">{c.problem}</p>
             </div>
           </Reveal>
         </div>
