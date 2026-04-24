@@ -29,7 +29,7 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-[90vh] lg:min-h-screen lg:max-h-[900px] xl:max-h-[960px] 2xl:max-h-[1080px] px-6 md:px-10 pt-24 md:pt-28 lg:pt-32 2xl:pt-36 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
+      className="relative min-h-[100svh] md:min-h-[75vh] lg:min-h-screen lg:max-h-[840px] xl:max-h-[880px] 2xl:max-h-[960px] px-6 md:px-10 pt-24 md:pt-28 lg:pt-32 2xl:pt-36 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
       {theme === "dark" && <BackgroundBeams className="opacity-50" />}
@@ -37,7 +37,7 @@ export const Hero = () => {
       <div className="mx-auto max-w-[1600px] relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
         <motion.div 
-          className="flex items-center justify-between mb-8 md:mb-10 lg:mb-12 2xl:mb-14"
+          className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6 2xl:mb-8"
           {...fadeIn}
         >
           <div className="flex items-center gap-3">
@@ -52,7 +52,7 @@ export const Hero = () => {
 
         {/* Headline — synchronized timing */}
         <h1
-          className="font-display mb-6 md:mb-8 2xl:mb-10 flex flex-col items-start text-[40px] md:text-[92px] lg:text-[clamp(40px,8vw,132px)] 2xl:text-[160px]"
+          className="font-display mb-5 md:mb-6 2xl:mb-8 flex flex-col items-start text-[36px] md:text-[80px] lg:text-[clamp(36px,7vw,114px)] 2xl:text-[138px]"
           style={{
             lineHeight: 0.95,
             letterSpacing: "-0.035em",
