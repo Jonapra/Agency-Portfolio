@@ -36,7 +36,7 @@ export const Process = () => {
         {/* Header */}
         <div className="mb-20 md:mb-28 max-w-4xl mx-auto text-center">
           <Reveal>
-            <div className="h-eyebrow text-mute mb-6">§ 04 · Process</div>
+            <div className="h-eyebrow text-mute mb-6">§ 04 · Why Choose Us</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="h-section font-display leading-[1.05]">

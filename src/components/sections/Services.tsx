@@ -388,7 +388,7 @@ export const Services = () => (
     <div className="mx-auto max-w-[1600px]">
       <div className="grid md:grid-cols-12 gap-10 mb-14">
         <div className="md:col-span-3">
-          <div className="h-eyebrow text-mute mb-3">§ 02 · Services</div>
+          <div className="h-eyebrow text-mute mb-3">§ 02 · Process</div>
         </div>
         <div className="md:col-span-9">
           <Reveal>
