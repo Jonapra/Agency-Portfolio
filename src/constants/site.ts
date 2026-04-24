@@ -11,11 +11,9 @@ export const BRAND = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Process", href: "#services" },
+  { label: "Process", href: "#process" },
   { label: "Projects", href: "#work" },
-  { label: "Services", href: "#" },
   { label: "Blog", href: "/blog" },
-  // { label: "Pricing", href: "#pricing" },
 ] as const;
 
 export interface Project {

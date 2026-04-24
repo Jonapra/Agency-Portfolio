@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { JOURNAL } from "@/constants/site";
 
 const Blog = () => (
-  <Layout>
+  <Layout anchorPrefix="/">
     <section className="relative px-6 md:px-10 pt-36 pb-16">
       <div className="mx-auto max-w-[1600px]">
         <Reveal>

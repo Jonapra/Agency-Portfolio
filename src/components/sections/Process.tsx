@@ -1,200 +1,410 @@
-import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Reveal } from "../Reveal";
-import { PROCESS_STEPS } from "@/constants/site";
-import StepIllustration from "../StepIllustration";
 
-export const Process = () => {
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+/* ── Card data ───────────────────────────────────────────────── */
+const CARDS = [
+  {
+    n: "01", title: "Brand Identity",
+    desc: "We dig into who you are, what you stand for, and where you're headed — then design & build a visual system that fits your brand like it was always meant to look this way.",
+    tags: ["Strategy", "Naming", "Identity", "Guidelines"],
+  },
+  {
+    n: "02", title: "Product Design",
+    desc: "UI/UX built around your users. We present the designs, walk through them together, and keep refining until every screen feels exactly right.",
+    tags: ["UX", "UI", "Prototyping", "Handoff"],
+  },
+  {
+    n: "03", title: "Website",
+    desc: "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
+    tags: ["Architecture", "Development", "Testing", "Launch"],
+  },
+  {
+    n: "04", title: "Performance",
+    desc: "We don't hand off and disappear. SEO, speed, and post-launch support — we stay invested in how your site actually performs.",
+    tags: ["SEO", "Analytics", "Speed", "Retention"],
+  },
+] as const;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!timelineRef.current) return;
-      const rect = timelineRef.current.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const totalHeight = rect.height;
-      const start = windowH * 0.5;
-      const scrolled = start - rect.top;
-      const raw = scrolled / totalHeight;
-      const clamped = Math.max(0, Math.min(1, raw));
-      setProgress(clamped);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
+const VP = { once: true, margin: "0px 0px -60px 0px" } as const;
+
+/* ── Shared: dot grid bg ─────────────────────────────────────── */
+const DotBg = ({ id }: { id: string }) => (
+  <>
+    <defs>
+      <pattern id={id} x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+        <circle cx={0.9} cy={0.9} r={0.9} fill="currentColor" opacity={0.16} />
+      </pattern>
+    </defs>
+    <rect width={320} height={260} fill={`url(#${id})`} />
+  </>
+);
+
+/* ── 01 · Brand Identity — Orbital hub ──────────────────────── */
+const OrbitVisual = ({ active }: { active: boolean }) => {
+  const cx0 = 160, cy0 = 130, orbitR = 82;
+  const items = [
+    { label: "Strategy",   angle: -Math.PI / 2, pw: 78 },
+    { label: "Naming",     angle: 0,            pw: 64 },
+    { label: "Identity",   angle: Math.PI / 2,  pw: 78 },
+    { label: "Guidelines", angle: Math.PI,      pw: 86 },
+  ].map((it) => {
+    const cx = cx0 + orbitR * Math.cos(it.angle);
+    const cy = cy0 + orbitR * Math.sin(it.angle);
+    return { ...it, cx, cy, px: cx - it.pw / 2 };
+  });
 
   return (
-    <section id="process" className="relative px-6 md:px-10 py-16 md:py-28">
-      <div className="mx-auto max-w-4xl">
+    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+      <DotBg id="db-orbit" />
 
-        {/* Header */}
-        <div className="mb-20 md:mb-28 max-w-4xl mx-auto text-center">
+      {/* spokes — fade in on scroll */}
+      {items.map(({ cx, cy }, i) => (
+        <motion.line key={i} x1={cx0} y1={cy0} x2={cx} y2={cy}
+          stroke="currentColor" strokeWidth={0.5}
+          initial={{ opacity: 0 }} whileInView={{ opacity: 0.15 }}
+          viewport={VP} transition={{ duration: 0.6, delay: 0.2 + i * 0.08 }}
+        />
+      ))}
+
+      {/* orbit ring — static dash, no loop */}
+      <motion.circle cx={cx0} cy={cy0} r={orbitR}
+        fill="none" stroke="currentColor"
+        strokeWidth={0.9} strokeDasharray="3 7"
+        initial={{ opacity: 0 }} whileInView={{ opacity: 0.3 }}
+        viewport={VP} transition={{ duration: 0.8, delay: 0.1 }}
+      />
+
+      {/* label pills — slide in on scroll */}
+      {items.map(({ label, cx, cy, px, pw }, i) => (
+        <motion.g key={label}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={VP}
+          style={{ transformOrigin: `${cx}px ${cy}px` }}
+          transition={{ duration: 0.5, delay: 0.35 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+        >
+          <rect x={px} y={cy - 13} width={pw} height={26} rx={13}
+            fill="hsl(var(--background))" fillOpacity={0.9}
+            stroke="currentColor" strokeWidth={0.9}
+            strokeOpacity={active ? 0.5 : 0.22}
+            style={{ transition: "stroke-opacity 0.3s ease" }}
+          />
+          <text x={cx} y={cy + 4.5}
+            textAnchor="middle" fontSize={9} fill="currentColor"
+            fillOpacity={active ? 0.9 : 0.72}
+            fontFamily="'JetBrains Mono', monospace" letterSpacing="0.08em"
+            style={{ transition: "fill-opacity 0.3s ease" }}
+          >
+            {label.toUpperCase()}
+          </text>
+        </motion.g>
+      ))}
+
+      {/* center hub — scales on hover */}
+      <motion.circle cx={cx0} cy={cy0} r={22} fill="hsl(var(--signal))"
+        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
+        viewport={VP}
+        style={{ transformOrigin: `${cx0}px ${cy0}px` }}
+        animate={{ r: active ? 26 : 22 }}
+        transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
+      />
+      <text x={cx0} y={cy0 + 3.5} textAnchor="middle" fontSize={8.5}
+        fill="white" fontFamily="'JetBrains Mono', monospace" letterSpacing="0.12em"
+        style={{ pointerEvents: "none" }}
+      >
+        BRAND
+      </text>
+    </svg>
+  );
+};
+
+/* ── 02 · Product Design — Zigzag flow ──────────────────────── */
+const FlowVisual = ({ active }: { active: boolean }) => {
+  const steps = [
+    { label: "UX Research", side: "right" as const },
+    { label: "UI Design",   side: "left"  as const },
+    { label: "Prototype",   side: "right" as const },
+    { label: "Handoff",     side: "left"  as const },
+  ];
+  const spineX = 160;
+  const yTop = 28, yBot = 234;
+  const ys    = [52, 108, 164, 218];
+  const pillW = 92, pillH = 28;
+  const pillR = 170, pillL = 58;
+
+  return (
+    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+      <DotBg id="db-flow" />
+
+      {/* spine draws once on scroll */}
+      <motion.path d={`M ${spineX} ${yTop} L ${spineX} ${yBot}`}
+        fill="none" stroke="hsl(var(--signal))" strokeWidth={1.8} strokeLinecap="round"
+        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
+        viewport={VP} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+      />
+
+      {/* spine dots — pop in once */}
+      {ys.map((y, i) => (
+        <motion.g key={`sd-${i}`}
+          style={{ transformOrigin: `${spineX}px ${y}px` }}
+          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
+          viewport={VP}
+          transition={{ duration: 0.35, delay: 0.5 + i * 0.12, ease: "backOut" }}
+        >
+          <circle cx={spineX} cy={y} r={6}
+            fill="hsl(var(--background))" stroke="hsl(var(--signal))" strokeWidth={1.8} />
+          <circle cx={spineX} cy={y} r={2.6} fill="hsl(var(--signal))" />
+        </motion.g>
+      ))}
+
+      {/* pills — slide in once, highlight on hover */}
+      {steps.map((step, i) => {
+        const y   = ys[i];
+        const isR = step.side === "right";
+        const px  = isR ? pillR : pillL;
+        return (
+          <motion.g key={step.label}
+            initial={{ opacity: 0, x: isR ? -16 : 16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={VP}
+            transition={{ duration: 0.5, delay: 0.55 + i * 0.12, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            <line
+              x1={isR ? spineX : px + pillW} y1={y}
+              x2={isR ? px : spineX}         y2={y}
+              stroke="currentColor" strokeWidth={0.9} opacity={0.22}
+            />
+            <rect x={px} y={y - pillH / 2} width={pillW} height={pillH} rx={pillH / 2}
+              fill="hsl(var(--background))" fillOpacity={0.92}
+              stroke="currentColor" strokeWidth={0.9}
+              strokeOpacity={active ? 0.45 : 0.22}
+              style={{ transition: "stroke-opacity 0.3s ease" }}
+            />
+            <text x={px + pillW / 2} y={y + 5}
+              textAnchor="middle" fontSize={9.5} fill="currentColor"
+              fillOpacity={active ? 0.9 : 0.72}
+              fontFamily="'JetBrains Mono', monospace" letterSpacing="0.05em"
+              style={{ transition: "fill-opacity 0.3s ease" }}
+            >
+              {step.label.toUpperCase()}
+            </text>
+          </motion.g>
+        );
+      })}
+    </svg>
+  );
+};
+
+/* ── 03 · Website — Architecture stack ──────────────────────── */
+const ArchVisual = ({ active }: { active: boolean }) => {
+  const layers = [
+    { label: "ARCHITECTURE", w: 240, signal: false },
+    { label: "DEVELOPMENT",  w: 196, signal: false },
+    { label: "TESTING",      w: 152, signal: false },
+    { label: "LAUNCH",       w: 112, signal: true  },
+  ];
+  const lh = 36, gap = 8;
+  const baseY = 208;
+  // hover: spread layers apart slightly
+  const ys = layers.map((_, i) => baseY - i * (lh + gap) - (active ? i * 5 : 0));
+
+  return (
+    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+      <DotBg id="db-arch" />
+
+      <line x1={40} y1={baseY + lh + 4} x2={280} y2={baseY + lh + 4}
+        stroke="currentColor" strokeWidth={0.5} opacity={0.18} />
+
+      {layers.map((layer, i) => {
+        const y = ys[i];
+        const x = (320 - layer.w) / 2;
+        return (
+          <motion.g key={layer.label}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VP}
+            transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+            animate={{ y: active ? -i * 5 : 0 }}
+          >
+            <rect x={x} y={y} width={layer.w} height={lh} rx={8}
+              fill={layer.signal ? "hsl(var(--signal))" : "currentColor"}
+              fillOpacity={layer.signal ? 1 : 0.06 + i * 0.028}
+              stroke={layer.signal ? "none" : "currentColor"}
+              strokeWidth={0.9} strokeOpacity={0.22}
+            />
+            <text x={160} y={y + lh / 2 + 4.5}
+              textAnchor="middle" fontSize={9.5}
+              fill={layer.signal ? "white" : "currentColor"}
+              fillOpacity={layer.signal ? 1 : 0.6}
+              fontFamily="'JetBrains Mono', monospace" letterSpacing="0.14em"
+            >
+              {layer.label}
+            </text>
+          </motion.g>
+        );
+      })}
+    </svg>
+  );
+};
+
+/* ── 04 · Performance — Metrics bars ────────────────────────── */
+const MetricsVisual = ({ active }: { active: boolean }) => {
+  const bars = [
+    { label: "SEO",       h: 74,  pct: "+42%" },
+    { label: "Analytics", h: 106, pct: "+58%" },
+    { label: "Speed",     h: 130, pct: "+76%" },
+    { label: "Retention", h: 154, pct: "+91%" },
+  ];
+  const base = 208, bw = 44;
+  const xs  = [48, 108, 172, 232];
+  const cxs = xs.map((x) => x + bw / 2);
+  const pts = bars.map((b, i) => ({ x: cxs[i], y: base - b.h }));
+  const trendD = `M ${pts.map((p) => `${p.x},${p.y}`).join(" L ")}`;
+
+  return (
+    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+      <DotBg id="db-metrics" />
+
+      {[60, 120, 180].map((y) => (
+        <line key={y} x1={34} y1={y} x2={290} y2={y}
+          stroke="currentColor" strokeWidth={0.4} opacity={0.08} strokeDasharray="2 4" />
+      ))}
+      <line x1={34} y1={base} x2={290} y2={base}
+        stroke="currentColor" strokeWidth={0.6} opacity={0.22} />
+
+      {/* bars — grow once on scroll */}
+      {bars.map((bar, i) => (
+        <g key={bar.label}>
+          <motion.rect
+            x={xs[i]} width={bw} rx={5}
+            fill="currentColor"
+            fillOpacity={active ? 0.16 : 0.08}
+            stroke="currentColor" strokeOpacity={0.22} strokeWidth={0.9}
+            style={{ transition: "fill-opacity 0.3s ease" }}
+            initial={{ height: 0, y: base }}
+            whileInView={{ height: bar.h, y: base - bar.h }}
+            viewport={VP}
+            transition={{ duration: 0.85, delay: 0.2 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+          />
+          {/* percentage — flies up once */}
+          <motion.text
+            x={cxs[i]} textAnchor="middle" fontSize={9}
+            fill="hsl(var(--signal))" fillOpacity={0.95}
+            fontFamily="'JetBrains Mono', monospace" letterSpacing="0.04em"
+            initial={{ opacity: 0, y: base - bar.h + 8 }}
+            whileInView={{ opacity: 1, y: base - bar.h - 10 }}
+            viewport={VP}
+            transition={{ duration: 0.45, delay: 1.1 + i * 0.08 }}
+          >
+            {bar.pct}
+          </motion.text>
+          <text x={cxs[i]} y={base + 18}
+            textAnchor="middle" fontSize={8.5} fill="currentColor" fillOpacity={0.5}
+            fontFamily="'JetBrains Mono', monospace" letterSpacing="0.06em"
+          >
+            {bar.label.toUpperCase()}
+          </text>
+        </g>
+      ))}
+
+      {/* trend line — draws once */}
+      <motion.path d={trendD} fill="none"
+        stroke="hsl(var(--signal))" strokeWidth={2}
+        strokeLinecap="round" strokeLinejoin="round"
+        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
+        viewport={VP}
+        transition={{ duration: 1.1, delay: 0.75, ease: "easeInOut" }}
+      />
+
+      {/* trend dots — pop in once, static after */}
+      {pts.map((p, i) => (
+        <motion.circle key={i} cx={p.x} cy={p.y} r={4}
+          fill="hsl(var(--signal))"
+          style={{ transformOrigin: `${p.x}px ${p.y}px` }}
+          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
+          viewport={VP}
+          transition={{ duration: 0.3, delay: 0.8 + i * 0.24, ease: "backOut" }}
+        />
+      ))}
+    </svg>
+  );
+};
+
+/* ── Card ────────────────────────────────────────────────────── */
+type CardData = (typeof CARDS)[number];
+const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual] as const;
+
+const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
+  const [hovered, setHovered] = useState(false);
+  const Visual = VISUALS[index];
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 44 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+      transition={{ duration: 0.75, delay: index * 0.09, ease: [0.2, 0.8, 0.2, 1] }}
+      whileHover={{ y: -5 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="group relative rounded-2xl border border-foreground/10 bg-foreground/[0.025]
+                 overflow-hidden cursor-pointer hover:border-signal/30
+                 hover:shadow-[0_20px_60px_-20px_hsl(17_100%_56%/0.18)]
+                 transition-[border-color,box-shadow] duration-500"
+    >
+      <div className="relative h-[210px] md:h-[270px] lg:h-[300px] text-foreground overflow-hidden">
+        <Visual active={hovered} />
+      </div>
+
+      <div className="h-px bg-foreground/[0.08]" />
+
+      <div className="p-5 md:p-6">
+        <div className="h-eyebrow text-mute mb-3">{data.n}</div>
+        <h3 className="font-display text-[1.55rem] md:text-[1.9rem] leading-[1.08] mb-3
+                       group-hover:text-signal transition-colors duration-300">
+          {data.title}
+        </h3>
+        <p className="text-mute-2 text-sm leading-relaxed mb-4 max-w-[52ch]">{data.desc}</p>
+        <div className="flex flex-wrap gap-1.5">
+          {data.tags.map((tag: string) => (
+            <span key={tag}
+              className="h-eyebrow text-mute border border-foreground/10 rounded-full
+                         px-2.5 py-1 text-[9.5px]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
+  );
+};
+
+/* ── Section ─────────────────────────────────────────────────── */
+export const Process = () => (
+  <section id="process" className="relative px-6 md:px-10 py-12 md:py-20">
+    <div className="mx-auto max-w-[1600px]">
+      <div className="grid md:grid-cols-12 gap-10 mb-14">
+        <div className="md:col-span-3">
+          <div className="h-eyebrow text-mute mb-3">§ 02 · Process</div>
+        </div>
+        <div className="md:col-span-9">
           <Reveal>
-            <div className="h-eyebrow text-mute mb-6">§ 04 · Why Choose Us</div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="h-section font-display leading-[1.05]">
-              Built To Move,{" "}
-              <span className="italic-display text-signal">Ship High-Quality</span>{" "}
-              Designs Faster
+            <h2 className="h-section font-display">
+              What we make,{" "}
+              <span className="italic-display text-signal">end‑to‑end.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-6 text-sm md:text-base text-mute-2 leading-relaxed max-w-2xl mx-auto">
-              Most founders waste months juggling freelancers or waiting on agencies. We move at startup speed. Here's exactly how we work together to get you investor-ready and launch-ready fast.
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Timeline */}
-        <div ref={timelineRef} className="relative">
-
-          {/* Vertical line — mobile: left rail at dot center; desktop: aligned to col 3 */}
-          {/* Mobile line */}
-          <div className="md:hidden pointer-events-none absolute top-4 bottom-4 left-[20px] w-[2px]" aria-hidden>
-            <div className="absolute inset-0 bg-foreground/15 rounded-full" />
-            <div
-              className="absolute top-0 w-[2px] bg-signal rounded-full shadow-[0_0_10px_hsl(var(--signal)/0.5)] transition-[height] duration-150 ease-out"
-              style={{ height: `${progress * 100}%` }}
-            />
-          </div>
-          {/* Desktop line */}
-          <div className="hidden md:block pointer-events-none absolute inset-y-0 left-0 right-0">
-            <div className="relative h-full grid grid-cols-12 gap-x-8">
-              <div className="col-start-3 flex justify-center relative">
-                <div className="absolute top-6 bottom-6 w-[2px] bg-foreground/15 rounded-full" />
-                <div
-                  className="absolute top-6 w-[2px] bg-signal rounded-full shadow-[0_0_12px_hsl(var(--signal)/0.6)] transition-[height] duration-150 ease-out"
-                  style={{ height: `calc(${progress * 100}% - 48px * ${progress})` }}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-20 md:space-y-28 relative">
-            {PROCESS_STEPS.map(([step, label, title, desc], i) => (
-              <StepRow
-                key={step}
-                id={i + 1}
-                index={i}
-                step={step}
-                label={label}
-                title={title}
-                desc={desc}
-              />
-            ))}
-          </div>
-
         </div>
       </div>
-    </section>
-  );
-};
 
-interface StepRowProps {
-  id: number;
-  index: number;
-  step: string;
-  label: string;
-  title: string;
-  desc: string;
-}
-
-const StepRow = ({ id, index, step, label, title, desc }: StepRowProps) => {
-  const rowRef = useRef<HTMLDivElement>(null);
-  const [reached, setReached] = useState(false);
-
-  useEffect(() => {
-    const check = () => {
-      if (!rowRef.current) return;
-      const rect = rowRef.current.getBoundingClientRect();
-      const viewportMid = window.innerHeight * 0.55;
-      setReached(rect.top < viewportMid);
-    };
-    check();
-    window.addEventListener("scroll", check, { passive: true });
-    window.addEventListener("resize", check);
-    return () => {
-      window.removeEventListener("scroll", check);
-      window.removeEventListener("resize", check);
-    };
-  }, []);
-
-  const dotActive = reached;
-
-  return (
-    <Reveal delay={index * 0.08}>
-      <div
-        ref={rowRef}
-        className="grid grid-cols-[40px_1fr] md:grid-cols-12 gap-x-7 md:gap-x-8 items-center group"
-      >
-        {/* Left label — lg+ only (too narrow on md) */}
-        <div className="hidden lg:block md:col-span-2 text-right pr-2 overflow-hidden">
-          <div className="font-display italic-display text-xl lg:text-[26px] xl:text-[30px] text-foreground/85 leading-tight">
-            {label}
-          </div>
-        </div>
-        {/* Spacer col on md where label is hidden */}
-        <div className="hidden md:block lg:hidden md:col-span-2" aria-hidden />
-
-        {/* Dot column */}
-        <div className="md:col-span-1 flex justify-center relative">
-          <div
-            className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${
-              dotActive
-                ? "bg-signal shadow-[0_0_0_6px_hsl(var(--signal)/0.15),0_0_24px_hsl(var(--signal)/0.5)]"
-                : "bg-background border-2 border-signal/30"
-            }`}
-          >
-            <ChevronDown
-              className={`w-4 h-4 transition-colors duration-500 ${
-                dotActive ? "text-ink" : "text-signal/50"
-              }`}
-              strokeWidth={3}
-            />
-          </div>
-        </div>
-
-        {/* Text content */}
-        <div className="md:col-span-4 flex flex-col min-w-0">
-          <span className="inline-flex items-center w-fit px-3 py-1 rounded-full bg-foreground/[0.06] border border-foreground/10 text-[11px] font-medium tracking-wide text-foreground/70 mb-3">
-            {step}
-          </span>
-          <h3 className="font-display text-2xl md:text-3xl lg:text-[32px] xl:text-[36px] mb-3 leading-[1.15] transition-colors duration-300 group-hover:text-signal">
-            {title}
-          </h3>
-          <p className="text-sm md:text-[14px] text-mute-2 leading-relaxed max-w-md">
-            {desc}
-          </p>
-
-          {/* Mobile + iPad: phase label below desc (hidden on lg+ where left col shows it) */}
-          <div className="lg:hidden mt-4 font-display italic-display text-lg text-foreground/60">
-            {label}
-          </div>
-        </div>
-
-        {/* Illustration — right side */}
-        <div className="hidden md:flex md:col-span-5 justify-end">
-          <div className="w-full max-w-[220px] lg:max-w-[260px] aspect-[16/10] rounded-2xl overflow-hidden border border-foreground/[0.12] bg-gradient-to-br from-foreground/[0.05] via-signal/[0.06] to-foreground/[0.03] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.6),0_6px_20px_-10px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_26px_60px_-20px_rgba(0,0,0,0.75)] flex items-center justify-center relative p-2">
-            <StepIllustration id={id} />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
-          </div>
-        </div>
-
-        {/* Mobile illustration — full width in content col */}
-        <div className="md:hidden col-start-2 mt-5 w-full">
-          <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-foreground/[0.12] bg-gradient-to-br from-foreground/[0.05] via-signal/[0.06] to-foreground/[0.03] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center p-2">
-            <StepIllustration id={id} />
-          </div>
-        </div>
-
+      <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+        {CARDS.map((card, i) => (
+          <ServiceCard key={card.n} data={card} index={i} />
+        ))}
       </div>
-    </Reveal>
-  );
-};
+    </div>
+  </section>
+);
