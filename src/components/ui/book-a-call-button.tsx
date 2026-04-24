@@ -50,7 +50,7 @@ export function BookACallButton({ href = "#contact" }: BookACallButtonProps) {
           transition={spring}
           className="font-sans font-bold text-[17px] tracking-[-0.04em] whitespace-nowrap"
         >
-          Book a call
+          {hovered ? "+91 9366279648" : "Book a call"}
         </motion.span>
       </motion.div>
     </a>
