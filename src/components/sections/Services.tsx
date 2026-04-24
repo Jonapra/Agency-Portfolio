@@ -8,7 +8,7 @@ import { Reveal } from "../Reveal";
 const CARDS = [
   {
     n: "01", title: "Brand Identity",
-    desc: "We dig into who you are, what you stand for, and where you're headed — then design a visual system that fits your brand like it was always meant to look this way.",
+    desc: "We dig into who you are, what you stand for, and where you're headed — then design & build a visual system that fits your brand like it was always meant to look this way.",
     tags: ["Strategy", "Naming", "Identity", "Guidelines"],
   },
   {
@@ -18,8 +18,8 @@ const CARDS = [
   },
   {
     n: "03", title: "Website",
-    desc: "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard.",
-    tags: ["Architecture", "Build", "CMS", "Launch"],
+    desc: "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard.We do any changes required before and even after deployment.",
+    tags: ["Architecture", "Development", "Testing", "Launch"],
   },
   {
     n: "04", title: "Performance",
@@ -83,7 +83,7 @@ const OrbitVisual = ({ active }: { active: boolean }) => {
         transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* pulse ring from center */}
+      {/* pulse ring from center - loops continuously */}
       {!rm && (
         <motion.circle cx={cx0} cy={cy0}
           fill="none" stroke="hsl(var(--signal))" strokeWidth={1.2}
@@ -104,14 +104,12 @@ const OrbitVisual = ({ active }: { active: boolean }) => {
         />
       )}
 
-      {/* orbit label pills */}
+      {/* orbit label pills - pulse continuously */}
       {items.map(({ label, cx, cy, px, pw }, i) => (
         <motion.g key={label}
-          initial={{ opacity: 0, scale: 0.85 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: [0.6, 1, 0.6], scale: [0.92, 1, 0.92] }}
           style={{ transformOrigin: `${cx}px ${cy}px` }}
-          transition={{ duration: 0.55, delay: 0.4 + i * 0.12, ease: [0.2, 0.8, 0.2, 1] }}
+          transition={{ duration: 2.8, delay: i * 0.15, repeat: Infinity, ease: [0.2, 0.8, 0.2, 1] }}
         >
           <rect x={px} y={cy - 13} width={pw} height={26} rx={13}
             fill="hsl(var(--background))" fillOpacity={0.9}
@@ -163,12 +161,12 @@ const FlowVisual = ({ active }: { active: boolean }) => {
     <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
       <DotBg id="db-flow" />
 
-      {/* spine draws in */}
+      {/* spine draws in - loops continuously */}
       <motion.path d={`M ${spineX} ${yTop} L ${spineX} ${yBot}`}
         fill="none" stroke="hsl(var(--signal))" strokeWidth={1.8} strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.95, ease: [0.2, 0.8, 0.2, 1] }}
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: [0, 1, 1, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: [0.2, 0.8, 0.2, 1] }}
       />
 
       {/* flowing particles along spine */}
@@ -190,13 +188,17 @@ const FlowVisual = ({ active }: { active: boolean }) => {
         />
       ))}
 
-      {/* spine dots */}
+      {/* spine dots - pulse continuously */}
       {ys.map((y, i) => (
         <motion.g key={`sd-${i}`}
           style={{ transformOrigin: `${spineX}px ${y}px` }}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35, delay: 0.65 + i * 0.14, ease: "backOut" }}
+          animate={{ scale: [1, 1.15, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{
+            duration: 1.8,
+            delay: i * 0.35,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           <circle cx={spineX} cy={y} r={6}
             fill="hsl(var(--background))" stroke="hsl(var(--signal))" strokeWidth={1.8} />
@@ -211,10 +213,9 @@ const FlowVisual = ({ active }: { active: boolean }) => {
         const px  = isR ? pillR : pillL;
         return (
           <motion.g key={step.label}
-            initial={{ opacity: 0, x: isR ? -18 : 18 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.6 + i * 0.14, ease: [0.2, 0.8, 0.2, 1] }}
+            initial={{ opacity: 0.4, x: isR ? -18 : 18 }}
+            animate={{ opacity: [0.4, 1, 1, 0.4], x: [isR ? -18 : 18, 0, 0, isR ? -18 : 18] }}
+            transition={{ duration: 4, delay: i * 0.2, repeat: Infinity, ease: [0.2, 0.8, 0.2, 1] }}
           >
             <line
               x1={isR ? spineX : px + pillW} y1={y}
@@ -245,9 +246,9 @@ const ArchVisual = ({ active }: { active: boolean }) => {
   const rm = useReducedMotion();
   const layers = [
     { label: "ARCHITECTURE", w: 240, signal: false },
-    { label: "BUILD",        w: 196, signal: false },
-    { label: "CMS",          w: 152, signal: false },
-    { label: "LAUNCH",       w: 112, signal: true  },
+    { label: "Development",        w: 196, signal: false },
+    { label: "Testing",          w: 152, signal: false },
+    { label: "Launch",       w: 112, signal: true  },
   ];
   const lh = 36;
   const gap = 8;
@@ -281,16 +282,15 @@ const ArchVisual = ({ active }: { active: boolean }) => {
         </linearGradient>
       </defs>
 
+      {/* layers - stack animation loops continuously */}
       {layers.map((layer, i) => {
         const y = ys[i];
         const x = (320 - layer.w) / 2;
         return (
           <motion.g key={layer.label}
-            initial={{ opacity: 0, y: 36 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.1 + i * 0.12, ease: [0.2, 0.8, 0.2, 1] }}
+            animate={{ opacity: [0.3, 1, 1, 0.3], y: [8, 0, 0, 8] }}
             style={{ transition: "transform 0.4s ease" }}
+            transition={{ duration: 2.5, delay: i * 0.12, repeat: Infinity, ease: [0.2, 0.8, 0.2, 1] }}
           >
             <rect x={x} y={y} width={layer.w} height={lh} rx={8}
               fill={layer.signal ? "hsl(var(--signal))" : "currentColor"}
@@ -316,7 +316,6 @@ const ArchVisual = ({ active }: { active: boolean }) => {
           <motion.rect
             y={launchY} width={80} height={lh}
             fill="url(#shimmer-grad)"
-            initial={{ x: launchX - 80 }}
             animate={{ x: [launchX - 80, launchX + launchW] }}
             transition={{
               duration: 1.8, repeat: Infinity, repeatDelay: 2.4,
@@ -360,7 +359,7 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
       <line x1={34} y1={base} x2={290} y2={base}
         stroke="currentColor" strokeWidth={0.6} opacity={0.22} />
 
-      {/* bars */}
+      {/* bars - grow animation loops continuously */}
       {bars.map((bar, i) => (
         <g key={bar.label}>
           <motion.rect
@@ -369,20 +368,16 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
             fillOpacity={active ? 0.15 : 0.08}
             stroke="currentColor" strokeOpacity={0.22} strokeWidth={0.9}
             style={{ transition: "fill-opacity 0.3s ease" }}
-            initial={{ height: 0, y: base }}
-            whileInView={{ height: bar.h, y: base - bar.h }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.85, delay: 0.2 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+            animate={{ height: [0, bar.h, bar.h, 0], y: [base, base - bar.h, base - bar.h, base] }}
+            transition={{ duration: 3, delay: i * 0.15, repeat: Infinity, ease: [0.2, 0.8, 0.2, 1] }}
           />
-          {/* percentage */}
+          {/* percentage - pulse continuously */}
           <motion.text
             x={cxs[i]} textAnchor="middle" fontSize={9}
             fill="hsl(var(--signal))" fillOpacity={0.95}
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.04em"
-            initial={{ opacity: 0, y: base - bar.h + 6 }}
-            whileInView={{ opacity: 1, y: base - bar.h - 10 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 1.1 + i * 0.09 }}
+            animate={{ opacity: [0, 1, 1, 0], y: [base - bar.h + 6, base - bar.h - 10, base - bar.h - 10, base - bar.h + 6] }}
+            transition={{ duration: 3, delay: i * 0.15, repeat: Infinity }}
           >
             {bar.pct}
           </motion.text>
@@ -396,13 +391,12 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
         </g>
       ))}
 
-      {/* trend line */}
+      {/* trend line - draws continuously */}
       <motion.path d={trendD} fill="none"
         stroke="hsl(var(--signal))" strokeWidth={2}
         strokeLinecap="round" strokeLinejoin="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.1, delay: 0.75, ease: "easeInOut" }}
+        animate={{ pathLength: [0, 1, 1, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* trend dots + pulse rings */}
@@ -411,9 +405,8 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
           <motion.circle cx={p.x} cy={p.y} r={4}
             fill="hsl(var(--signal))"
             style={{ transformOrigin: `${p.x}px ${p.y}px` }}
-            initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.32, delay: 0.78 + i * 0.26, ease: "backOut" }}
+            animate={{ scale: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
+            transition={{ duration: 3, delay: i * 0.2, repeat: Infinity }}
           />
           {!rm && (
             <motion.circle cx={p.x} cy={p.y}
@@ -421,7 +414,7 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
               animate={{ r: [4, 12], opacity: [0.6, 0] }}
               transition={{
                 duration: 1.9, repeat: Infinity,
-                delay: 2.2 + i * 0.35, ease: "easeOut",
+                delay: 0.5 + i * 0.35, ease: "easeOut",
               }}
             />
           )}
@@ -441,9 +434,8 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 48 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-      transition={{ duration: 0.8, delay: index * 0.09, ease: [0.2, 0.8, 0.2, 1] }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.15, ease: [0.2, 0.8, 0.2, 1] }}
       whileHover={{ y: -6 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
@@ -466,7 +458,7 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
                        group-hover:text-signal transition-colors duration-300">
           {data.title}
         </h3>
-        <p className="text-mute-2 text-sm leading-relaxed mb-4 max-w-[52ch]">{data.desc}</p>
+        <p className="text-foreground/80 font-medium text-[15px] leading-relaxed mb-4 max-w-[52ch]">{data.desc}</p>
         <div className="flex flex-wrap gap-1.5">
           {data.tags.map((tag: string) => (
             <span key={tag}
