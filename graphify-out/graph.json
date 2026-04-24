@@ -52,7 +52,7 @@
       "label": "ScrollManager()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "app_scrollmanager",
       "community": 2,
       "norm_label": "scrollmanager()"
@@ -61,7 +61,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "app_app",
       "community": 2,
       "norm_label": "app()"
@@ -661,12 +661,21 @@
       "norm_label": "cn()"
     },
     {
+      "label": "Blog.tsx",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\pages\\Blog.tsx",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_pages_blog_tsx",
+      "community": 2,
+      "norm_label": "blog.tsx"
+    },
+    {
       "label": "Index.tsx",
       "file_type": "code",
-      "source_file": "src\\pages\\Index.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\pages\\Index.tsx",
       "source_location": "L1",
-      "id": "src_pages_index_tsx",
-      "community": 47,
+      "id": "d_agency_portfolio_src_pages_index_tsx",
+      "community": 2,
       "norm_label": "index.tsx"
     },
     {
@@ -861,7 +870,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 48,
+      "community": 47,
       "norm_label": "spacing variable scale",
       "id": "MASTER_spacing"
     },
@@ -1056,7 +1065,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 49,
+      "community": 48,
       "norm_label": "design system master",
       "id": "design_system_master"
     }
@@ -1066,7 +1075,31 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_app_tsx",
+      "_tgt": "d_agency_portfolio_src_pages_index_tsx",
+      "source": "d_agency_portfolio_src_app_tsx",
+      "target": "d_agency_portfolio_src_pages_index_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
       "source_location": "L8",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_app_tsx",
+      "_tgt": "d_agency_portfolio_src_pages_blog_tsx",
+      "source": "d_agency_portfolio_src_app_tsx",
+      "target": "d_agency_portfolio_src_pages_blog_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "d_agency_portfolio_src_pages_project_tsx",
@@ -1078,7 +1111,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "app_scrollmanager",
@@ -1090,7 +1123,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "app_app",

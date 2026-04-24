@@ -33,24 +33,33 @@ function ScrollManager() {
   // Handle scroll-to-top for project pages and restore for home
   useEffect(() => {
     if (pathname.startsWith("/projects/")) {
-      // New project page - scroll to top
       window.scrollTo(0, 0);
-    } else if (pathname === "/") {
-      // Returning to home - restore position if available
-      const saved = scrollPositions.current["/"];
-      if (saved !== undefined) {
-        window.scrollTo(0, saved);
+    } else if (pathname === "/" || pathname === "/blog") {
+      // Check for hash and scroll to section
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+        }
       } else {
-        window.scrollTo(0, 0);
+        // No hash - restore position if available (back/forward nav)
+        const saved = scrollPositions.current[pathname];
+        if (saved !== undefined) {
+          window.scrollTo(0, saved);
+        } else {
+          window.scrollTo(0, 0);
+        }
       }
     }
   }, [pathname]);
 
-  // Save scroll position continuously while on home
+  // Save scroll position continuously while on home or blog
   useEffect(() => {
-    if (pathname !== "/") return;
+    if (pathname !== "/" && pathname !== "/blog") return;
     const onScroll = () => {
-      scrollPositions.current["/"] = window.scrollY;
+      scrollPositions.current[pathname] = window.scrollY;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
