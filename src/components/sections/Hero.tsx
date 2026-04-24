@@ -111,18 +111,18 @@ export const Hero = () => {
                 <div className="h-eyebrow text-mute mt-2">Websites shipped</div>
               </div>
               <div>
-                <div className="num font-display text-3xl md:text-4xl leading-none">4<span className="text-signal italic-display">y</span></div>
+                <div className="num font-display text-3xl md:text-4xl leading-none">2<span className="text-signal italic-display">y</span></div>
                 <div className="h-eyebrow text-mute mt-2">In practice</div>
               </div>
               <div>
-                <div className="num font-display text-3xl md:text-4xl leading-none">96<span className="italic-display text-signal">%</span></div>
+                <div className="num font-display text-3xl md:text-4xl leading-none">96<span className="italic-display text-signal font-bold">%</span></div>
                 <div className="h-eyebrow text-mute mt-2">Retain · re‑hire</div>
               </div>
             </div>
 
             <div className="md:col-span-6 md:text-right">
               <div className="h-eyebrow text-mute mb-1">Achivements</div>
-              <div className="italic-display text-lg md:text-xl lg:text-2xl">We are proud to say we have <span className="text-signal italic-display">100%</span> client Satisfaction rate.</div>
+              <div className="italic-display text-lg md:text-xl lg:text-2xl">We are proud to say we have <span className="text-signal italic-display font-bold">100%</span> client Satisfaction rate.</div>
             </div>
           </motion.div>
         </div>

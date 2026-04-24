@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useRef } from "react";
 import Index from "./pages/Index.tsx";
+import Blog from "./pages/Blog.tsx";
 import Project from "./pages/Project.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -67,6 +68,7 @@ const App = () => (
         <ScrollManager />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/projects/:slug" element={<Project />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
