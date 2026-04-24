@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SectionContainer } from "@/components/ui/section-container";
 import { Hero } from "@/components/sections/Hero";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
@@ -11,13 +12,15 @@ import { CTA } from "@/components/sections/CTA";
 const Index = () => (
   <Layout>
     <Hero />
-    <Services />
-    <Work />
-    <Process />
-{/* <Pricing /> */}
-    <Testimonials />
-    <FAQ />
-    <CTA />
+    <SectionContainer>
+      <Services />
+      <Work />
+      <Process />
+      {/* <Pricing /> */}
+      <Testimonials />
+      <FAQ />
+      <CTA />
+    </SectionContainer>
   </Layout>
 );
 

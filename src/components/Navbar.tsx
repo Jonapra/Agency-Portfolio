@@ -48,7 +48,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 transition-colors duration-300 ${isScrolled && !menuOpen ? `bg-background/80 backdrop-blur-md border-b ${theme === "dark" ? "border-cream/10" : "border-ink/10"}` : ""} ${headerTextColor}`}>
-        <div className="mx-auto max-w-[1600px] flex items-center justify-between">
+        <div className="mx-auto max-w-[1400px] flex items-center justify-between">
           <Logo />
 
           <nav className="hidden md:flex items-center gap-9 text-sm">
