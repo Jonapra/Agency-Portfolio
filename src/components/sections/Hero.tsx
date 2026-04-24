@@ -4,6 +4,7 @@ import { useMagnetic } from "@/hooks/useMagnetic";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
@@ -22,6 +23,7 @@ export const Hero = () => {
       className="relative min-h-[100svh] md:min-h-[90vh] lg:min-h-screen lg:max-h-[900px] xl:max-h-[960px] 2xl:max-h-[1080px] px-6 md:px-10 pt-24 md:pt-28 lg:pt-32 2xl:pt-36 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
+      <BackgroundBeams className="opacity-50" />
 
       <div className="mx-auto max-w-[1600px] relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
