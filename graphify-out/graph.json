@@ -277,7 +277,7 @@
       "label": "Hero()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Hero.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "hero_hero",
       "community": 3,
       "norm_label": "hero()"
@@ -400,12 +400,21 @@
       "norm_label": "work.tsx"
     },
     {
+      "label": "background-beams.tsx",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\ui\\background-beams.tsx",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_components_ui_background_beams_tsx",
+      "community": 41,
+      "norm_label": "background-beams.tsx"
+    },
+    {
       "label": "book-a-call-button.tsx",
       "file_type": "code",
       "source_file": "src\\components\\ui\\book-a-call-button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_book_a_call_button_tsx",
-      "community": 41,
+      "community": 42,
       "norm_label": "book-a-call-button.tsx"
     },
     {
@@ -432,7 +441,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_button_tsx",
-      "community": 42,
+      "community": 43,
       "norm_label": "button.tsx"
     },
     {
@@ -495,7 +504,7 @@
       "source_file": "src\\components\\ui\\toast.tsx",
       "source_location": "L1",
       "id": "src_components_ui_toast_tsx",
-      "community": 43,
+      "community": 44,
       "norm_label": "toast.tsx"
     },
     {
@@ -522,7 +531,7 @@
       "source_file": "src\\components\\ui\\tooltip.tsx",
       "source_location": "L1",
       "id": "src_components_ui_tooltip_tsx",
-      "community": 44,
+      "community": 45,
       "norm_label": "tooltip.tsx"
     },
     {
@@ -531,7 +540,7 @@
       "source_file": "src\\components\\ui\\use-toast.ts",
       "source_location": "L1",
       "id": "src_components_ui_use_toast_ts",
-      "community": 45,
+      "community": 46,
       "norm_label": "use-toast.ts"
     },
     {
@@ -540,7 +549,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\constants\\site.ts",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_constants_site_ts",
-      "community": 46,
+      "community": 47,
       "norm_label": "site.ts"
     },
     {
@@ -870,7 +879,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 47,
+      "community": 48,
       "norm_label": "spacing variable scale",
       "id": "MASTER_spacing"
     },
@@ -1065,7 +1074,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 48,
+      "community": 49,
       "norm_label": "design system master",
       "id": "design_system_master"
     }
@@ -1243,7 +1252,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Hero.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_sections_hero_tsx",
       "_tgt": "hero_hero",

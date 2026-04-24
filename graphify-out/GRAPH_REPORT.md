@@ -1,11 +1,11 @@
 # Graph Report - D:\Agency-Portfolio  (2026-04-24)
 
 ## Corpus Check
-- 46 files · ~18,023 words
+- 47 files · ~19,457 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 106 nodes · 61 edges · 49 communities detected
+- 107 nodes · 61 edges · 50 communities detected
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -59,6 +59,7 @@
 - [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Color Palette Tokens` - 5 edges
@@ -268,9 +269,13 @@ Nodes (0):
 
 ### Community 47 - "Community 47"
 Cohesion: 1.0
-Nodes (1): Spacing Variable Scale
+Nodes (0): 
 
 ### Community 48 - "Community 48"
+Cohesion: 1.0
+Nodes (1): Spacing Variable Scale
+
+### Community 49 - "Community 49"
 Cohesion: 1.0
 Nodes (1): Design System MASTER
 
@@ -335,21 +340,23 @@ Nodes (1): Design System MASTER
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 40`** (1 nodes): `Work.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (1 nodes): `book-a-call-button.tsx`
+- **Thin community `Community 41`** (1 nodes): `background-beams.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (1 nodes): `button.tsx`
+- **Thin community `Community 42`** (1 nodes): `book-a-call-button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 43`** (1 nodes): `toast.tsx`
+- **Thin community `Community 43`** (1 nodes): `button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 44`** (1 nodes): `tooltip.tsx`
+- **Thin community `Community 44`** (1 nodes): `toast.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (1 nodes): `use-toast.ts`
+- **Thin community `Community 45`** (1 nodes): `tooltip.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (1 nodes): `site.ts`
+- **Thin community `Community 46`** (1 nodes): `use-toast.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (1 nodes): `Spacing Variable Scale`
+- **Thin community `Community 47`** (1 nodes): `site.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (1 nodes): `Design System MASTER`
+- **Thin community `Community 48`** (1 nodes): `Spacing Variable Scale`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 49`** (1 nodes): `Design System MASTER`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
