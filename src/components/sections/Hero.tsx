@@ -29,7 +29,7 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-[75vh] lg:min-h-screen lg:max-h-[840px] xl:max-h-[880px] 2xl:max-h-[960px] px-6 md:px-10 pt-24 md:pt-28 lg:pt-32 2xl:pt-36 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
+      className="relative min-h-[100svh] md:min-h-[75vh] lg:min-h-screen lg:max-h-[840px] xl:max-h-[880px] 2xl:max-h-[960px] px-6 md:px-10 pt-20 md:pt-24 lg:pt-28 2xl:pt-32 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
       {theme === "dark" && <BackgroundBeams className="opacity-50" />}
@@ -110,7 +110,7 @@ export const Hero = () => {
         </div>
 
         {/* Bottom row: inline social proof */}
-        <div className="mt-auto pt-10 md:pt-12 lg:pt-16 2xl:pt-20">
+        <div className="mt-auto pt-6 md:pt-8 lg:pt-10 2xl:pt-12">
           <motion.div 
             className="border-t border-current/15 pt-5 md:pt-6 lg:pt-8 2xl:pt-6 grid md:grid-cols-12 gap-6 items-end"
             {...fadeIn}
