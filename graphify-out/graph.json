@@ -61,7 +61,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L62",
+      "source_location": "L71",
       "id": "app_app",
       "community": 2,
       "norm_label": "app()"
@@ -1123,7 +1123,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L62",
+      "source_location": "L71",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "app_app",
