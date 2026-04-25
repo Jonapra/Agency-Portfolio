@@ -401,7 +401,7 @@ export const Process = () => (
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-5 md:gap-6 font-semibold">
+      <div className="grid md:grid-cols-2 gap-5 md:gap-6 font-semibold lg:px-32">
         {CARDS.map((card, i) => (
           <ServiceCard key={card.n} data={card} index={i} />
         ))}
