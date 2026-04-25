@@ -12,7 +12,7 @@ import { CTA } from "@/components/sections/CTA";
 const Index = () => (
   <Layout>
     <Hero />
-    <SectionContainer className="px-0">
+    <SectionContainer className="px-0 md:px-0">
       <Process />
       <Work />
       <ChooseUs />
