@@ -62,9 +62,9 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
           className={`
             transition-all duration-500 ease-[0.2,0.8,0.2,1] w-full lg:px-5
             ${isPastHero && !menuOpen
-              ? "w-full md:w-[calc(100%-4rem)] max-w-[1400px] md:rounded-b-2xl md:border-x border-b bg-background/80 backdrop-blur-xl py-2"
+              ? "w-full md:w-[calc(100%-4rem)] max-w-[1400px] md:rounded-b-2xl md:border-x border-b bg-background/80 backdrop-blur-xl py-3"
               : isScrolled || menuOpen
-                ? `w-full border-b backdrop-blur-xl py-2 ${menuOpen ? "bg-ink border-white/10" : "bg-background/80 border-foreground/10"}`
+                ? `w-full border-b backdrop-blur-xl py-3 ${menuOpen ? "bg-ink border-white/10" : "bg-background/80 border-foreground/10"}`
                 : "w-full border-b border-transparent py-5"
             }
             ${isPastHero && !menuOpen ? "border-foreground/10" : ""}
