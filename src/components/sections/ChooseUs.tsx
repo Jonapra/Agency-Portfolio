@@ -319,103 +319,140 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
 
 /* ================================================================
    ILLUSTRATION 5 — Transparent Process
-   Gantt-style cascading pill labels.
+   Horizontal cascading pill labels with vertical connectors.
 ================================================================ */
 const STAGES = [
-  { label: "Brief approval",  xOff: 44,  isSig: false },
-  { label: "Concept Design", xOff: 76,  isSig: false },
-  { label: "Client feedback", xOff: 50,  isSig: true },
-  { label: "Developement and testing",    xOff: 56,  isSig: true  },
-  { label: "Cleint Revisions and feedback", xOff: 76,  isSig: false },
-  { label: "Launch and support",    xOff: 94,  isSig: true  },
+  { label: "Brief approval",     line2: null,           isSig: false },
+  { label: "Concept Design",     line2: null,           isSig: false },
+  { label: "Client feedback",    line2: null,           isSig: true  },
+  { label: "Developement",       line2: "and testing",  isSig: true  },
+  { label: "Cleint Revisions",   line2: "and feedback", isSig: false },
+  { label: "Launch and support", line2: null,           isSig: true  },
 ];
-const STAGE_Y = (i: number) => 20 + i * 33;
-const SPINE_X = 26;
 
-const TransparentProcessIllustration = ({ active }: { active: boolean }) => (
-  <svg viewBox="0 0 480 222" className="w-full h-full" aria-hidden="true">
-    {/* Spine */}
-    <motion.line
-      x1={SPINE_X} y1="16" x2={SPINE_X} y2="208"
-      stroke={FG} strokeOpacity="0.1" strokeWidth="1.5"
-      style={{ transformOrigin: `${SPINE_X}px 16px` }}
-      initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={VP}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-    />
+const PILL_CHW    = 4.8;
+const PILL_PAD_X  = 20;
+const PILL_H1     = 22;
+const PILL_H2     = 34;
+const H_BASELINE  = 180;
+const H_Y_START   = 16;
+const H_Y_STEP    = 22;
+const H_GAP       = 8;
 
-    {/* Dashed active-zone segment between last two stages */}
-    <line
-      x1={SPINE_X} y1={STAGE_Y(4) + 6} x2={SPINE_X} y2={STAGE_Y(5) + 6}
-      stroke={SIG} strokeWidth="1.5" strokeOpacity="0.4"
-      strokeDasharray="4 5"
-      className="anim-dash-flow"
-    />
+const TransparentProcessIllustration = ({ active }: { active: boolean }) => {
+  const pills = STAGES.map(({ label, line2, isSig }) => {
+    const w1 = label.length * PILL_CHW + PILL_PAD_X;
+    const w2 = line2 ? line2.length * PILL_CHW + PILL_PAD_X : 0;
+    return { label, line2, isSig, w: Math.max(w1, w2), h: line2 ? PILL_H2 : PILL_H1 };
+  });
 
-    {STAGES.map(({ label, xOff, isSig }, i) => {
-      const cy = STAGE_Y(i) + 6;
-      const pillW = label.length * 6.6 + 26;
-      return (
-        <motion.g key={i}
-          initial={{ opacity: 0, x: -18 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={VP}
-          transition={{ delay: 0.08 + i * 0.1, duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-        >
-          {/* Glow behind signal pills */}
-          {isSig && (
-            <circle cx={xOff + pillW / 2} cy={cy} r="14"
-              fill={SIG} fillOpacity="0.06"
-              className="anim-pulse-glow"
-              style={{ animationDelay: `${i * 0.35}s` }}
+  const lefts = pills.reduce<number[]>((acc, _p, i) => {
+    acc.push(i === 0 ? 12 : acc[i - 1] + pills[i - 1].w + H_GAP);
+    return acc;
+  }, []);
+
+  const totalW = Math.ceil(lefts[5] + pills[5].w + 14);
+  const dotXs  = pills.map((p, i) => lefts[i] + p.w / 2);
+
+  return (
+    <svg viewBox={`0 0 ${totalW} 205`} className="w-full h-full" aria-hidden="true">
+
+      {/* Horizontal baseline */}
+      <motion.line
+        x1={dotXs[0]} y1={H_BASELINE} x2={dotXs[5]} y2={H_BASELINE}
+        stroke={FG} strokeOpacity="0.12" strokeWidth="1.5"
+        style={{ transformOrigin: `${dotXs[0]}px ${H_BASELINE}px` }}
+        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={VP}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      />
+
+      {/* Dashed active-zone segment between last two stages */}
+      <line
+        x1={dotXs[4]} y1={H_BASELINE} x2={dotXs[5]} y2={H_BASELINE}
+        stroke={SIG} strokeWidth="1.5" strokeOpacity="0.4"
+        strokeDasharray="4 5"
+        className="anim-dash-flow"
+      />
+
+      {pills.map(({ label, line2, isSig, w, h }, i) => {
+        const px    = lefts[i];
+        const py    = H_Y_START + i * H_Y_STEP;
+        const cx    = dotXs[i];
+        const cy    = py + h / 2;
+        const connY = py + h;
+
+        return (
+          <motion.g key={i}
+            initial={{ opacity: 0, y: -12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={VP}
+            transition={{ delay: 0.08 + i * 0.1, duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            {isSig && (
+              <circle cx={cx} cy={cy} r="14"
+                fill={SIG} fillOpacity="0.06"
+                className="anim-pulse-glow"
+                style={{ animationDelay: `${i * 0.35}s` }}
+              />
+            )}
+
+            {/* Vertical connector */}
+            <line
+              x1={cx} y1={connY} x2={cx} y2={H_BASELINE}
+              stroke={FG} strokeOpacity="0.1" strokeWidth="1"
             />
-          )}
 
-          {/* Spine dot */}
-          <circle cx={SPINE_X} cy={cy} r="4"
-            fill={isSig ? SIG : INK3}
-            stroke={isSig ? SIG : FG}
-            strokeWidth="1.5"
-            style={{
-              strokeOpacity: active ? (isSig ? 0.8 : 0.22) : (isSig ? 0.5 : 0.15),
-              fillOpacity: isSig ? (active ? 1 : 0.9) : 0.45,
-              transition: "stroke-opacity 0.3s ease, fill-opacity 0.3s ease",
-            }}
-          />
+            {/* Baseline dot */}
+            <circle cx={cx} cy={H_BASELINE} r="3.5"
+              fill={isSig ? SIG : INK3}
+              stroke={isSig ? SIG : FG}
+              strokeWidth="1.5"
+              style={{
+                strokeOpacity: active ? (isSig ? 0.8 : 0.22) : (isSig ? 0.5 : 0.15),
+                fillOpacity: isSig ? (active ? 1 : 0.9) : 0.45,
+                transition: "stroke-opacity 0.3s ease, fill-opacity 0.3s ease",
+              }}
+            />
 
-          {/* Connector */}
-          <line
-            x1={SPINE_X + 4} y1={cy} x2={xOff} y2={cy}
-            stroke={FG} strokeOpacity="0.08" strokeWidth="1"
-          />
+            {/* Pill */}
+            <motion.rect
+              x={px} y={py} width={w} height={h} rx={PILL_H1 / 2}
+              fill={isSig ? SIG : FG}
+              fillOpacity={isSig ? 0.13 : 0.05}
+              stroke={isSig ? SIG : FG}
+              strokeWidth="1"
+              animate={{
+                strokeOpacity: active ? (isSig ? 0.7 : 0.28) : (isSig ? 0.38 : 0.13),
+                scale: active && isSig ? 1.04 : 1,
+              }}
+              style={{ transformOrigin: `${cx}px ${cy}px` }}
+              transition={{ duration: 0.28 }}
+            />
 
-          {/* Pill */}
-          <motion.rect
-            x={xOff} y={cy - 11} width={pillW} height="22" rx="11"
-            fill={isSig ? SIG : FG}
-            fillOpacity={isSig ? 0.13 : 0.05}
-            stroke={isSig ? SIG : FG}
-            strokeWidth="1"
-            animate={{
-              strokeOpacity: active
-                ? (isSig ? 0.7 : 0.28)
-                : (isSig ? 0.38 : 0.13),
-              scale: active && isSig ? 1.04 : 1,
-            }}
-            style={{ transformOrigin: `${xOff + pillW / 2}px ${cy}px` }}
-            transition={{ duration: 0.28 }}
-          />
-
-          <text x={xOff + 13} y={cy + 4}
-            fill={isSig ? SIG2 : FG}
-            fillOpacity={isSig ? 0.88 : 0.6}
-            fontSize="10" fontFamily="sans-serif"
-            fontWeight={isSig ? "600" : "400"}
-          >{label}</text>
-        </motion.g>
-      );
-    })}
-  </svg>
-);
+            {/* Label — two lines for wrapped stages */}
+            {line2 ? (
+              <text textAnchor="middle" fontSize="8" fontFamily="sans-serif"
+                fontWeight={isSig ? "600" : "400"}
+                fill={isSig ? SIG2 : FG}
+                fillOpacity={isSig ? 0.88 : 0.6}
+              >
+                <tspan x={cx} y={py + 13}>{label}</tspan>
+                <tspan x={cx} dy="11">{line2}</tspan>
+              </text>
+            ) : (
+              <text x={cx} y={py + h / 2 + 3}
+                textAnchor="middle" fontSize="8" fontFamily="sans-serif"
+                fontWeight={isSig ? "600" : "400"}
+                fill={isSig ? SIG2 : FG}
+                fillOpacity={isSig ? 0.88 : 0.6}
+              >{label}</text>
+            )}
+          </motion.g>
+        );
+      })}
+    </svg>
+  );
+};
 
 /* ================================================================
    BentoCard — shared card shell
