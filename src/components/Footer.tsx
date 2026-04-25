@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const Footer = () => (
-  <footer className="relative px-6 md:px-10 pt-20 pb-10">
-    <div className="mx-auto max-w-[1600px]">
+  <footer className="relative pt-20 pb-10">
+    <SectionContainer className="max-w-[1600px]">
       <div className="grid md:grid-cols-12 gap-10 pb-16 border-b border-foreground/10">
         <Reveal className="md:col-span-5">
           <div className="flex items-center gap-2 mb-6">
@@ -64,6 +65,6 @@ export const Footer = () => (
         </div>
         <div>Built in‑house · v4.2</div>
       </Reveal>
-    </div>
+    </SectionContainer>
   </footer>
 );

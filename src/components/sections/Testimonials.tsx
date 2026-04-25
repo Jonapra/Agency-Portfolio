@@ -1,9 +1,10 @@
 import { Reveal } from "../Reveal";
 import { TESTIMONIALS } from "@/constants/site";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const Testimonials = () => (
-  <section id="testimonials" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px]">
+  <section id="testimonials" className="relative py-10 md:py-16">
+    <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 06 · Kind words</div></div>
         <div className="md:col-span-9">
@@ -31,6 +32,6 @@ export const Testimonials = () => (
           </Reveal>
         ))}
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

@@ -1,9 +1,10 @@
 import { Reveal } from "../Reveal";
 import { FAQ_ITEMS } from "@/constants/site";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const FAQ = () => (
-  <section id="faq" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px] grid md:grid-cols-12 gap-10">
+  <section id="faq" className="relative py-10 md:py-16">
+    <SectionContainer className="grid md:grid-cols-12 gap-10">
       <aside className="md:col-span-4 md:sticky md:top-28 self-start">
         <div className="h-eyebrow text-mute mb-3">§ 08 · FAQ</div>
         <Reveal><h2 className="h-section font-display">Questions we <span className="italic-display text-signal">hear a lot.</span></h2></Reveal>
@@ -30,6 +31,6 @@ export const FAQ = () => (
           ))}
         </div>
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

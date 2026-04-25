@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { PROCESS_STEPS } from "@/constants/site";
 import StepIllustration from "../StepIllustration";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const ChooseUs = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -30,8 +31,8 @@ export const ChooseUs = () => {
   }, []);
 
   return (
-    <section id="process" className="relative px-6 md:px-10 py-14 md:py-22">
-      <div className="mx-auto max-w-4xl">
+    <section id="process" className="relative py-14 md:py-22">
+      <SectionContainer className="max-w-4xl">
 
         {/* Header */}
         <div className="mb-16 md:mb-22 max-w-4xl mx-auto text-center">
@@ -92,7 +93,7 @@ export const ChooseUs = () => {
           </div>
 
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

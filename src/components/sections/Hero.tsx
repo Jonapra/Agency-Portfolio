@@ -6,6 +6,7 @@ import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
@@ -29,12 +30,12 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-[75vh] lg:min-h-screen lg:max-h-[840px] xl:max-h-[880px] 2xl:max-h-[960px] px-6 md:px-10 pt-20 md:pt-24 lg:pt-28 2xl:pt-32 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
+      className="relative min-h-[100svh] md:min-h-[75vh] lg:min-h-screen lg:max-h-[840px] xl:max-h-[880px] 2xl:max-h-[960px] pt-20 md:pt-24 lg:pt-28 2xl:pt-32 pb-8 2xl:pb-10 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
       {theme === "dark" && <BackgroundBeams className="opacity-50" />}
 
-      <div className="mx-auto max-w-[1400px] relative w-full flex-1 flex flex-col">
+      <SectionContainer className="relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
         <motion.div 
           className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6"
@@ -137,7 +138,7 @@ export const Hero = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

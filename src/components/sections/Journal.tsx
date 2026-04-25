@@ -1,9 +1,10 @@
 import { Reveal } from "../Reveal";
 import { JOURNAL } from "@/constants/site";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const Journal = () => (
-  <section id="journal" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px]">
+  <section id="journal" className="relative py-10 md:py-16">
+    <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 07 · Journal</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
@@ -30,6 +31,6 @@ export const Journal = () => (
           </Reveal>
         ))}
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

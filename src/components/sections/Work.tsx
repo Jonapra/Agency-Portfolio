@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Reveal } from "../Reveal";
 import { PROJECTS, type Project } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { SectionContainer } from "@/components/ui/section-container";
 
 const ProjectArt = ({ p }: { p: Project }) => {
   if (p.title === "Veldt")
@@ -46,8 +47,8 @@ const sizes = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7
 const offsets = ["", "", "md:mt-16", "md:-mt-8"];
 
 export const Work = () => (
-  <section id="work" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px]">
+  <section id="work" className="relative py-10 md:py-16">
+    <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Selected</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
@@ -107,6 +108,6 @@ export const Work = () => (
           />
         </a>
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

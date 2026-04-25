@@ -1,10 +1,11 @@
 import { Reveal } from "../Reveal";
 import { PLANS } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const Pricing = () => (
-  <section id="pricing" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px]">
+  <section id="pricing" className="relative py-10 md:py-16">
+    <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 05 · Engagements</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
@@ -42,6 +43,6 @@ export const Pricing = () => (
           </Reveal>
         ))}
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

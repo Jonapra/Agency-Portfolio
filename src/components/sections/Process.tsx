@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "../Reveal";
+import { SectionContainer } from "@/components/ui/section-container";
 
 /* ── Card data ───────────────────────────────────────────────── */
 const CARDS = [
@@ -384,8 +385,8 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
 
 /* ── Section ─────────────────────────────────────────────────── */
 export const Process = () => (
-  <section id="process" className="relative px-6 md:px-10 py-10 md:py-16">
-    <div className="mx-auto max-w-[1400px]">
+  <section id="process" className="relative py-10 md:py-16">
+    <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-14">
         <div className="md:col-span-3">
           <div className="h-eyebrow text-mute mb-3">§ 02 · Process</div>
@@ -405,6 +406,6 @@ export const Process = () => (
           <ServiceCard key={card.n} data={card} index={i} />
         ))}
       </div>
-    </div>
+    </SectionContainer>
   </section>
 );

@@ -2,11 +2,12 @@ import { Reveal } from "../Reveal";
 import { BRAND } from "@/constants/site";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { MailButton } from "@/components/ui/mail-button";
+import { SectionContainer } from "@/components/ui/section-container";
 
 export const CTA = () => {
   return (
-    <section id="contact" className="relative px-6 md:px-10 py-10 md:py-16">
-      <div className="mx-auto max-w-[1400px]">
+    <section id="contact" className="relative py-10 md:py-16">
+      <SectionContainer>
         <div className="relative overflow-hidden rounded-2xl plate p-10 md:p-20 text-center">
           <div className="halo" style={{ width: 800, height: 800, background: "hsl(var(--signal))", left: "50%", top: "50%", transform: "translate(-50%, -50%)", opacity: 0.22 }} />
           <div className="relative">
@@ -25,7 +26,7 @@ export const CTA = () => {
             <div className="mt-14 h-eyebrow text-mute">Currently     Available · slots open</div>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };
