@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Reveal } from "../Reveal";
 import { SectionContainer } from "@/components/ui/section-container";
 
@@ -29,8 +29,6 @@ const CARDS = [
   },
 ] as const;
 
-const VP = { once: true, margin: "0px 0px -60px 0px" } as const;
-
 /* ── Shared: dot grid bg ─────────────────────────────────────── */
 const DotBg = ({ id }: { id: string }) => (
   <>
@@ -44,7 +42,7 @@ const DotBg = ({ id }: { id: string }) => (
 );
 
 /* ── 01 · Brand Identity — Orbital hub ──────────────────────── */
-const OrbitVisual = ({ active }: { active: boolean }) => {
+const OrbitVisual = ({ inView }: { inView: boolean }) => {
   const cx0 = 160, cy0 = 130, orbitR = 82;
   const items = [
     { label: "Strategy",   angle: -Math.PI / 2, pw: 78 },
@@ -61,59 +59,63 @@ const OrbitVisual = ({ active }: { active: boolean }) => {
     <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
       <DotBg id="db-orbit" />
 
-      {/* spokes — fade in on scroll */}
+      {/* spokes */}
       {items.map(({ cx, cy }, i) => (
         <motion.line key={i} x1={cx0} y1={cy0} x2={cx} y2={cy}
           stroke="currentColor" strokeWidth={0.5}
-          initial={{ opacity: 0 }} whileInView={{ opacity: 0.15 }}
-          viewport={VP} transition={{ duration: 0.6, delay: 0.2 + i * 0.08 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: inView ? 0.15 : 0 }}
+          transition={{ duration: 0.6, delay: 0.2 + i * 0.08 }}
         />
       ))}
 
-      {/* orbit ring — static dash, no loop */}
+      {/* orbit ring */}
       <motion.circle cx={cx0} cy={cy0} r={orbitR}
         fill="none" stroke="currentColor"
         strokeWidth={0.9} strokeDasharray="3 7"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.3 }}
-        viewport={VP} transition={{ duration: 0.8, delay: 0.1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 0.3 : 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
       />
 
-      {/* label pills — slide in on scroll */}
+      {/* label pills */}
       {items.map(({ label, cx, cy, px, pw }, i) => (
         <motion.g key={label}
           initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={VP}
+          animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           style={{ transformOrigin: `${cx}px ${cy}px` }}
           transition={{ duration: 0.5, delay: 0.35 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          <rect x={px} y={cy - 13} width={pw} height={26} rx={13}
+          <motion.rect x={px} y={cy - 13} width={pw} height={26} rx={13}
             fill="hsl(var(--background))" fillOpacity={0.9}
             stroke="currentColor" strokeWidth={0.9}
-            strokeOpacity={active ? 0.5 : 0.22}
-            style={{ transition: "stroke-opacity 0.3s ease" }}
+            initial={{ strokeOpacity: 0.22 }}
+            variants={{ hover: { strokeOpacity: 0.5 } }}
+            transition={{ duration: 0.3 }}
           />
-          <text x={cx} y={cy + 4.5}
+          <motion.text x={cx} y={cy + 4.5}
             textAnchor="middle" fontSize={9} fill="currentColor"
-            fillOpacity={active ? 0.9 : 0.72}
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.08em"
-            style={{ transition: "fill-opacity 0.3s ease" }}
+            initial={{ fillOpacity: 0.72 }}
+            variants={{ hover: { fillOpacity: 0.9 } }}
+            transition={{ duration: 0.3 }}
           >
             {label.toUpperCase()}
-          </text>
+          </motion.text>
         </motion.g>
       ))}
 
-      {/* center hub — scales on hover */}
+      {/* center hub — scales on scroll-in, pulses on card hover */}
       <motion.g
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={VP}
+        initial={{ scale: 0 }}
+        animate={{ scale: inView ? 1 : 0 }}
         style={{ transformOrigin: `${cx0}px ${cy0}px` }}
         transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
       >
         <motion.circle cx={cx0} cy={cy0} r={22} fill="hsl(var(--signal))"
           style={{ transformOrigin: `${cx0}px ${cy0}px` }}
-          animate={{ scale: active ? 26/22 : 1 }}
+          initial={{ scale: 1 }}
+          variants={{ hover: { scale: 26 / 22 } }}
           transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
         />
       </motion.g>
@@ -128,7 +130,7 @@ const OrbitVisual = ({ active }: { active: boolean }) => {
 };
 
 /* ── 02 · Product Design — Zigzag flow ──────────────────────── */
-const FlowVisual = ({ active }: { active: boolean }) => {
+const FlowVisual = ({ inView }: { inView: boolean }) => {
   const steps = [
     { label: "UX Research", side: "right" as const },
     { label: "UI Design",   side: "left"  as const },
@@ -148,16 +150,17 @@ const FlowVisual = ({ active }: { active: boolean }) => {
       {/* spine draws once on scroll */}
       <motion.path d={`M ${spineX} ${yTop} L ${spineX} ${yBot}`}
         fill="none" stroke="hsl(var(--signal))" strokeWidth={1.8} strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={VP} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: inView ? 1 : 0 }}
+        transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
       />
 
-      {/* spine dots — pop in once */}
+      {/* spine dots */}
       {ys.map((y, i) => (
         <motion.g key={`sd-${i}`}
           style={{ transformOrigin: `${spineX}px ${y}px` }}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={VP}
+          initial={{ scale: 0 }}
+          animate={{ scale: inView ? 1 : 0 }}
           transition={{ duration: 0.35, delay: 0.5 + i * 0.12, ease: "backOut" }}
         >
           <circle cx={spineX} cy={y} r={6}
@@ -166,7 +169,7 @@ const FlowVisual = ({ active }: { active: boolean }) => {
         </motion.g>
       ))}
 
-      {/* pills — slide in once, highlight on hover */}
+      {/* pills — slide in once, highlight on card hover */}
       {steps.map((step, i) => {
         const y   = ys[i];
         const isR = step.side === "right";
@@ -174,8 +177,7 @@ const FlowVisual = ({ active }: { active: boolean }) => {
         return (
           <motion.g key={step.label}
             initial={{ opacity: 0, x: isR ? -16 : 16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={VP}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: isR ? -16 : 16 }}
             transition={{ duration: 0.5, delay: 0.55 + i * 0.12, ease: [0.2, 0.8, 0.2, 1] }}
           >
             <line
@@ -183,20 +185,22 @@ const FlowVisual = ({ active }: { active: boolean }) => {
               x2={isR ? px : spineX}         y2={y}
               stroke="currentColor" strokeWidth={0.9} opacity={0.22}
             />
-            <rect x={px} y={y - pillH / 2} width={pillW} height={pillH} rx={pillH / 2}
+            <motion.rect x={px} y={y - pillH / 2} width={pillW} height={pillH} rx={pillH / 2}
               fill="hsl(var(--background))" fillOpacity={0.92}
               stroke="currentColor" strokeWidth={0.9}
-              strokeOpacity={active ? 0.45 : 0.22}
-              style={{ transition: "stroke-opacity 0.3s ease" }}
+              initial={{ strokeOpacity: 0.22 }}
+              variants={{ hover: { strokeOpacity: 0.45 } }}
+              transition={{ duration: 0.3 }}
             />
-            <text x={px + pillW / 2} y={y + 5}
+            <motion.text x={px + pillW / 2} y={y + 5}
               textAnchor="middle" fontSize={9.5} fill="currentColor"
-              fillOpacity={active ? 0.9 : 0.72}
               fontFamily="'JetBrains Mono', monospace" letterSpacing="0.05em"
-              style={{ transition: "fill-opacity 0.3s ease" }}
+              initial={{ fillOpacity: 0.72 }}
+              variants={{ hover: { fillOpacity: 0.9 } }}
+              transition={{ duration: 0.3 }}
             >
               {step.label.toUpperCase()}
-            </text>
+            </motion.text>
           </motion.g>
         );
       })}
@@ -205,7 +209,7 @@ const FlowVisual = ({ active }: { active: boolean }) => {
 };
 
 /* ── 03 · Website — Architecture stack ──────────────────────── */
-const ArchVisual = ({ active }: { active: boolean }) => {
+const ArchVisual = ({ inView }: { inView: boolean }) => {
   const layers = [
     { label: "ARCHITECTURE", w: 240, signal: false },
     { label: "DEVELOPMENT",  w: 196, signal: false },
@@ -214,8 +218,8 @@ const ArchVisual = ({ active }: { active: boolean }) => {
   ];
   const lh = 36, gap = 8;
   const baseY = 208;
-  // hover: spread layers apart slightly
-  const ys = layers.map((_, i) => baseY - i * (lh + gap) - (active ? i * 5 : 0));
+  // Static positions — hover spread handled by variants only (fixes double-offset bug)
+  const ys = layers.map((_, i) => baseY - i * (lh + gap));
 
   return (
     <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
@@ -230,10 +234,9 @@ const ArchVisual = ({ active }: { active: boolean }) => {
         return (
           <motion.g key={layer.label}
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={VP}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            variants={{ hover: { y: -i * 5, transition: { duration: 0.35, ease: [0.2, 0.8, 0.2, 1] } } }}
             transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-            animate={{ y: active ? -i * 5 : 0 }}
           >
             <rect x={x} y={y} width={layer.w} height={lh} rx={8}
               fill={layer.signal ? "hsl(var(--signal))" : "currentColor"}
@@ -257,7 +260,7 @@ const ArchVisual = ({ active }: { active: boolean }) => {
 };
 
 /* ── 04 · Performance — Metrics bars ────────────────────────── */
-const MetricsVisual = ({ active }: { active: boolean }) => {
+const MetricsVisual = ({ inView }: { inView: boolean }) => {
   const bars = [
     { label: "SEO",       h: 74,  pct: "+42%" },
     { label: "Analytics", h: 106, pct: "+58%" },
@@ -281,31 +284,27 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
       <line x1={34} y1={base} x2={290} y2={base}
         stroke="currentColor" strokeWidth={0.6} opacity={0.22} />
 
-      {/* bars — grow once on scroll */}
+      {/* bars — grow once on scroll, brighten on card hover */}
       {bars.map((bar, i) => (
         <g key={bar.label}>
           <motion.rect
             x={xs[i]} y={base - bar.h} width={bw} height={bar.h} rx={5}
             fill="currentColor"
-            fillOpacity={active ? 0.16 : 0.08}
             stroke="currentColor" strokeOpacity={0.22} strokeWidth={0.9}
-            style={{ 
-              transition: "fill-opacity 0.3s ease",
-              transformOrigin: `${xs[i] + bw / 2}px ${base}px`
-            }}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={VP}
+            style={{ transformOrigin: `${xs[i] + bw / 2}px ${base}px` }}
+            initial={{ scaleY: 0, fillOpacity: 0.08 }}
+            animate={{ scaleY: inView ? 1 : 0, fillOpacity: 0.08 }}
+            variants={{ hover: { fillOpacity: 0.16 } }}
             transition={{ duration: 0.85, delay: 0.2 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
           />
-          {/* percentage — flies up once */}
           <motion.text
             x={cxs[i]} textAnchor="middle" fontSize={9}
             fill="hsl(var(--signal))" fillOpacity={0.95}
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.04em"
             initial={{ opacity: 0, y: base - bar.h + 8 }}
-            whileInView={{ opacity: 1, y: base - bar.h - 10 }}
-            viewport={VP}
+            animate={inView
+              ? { opacity: 1, y: base - bar.h - 10 }
+              : { opacity: 0, y: base - bar.h + 8 }}
             transition={{ duration: 0.45, delay: 1.1 + i * 0.08 }}
           >
             {bar.pct}
@@ -319,22 +318,22 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
         </g>
       ))}
 
-      {/* trend line — draws once */}
+      {/* trend line */}
       <motion.path d={trendD} fill="none"
         stroke="hsl(var(--signal))" strokeWidth={2}
         strokeLinecap="round" strokeLinejoin="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={VP}
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: inView ? 1 : 0 }}
         transition={{ duration: 1.1, delay: 0.75, ease: "easeInOut" }}
       />
 
-      {/* trend dots — pop in once, static after */}
+      {/* trend dots */}
       {pts.map((p, i) => (
         <motion.circle key={i} cx={p.x} cy={p.y} r={4}
           fill="hsl(var(--signal))"
           style={{ transformOrigin: `${p.x}px ${p.y}px` }}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={VP}
+          initial={{ scale: 0 }}
+          animate={{ scale: inView ? 1 : 0 }}
           transition={{ duration: 0.3, delay: 0.8 + i * 0.24, ease: "backOut" }}
         />
       ))}
@@ -347,24 +346,25 @@ type CardData = (typeof CARDS)[number];
 const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual] as const;
 
 const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
-  const [hovered, setHovered] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
   const Visual = VISUALS[index];
+
   return (
     <motion.article
+      ref={ref}
       initial={{ opacity: 0, y: 44 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 44 }}
+      whileHover="hover"
+      variants={{ hover: { y: -5, transition: { duration: 0.3, ease: [0.2, 0.8, 0.2, 1] } } }}
       transition={{ duration: 0.75, delay: index * 0.09, ease: [0.2, 0.8, 0.2, 1] }}
-      whileHover={{ y: -5 }}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
       className="group relative rounded-2xl border border-foreground/10 bg-foreground/[0.025]
                  overflow-hidden cursor-pointer hover:border-signal/30
                  hover:shadow-[0_20px_60px_-20px_hsl(17_100%_56%/0.18)]
                  transition-[border-color,box-shadow] duration-500"
     >
       <div className="relative h-[180px] md:h-[220px] lg:h-[240px] text-foreground overflow-hidden">
-        <Visual active={hovered} />
+        <Visual inView={inView} />
       </div>
 
       <div className="h-px bg-foreground/[0.08]" />

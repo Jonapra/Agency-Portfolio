@@ -478,23 +478,26 @@ export const ChooseUs = () => (
     <SectionContainer className="px-8 sm:px-10 md:px-10">
 
       {/* Header */}
-      <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
+      <div className="mb-12 md:mb-16">
         <Reveal>
           <div className="h-eyebrow text-mute mb-5">§ 04 · Why Choose Us</div>
         </Reveal>
-        <Reveal delay={0.05}>
-          <h2 className="h-section font-display leading-[1.05]">
-            Built To Move,{" "}
-            <span className="italic-display text-signal">Ship High-Quality</span>{" "}
-            Designs Faster
-          </h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mt-6 text-sm md:text-base text-mute-2 leading-relaxed max-w-2xl mx-auto">
-            Most founders waste months juggling freelancers or waiting on agencies.
-            We move at startup speed — here's exactly how.
-          </p>
-        </Reveal>
+        
+        <div className="text-center max-w-3xl mx-auto">
+          <Reveal delay={0.05}>
+            <h2 className="h-section font-display leading-[1.05]">
+              Built To Move,{" "}
+              <span className="italic-display text-signal">Ship High-Quality</span>{" "}
+              Designs Faster
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-sm md:text-base text-mute-2 leading-relaxed max-w-2xl mx-auto">
+              Most founders waste months juggling freelancers or waiting on agencies.
+              We move at startup speed — here's exactly how.
+            </p>
+          </Reveal>
+        </div>
       </div>
 
       {/* Bento grid */}
