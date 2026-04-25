@@ -105,13 +105,18 @@ const OrbitVisual = ({ active }: { active: boolean }) => {
       ))}
 
       {/* center hub — scales on hover */}
-      <motion.circle cx={cx0} cy={cy0} r={22} fill="hsl(var(--signal))"
+      <motion.g
         initial={{ scale: 0 }} whileInView={{ scale: 1 }}
         viewport={VP}
         style={{ transformOrigin: `${cx0}px ${cy0}px` }}
-        animate={{ r: active ? 26 : 22 }}
         transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-      />
+      >
+        <motion.circle cx={cx0} cy={cy0} r={22} fill="hsl(var(--signal))"
+          style={{ transformOrigin: `${cx0}px ${cy0}px` }}
+          animate={{ scale: active ? 26/22 : 1 }}
+          transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
+        />
+      </motion.g>
       <text x={cx0} y={cy0 + 3.5} textAnchor="middle" fontSize={8.5}
         fill="white" fontFamily="'JetBrains Mono', monospace" letterSpacing="0.12em"
         style={{ pointerEvents: "none" }}
@@ -280,13 +285,16 @@ const MetricsVisual = ({ active }: { active: boolean }) => {
       {bars.map((bar, i) => (
         <g key={bar.label}>
           <motion.rect
-            x={xs[i]} width={bw} rx={5}
+            x={xs[i]} y={base - bar.h} width={bw} height={bar.h} rx={5}
             fill="currentColor"
             fillOpacity={active ? 0.16 : 0.08}
             stroke="currentColor" strokeOpacity={0.22} strokeWidth={0.9}
-            style={{ transition: "fill-opacity 0.3s ease" }}
-            initial={{ height: 0, y: base }}
-            whileInView={{ height: bar.h, y: base - bar.h }}
+            style={{ 
+              transition: "fill-opacity 0.3s ease",
+              transformOrigin: `${xs[i] + bw / 2}px ${base}px`
+            }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
             viewport={VP}
             transition={{ duration: 0.85, delay: 0.2 + i * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
           />

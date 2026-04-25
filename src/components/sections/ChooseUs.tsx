@@ -37,7 +37,9 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
       {/* Hover ripple */}
       <motion.circle cx="156" cy="90" r="28"
         fill="none" stroke={SIG} strokeWidth="1.5"
-        animate={{ r: active ? 54 : 28, opacity: active ? 0 : 0.3 }}
+        vectorEffect="non-scaling-stroke"
+        style={{ transformOrigin: "156px 90px" }}
+        animate={{ scale: active ? 54/28 : 1, opacity: active ? 0 : 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       />
 
@@ -59,7 +61,9 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
           {isCenter && (
             <motion.circle cx={cx} cy="90" r="29"
               fill="none" stroke={SIG} strokeWidth="2"
-              animate={{ strokeOpacity: active ? 0.9 : 0.45, r: active ? 31 : 29 }}
+              vectorEffect="non-scaling-stroke"
+              style={{ transformOrigin: `${cx}px 90px` }}
+              animate={{ strokeOpacity: active ? 0.9 : 0.45, scale: active ? 31/29 : 1 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             />
           )}
@@ -177,21 +181,36 @@ const ImpactIllustration = ({ active }: { active: boolean }) => {
         const isSig = i === SIG_BAR;
         const h = bh(v), y = by(v), x = bx(i);
         return (
-          <motion.rect key={i}
-            x={x} y={y} width={BAR_W} height={h} rx="4"
-            fill={isSig ? SIG : FG}
-            style={{ transformOrigin: `${x + BAR_W / 2}px ${CHART_BOT}px` }}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={VP}
-            animate={{
-              fillOpacity: isSig ? 0.88 : (active ? 0.16 : 0.09),
-              filter: isSig && active
-                ? `drop-shadow(0 0 7px ${SIG}99)`
-                : "none",
-            }}
-            transition={{ duration: 0.5, delay: 0.07 * i, ease: [0.2, 0.8, 0.2, 1] }}
-          />
+          <g key={i}>
+            {/* Glow backdrop for performance instead of drop-shadow filter */}
+            {isSig && (
+              <motion.rect
+                x={x - 4} y={y - 4} width={BAR_W + 8} height={h + 8} rx="8"
+                fill={SIG}
+                style={{ 
+                  filter: "blur(6px)", 
+                  transformOrigin: `${x + BAR_W / 2}px ${CHART_BOT}px` 
+                }}
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={VP}
+                animate={{ opacity: active ? 0.35 : 0 }}
+                transition={{ duration: 0.5, delay: 0.07 * i, ease: [0.2, 0.8, 0.2, 1] }}
+              />
+            )}
+            <motion.rect
+              x={x} y={y} width={BAR_W} height={h} rx="4"
+              fill={isSig ? SIG : FG}
+              style={{ transformOrigin: `${x + BAR_W / 2}px ${CHART_BOT}px` }}
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={VP}
+              animate={{
+                fillOpacity: isSig ? 0.88 : (active ? 0.16 : 0.09)
+              }}
+              transition={{ duration: 0.5, delay: 0.07 * i, ease: [0.2, 0.8, 0.2, 1] }}
+            />
+          </g>
         );
       })}
 
@@ -456,7 +475,7 @@ const BentoCard = ({
 ================================================================ */
 export const ChooseUs = () => (
   <section id="choose-us" className="relative py-14 md:py-22">
-    <SectionContainer>
+    <SectionContainer className="px-8 sm:px-10 md:px-10">
 
       {/* Header */}
       <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
@@ -479,7 +498,7 @@ export const ChooseUs = () => (
       </div>
 
       {/* Bento grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 ">
 
         {/* Row 1 — equal thirds */}
         <BentoCard
