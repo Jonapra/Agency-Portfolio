@@ -9,8 +9,8 @@ import { SectionContainer } from "@/components/ui/section-container";
 const CARDS = [
   {
     n: "01", title: "Brand Identity",
-    desc: "We dig into who you are, what you stand for, and where you're headed — then design & build a visual system that fits your brand like it was always meant to look this way.",
-    tags: ["Strategy", "Naming", "Identity", "Guidelines"],
+    desc: "We dig into who you are, what you stand for, and learn about you business and industry — then design a visual system that fits your business like it was always meant to look this way.",
+    tags: ["Strategy", "Planning", "Identity", "Guidelines"],
   },
   {
     n: "02", title: "Product Design",
@@ -24,7 +24,7 @@ const CARDS = [
   },
   {
     n: "04", title: "Performance",
-    desc: "We don't hand off and disappear. SEO, speed, and post-launch support — we stay invested in how your site actually performs.",
+    desc: "We don't hand off and disappear. SEO, speed, maintainance, and post-launch support — we stay invested in how your site actually performs.",
     tags: ["SEO", "Analytics", "Speed", "Retention"],
   },
 ] as const;
@@ -46,7 +46,7 @@ const OrbitVisual = ({ inView }: { inView: boolean }) => {
   const cx0 = 160, cy0 = 130, orbitR = 82;
   const items = [
     { label: "Strategy",   angle: -Math.PI / 2, pw: 78 },
-    { label: "Naming",     angle: 0,            pw: 64 },
+    { label: "Planning",   angle: 0,            pw: 78 },
     { label: "Identity",   angle: Math.PI / 2,  pw: 78 },
     { label: "Guidelines", angle: Math.PI,      pw: 86 },
   ].map((it) => {

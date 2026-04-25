@@ -507,7 +507,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-4"
           title="Personalised Support"
-          desc="You get a dedicated consultants who understands your business goals."
+          desc="You get a dedicated consultants who understands your business goals and plan it accordingly."
           delay={0}
           illustration={(a) => <PersonalisedIllustration active={a} />}
         />

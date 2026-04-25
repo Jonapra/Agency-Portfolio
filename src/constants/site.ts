@@ -36,10 +36,10 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SERVICES = [
-  ["01", "Brand Identity", "We dig into who you are, what you stand for, and where you're headed — then design a visual system that fits your brand like it was always meant to look this way.", "Strategy · Naming · Identity · Guidelines"],
+  ["01", "Brand Identity", "We dig into who you are, what you stand for, and learn about you business and industry — then design a visual system that fits your business like it was always meant to look this way.", "Planning · Strategy · Identity · Guidelines"],
   ["02", "Product Design", "UI/UX built around your users. We present the designs, walk through them together, and keep refining until every screen feels exactly right.", "UX · UI · Prototyping · Handoff"],
   ["03", "Development", "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard.", "Architecture · Build · CMS · Launch"],
-  ["04", "Performance", "We don't hand off and disappear. SEO, speed, and post-launch support — we stay invested in how your site actually performs.", "SEO · Analytics · Speed · Retention"],
+  ["04", "Performance", "We don't hand off and disappear. SEO, speed, maintainance, and post-launch support and — we stay invested in how your site actually performs.", "SEO · Analytics · Speed · Retention"],
 ] as const;
 
 export const PROCESS_STEPS = [
@@ -58,10 +58,10 @@ export const PLANS: Plan[] = [
 ];
 
 export const TESTIMONIALS = [
-  { q: "They didn't just redesign the brand — they rewrote the company's internal language. Every email sounds sharper now.", n: "Marion Lux", r: "COO, Hollow", col: "md:col-span-7" },
-  { q: "Rare to find a team both this opinionated and this easy to collaborate with.", n: "Theo Mercer", r: "Founder, Mercer&Co.", col: "md:col-span-5" },
-  { q: "Shipped our site three weeks early and the post-launch guide is still how we onboard designers.", n: "Jamie O.", r: "Head of Design, Lantern", col: "md:col-span-5" },
-  { q: "Agiton made a boring B2B product feel like a culture brand. Our hiring funnel doubled.", n: "Elena Qiu", r: "CEO, Kiln", col: "md:col-span-7" },
+  { q: "They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.", n: "Marion Lux", r: "COO, Hollow", col: "md:col-span-7" },
+  { q: "Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.", n: "Theo Mercer", r: "Founder, Mercer&Co.", col: "md:col-span-5" },
+  { q: "They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.", n: "Jamie O.", r: "Head of Design, Lantern", col: "md:col-span-5" },
+  { q: "A seamless rebuild process. Their team is highly collaborative, took our feedback to heart, and delivered a perfect website and there post launch support was incredible.", n: "Elena Qiu", r: "CEO, Kiln", col: "md:col-span-7" },
 ];
 
 export const JOURNAL = [
