@@ -1,7 +1,7 @@
 # Graph Report - D:\Agency-Portfolio  (2026-04-24)
 
 ## Corpus Check
-- 47 files · ~20,364 words
+- 47 files · ~20,352 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -344,7 +344,7 @@ Nodes (1): Design System MASTER
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 38`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (1 nodes): `Services.tsx`
+- **Thin community `Community 39`** (1 nodes): `Process.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 40`** (1 nodes): `Testimonials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

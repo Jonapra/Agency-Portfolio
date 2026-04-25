@@ -238,6 +238,33 @@
       "norm_label": "stepillustration.tsx"
     },
     {
+      "label": "ChooseUs.tsx",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\ChooseUs.tsx",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_components_sections_chooseus_tsx",
+      "community": 7,
+      "norm_label": "chooseus.tsx"
+    },
+    {
+      "label": "handleScroll()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\ChooseUs.tsx",
+      "source_location": "L12",
+      "id": "chooseus_handlescroll",
+      "community": 7,
+      "norm_label": "handlescroll()"
+    },
+    {
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\ChooseUs.tsx",
+      "source_location": "L114",
+      "id": "chooseus_check",
+      "community": 7,
+      "norm_label": "check()"
+    },
+    {
       "label": "CTA.tsx",
       "file_type": "code",
       "source_file": "src\\components\\sections\\CTA.tsx",
@@ -297,26 +324,8 @@
       "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_components_sections_process_tsx",
-      "community": 7,
+      "community": 39,
       "norm_label": "process.tsx"
-    },
-    {
-      "label": "handleScroll()",
-      "file_type": "code",
-      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L12",
-      "id": "process_handlescroll",
-      "community": 7,
-      "norm_label": "handlescroll()"
-    },
-    {
-      "label": "check()",
-      "file_type": "code",
-      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L114",
-      "id": "process_check",
-      "community": 7,
-      "norm_label": "check()"
     },
     {
       "label": "ServiceIcon.tsx",
@@ -335,15 +344,6 @@
       "id": "serviceicon_serviceicon",
       "community": 15,
       "norm_label": "serviceicon()"
-    },
-    {
-      "label": "Services.tsx",
-      "file_type": "code",
-      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Services.tsx",
-      "source_location": "L1",
-      "id": "d_agency_portfolio_src_components_sections_services_tsx",
-      "community": 39,
-      "norm_label": "services.tsx"
     },
     {
       "label": "Testimonials.tsx",
@@ -1230,6 +1230,30 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\ChooseUs.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_components_sections_chooseus_tsx",
+      "_tgt": "chooseus_handlescroll",
+      "source": "d_agency_portfolio_src_components_sections_chooseus_tsx",
+      "target": "chooseus_handlescroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\ChooseUs.tsx",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_components_sections_chooseus_tsx",
+      "_tgt": "chooseus_check",
+      "source": "d_agency_portfolio_src_components_sections_chooseus_tsx",
+      "target": "chooseus_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src\\components\\sections\\CTA.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -1237,30 +1261,6 @@
       "_tgt": "cta_cta",
       "source": "src_components_sections_cta_tsx",
       "target": "cta_cta",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "d_agency_portfolio_src_components_sections_process_tsx",
-      "_tgt": "process_handlescroll",
-      "source": "d_agency_portfolio_src_components_sections_process_tsx",
-      "target": "process_handlescroll",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Process.tsx",
-      "source_location": "L114",
-      "weight": 1.0,
-      "_src": "d_agency_portfolio_src_components_sections_process_tsx",
-      "_tgt": "process_check",
-      "source": "d_agency_portfolio_src_components_sections_process_tsx",
-      "target": "process_check",
       "confidence_score": 1.0
     },
     {

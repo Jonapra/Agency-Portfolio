@@ -15,10 +15,18 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
+  const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const hero = document.getElementById("top");
+      const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+      
+      setIsScrolled(window.scrollY > 2);
+      setIsPastHero(window.scrollY > heroHeight - 80);
+    };
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -47,70 +55,85 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-5 transition-colors duration-300 ${isScrolled && !menuOpen ? `bg-background/80 backdrop-blur-md border-b ${theme === "dark" ? "border-cream/10" : "border-ink/10"}` : ""} ${headerTextColor}`}>
-        <div className="mx-auto max-w-[1400px] flex items-center justify-between">
-          <Logo />
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[0.2,0.8,0.2,1] p-0 ${headerTextColor}`}
+      >
+        <div
+          className={`
+            transition-all duration-500 ease-[0.2,0.8,0.2,1] w-full
+            ${isPastHero && !menuOpen 
+              ? "w-full md:w-[calc(100%-4rem)] max-w-[1600px] md:rounded-b-2xl md:border-x border-b bg-background/80 backdrop-blur-xl py-5" 
+              : isScrolled || menuOpen
+                ? `w-full border-b backdrop-blur-xl py-5 ${menuOpen ? "bg-ink border-white/10" : "bg-background/80 border-foreground/10"}`
+                : "w-full border-b border-transparent py-5"
+            }
+            ${isPastHero && !menuOpen ? "border-foreground/10" : ""}
+          `}
+        >
+          <div className="mx-auto flex items-center justify-between w-full max-w-[1600px] px-6 md:px-10">
+            <Logo />
 
-          <nav className="hidden md:flex items-center gap-9 text-sm">
-            {NAV_LINKS.map(l => (
-              <a key={l.href} href={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</a>
-            ))}
-          </nav>
+            <nav className="hidden md:flex items-center gap-9 text-sm">
+              {NAV_LINKS.map(l => (
+                <a key={l.href} href={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</a>
+              ))}
+            </nav>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setTheme(t => (t === "dark" ? "light" : "dark"))}
-              aria-label="Toggle theme"
-              className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
-            >
-              {theme === "dark" ? (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setTheme(t => (t === "dark" ? "light" : "dark"))}
+                aria-label="Toggle theme"
+                className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
+              >
+                {theme === "dark" ? (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                  </svg>
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+                )}
+              </button>
+              <a
+                ref={ctaRef}
+                href={`${anchorPrefix}#contact`}
+                className="hidden sm:inline-flex items-center gap-2 text-sm group"
+              >
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-signal opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-signal" />
+                </span>
+                <span className="u-link">Let's talk</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
-              ) : (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
-              )}
-            </button>
-            <a
-              ref={ctaRef}
-              href={`${anchorPrefix}#contact`}
-              className="hidden sm:inline-flex items-center gap-2 text-sm group"
-            >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-signal opacity-75 animate-ping" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-signal" />
-              </span>
-              <span className="u-link">Let's talk</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                <path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" />
-              </svg>
-            </a>
+              </a>
 
-            <button
-              onClick={() => setMenuOpen(o => !o)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center border transition cursor-pointer z-[60] ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
-            >
-              <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
-              <span className="relative w-4 h-3 block">
-                <motion.span
-                  className="absolute left-0 right-0 h-px bg-current origin-center"
-                  animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                />
-                <motion.span
-                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
-                  animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-                <motion.span
-                  className="absolute left-0 right-0 h-px bg-current origin-center"
-                  animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                />
-              </span>
-            </button>
+              <button
+                onClick={() => setMenuOpen(o => !o)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center border transition cursor-pointer z-[60] ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
+              >
+                <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+                <span className="relative w-4 h-3 block">
+                  <motion.span
+                    className="absolute left-0 right-0 h-px bg-current origin-center"
+                    animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                  <motion.span
+                    className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
+                    animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                  <motion.span
+                    className="absolute left-0 right-0 h-px bg-current origin-center"
+                    animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
