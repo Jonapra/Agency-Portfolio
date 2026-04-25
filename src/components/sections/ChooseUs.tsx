@@ -323,11 +323,11 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
 ================================================================ */
 const STAGES = [
   { label: "Brief approval",  xOff: 44,  isSig: false },
-  { label: "Content plan",    xOff: 62,  isSig: false },
-  { label: "Internal review", xOff: 50,  isSig: false },
-  { label: "Client feedback", xOff: 76,  isSig: false },
-  { label: "Asset export",    xOff: 56,  isSig: true  },
-  { label: "Launch setup",    xOff: 94,  isSig: true  },
+  { label: "Concept Design", xOff: 76,  isSig: false },
+  { label: "Client feedback", xOff: 50,  isSig: true },
+  { label: "Developement and testing",    xOff: 56,  isSig: true  },
+  { label: "Cleint Revisions and feedback", xOff: 76,  isSig: false },
+  { label: "Launch and support",    xOff: 94,  isSig: true  },
 ];
 const STAGE_Y = (i: number) => 20 + i * 33;
 const SPINE_X = 26;
@@ -507,14 +507,14 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-4"
           title="Personalised Support"
-          desc="You get a dedicated senior lead, not a ticket queue. Real conversations, real decisions."
+          desc="You get a dedicated consultants who understands your business goals."
           delay={0}
           illustration={(a) => <PersonalisedIllustration active={a} />}
         />
         <BentoCard
           className="md:col-span-4"
           title="With You Every Step"
-          desc="Weekly check-ins, async updates, and a direct line — we're in it with you, not just for you."
+          desc="Weekly check-ins, consistent updates, We stay with you from the first consultation to the final launch."
           delay={0.07}
           illustration={(a) => <StepsIllustration active={a} />}
         />
@@ -530,7 +530,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-5"
           title="Future-Ready Solutions"
-          desc="We build for scale from day one — composable, headless, with a tech stack that won't need replacing in 18 months."
+          desc="We design and build scalable system that keep you competative tomorrow."
           delay={0.07}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
@@ -538,7 +538,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-7"
           title="Transparent Process"
-          desc="No black-box handoffs. You see every milestone before it moves, with a living timeline shared from day one."
+          desc="You'll always know what's happening with clear timelines and regular updates, feedbacks & open communication."
           delay={0.14}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <TransparentProcessIllustration active={a} />}
