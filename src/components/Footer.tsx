@@ -47,16 +47,6 @@ export const Footer = () => (
         </div>
       </Reveal>
 
-      <Reveal delay={0.15} className="mt-6 flex flex-col md:flex-row gap-6 md:items-center justify-between h-eyebrow text-mute">
-        <div>© 2019 — 2026 Agiton Studio · Lisbon · Brooklyn</div>
-        <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-signal">Instagram</a>
-          <a href="#" className="hover:text-signal">Read.cv</a>
-          <a href="#" className="hover:text-signal">Are.na</a>
-          <a href="#" className="hover:text-signal">LinkedIn</a>
-        </div>
-        <div>Built in‑house · v4.2</div>
-      </Reveal>
     </SectionContainer>
   </footer>
 );
