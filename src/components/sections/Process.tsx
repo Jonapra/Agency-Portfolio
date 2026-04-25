@@ -394,14 +394,14 @@ export const Process = () => (
         <div className="md:col-span-9">
           <Reveal>
             <h2 className="h-section font-display">
-              What we make,{" "}
-              <span className="italic-display text-signal">end‑to‑end.</span>
+              Process from,{" "}
+              <span className="italic-display text-signal">Start‑to‑end.</span>
             </h2>
           </Reveal>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+      <div className="grid md:grid-cols-2 gap-5 md:gap-6 font-semibold">
         {CARDS.map((card, i) => (
           <ServiceCard key={card.n} data={card} index={i} />
         ))}
