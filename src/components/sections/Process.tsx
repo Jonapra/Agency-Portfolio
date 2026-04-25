@@ -18,7 +18,7 @@ const CARDS = [
     tags: ["UX", "UI", "Prototyping", "Handoff"],
   },
   {
-    n: "03", title: "Website",
+    n: "03", title: "Development",
     desc: "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
     tags: ["Architecture", "Development", "Testing", "Launch"],
   },

@@ -53,7 +53,7 @@ export const Work = () => (
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Selected</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
           <Reveal><h2 className="h-section font-display">The <span className="italic-display text-signal">receipts.</span></h2></Reveal>
-          <a href="#" className="u-link hidden md:inline-block mb-4 text-sm">Archive (32) →</a>
+          {/* Archive link removed */}
         </div>
       </div>
 

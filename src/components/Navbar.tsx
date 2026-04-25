@@ -70,7 +70,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
             ${isPastHero && !menuOpen ? "border-foreground/10" : ""}
           `}
         >
-          <div className="mx-auto flex items-center justify-between w-full max-w-[1600px] px-6 md:px-10">
+          <div className="mx-auto flex items-center justify-between w-full max-w-[1400px] px-6 md:px-10">
             <Logo />
 
             <nav className="hidden md:flex items-center gap-9 text-sm">
