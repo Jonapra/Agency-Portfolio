@@ -28,3 +28,6 @@ graphify-out/
 
 # Claude Usage Dashboard
 claude-usage/
+
+# Extracted reusable components
+src/components/LineAnime/
