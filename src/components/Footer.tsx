@@ -4,7 +4,7 @@ import { SectionContainer } from "@/components/ui/section-container";
 
 export const Footer = () => (
   <footer className="relative pt-12 pb-8">
-    <SectionContainer className="max-w-[1600px]">
+    <SectionContainer>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-10 border-b border-foreground/10">
         <Reveal className="md:col-span-6">
           <div className="flex items-center gap-2 mb-6">
