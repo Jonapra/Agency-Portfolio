@@ -29,12 +29,12 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-12 2xl:pt-12 md:pb-16 lg:pb-20 2xl:pb-24 overflow-hidden hero-section-text flex flex-col"
+      className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-20 2xl:pt-24 md:pb-16 lg:pb-20 2xl:pb-24 overflow-hidden hero-section-text flex flex-col"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
       {theme === "dark" && <BackgroundBeams className="opacity-50" />}
 
-      <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-12 md:mt-16 lg:mt-0 2xl:mt-0">
+      <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-12 md:mt-16 lg:mt-4 2xl:mt-6">
         {/* Top Pill */}
         <motion.div 
           className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-current/10 bg-current/5 mb-6 md:mb-8 backdrop-blur-sm"
