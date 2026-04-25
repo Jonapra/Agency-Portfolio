@@ -51,7 +51,7 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
         >
           <circle cx={cx} cy="90" r="26"
             fill={color} fillOpacity="0.9"
-            stroke={INK3} strokeWidth="2.5"
+            stroke="white" strokeOpacity="0.2" strokeWidth="2"
           />
           <text x={cx} y="95" textAnchor="middle"
             fill="white" fillOpacity="0.88"
@@ -285,10 +285,10 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
       >
         <g className={float} style={{ animationDelay: delay }}>
           <circle cx={cx} cy={cy} r="18"
-            fill={INK3}
+            fill={FG} fillOpacity="0.07"
             stroke={FG} strokeWidth="1"
             style={{
-              strokeOpacity: active ? 0.32 : 0.16,
+              strokeOpacity: active ? 0.22 : 0.12,
               transition: "stroke-opacity 0.3s ease",
             }}
           />
@@ -300,10 +300,10 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
       </motion.g>
     ))}
 
-    {/* Hub rect */}
-    <motion.rect
-      x={HUB.cx - 34} y={HUB.cy - 19} width="68" height="38" rx="8"
-      fill={INK3}
+    {/* Hub circle */}
+    <motion.circle
+      cx={HUB.cx} cy={HUB.cy} r="30"
+      fill={FG} fillOpacity="0.07"
       stroke={SIG} strokeWidth="1.5"
       animate={{ strokeOpacity: active ? 0.85 : 0.4 }}
       transition={{ duration: 0.35 }}
