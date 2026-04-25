@@ -46,9 +46,9 @@ const sizes = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7
 const offsets = ["", "", "md:mt-16", "md:-mt-8"];
 
 export const Work = () => (
-  <section id="work" className="relative px-6 md:px-10 py-12 md:py-20">
-    <div className="mx-auto max-w-[1600px]">
-      <div className="grid md:grid-cols-12 gap-10 mb-14">
+  <section id="work" className="relative px-6 md:px-10 py-10 md:py-16">
+    <div className="mx-auto max-w-[1400px]">
+      <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Selected</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
           <Reveal><h2 className="h-section font-display">The <span className="italic-display text-signal">receipts.</span></h2></Reveal>
@@ -86,7 +86,7 @@ export const Work = () => (
               </div>
               <div className="mt-5 flex items-end justify-between">
                 <div>
-                  <div className="font-display text-3xl md:text-4xl">{p.title}</div>
+                  <div className="font-display text-2xl md:text-3xl">{p.title}</div>
                   <div className="text-mute-2 text-sm mt-1">{p.sub}</div>
                 </div>
                 <div className="text-right h-eyebrow text-mute">
@@ -99,7 +99,7 @@ export const Work = () => (
         ))}
       </div>
 
-      <div className="mt-16 flex justify-center">
+      <div className="mt-10 flex justify-center">
         <a href="#">
           <ButtonWithIcon 
             text="See the full archive" 

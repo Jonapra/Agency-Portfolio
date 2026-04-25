@@ -2,9 +2,9 @@ import { Reveal } from "../Reveal";
 import { JOURNAL } from "@/constants/site";
 
 export const Journal = () => (
-  <section id="journal" className="relative px-6 md:px-10 py-12 md:py-20">
-    <div className="mx-auto max-w-[1600px]">
-      <div className="grid md:grid-cols-12 gap-10 mb-14">
+  <section id="journal" className="relative px-6 md:px-10 py-10 md:py-16">
+    <div className="mx-auto max-w-[1400px]">
+      <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 07 · Journal</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
           <Reveal><h2 className="h-section font-display">From the <span className="italic-display text-signal">studio.</span></h2></Reveal>
@@ -23,7 +23,7 @@ export const Journal = () => (
                 </div>
               </div>
               <div className="mt-5">
-                <div className="font-display text-2xl md:text-3xl leading-tight group-hover:text-signal transition-colors">{a.t}</div>
+                <div className="font-display text-xl md:text-2xl leading-tight group-hover:text-signal transition-colors">{a.t}</div>
                 <p className="mt-2 text-sm text-mute-2">{a.x}</p>
               </div>
             </a>

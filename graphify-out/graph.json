@@ -160,7 +160,7 @@
       "label": "handleScroll()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\Navbar.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "navbar_handlescroll",
       "community": 5,
       "norm_label": "handlescroll()"
@@ -169,7 +169,7 @@
       "label": "onKey()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\Navbar.tsx",
-      "source_location": "L34",
+      "source_location": "L42",
       "id": "navbar_onkey",
       "community": 5,
       "norm_label": "onkey()"
@@ -267,16 +267,16 @@
     {
       "label": "CTA.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\CTA.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\CTA.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_cta_tsx",
+      "id": "d_agency_portfolio_src_components_sections_cta_tsx",
       "community": 14,
       "norm_label": "cta.tsx"
     },
     {
       "label": "CTA()",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\CTA.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\CTA.tsx",
       "source_location": "L6",
       "id": "cta_cta",
       "community": 14,
@@ -285,9 +285,9 @@
     {
       "label": "FAQ.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\FAQ.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\FAQ.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_faq_tsx",
+      "id": "d_agency_portfolio_src_components_sections_faq_tsx",
       "community": 35,
       "norm_label": "faq.tsx"
     },
@@ -303,18 +303,18 @@
     {
       "label": "Journal.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Journal.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Journal.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_journal_tsx",
+      "id": "d_agency_portfolio_src_components_sections_journal_tsx",
       "community": 37,
       "norm_label": "journal.tsx"
     },
     {
       "label": "Pricing.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Pricing.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Pricing.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_pricing_tsx",
+      "id": "d_agency_portfolio_src_components_sections_pricing_tsx",
       "community": 38,
       "norm_label": "pricing.tsx"
     },
@@ -348,18 +348,18 @@
     {
       "label": "Testimonials.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Testimonials.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Testimonials.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_testimonials_tsx",
+      "id": "d_agency_portfolio_src_components_sections_testimonials_tsx",
       "community": 40,
       "norm_label": "testimonials.tsx"
     },
     {
       "label": "Work.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\sections\\Work.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\Work.tsx",
       "source_location": "L1",
-      "id": "src_components_sections_work_tsx",
+      "id": "d_agency_portfolio_src_components_sections_work_tsx",
       "community": 41,
       "norm_label": "work.tsx"
     },
@@ -1171,7 +1171,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\Navbar.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_navbar_tsx",
       "_tgt": "navbar_handlescroll",
@@ -1183,7 +1183,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\components\\Navbar.tsx",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_components_navbar_tsx",
       "_tgt": "navbar_onkey",
@@ -1254,12 +1254,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\sections\\CTA.tsx",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\sections\\CTA.tsx",
       "source_location": "L6",
       "weight": 1.0,
-      "_src": "src_components_sections_cta_tsx",
+      "_src": "d_agency_portfolio_src_components_sections_cta_tsx",
       "_tgt": "cta_cta",
-      "source": "src_components_sections_cta_tsx",
+      "source": "d_agency_portfolio_src_components_sections_cta_tsx",
       "target": "cta_cta",
       "confidence_score": 1.0
     },

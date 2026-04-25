@@ -30,11 +30,11 @@ export const ChooseUs = () => {
   }, []);
 
   return (
-    <section id="process" className="relative px-6 md:px-10 py-16 md:py-28">
+    <section id="process" className="relative px-6 md:px-10 py-14 md:py-22">
       <div className="mx-auto max-w-4xl">
 
         {/* Header */}
-        <div className="mb-20 md:mb-28 max-w-4xl mx-auto text-center">
+        <div className="mb-16 md:mb-22 max-w-4xl mx-auto text-center">
           <Reveal>
             <div className="h-eyebrow text-mute mb-6">§ 04 · Why Choose Us</div>
           </Reveal>
@@ -77,7 +77,7 @@ export const ChooseUs = () => {
             </div>
           </div>
 
-          <div className="space-y-20 md:space-y-28 relative">
+          <div className="space-y-16 md:space-y-22 relative">
             {PROCESS_STEPS.map(([step, label, title, desc], i) => (
               <StepRow
                 key={step}
@@ -166,7 +166,7 @@ const StepRow = ({ id, index, step, label, title, desc }: StepRowProps) => {
           <span className="inline-flex items-center w-fit px-3 py-1 rounded-full bg-foreground/[0.06] border border-foreground/10 text-[11px] font-medium tracking-wide text-foreground/70 mb-3">
             {step}
           </span>
-          <h3 className="font-display text-2xl md:text-3xl lg:text-[32px] xl:text-[36px] mb-3 leading-[1.15] transition-colors duration-300 group-hover:text-signal">
+          <h3 className="font-display text-xl md:text-2xl lg:text-[28px] xl:text-[32px] mb-3 leading-[1.15] transition-colors duration-300 group-hover:text-signal">
             {title}
           </h3>
           <p className="text-sm md:text-[14px] text-mute-2 leading-relaxed max-w-md">

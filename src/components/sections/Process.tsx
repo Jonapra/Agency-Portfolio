@@ -354,24 +354,24 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
                  hover:shadow-[0_20px_60px_-20px_hsl(17_100%_56%/0.18)]
                  transition-[border-color,box-shadow] duration-500"
     >
-      <div className="relative h-[210px] md:h-[270px] lg:h-[300px] text-foreground overflow-hidden">
+      <div className="relative h-[180px] md:h-[220px] lg:h-[240px] text-foreground overflow-hidden">
         <Visual active={hovered} />
       </div>
 
       <div className="h-px bg-foreground/[0.08]" />
 
-      <div className="p-5 md:p-6">
-        <div className="h-eyebrow text-mute mb-3">{data.n}</div>
-        <h3 className="font-display text-[1.55rem] md:text-[1.9rem] leading-[1.08] mb-3
+      <div className="p-4 md:p-5">
+        <div className="h-eyebrow text-mute mb-2">{data.n}</div>
+        <h3 className="font-display text-[1.35rem] md:text-[1.6rem] leading-[1.08] mb-2
                        group-hover:text-signal transition-colors duration-300">
           {data.title}
         </h3>
-        <p className="text-mute-2 text-sm leading-relaxed mb-4 max-w-[52ch]">{data.desc}</p>
+        <p className="text-mute-2 text-xs md:text-sm leading-relaxed mb-3 max-w-[52ch]">{data.desc}</p>
         <div className="flex flex-wrap gap-1.5">
           {data.tags.map((tag: string) => (
             <span key={tag}
               className="h-eyebrow text-mute border border-foreground/10 rounded-full
-                         px-2.5 py-1 text-[9.5px]"
+                         px-2 py-0.5 text-[9px]"
             >
               {tag}
             </span>
@@ -384,8 +384,8 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
 
 /* ── Section ─────────────────────────────────────────────────── */
 export const Process = () => (
-  <section id="process" className="relative px-6 md:px-10 py-12 md:py-20">
-    <div className="mx-auto max-w-[1600px]">
+  <section id="process" className="relative px-6 md:px-10 py-10 md:py-16">
+    <div className="mx-auto max-w-[1400px]">
       <div className="grid md:grid-cols-12 gap-10 mb-14">
         <div className="md:col-span-3">
           <div className="h-eyebrow text-mute mb-3">§ 02 · Process</div>

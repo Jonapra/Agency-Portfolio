@@ -34,10 +34,10 @@ export const Hero = () => {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
       {theme === "dark" && <BackgroundBeams className="opacity-50" />}
 
-      <div className="mx-auto max-w-[1600px] relative w-full flex-1 flex flex-col">
+      <div className="mx-auto max-w-[1400px] relative w-full flex-1 flex flex-col">
         {/* Top meta row */}
         <motion.div 
-          className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6 2xl:mb-8"
+          className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6"
           {...fadeIn}
         >
           <div className="flex items-center gap-3">
@@ -52,9 +52,9 @@ export const Hero = () => {
 
         {/* Headline — synchronized timing */}
         <h1
-          className="font-display mb-5 md:mb-6 2xl:mb-8 flex flex-col items-start text-[36px] md:text-[80px] lg:text-[clamp(36px,7vw,114px)] 2xl:text-[138px]"
+          className="font-display mb-5 md:mb-6 flex flex-col items-start text-[36px] md:text-[70px] lg:text-[clamp(36px,6.5vw,96px)] 2xl:text-[110px]"
           style={{
-            lineHeight: 0.95,
+            lineHeight: 0.98,
             letterSpacing: "-0.035em",
           }}
         >
