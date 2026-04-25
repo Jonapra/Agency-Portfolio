@@ -431,7 +431,7 @@ interface BentoCardProps {
 
 const BentoCard = ({
   title, desc, className, delay = 0,
-  illustrationHeight = "h-[190px] md:h-[210px]",
+  illustrationHeight = "h-[160px] md:h-[190px]",
   illustration,
 }: BentoCardProps) => {
   const [hovered, setHovered] = useState(false);
@@ -474,11 +474,11 @@ const BentoCard = ({
    Section export
 ================================================================ */
 export const ChooseUs = () => (
-  <section id="choose-us" className="relative py-14 md:py-22">
-    <SectionContainer className="px-8 sm:px-10 md:px-10">
+  <section id="choose-us" className="relative py-10 md:py-16">
+    <SectionContainer>
 
       {/* Header */}
-      <div className="mb-12 md:mb-16">
+      <div className="mb-8 md:mb-12">
         <Reveal>
           <div className="h-eyebrow text-mute mb-5">§ 04 · Why Choose Us</div>
         </Reveal>
@@ -532,7 +532,7 @@ export const ChooseUs = () => (
           title="Future-Ready Solutions"
           desc="We build for scale from day one — composable, headless, with a tech stack that won't need replacing in 18 months."
           delay={0.07}
-          illustrationHeight="h-[210px] md:h-[250px]"
+          illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
         />
         <BentoCard
@@ -540,7 +540,7 @@ export const ChooseUs = () => (
           title="Transparent Process"
           desc="No black-box handoffs. You see every milestone before it moves, with a living timeline shared from day one."
           delay={0.14}
-          illustrationHeight="h-[210px] md:h-[250px]"
+          illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <TransparentProcessIllustration active={a} />}
         />
 

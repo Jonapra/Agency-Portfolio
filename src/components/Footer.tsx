@@ -3,9 +3,9 @@ import { Reveal } from "./Reveal";
 import { SectionContainer } from "@/components/ui/section-container";
 
 export const Footer = () => (
-  <footer className="relative pt-20 pb-10">
+  <footer className="relative pt-12 pb-8">
     <SectionContainer className="max-w-[1600px]">
-      <div className="grid md:grid-cols-12 gap-10 pb-16 border-b border-foreground/10">
+      <div className="grid md:grid-cols-12 gap-10 pb-10 border-b border-foreground/10">
         <Reveal className="md:col-span-5">
           <div className="flex items-center gap-2 mb-6">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -49,13 +49,13 @@ export const Footer = () => (
         </Reveal>
       </div>
 
-      <Reveal delay={0.1} y={40} className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <Reveal delay={0.1} y={40} className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="italic-display leading-[0.9]" style={{ fontSize: "clamp(48px, 10vw, 180px)" }}>
           Agiton<span className="text-signal">.</span>
         </div>
       </Reveal>
 
-      <Reveal delay={0.15} className="mt-10 flex flex-col md:flex-row gap-6 md:items-center justify-between h-eyebrow text-mute">
+      <Reveal delay={0.15} className="mt-6 flex flex-col md:flex-row gap-6 md:items-center justify-between h-eyebrow text-mute">
         <div>© 2019 — 2026 Agiton Studio · Lisbon · Brooklyn</div>
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-signal">Instagram</a>

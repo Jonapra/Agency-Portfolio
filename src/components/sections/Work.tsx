@@ -44,12 +44,12 @@ const ProjectArt = ({ p }: { p: Project }) => {
 };
 
 const sizes = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7"];
-const offsets = ["", "", "md:mt-16", "md:-mt-8"];
+const offsets = ["", "", "md:mt-10", "md:-mt-5"];
 
 export const Work = () => (
   <section id="work" className="relative py-10 md:py-16">
     <SectionContainer>
-      <div className="grid md:grid-cols-12 gap-10 mb-10">
+      <div className="grid md:grid-cols-12 gap-8 mb-8">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Selected</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
           <Reveal><h2 className="h-section font-display">The <span className="italic-display text-signal">receipts.</span></h2></Reveal>
@@ -57,7 +57,7 @@ export const Work = () => (
         </div>
       </div>
 
-      <div className="grid md:grid-cols-12 gap-6 md:gap-10">
+      <div className="grid md:grid-cols-12 gap-5 md:gap-7">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.slug} delay={i * 0.05} className={`${sizes[i]} ${offsets[i]}`}>
             <Link to={`/projects/${p.slug}`} className="proj-card group block" data-cursor="view">
