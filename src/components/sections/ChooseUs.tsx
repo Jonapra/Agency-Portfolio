@@ -96,7 +96,7 @@ const StepsIllustration = ({ active }: { active: boolean }) => (
       animate={{ strokeOpacity: active ? 0.55 : 0.22 }}
       transition={{ duration: 0.3 }}
     />
-    <text x="52" y="81" fill={FG} fillOpacity="0.82" fontSize="10" fontFamily="sans-serif">
+    <text x="52" y="81" fill={FG} fillOpacity="0.82" fontSize="10" fontWeight="600" fontFamily="sans-serif">
       Hi Daniel! Your design draft is ready.
     </text>
 
@@ -106,7 +106,7 @@ const StepsIllustration = ({ active }: { active: boolean }) => (
       animate={{ strokeOpacity: active ? 0.22 : 0.1 }}
       transition={{ duration: 0.3 }}
     />
-    <text x="52" y="127" fill={FG} fillOpacity="0.72" fontSize="10" fontFamily="sans-serif">
+    <text x="52" y="127" fill={FG} fillOpacity="0.72" fontSize="10" fontWeight="600" fontFamily="sans-serif">
       Want feedback before next step?
     </text>
 
@@ -292,9 +292,9 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
               transition: "stroke-opacity 0.3s ease",
             }}
           />
-          <text x={cx} y={cy + 4} textAnchor="middle"
+          <text x={cx} y={cy + 5} textAnchor="middle"
             fill={FG} fillOpacity="0.6"
-            fontSize="8.5" fontWeight="600" fontFamily="sans-serif"
+            fontSize="10" fontWeight="600" fontFamily="sans-serif"
           >{label}</text>
         </g>
       </motion.g>
@@ -308,11 +308,11 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
       animate={{ strokeOpacity: active ? 0.85 : 0.4 }}
       transition={{ duration: 0.35 }}
     />
-    <text x={HUB.cx} y={HUB.cy - 3} textAnchor="middle"
-      fill={SIG} fontSize="7.5" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.07em"
+    <text x={HUB.cx} y={HUB.cy - 4} textAnchor="middle"
+      fill={SIG} fontSize="10" fontWeight="600" fontFamily="sans-serif" letterSpacing="0.07em"
     >YOUR</text>
-    <text x={HUB.cx} y={HUB.cy + 10} textAnchor="middle"
-      fill={SIG} fontSize="7.5" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.07em"
+    <text x={HUB.cx} y={HUB.cy + 11} textAnchor="middle"
+      fill={SIG} fontSize="10" fontWeight="600" fontFamily="sans-serif" letterSpacing="0.07em"
     >BRAND</text>
   </svg>
 );
@@ -325,8 +325,8 @@ const STAGES = [
   { label: "Brief approval",     line2: null,           isSig: false },
   { label: "Concept Design",     line2: null,           isSig: false },
   { label: "Client feedback",    line2: null,           isSig: true  },
-  { label: "Developement",       line2: "and testing",  isSig: true  },
-  { label: "Cleint Revisions",   line2: "and feedback", isSig: false },
+  { label: "Development",        line2: "and testing",  isSig: true  },
+  { label: "Client Revisions",   line2: "and feedback", isSig: false },
   { label: "Launch and support", line2: null,           isSig: true  },
 ];
 
@@ -431,18 +431,18 @@ const TransparentProcessIllustration = ({ active }: { active: boolean }) => {
 
             {/* Label — two lines for wrapped stages */}
             {line2 ? (
-              <text textAnchor="middle" fontSize="8" fontFamily="sans-serif"
-                fontWeight={isSig ? "600" : "400"}
+              <text textAnchor="middle" fontSize="10" fontFamily="sans-serif"
+                fontWeight="600"
                 fill={isSig ? SIG2 : FG}
                 fillOpacity={isSig ? 0.88 : 0.6}
               >
-                <tspan x={cx} y={py + 13}>{label}</tspan>
-                <tspan x={cx} dy="11">{line2}</tspan>
+                <tspan x={cx} y={py + 15}>{label}</tspan>
+                <tspan x={cx} dy="12">{line2}</tspan>
               </text>
             ) : (
-              <text x={cx} y={py + h / 2 + 3}
-                textAnchor="middle" fontSize="8" fontFamily="sans-serif"
-                fontWeight={isSig ? "600" : "400"}
+              <text x={cx} y={py + h / 2 + 4}
+                textAnchor="middle" fontSize="10" fontFamily="sans-serif"
+                fontWeight="600"
                 fill={isSig ? SIG2 : FG}
                 fillOpacity={isSig ? 0.88 : 0.6}
               >{label}</text>
@@ -520,15 +520,15 @@ export const ChooseUs = () => (
           <div className="h-eyebrow text-mute mb-5">§ 04 · Why Choose Us</div>
         </Reveal>
         
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto">
           <Reveal delay={0.05}>
             <h2 className="h-section font-display leading-[1.05]">
-              Why <span className="italic-display text-signal">Choose Us</span>
+              Brand <span className="italic-display text-signal">Identity</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-3xl mx-auto">
-              Built To Move, <span className="italic-display">Ship High-Quality</span> Designs Faster
+            <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-4xl mx-auto">
+              We dig into who you are, what you stand for, and learn about your business and industry — then design a visual system that fits your business like it was always meant to look this way.
             </p>
           </Reveal>
         </div>
