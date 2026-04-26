@@ -104,13 +104,10 @@ export const Services = () => {
       className="relative bg-white text-ink py-16 md:py-20 lg:py-24 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
-        {/* Overline */}
-        <div className="mb-10 md:mb-14 flex items-center gap-3">
-          <span className="h-px w-8 bg-ink/30" />
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.18em] text-ink/60">
-            What We Build
-          </span>
-        </div>
+        {/* Section title */}
+        <h2 className="mb-10 md:mb-14 font-sans font-black uppercase leading-[0.85] tracking-[-0.04em] text-ink text-6xl md:text-8xl lg:text-[140px]">
+          Services
+        </h2>
 
         {/* Rows */}
         <div className="border-t border-ink/10">
