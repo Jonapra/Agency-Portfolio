@@ -555,7 +555,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-4"
           title="Measurable Impact"
-          desc="We track what matters. Every engagement ships with analytics baselines so you can see the delta."
+          desc=" We bake analytics into every ship, providing clear benchmarks so you can track your success from day one."
           delay={0.14}
           illustration={(a) => <ImpactIllustration active={a} />}
         />
@@ -564,7 +564,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-5"
           title="Future-Ready Solutions"
-          desc="We design and build scalable system that keep you competative tomorrow."
+          desc="We design and build scalable systems that keep you competitive tomorrow."
           delay={0.07}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
@@ -572,7 +572,7 @@ export const ChooseUs = () => (
         <BentoCard
           className="md:col-span-7"
           title="Transparent Process"
-          desc="You'll always know what's happening with clear timelines and regular updates, feedbacks & open communication."
+          desc="You'll always know what's happening with clear timelines, regular updates, and open communication."
           delay={0.14}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <TransparentProcessIllustration active={a} />}
