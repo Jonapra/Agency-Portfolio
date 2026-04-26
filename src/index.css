@@ -207,6 +207,7 @@
 }
 .cursor-ring.hover { width: 72px; height: 72px; background: hsl(var(--signal) / 0.9); border-color: transparent; }
 .cursor-ring.view { width: 96px; height: 96px; background: hsl(var(--signal)); border-color: transparent; }
+.cursor-ring.off, .cursor-dot.off { opacity: 0; }
 @media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
 
 /* FAQ details */

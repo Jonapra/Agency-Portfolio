@@ -27,13 +27,25 @@ export const useCustomCursor = () => {
     raf = requestAnimationFrame(tick);
 
     const onOver = (e: MouseEvent) => {
-      const t = (e.target as HTMLElement).closest("[data-cursor]") as HTMLElement | null;
+      const el = e.target as HTMLElement;
+      if (el.closest("button, a")) {
+        ring.classList.add("off");
+        dot.classList.add("off");
+        return;
+      }
+      const t = el.closest("[data-cursor]") as HTMLElement | null;
       if (!t) return;
       if (t.dataset.cursor === "view") { ring.classList.add("view"); ring.classList.remove("hover"); }
       else { ring.classList.add("hover"); ring.classList.remove("view"); }
     };
     const onOut = (e: MouseEvent) => {
-      const t = (e.target as HTMLElement).closest("[data-cursor]");
+      const el = e.target as HTMLElement;
+      if (el.closest("button, a")) {
+        ring.classList.remove("off");
+        dot.classList.remove("off");
+        return;
+      }
+      const t = el.closest("[data-cursor]");
       if (!t) return;
       ring.classList.remove("hover", "view");
     };
