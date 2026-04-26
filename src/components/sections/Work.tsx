@@ -50,9 +50,9 @@ export const Work = () => (
   <section id="work" className="relative py-10 md:py-16">
     <SectionContainer>
       <div className="grid md:grid-cols-12 gap-8 mb-8">
-        <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Selected</div></div>
+        <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Project</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
-          <Reveal><h2 className="h-section font-display">The <span className="italic-display text-signal">receipts.</span></h2></Reveal>
+          <Reveal><h2 className="h-section font-display">Projects <span className="italic-display text-signal">Section</span></h2></Reveal>
           {/* Archive link removed */}
         </div>
       </div>

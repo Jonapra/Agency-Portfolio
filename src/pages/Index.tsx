@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SectionContainer } from "@/components/ui/section-container";
 import { Hero } from "@/components/sections/Hero";
+import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { ChooseUs } from "@/components/sections/ChooseUs";
 import { Work } from "@/components/sections/Work";
@@ -12,6 +13,7 @@ import { CTA } from "@/components/sections/CTA";
 const Index = () => (
   <Layout>
     <Hero />
+    <Services />
     <SectionContainer className="px-0 md:px-0">
       <Process />
       <Work />
