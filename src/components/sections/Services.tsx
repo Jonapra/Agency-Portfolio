@@ -60,16 +60,16 @@ export const Services = () => {
         if (items.length) {
           gsap.fromTo(
             items,
-            { y: -110, opacity: 0 },
+            { y: 40, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              ease: "none",
+              ease: "power2.out",
               stagger: 0.05,
               scrollTrigger: {
                 trigger: row,
-                start: "top bottom",
-                end: "top 45%",
+                start: "top 90%",
+                end: "top 60%",
                 scrub: 1,
               },
             }
@@ -79,15 +79,16 @@ export const Services = () => {
         if (image) {
           gsap.fromTo(
             image,
-            { y: -60 },
+            { y: 40, opacity: 0 },
             {
-              y: 50,
-              ease: "none",
+              y: 0,
+              opacity: 1,
+              ease: "power2.out",
               scrollTrigger: {
                 trigger: row,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1.2,
+                start: "top 90%",
+                end: "top 60%",
+                scrub: 1,
               },
             }
           );
@@ -115,7 +116,7 @@ export const Services = () => {
             <div
               key={service.num}
               data-services-row
-              className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_1.1fr_160px_1.4fr_180px] items-start md:items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-ink/10 py-5 md:py-5 lg:py-6 transition-colors duration-300 hover:bg-ink/[0.02]"
+              className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_1.1fr_160px_1.4fr_180px] items-start md:items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-ink/10 py-5 md:py-5 lg:py-6 transition-colors duration-300 hover:bg-ink/[0.02] overflow-hidden"
             >
               {/* Number */}
               <div
