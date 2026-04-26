@@ -523,12 +523,12 @@ export const ChooseUs = () => (
         <div className="text-center max-w-5xl mx-auto">
           <Reveal delay={0.05}>
             <h2 className="h-section font-display leading-[1.05]">
-              Brand <span className="italic-display text-signal">Identity</span>
+              Why <span className="italic-display text-signal">Choose Us</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-4xl mx-auto">
-              We dig into who you are, what you stand for, and learn about your business and industry — then design a visual system that fits your business like it was always meant to look this way.
+            <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-3xl mx-auto">
+              Built To <span className="italic-display">Grow</span>, <span className="italic-display text-signal">Ship High-Quality</span> Websites Faster
             </p>
           </Reveal>
         </div>
@@ -563,8 +563,8 @@ export const ChooseUs = () => (
         {/* Row 2 — 5 + 7 split */}
         <BentoCard
           className="md:col-span-5"
-          title="Future-Ready Solutions"
-          desc="We design and build scalable systems that keep you competitive tomorrow."
+          title="Brand Identity"
+          desc="We dig into who you are, what you stand for, and learn about your business and industry — then design a visual system that fits your business like it was always meant to look this way."
           delay={0.07}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
