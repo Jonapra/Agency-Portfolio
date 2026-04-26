@@ -10,6 +10,8 @@ type Service = {
   name: string;
   tags: string;
   description: string;
+  image: string;
+  imageAlt: string;
 };
 
 const SERVICES: Service[] = [
@@ -19,6 +21,8 @@ const SERVICES: Service[] = [
     tags: "Wireframes, Prototypes, Design Systems",
     description:
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
+    image: "/assets/UIUX image.png",
+    imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
   },
   {
     num: "02",
@@ -26,6 +30,8 @@ const SERVICES: Service[] = [
     tags: "React, Next.js, Vite",
     description:
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
+    image: "/assets/webdev Image.png",
+    imageAlt: "Website development — code editor and live browser preview side by side",
   },
   {
     num: "03",
@@ -33,6 +39,8 @@ const SERVICES: Service[] = [
     tags: "Product, Auth, Dashboards",
     description:
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
+    image: "/assets/SaaS Image.png",
+    imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
   },
   {
     num: "04",
@@ -40,6 +48,8 @@ const SERVICES: Service[] = [
     tags: "Node, APIs, Databases",
     description:
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
+    image: "/assets/FullStack Image.png",
+    imageAlt: "Full stack system architecture diagram — client, frontend, API gateway, backend, database",
   },
 ];
 
@@ -148,13 +158,18 @@ export const Services = () => {
                 </p>
               </div>
 
-              {/* Image placeholder */}
+              {/* Image */}
               <div
                 data-services-image
-                className="hidden lg:block aspect-[4/3] w-full bg-bone border border-ink/10 rounded-sm overflow-hidden"
-                aria-hidden="true"
+                className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[4/3] w-full md:col-span-3 lg:col-span-1 bg-ink border border-ink/10 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
               >
-                {/* Replace with <img src="..." alt="..." className="w-full h-full object-cover" /> */}
+                <img
+                  src={encodeURI(service.image)}
+                  alt={service.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
