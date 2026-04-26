@@ -189,7 +189,6 @@ const Project = () => {
               </Reveal>
             </div>
             <Reveal delay={0.16} className="md:col-span-1 space-y-6">
-              <p className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground font-medium leading-[1.1]">{c.intro}</p>
               <div className="grid grid-cols-2 gap-6 pt-4 border-t border-foreground/10">
                 <div><div className="h-eyebrow text-mute mb-1">Client</div><div>{c.client}</div></div>
                 <div><div className="h-eyebrow text-mute mb-1">Timeline</div><div>{c.timeline}</div></div>

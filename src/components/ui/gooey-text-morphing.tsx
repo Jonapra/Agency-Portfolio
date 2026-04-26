@@ -22,6 +22,16 @@ export function GooeyText({
   const text2Ref = React.useRef<HTMLSpanElement>(null);
 
   React.useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (text1Ref.current && text2Ref.current) {
+        text2Ref.current.textContent = texts[0];
+        text2Ref.current.style.opacity = "100%";
+        text2Ref.current.style.filter = "";
+        text1Ref.current.style.opacity = "0%";
+      }
+      return;
+    }
+
     let textIndex = texts.length - 1;
     let time = new Date();
     let morph = 0;
