@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
-import { useMagnetic } from "@/hooks/useMagnetic";
 import { NAV_LINKS } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 
@@ -14,7 +13,6 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [theme, setTheme] = useState<"dark" | "light">(() => (localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
@@ -93,20 +91,6 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
                 )}
               </button>
-              <a
-                ref={ctaRef}
-                href={`${anchorPrefix}#contact`}
-                className="hidden sm:inline-flex items-center gap-2 text-sm group"
-              >
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-signal opacity-75 animate-ping" />
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-signal" />
-                </span>
-                <span className="u-link">Let's talk</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path d="M2 10 L10 2 M4 2 H10 V8" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                </svg>
-              </a>
 
               <button
                 onClick={() => setMenuOpen(o => !o)}
