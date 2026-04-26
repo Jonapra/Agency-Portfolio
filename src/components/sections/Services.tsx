@@ -126,7 +126,7 @@ export const Services = () => {
             <div
               key={service.num}
               data-services-row
-              className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_1.1fr_160px_1.4fr_180px] items-start md:items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-ink/10 py-5 md:py-5 lg:py-6 transition-colors duration-300 hover:bg-ink/[0.02] overflow-hidden"
+              className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_0.9fr_140px_1fr_360px] items-start md:items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-ink/10 py-5 md:py-5 lg:py-2 transition-colors duration-300 hover:bg-ink/[0.02] overflow-hidden"
             >
               {/* Number */}
               <div
@@ -161,7 +161,7 @@ export const Services = () => {
               {/* Image */}
               <div
                 data-services-image
-                className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[4/3] w-full md:col-span-3 lg:col-span-1 bg-ink border border-ink/10 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
+                className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/10] w-full md:col-span-3 lg:col-span-1 bg-ink border border-ink/10 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
               >
                 <img
                   src={encodeURI(service.image)}

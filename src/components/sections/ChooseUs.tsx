@@ -19,11 +19,11 @@ const VP = { once: true, margin: "0px 0px -60px 0px" } as const;
 ================================================================ */
 const PersonalisedIllustration = ({ active }: { active: boolean }) => {
   const avatars = [
-    { cx: 86,  color: "#5C748B", label: "A", float: "anim-float-slow", delay: "0.5s" },
-    { cx: 116, color: "#8B7355", label: "B", float: "anim-float-mid",  delay: "0.2s" },
-    { cx: 156, color: "#6B5B7B", label: "C", float: undefined,         delay: "0s",  isCenter: true },
-    { cx: 196, color: "#5C7A5C", label: "D", float: "anim-float-mid",  delay: "0.35s" },
-    { cx: 226, color: "#7A5C5C", label: "E", float: "anim-float-slow", delay: "0.7s" },
+    { cx: 86,  color: "#5C748B", float: "anim-float-slow", delay: "0.5s" },
+    { cx: 116, color: "#8B7355", float: "anim-float-mid",  delay: "0.2s" },
+    { cx: 156, color: "#6B5B7B", float: undefined,         delay: "0s",  isCenter: true },
+    { cx: 196, color: "#5C7A5C", float: "anim-float-mid",  delay: "0.35s" },
+    { cx: 226, color: "#7A5C5C", float: "anim-float-slow", delay: "0.7s" },
   ];
 
   return (
@@ -42,17 +42,33 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       />
 
+      {/* Clip silhouettes to the avatar circle so torso bottom blends into the disc */}
+      <defs>
+        {avatars.map(({ cx }) => (
+          <clipPath key={cx} id={`avatar-clip-${cx}`}>
+            <circle cx={cx} cy="90" r="26" />
+          </clipPath>
+        ))}
+      </defs>
+
       {/* Avatars — back to front (z-order) */}
-      {avatars.map(({ cx, color, label, isCenter }) => (
+      {avatars.map(({ cx, color, isCenter }) => (
         <g key={cx}>
           <circle cx={cx} cy="90" r="26"
             fill={color} fillOpacity="0.9"
             stroke="white" strokeOpacity="0.2" strokeWidth="2"
           />
-          <text x={cx} y="95" textAnchor="middle"
-            fill="white" fillOpacity="0.88"
-            fontSize="13" fontWeight="600" fontFamily="sans-serif"
-          >{label}</text>
+
+          {/* Person silhouette: head + shoulders, clipped to disc */}
+          <g clipPath={`url(#avatar-clip-${cx})`}>
+            <circle cx={cx} cy="82" r="7"
+              fill="white" fillOpacity="0.92"
+            />
+            <path
+              d={`M ${cx - 14} 118 C ${cx - 14} 100, ${cx + 14} 100, ${cx + 14} 118 Z`}
+              fill="white" fillOpacity="0.92"
+            />
+          </g>
 
           {isCenter && (
             <motion.circle cx={cx} cy="90" r="29"
@@ -226,10 +242,88 @@ const ImpactIllustration = ({ active }: { active: boolean }) => {
 ================================================================ */
 const ORBIT_R = 78;
 const HUB = { cx: 156, cy: 118 };
-const SATS = ["SEO", "Perf", "CMS", "A11y", "i18n", "API"].map((label, i) => {
-  const angle = (i * Math.PI * 2) / 6 - Math.PI / 2;
+
+type TechRender = (cx: number, cy: number) => React.ReactNode;
+
+const TECHS: { name: string; render: TechRender }[] = [
+  {
+    name: "Next.js",
+    render: (cx, cy) => (
+      <g transform={`translate(${cx - 12} ${cy - 12})`}>
+        <circle cx="12" cy="12" r="12" fill="#000" />
+        {/* Stylized N: left vertical stub + diagonal + right vertical bar */}
+        <path
+          d="M7.6 17.6V6.4h1.7l6 9.5V6.4h1.7v11.2h-1.7l-6-9.5v9.5z"
+          fill="#fff"
+        />
+      </g>
+    ),
+  },
+  {
+    name: "TypeScript",
+    render: (cx, cy) => (
+      <>
+        <rect x={cx - 12} y={cy - 12} width="24" height="24" rx="3" fill="#3178C6" />
+        <text x={cx} y={cy + 5} textAnchor="middle"
+          fill="#fff" fontSize="10" fontWeight="800" fontFamily="sans-serif"
+        >TS</text>
+      </>
+    ),
+  },
+  {
+    name: "MongoDB",
+    render: (cx, cy) => (
+      <>
+        <path
+          d={`M ${cx} ${cy - 13} C ${cx - 8} ${cy - 6}, ${cx - 8} ${cy + 7}, ${cx} ${cy + 13} C ${cx + 8} ${cy + 7}, ${cx + 8} ${cy - 6}, ${cx} ${cy - 13} Z`}
+          fill="#47A248"
+        />
+        <line x1={cx} y1={cy - 11} x2={cx} y2={cy + 12}
+          stroke="#fff" strokeOpacity="0.7" strokeWidth="1"
+        />
+      </>
+    ),
+  },
+  {
+    name: "React",
+    render: (cx, cy) => (
+      <g stroke="#61DAFB" strokeWidth="1.4" fill="none">
+        <ellipse cx={cx} cy={cy} rx="11" ry="4.2" />
+        <ellipse cx={cx} cy={cy} rx="11" ry="4.2" transform={`rotate(60 ${cx} ${cy})`} />
+        <ellipse cx={cx} cy={cy} rx="11" ry="4.2" transform={`rotate(120 ${cx} ${cy})`} />
+        <circle cx={cx} cy={cy} r="2.2" fill="#61DAFB" stroke="none" />
+      </g>
+    ),
+  },
+  {
+    name: "Tailwind",
+    render: (cx, cy) => (
+      <g stroke="#38BDF8" strokeWidth="2.6" fill="none" strokeLinecap="round">
+        <path d={`M ${cx - 13} ${cy - 3} Q ${cx - 6.5} ${cy - 10} ${cx} ${cy - 3} T ${cx + 13} ${cy - 3}`} />
+        <path d={`M ${cx - 13} ${cy + 5} Q ${cx - 6.5} ${cy - 2} ${cx} ${cy + 5} T ${cx + 13} ${cy + 5}`} />
+      </g>
+    ),
+  },
+  {
+    name: "Node.js",
+    render: (cx, cy) => (
+      <>
+        <polygon
+          points={`${cx},${cy - 13} ${cx + 11},${cy - 6.5} ${cx + 11},${cy + 6.5} ${cx},${cy + 13} ${cx - 11},${cy + 6.5} ${cx - 11},${cy - 6.5}`}
+          fill="#5FA04E"
+        />
+        <text x={cx} y={cy + 4} textAnchor="middle"
+          fill="#fff" fontSize="9" fontWeight="800" fontFamily="sans-serif"
+        >node</text>
+      </>
+    ),
+  },
+];
+
+const SATS = TECHS.map((tech, i) => {
+  const angle = (i * Math.PI * 2) / TECHS.length - Math.PI / 2;
   return {
-    label,
+    ...tech,
     cx: HUB.cx + ORBIT_R * Math.cos(angle),
     cy: HUB.cy + ORBIT_R * Math.sin(angle),
     float: i % 2 === 0 ? "anim-float-slow" : "anim-float-mid",
@@ -267,8 +361,8 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
       />
     ))}
 
-    {/* Satellites — entry only, no idle float */}
-    {SATS.map(({ cx, cy, label }, i) => (
+    {/* Satellites — tech icons */}
+    {SATS.map(({ cx, cy, name, render }, i) => (
       <motion.g key={i}
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -277,17 +371,15 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
         transition={{ delay: 0.12 * i, duration: 0.45, ease: [0.34, 1.56, 0.64, 1] }}
       >
         <circle cx={cx} cy={cy} r="18"
-          fill={FG} fillOpacity="0.07"
+          fill={FG} fillOpacity="0.04"
           stroke={FG} strokeWidth="1"
           style={{
             strokeOpacity: active ? 0.22 : 0.12,
             transition: "stroke-opacity 0.3s ease",
           }}
         />
-        <text x={cx} y={cy + 5} textAnchor="middle"
-          fill={FG} fillOpacity="0.6"
-          fontSize="10" fontWeight="600" fontFamily="sans-serif"
-        >{label}</text>
+        {render(cx, cy)}
+        <title>{name}</title>
       </motion.g>
     ))}
 
