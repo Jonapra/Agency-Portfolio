@@ -28,26 +28,30 @@ export const useCustomCursor = () => {
 
     const onOver = (e: MouseEvent) => {
       const el = e.target as HTMLElement;
+      const t = el.closest("[data-cursor]") as HTMLElement | null;
+      if (t) {
+        ring.classList.remove("off");
+        dot.classList.remove("off");
+        if (t.dataset.cursor === "view") { ring.classList.add("view"); ring.classList.remove("hover"); }
+        else { ring.classList.add("hover"); ring.classList.remove("view"); }
+        return;
+      }
       if (el.closest("button, a")) {
         ring.classList.add("off");
         dot.classList.add("off");
-        return;
       }
-      const t = el.closest("[data-cursor]") as HTMLElement | null;
-      if (!t) return;
-      if (t.dataset.cursor === "view") { ring.classList.add("view"); ring.classList.remove("hover"); }
-      else { ring.classList.add("hover"); ring.classList.remove("view"); }
     };
     const onOut = (e: MouseEvent) => {
       const el = e.target as HTMLElement;
+      const t = el.closest("[data-cursor]");
+      if (t) {
+        ring.classList.remove("hover", "view");
+        return;
+      }
       if (el.closest("button, a")) {
         ring.classList.remove("off");
         dot.classList.remove("off");
-        return;
       }
-      const t = el.closest("[data-cursor]");
-      if (!t) return;
-      ring.classList.remove("hover", "view");
     };
 
     window.addEventListener("mousemove", onMove);

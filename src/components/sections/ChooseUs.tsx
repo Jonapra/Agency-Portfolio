@@ -31,7 +31,6 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
       {/* Ambient glow behind center avatar */}
       <circle cx="156" cy="90" r="36"
         fill={SIG} fillOpacity="0.07"
-        className="anim-pulse-glow"
       />
 
       {/* Hover ripple */}
@@ -44,11 +43,8 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
       />
 
       {/* Avatars — back to front (z-order) */}
-      {avatars.map(({ cx, color, label, float, delay, isCenter }) => (
-        <g key={cx}
-          className={float}
-          style={{ animationDelay: delay }}
-        >
+      {avatars.map(({ cx, color, label, isCenter }) => (
+        <g key={cx}>
           <circle cx={cx} cy="90" r="26"
             fill={color} fillOpacity="0.9"
             stroke="white" strokeOpacity="0.2" strokeWidth="2"
@@ -119,8 +115,6 @@ const StepsIllustration = ({ active }: { active: boolean }) => (
       <circle key={i}
         cx={57 + i * 13} cy="165" r="3.5"
         fill={FG} fillOpacity="0.48"
-        className="anim-float-mid"
-        style={{ animationDelay: `${i * 0.25}s` }}
       />
     ))}
   </svg>
@@ -248,7 +242,6 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
     {/* Hub glow */}
     <circle cx={HUB.cx} cy={HUB.cy} r="38"
       fill={SIG} fillOpacity="0.07"
-      className="anim-pulse-glow"
     />
 
     {/* Orbit ring */}
@@ -274,8 +267,8 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
       />
     ))}
 
-    {/* Satellites — outer motion.g for entry, inner g for idle float */}
-    {SATS.map(({ cx, cy, label, float, delay }, i) => (
+    {/* Satellites — entry only, no idle float */}
+    {SATS.map(({ cx, cy, label }, i) => (
       <motion.g key={i}
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -283,20 +276,18 @@ const FutureReadyIllustration = ({ active }: { active: boolean }) => (
         style={{ transformOrigin: `${cx}px ${cy}px` }}
         transition={{ delay: 0.12 * i, duration: 0.45, ease: [0.34, 1.56, 0.64, 1] }}
       >
-        <g className={float} style={{ animationDelay: delay }}>
-          <circle cx={cx} cy={cy} r="18"
-            fill={FG} fillOpacity="0.07"
-            stroke={FG} strokeWidth="1"
-            style={{
-              strokeOpacity: active ? 0.22 : 0.12,
-              transition: "stroke-opacity 0.3s ease",
-            }}
-          />
-          <text x={cx} y={cy + 5} textAnchor="middle"
-            fill={FG} fillOpacity="0.6"
-            fontSize="10" fontWeight="600" fontFamily="sans-serif"
-          >{label}</text>
-        </g>
+        <circle cx={cx} cy={cy} r="18"
+          fill={FG} fillOpacity="0.07"
+          stroke={FG} strokeWidth="1"
+          style={{
+            strokeOpacity: active ? 0.22 : 0.12,
+            transition: "stroke-opacity 0.3s ease",
+          }}
+        />
+        <text x={cx} y={cy + 5} textAnchor="middle"
+          fill={FG} fillOpacity="0.6"
+          fontSize="10" fontWeight="600" fontFamily="sans-serif"
+        >{label}</text>
       </motion.g>
     ))}
 
@@ -371,7 +362,6 @@ const TransparentProcessIllustration = ({ active }: { active: boolean }) => {
         x1={dotXs[4]} y1={H_BASELINE} x2={dotXs[5]} y2={H_BASELINE}
         stroke={SIG} strokeWidth="1.5" strokeOpacity="0.4"
         strokeDasharray="4 5"
-        className="anim-dash-flow"
       />
 
       {pills.map(({ label, line2, isSig, w, h }, i) => {
@@ -391,8 +381,6 @@ const TransparentProcessIllustration = ({ active }: { active: boolean }) => {
             {isSig && (
               <circle cx={cx} cy={cy} r="14"
                 fill={SIG} fillOpacity="0.06"
-                className="anim-pulse-glow"
-                style={{ animationDelay: `${i * 0.35}s` }}
               />
             )}
 
@@ -528,7 +516,7 @@ export const ChooseUs = () => (
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-3xl mx-auto">
-              Built To <span className="italic-display">Grow</span>, <span className="italic-display text-signal">Ship High-Quality</span> Websites Faster
+              Built To <span className="italic-display font-bold">Grow</span>, <span className="italic-display text-signal font-bold">Ship High-Quality</span> Websites Faster
             </p>
           </Reveal>
         </div>
@@ -563,8 +551,8 @@ export const ChooseUs = () => (
         {/* Row 2 — 5 + 7 split */}
         <BentoCard
           className="md:col-span-5"
-          title="Brand Identity"
-          desc="We dig into who you are, what you stand for, and learn about your business and industry — then design a visual system that fits your business like it was always meant to look this way."
+          title="Future-Ready Solutions"
+          desc="We build fast, secure, and scalable websites using modern technologies that keeps you competitive tomorrow."
           delay={0.07}
           illustrationHeight="h-[190px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
