@@ -19,7 +19,7 @@ const CARDS = [
   },
   {
     n: "03", title: "Development",
-    desc: "We plan before we build. Every decision — structure, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
+    desc: "We plan before we build. Every decision , design, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
     tags: ["Architecture", "Development", "Testing", "Launch"],
   },
   {
@@ -371,7 +371,7 @@ const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
 
       <div className="p-4 md:p-5">
         <div className="h-eyebrow text-mute mb-2">{data.n}</div>
-        <h3 className="font-display text-[1.35rem] md:text-[1.6rem] leading-[1.08] mb-2
+        <h3 className="font-display font-semibold text-[1.45rem] md:text-[1.75rem] leading-[1.08] mb-2
                        group-hover:text-signal transition-colors duration-300">
           {data.title}
         </h3>
