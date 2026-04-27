@@ -1,0 +1,457 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Agiton home" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]: Agiton
+        - navigation [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: "#services"
+          - link "Process" [ref=e14] [cursor=pointer]:
+            - /url: "#process"
+          - link "Work" [ref=e15] [cursor=pointer]:
+            - /url: "#work"
+          - link "Contact" [ref=e16] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Blog" [ref=e17] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=e18]:
+          - link "Chat on WhatsApp" [ref=e19] [cursor=pointer]:
+            - /url: https://wa.me/917042607942
+            - img [ref=e23]
+            - generic [ref=e26]: WhatsApp Us
+          - button "Toggle theme" [ref=e27] [cursor=pointer]:
+            - img [ref=e28]
+    - main [ref=e31]:
+      - generic [ref=e32]:
+        - generic:
+          - img
+          - img
+        - generic [ref=e33]:
+          - generic [ref=e38]: Booking Available · Agiton Studio
+          - heading "W e B u i l d Awesome Modern W e b s i t e s t h a t s h a p e y o u r b r a n d ." [level=1] [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e42]:
+                - generic [ref=e43]: W
+                - generic [ref=e44]: e
+                - generic [ref=e46]: B
+                - generic [ref=e47]: u
+                - generic [ref=e48]: i
+                - generic [ref=e49]: l
+                - generic [ref=e50]: d
+              - generic [ref=e53]:
+                - generic [ref=e54]: Awesome
+                - generic [ref=e55]: Modern
+              - generic [ref=e57]:
+                - generic [ref=e58]: W
+                - generic [ref=e59]: e
+                - generic [ref=e60]: b
+                - generic [ref=e61]: s
+                - generic [ref=e62]: i
+                - generic [ref=e63]: t
+                - generic [ref=e64]: e
+                - generic [ref=e65]: s
+            - generic [ref=e69]:
+              - generic [ref=e70]: t
+              - generic [ref=e71]: h
+              - generic [ref=e72]: a
+              - generic [ref=e73]: t
+              - generic [ref=e75]: s
+              - generic [ref=e76]: h
+              - generic [ref=e77]: a
+              - generic [ref=e78]: p
+              - generic [ref=e79]: e
+              - generic [ref=e81]: "y"
+              - generic [ref=e82]: o
+              - generic [ref=e83]: u
+              - generic [ref=e84]: r
+              - generic [ref=e86]: b
+              - generic [ref=e87]: r
+              - generic [ref=e88]: a
+              - generic [ref=e89]: "n"
+              - generic [ref=e90]: d
+              - generic [ref=e91]: .
+          - paragraph [ref=e93]: Digital product design agency crafting UI/UX, Websites and SaaS that help business grow. We focus on user-friendly designs that look great and work smoothly.
+          - generic [ref=e94]:
+            - link "Projects" [ref=e95] [cursor=pointer]:
+              - /url: "#work"
+              - button "Projects" [ref=e97]:
+                - generic [ref=e98]: Projects
+                - img [ref=e100]
+            - link "Book a call" [ref=e103] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e104]:
+                - img [ref=e107]
+                - generic [ref=e109]: Book a call
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - generic [ref=e112]: 15+
+              - generic [ref=e113]: Websites shipped
+            - generic [ref=e114]:
+              - generic [ref=e115]: 10+
+              - generic [ref=e116]: INDUSTRIES SERVED
+            - generic [ref=e117]:
+              - generic [ref=e118]: "4.9"
+              - generic [ref=e119]: Avg project rating
+            - generic [ref=e120]:
+              - generic [ref=e121]: 100%
+              - generic [ref=e122]: CLIENT Satisfaction
+      - generic [ref=e124]:
+        - heading "Services" [level=2] [ref=e125]
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - generic [ref=e128]: "01"
+            - heading "UI/UX Design" [level=3] [ref=e130]
+            - generic [ref=e131]: Wireframes, Prototypes, Design Systems
+            - paragraph [ref=e133]: We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.
+            - img "UI/UX design elements pack — typography, components, color palette, grid system" [ref=e135]
+          - generic [ref=e136]:
+            - generic [ref=e137]: "02"
+            - heading "Website Development" [level=3] [ref=e139]
+            - generic [ref=e140]: React, Next.js, Vite
+            - paragraph [ref=e142]: We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.
+            - img "Website development — code editor and live browser preview side by side" [ref=e144]
+          - generic [ref=e145]:
+            - generic [ref=e146]: "03"
+            - heading "SaaS Development" [level=3] [ref=e148]
+            - generic [ref=e149]: Product, Auth, Dashboards
+            - paragraph [ref=e151]: "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product."
+            - img "SaaS dashboard interface with metrics, revenue chart, and user analytics" [ref=e153]
+          - generic [ref=e154]:
+            - generic [ref=e155]: "04"
+            - heading "Full Stack Development" [level=3] [ref=e157]
+            - generic [ref=e158]: Node, APIs, Databases
+            - paragraph [ref=e160]: Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.
+            - img "Full stack system architecture diagram — client, frontend, API gateway, backend, database" [ref=e162]
+      - generic [ref=e163]:
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e168]: § 02 · Process
+            - generic [ref=e169]:
+              - heading "Process from, Start‑to‑end." [level=2] [ref=e171]
+              - paragraph [ref=e173]: Four phases, one engagement. Brand → design → build → grow — same team start to end, no handoffs.
+          - generic [ref=e174]:
+            - article [ref=e175] [cursor=pointer]:
+              - img [ref=e177]:
+                - generic [ref=e182]: STRATEGY
+                - generic [ref=e185]: PLANNING
+                - generic [ref=e188]: IDENTITY
+                - generic [ref=e191]: GUIDELINES
+                - generic: BRAND
+              - generic [ref=e193]:
+                - generic [ref=e194]: "01"
+                - heading "Brand Identity" [level=3] [ref=e195]
+                - paragraph [ref=e196]: We dig into who you are, what you stand for, and learn about you business and industry — then design a visual system that fits your business like it was always meant to look this way.
+                - generic [ref=e197]:
+                  - generic [ref=e198]: Strategy
+                  - generic [ref=e199]: Planning
+                  - generic [ref=e200]: Identity
+                  - generic [ref=e201]: Guidelines
+            - article [ref=e202] [cursor=pointer]:
+              - img [ref=e204]:
+                - generic [ref=e208]: UX RESEARCH
+                - generic [ref=e211]: UI DESIGN
+                - generic [ref=e214]: PROTOTYPE
+                - generic [ref=e217]: HANDOFF
+              - generic [ref=e219]:
+                - generic [ref=e220]: "02"
+                - heading "Product Design" [level=3] [ref=e221]
+                - paragraph [ref=e222]: UI/UX built around your users. We present the designs, walk through them together, and keep refining until every screen feels exactly right.
+                - generic [ref=e223]:
+                  - generic [ref=e224]: UX
+                  - generic [ref=e225]: UI
+                  - generic [ref=e226]: Prototyping
+                  - generic [ref=e227]: Handoff
+            - article [ref=e228] [cursor=pointer]:
+              - img [ref=e230]:
+                - generic [ref=e234]: ARCHITECTURE
+                - generic [ref=e237]: DEVELOPMENT
+                - generic [ref=e240]: TESTING
+                - generic [ref=e243]: LAUNCH
+              - generic [ref=e245]:
+                - generic [ref=e246]: "03"
+                - heading "Development" [level=3] [ref=e247]
+                - paragraph [ref=e248]: We plan before we build. Every decision , design, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.
+                - generic [ref=e249]:
+                  - generic [ref=e250]: Architecture
+                  - generic [ref=e251]: Development
+                  - generic [ref=e252]: Testing
+                  - generic [ref=e253]: Launch
+            - article [ref=e254] [cursor=pointer]:
+              - img [ref=e256]:
+                - generic [ref=e258]:
+                  - generic [ref=e259]: +42%
+                  - generic [ref=e260]: SEO
+                - generic [ref=e261]:
+                  - generic [ref=e262]: +58%
+                  - generic [ref=e263]: ANALYTICS
+                - generic [ref=e264]:
+                  - generic [ref=e265]: +76%
+                  - generic [ref=e266]: SPEED
+                - generic [ref=e267]:
+                  - generic [ref=e268]: +91%
+                  - generic [ref=e269]: RETENTION
+              - generic [ref=e272]:
+                - generic [ref=e273]: "04"
+                - heading "Performance" [level=3] [ref=e274]
+                - paragraph [ref=e275]: We don't hand off and disappear. SEO, speed, maintainance, and post-launch support — we stay invested in how your site actually performs.
+                - generic [ref=e276]:
+                  - generic [ref=e277]: SEO
+                  - generic [ref=e278]: Analytics
+                  - generic [ref=e279]: Speed
+                  - generic [ref=e280]: Retention
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - generic [ref=e285]: § 03 · Project
+            - heading "Projects Section" [level=2] [ref=e288]
+          - generic [ref=e289]:
+            - link "Veldt◐ 01 · Identity Veldt A restaurant with a garden problem. Identity · Menu · Site 2026" [ref=e291] [cursor=pointer]:
+              - /url: /projects/veldt
+              - generic [ref=e292]:
+                - generic [ref=e294]: Veldt◐
+                - generic [ref=e296]: 01 · Identity
+                - img [ref=e298]
+              - generic [ref=e301]:
+                - generic [ref=e302]:
+                  - generic [ref=e303]: Veldt
+                  - generic [ref=e304]: A restaurant with a garden problem.
+                - generic [ref=e305]:
+                  - generic [ref=e306]: Identity · Menu · Site
+                  - generic [ref=e307]: "2026"
+            - link "02 · Product Flint OS Private equity, made legible. Product · Brand · Ops 2025" [ref=e309] [cursor=pointer]:
+              - /url: /projects/flint-os
+              - generic [ref=e310]:
+                - generic [ref=e330]: 02 · Product
+                - img [ref=e332]
+              - generic [ref=e335]:
+                - generic [ref=e336]:
+                  - generic [ref=e337]: Flint OS
+                  - generic [ref=e338]: Private equity, made legible.
+                - generic [ref=e339]:
+                  - generic [ref=e340]: Product · Brand · Ops
+                  - generic [ref=e341]: "2025"
+            - link "Paperbound. Issue 07 · Noise 03 · Editorial Paperbound An independent press gets louder. Editorial · Type · Web 2025" [ref=e343] [cursor=pointer]:
+              - /url: /projects/paperbound
+              - generic [ref=e344]:
+                - generic [ref=e346]:
+                  - generic [ref=e347]: Paperbound.
+                  - generic [ref=e348]: Issue 07 · Noise
+                - generic [ref=e350]: 03 · Editorial
+                - img [ref=e352]
+              - generic [ref=e355]:
+                - generic [ref=e356]:
+                  - generic [ref=e357]: Paperbound
+                  - generic [ref=e358]: An independent press gets louder.
+                - generic [ref=e359]:
+                  - generic [ref=e360]: Editorial · Type · Web
+                  - generic [ref=e361]: "2025"
+            - link "04 · Motion Aero/90 A launch film for the fastest bike of 1990, in 2026. Direction · Motion · Sound 2025" [ref=e363] [cursor=pointer]:
+              - /url: /projects/aero-90
+              - generic [ref=e364]:
+                - img [ref=e367]:
+                  - generic [ref=e373]: Aero / 90
+                - generic [ref=e375]: 04 · Motion
+                - img [ref=e377]
+              - generic [ref=e380]:
+                - generic [ref=e381]:
+                  - generic [ref=e382]: Aero/90
+                  - generic [ref=e383]: A launch film for the fastest bike of 1990, in 2026.
+                - generic [ref=e384]:
+                  - generic [ref=e385]: Direction · Motion · Sound
+                  - generic [ref=e386]: "2025"
+          - link "See the full archive" [ref=e388] [cursor=pointer]:
+            - /url: "#"
+            - button "See the full archive" [ref=e390]:
+              - generic [ref=e391]: See the full archive
+              - img [ref=e393]
+        - generic [ref=e397]:
+          - generic [ref=e398]:
+            - generic [ref=e400]: § 04 · Why Choose Us
+            - generic [ref=e401]:
+              - heading "Why Choose Us" [level=2] [ref=e403]
+              - paragraph [ref=e405]: Built To Grow, Ship High-Quality Websites Faster
+          - generic [ref=e406]:
+            - article [ref=e408] [cursor=pointer]:
+              - img [ref=e410]:
+                - generic [ref=e425]: DEDICATED TEAM
+              - generic [ref=e427]:
+                - heading "Personalised Support" [level=3] [ref=e428]
+                - paragraph [ref=e429]: You get a dedicated team who understands your business goals and plan it accordingly.
+            - article [ref=e431] [cursor=pointer]:
+              - img [ref=e433]:
+                - generic [ref=e435]: M
+                - generic [ref=e436]: Maddy
+                - generic [ref=e437]: 10:15 AM
+                - generic [ref=e439]: Hi Daniel! Your design draft is ready.
+                - generic [ref=e441]: Want feedback before next step?
+              - generic [ref=e447]:
+                - heading "With You Every Step" [level=3] [ref=e448]
+                - paragraph [ref=e449]: Weekly check-ins, consistent updates, We stay with you from the first consultation to the final launch.
+            - article [ref=e451] [cursor=pointer]:
+              - img [ref=e453]:
+                - generic [ref=e454]: Uptime Trends
+                - generic [ref=e457]: D
+                - generic [ref=e460]: W
+                - generic [ref=e463]: M
+                - generic [ref=e466]: "Y"
+              - generic [ref=e469]:
+                - heading "Measurable Impact" [level=3] [ref=e470]
+                - paragraph [ref=e471]: We bake analytics into every ship, providing clear benchmarks so you can track your success from day one.
+            - article [ref=e473] [cursor=pointer]:
+              - img [ref=e475]:
+                - generic [ref=e483]: YOUR
+                - generic [ref=e484]: BRAND
+              - generic [ref=e486]:
+                - heading "Future-Ready Solutions" [level=3] [ref=e487]
+                - paragraph [ref=e488]: We build fast, secure, and scalable websites using modern technologies that keeps you competitive tomorrow.
+            - article [ref=e490] [cursor=pointer]:
+              - img [ref=e492]:
+                - generic [ref=e496]: Brief approval
+                - generic [ref=e500]: Concept Design
+                - generic [ref=e505]: Client feedback
+                - generic [ref=e510]: Developmentand testing
+                - generic [ref=e514]: Client Revisionsand feedback
+                - generic [ref=e519]: Launch and support
+              - generic [ref=e521]:
+                - heading "Transparent Process" [level=3] [ref=e522]
+                - paragraph [ref=e523]: You'll always know what's happening with clear timelines, regular updates, and open communication.
+        - generic [ref=e525]:
+          - generic [ref=e526]:
+            - generic [ref=e528]: § 06 · TESTIMONIALS
+            - heading "Kind words from founders who loved our works." [level=2] [ref=e531]
+          - generic [ref=e532]:
+            - figure "Marion Lux COO, Hollow" [ref=e534]:
+              - img [ref=e535]
+              - blockquote [ref=e537]: "\"They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.\""
+              - generic [ref=e540]:
+                - generic [ref=e541]: Marion Lux
+                - generic [ref=e542]: COO, Hollow
+            - figure "Theo Mercer Founder, Mercer&Co." [ref=e544]:
+              - img [ref=e545]
+              - blockquote [ref=e547]: "\"Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.\""
+              - generic [ref=e550]:
+                - generic [ref=e551]: Theo Mercer
+                - generic [ref=e552]: Founder, Mercer&Co.
+            - figure "Jamie O. Head of Design, Lantern" [ref=e554]:
+              - img [ref=e555]
+              - blockquote [ref=e557]: "\"They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.\""
+              - generic [ref=e560]:
+                - generic [ref=e561]: Jamie O.
+                - generic [ref=e562]: Head of Design, Lantern
+            - figure "Elena Qiu CEO, Kiln" [ref=e564]:
+              - img [ref=e565]
+              - blockquote [ref=e567]: "\"A seamless rebuild process. Their team is highly collaborative, took our feedback to heart, and delivered a perfect website and there post launch support was incredible.\""
+              - generic [ref=e570]:
+                - generic [ref=e571]: Elena Qiu
+                - generic [ref=e572]: CEO, Kiln
+        - generic [ref=e574]:
+          - complementary [ref=e575]:
+            - generic [ref=e576]: § 08 · FAQ
+            - heading "Questions we hear a lot." [level=2] [ref=e578]
+            - paragraph [ref=e580]:
+              - text: Didn't answer yours?
+              - link "Ask directly →" [ref=e581] [cursor=pointer]:
+                - /url: "#contact"
+          - generic [ref=e583]:
+            - group [ref=e584]:
+              - generic "01 What does a typical engagement look like?" [ref=e585] [cursor=pointer]:
+                - generic [ref=e586]:
+                  - generic [ref=e587]: "01"
+                  - generic [ref=e588]: What does a typical engagement look like?
+                - img [ref=e590]
+              - paragraph [ref=e594]: Most clients start on Partner — an 8 to 12 week arc covering strategy, identity and launch site. We scope live on our first call and email the number within 48h.
+            - group [ref=e595]:
+              - generic "02 Can you work inside our existing team?" [ref=e596] [cursor=pointer]:
+                - generic [ref=e597]:
+                  - generic [ref=e598]: "02"
+                  - generic [ref=e599]: Can you work inside our existing team?
+                - img [ref=e601]
+            - group [ref=e603]:
+              - generic "03 Do you take equity?" [ref=e604] [cursor=pointer]:
+                - generic [ref=e605]:
+                  - generic [ref=e606]: "03"
+                  - generic [ref=e607]: Do you take equity?
+                - img [ref=e609]
+            - group [ref=e611]:
+              - generic "04 Where are you based?" [ref=e612] [cursor=pointer]:
+                - generic [ref=e613]:
+                  - generic [ref=e614]: "04"
+                  - generic [ref=e615]: Where are you based?
+                - img [ref=e617]
+            - group [ref=e619]:
+              - generic "05 What tools do you use?" [ref=e620] [cursor=pointer]:
+                - generic [ref=e621]:
+                  - generic [ref=e622]: "05"
+                  - generic [ref=e623]: What tools do you use?
+                - img [ref=e625]
+            - group [ref=e627]:
+              - generic "06 Do you do logos only?" [ref=e628] [cursor=pointer]:
+                - generic [ref=e629]:
+                  - generic [ref=e630]: "06"
+                  - generic [ref=e631]: Do you do logos only?
+                - img [ref=e633]
+        - generic [ref=e638]:
+          - generic [ref=e640]: Let's make something that outlives the trend.
+          - heading "Start a project with us." [level=2] [ref=e642]:
+            - text: Start a
+            - text: project with us.
+          - generic [ref=e644]:
+            - link "hello@agiton.studio" [ref=e645] [cursor=pointer]:
+              - /url: mailto:hello@agiton.studio
+              - generic [ref=e646]:
+                - img [ref=e649]
+                - generic [ref=e652]: hello@agiton.studio
+            - link "Book a call" [ref=e653] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e654]:
+                - img [ref=e657]
+                - generic [ref=e659]: Book a call
+          - generic [ref=e660]: Currently Available · slots open
+    - contentinfo [ref=e661]:
+      - generic [ref=e662]:
+        - generic [ref=e663]:
+          - generic [ref=e664]:
+            - generic [ref=e665]:
+              - img [ref=e666]
+              - generic [ref=e669]: Agiton
+            - paragraph [ref=e670]: A design studio for founders who refuse to blend in.
+          - generic [ref=e671]:
+            - generic [ref=e672]:
+              - generic [ref=e673]: Studio
+              - list [ref=e674]:
+                - listitem [ref=e675]:
+                  - link "Services" [ref=e676] [cursor=pointer]:
+                    - /url: /#services
+                - listitem [ref=e677]:
+                  - link "Process" [ref=e678] [cursor=pointer]:
+                    - /url: /#process
+                - listitem [ref=e679]:
+                  - link "Work" [ref=e680] [cursor=pointer]:
+                    - /url: /#work
+                - listitem [ref=e681]:
+                  - link "Contact" [ref=e682] [cursor=pointer]:
+                    - /url: /#contact
+                - listitem [ref=e683]:
+                  - link "Blog" [ref=e684] [cursor=pointer]:
+                    - /url: /blog
+            - generic [ref=e685]:
+              - generic [ref=e686]: Work
+              - list [ref=e687]:
+                - listitem [ref=e688]:
+                  - link "Veldt" [ref=e689] [cursor=pointer]:
+                    - /url: /projects/veldt
+                - listitem [ref=e690]:
+                  - link "Flint OS" [ref=e691] [cursor=pointer]:
+                    - /url: /projects/flint-os
+                - listitem [ref=e692]:
+                  - link "Paperbound" [ref=e693] [cursor=pointer]:
+                    - /url: /projects/paperbound
+                - listitem [ref=e694]:
+                  - link "Aero/90" [ref=e695] [cursor=pointer]:
+                    - /url: /projects/aero-90
+        - generic [ref=e697]: Agiton.
