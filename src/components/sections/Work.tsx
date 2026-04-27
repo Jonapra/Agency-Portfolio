@@ -3,17 +3,18 @@ import { Reveal } from "../Reveal";
 import { PROJECTS, type Project } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { SectionContainer } from "@/components/ui/section-container";
+import { cn } from "@/lib/utils";
 
 const ProjectArt = ({ p }: { p: Project }) => {
   if (p.title === "Veldt")
     return (
-      <div className="italic-display text-white" style={{ fontSize: "clamp(80px,10vw,160px)", lineHeight: 0.9 }}>
+      <div className="italic-display text-white" style={{ fontSize: "clamp(56px,7vw,110px)", lineHeight: 0.9 }}>
         Veldt<span className="not-italic font-display text-white/60">◐</span>
       </div>
     );
   if (p.title === "Flint OS")
     return (
-      <div className="grid grid-cols-4 gap-2 w-[60%] h-[60%]">
+      <div className="grid grid-cols-4 gap-2 w-[55%] h-[55%]">
         {Array.from({ length: 16 }).map((_, i) => (
           <div key={i} className={`rounded-sm ${i % 5 === 0 ? "bg-signal" : "bg-white/10"}`} />
         ))}
@@ -22,16 +23,15 @@ const ProjectArt = ({ p }: { p: Project }) => {
   if (p.title === "Paperbound")
     return (
       <div className="text-ink text-center">
-        <div className="italic-display" style={{ fontSize: "clamp(60px,8vw,120px)", lineHeight: 0.9 }}>
+        <div className="italic-display" style={{ fontSize: "clamp(40px,5.5vw,80px)", lineHeight: 0.9 }}>
           Paperbound<span className="text-signal">.</span>
         </div>
-        <div className="h-eyebrow mt-4 opacity-60">Issue 07 · Noise</div>
+        <div className="h-eyebrow mt-3 opacity-60 text-[10px]">Issue 07 · Noise</div>
       </div>
     );
-  // Aero/90
   return (
     <div className="relative">
-      <svg width="420" height="220" viewBox="0 0 420 220" className="max-w-[70vw]">
+      <svg width="320" height="170" viewBox="0 0 420 220" className="max-w-[80%]">
         <g stroke="hsl(var(--signal))" fill="none" strokeWidth="1.2">
           <circle cx="100" cy="160" r="48" /><circle cx="320" cy="160" r="48" />
           <path d="M100 160 L180 80 L270 80 L320 160" />
@@ -43,67 +43,98 @@ const ProjectArt = ({ p }: { p: Project }) => {
   );
 };
 
-const sizes = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7"];
-const offsets = ["", "", "md:mt-10", "md:-mt-5"];
+const ProjectCard = ({ p }: { p: Project }) => {
+  const tags = p.meta.split(" · ");
+
+  return (
+    <Link to={`/projects/${p.slug}`} className="proj-card group block" data-cursor="view">
+      {/* Visual frame */}
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-xl plate",
+          p.invert ? "bg-cream" : ""
+        )}
+        style={
+          !p.invert
+            ? { background: `linear-gradient(135deg, ${p.c2}, #06060a)` }
+            : undefined
+        }
+      >
+        <div
+          className="proj-img grid place-items-center aspect-[4/3] px-6"
+          style={{
+            background: p.invert
+              ? `linear-gradient(135deg, ${p.c1}, ${p.c2})`
+              : `radial-gradient(600px 260px at 50% 65%, ${p.c1}88, transparent 65%)`,
+          }}
+        >
+          <ProjectArt p={p} />
+        </div>
+
+        {/* View Project pill — appears on hover */}
+        <div className="pointer-events-none absolute inset-0 grid place-items-center">
+          <span
+            className={cn(
+              "px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.22em]",
+              "bg-background/30 backdrop-blur-md border border-foreground/25 text-foreground",
+              "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0",
+              "transition-all duration-300 ease-out"
+            )}
+          >
+            View Project
+          </span>
+        </div>
+      </div>
+
+      {/* Tags */}
+      <div className="mt-4 flex flex-wrap items-center gap-3 text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-mute">
+        {tags.map((t, i) => (
+          <span key={t} className="flex items-center gap-3">
+            {i > 0 && <span className="w-1 h-1 rounded-full bg-foreground/20" />}
+            <span>{t}</span>
+          </span>
+        ))}
+      </div>
+
+      {/* Title */}
+      <h3 className="mt-2 font-display font-semibold tracking-[-0.01em] text-[1.4rem] md:text-[1.65rem] lg:text-[1.85rem] leading-tight group-hover:text-signal transition-colors duration-300">
+        {p.title}
+      </h3>
+    </Link>
+  );
+};
 
 export const Work = () => (
   <section id="work" className="relative py-10 md:py-16">
     <SectionContainer>
-      <div className="grid md:grid-cols-12 gap-8 mb-8">
+      <div className="grid md:grid-cols-12 gap-8 mb-12 md:mb-16">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Project</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
-          <Reveal><h2 className="h-section font-display">Projects <span className="italic-display text-signal">Section</span></h2></Reveal>
-          {/* Archive link removed */}
+          <Reveal>
+            <h2 className="h-section font-display">
+              Selected <span className="italic-display text-signal">Pieces</span>
+            </h2>
+          </Reveal>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-12 gap-5 md:gap-7">
+      {/* Zigzag two-column grid — odd items offset down on md+ */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-12 md:gap-y-20">
         {PROJECTS.map((p, i) => (
-          <Reveal key={p.slug} delay={i * 0.05} className={`${sizes[i]} ${offsets[i]}`}>
-            <Link to={`/projects/${p.slug}`} className="proj-card group block" data-cursor="view">
-              <div
-                className={`relative overflow-hidden rounded-lg plate ${p.invert ? "bg-cream" : ""}`}
-                style={!p.invert ? { background: `linear-gradient(135deg, ${p.c2}, #06060a)` } : undefined}
-              >
-                <div
-                  className="proj-img grid place-items-center aspect-[4/3] px-6"
-                  style={{
-                    background: p.invert
-                      ? `linear-gradient(135deg, ${p.c1}, ${p.c2})`
-                      : `radial-gradient(700px 300px at 30% 80%, ${p.c1}88, transparent 60%)`,
-                  }}
-                >
-                  <ProjectArt p={p} />
-                </div>
-                <div className="absolute left-5 top-5">
-                  <span className={`pill ${p.invert ? "text-ink" : "text-white/80"}`}>{p.tag}</span>
-                </div>
-                <div className="absolute right-5 bottom-5 proj-arrow">
-                  <svg width="42" height="42" viewBox="0 0 42 42" className={p.invert ? "text-ink" : "text-white"}>
-                    <circle cx="21" cy="21" r="20" fill="none" stroke="currentColor" strokeOpacity=".4" />
-                    <path d="M15 27 L27 15 M19 15 H27 V23" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                  </svg>
-                </div>
-              </div>
-              <div className="mt-5 flex items-end justify-between">
-                <div>
-                  <div className="font-display text-2xl md:text-3xl">{p.title}</div>
-                  <div className="text-mute-2 text-sm mt-1">{p.sub}</div>
-                </div>
-                <div className="text-right h-eyebrow text-mute">
-                  <div>{p.meta}</div>
-                  <div className="mt-1">{p.year}</div>
-                </div>
-              </div>
-            </Link>
+          <Reveal
+            key={p.slug}
+            delay={i * 0.08}
+            className={cn(i % 2 === 1 && "md:mt-24 lg:mt-40")}
+          >
+            <ProjectCard p={p} />
           </Reveal>
         ))}
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-16 md:mt-24 flex justify-center">
         <a href="#">
-          <ButtonWithIcon 
-            text="See the full archive" 
+          <ButtonWithIcon
+            text="See the full archive"
             className="bg-signal text-ink"
           />
         </a>
