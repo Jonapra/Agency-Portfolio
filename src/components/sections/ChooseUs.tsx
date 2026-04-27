@@ -19,11 +19,10 @@ const VP = { once: true, margin: "0px 0px -60px 0px" } as const;
 ================================================================ */
 const PersonalisedIllustration = ({ active }: { active: boolean }) => {
   const avatars = [
-    { cx: 86,  color: "#5C748B", float: "anim-float-slow", delay: "0.5s" },
-    { cx: 116, color: "#8B7355", float: "anim-float-mid",  delay: "0.2s" },
-    { cx: 156, color: "#6B5B7B", float: undefined,         delay: "0s",  isCenter: true },
-    { cx: 196, color: "#5C7A5C", float: "anim-float-mid",  delay: "0.35s" },
-    { cx: 226, color: "#7A5C5C", float: "anim-float-slow", delay: "0.7s" },
+    { cx: 111, photo: "https://i.pravatar.cc/120?img=12", float: "anim-float-slow", delay: "0.5s" },
+    { cx: 141, photo: "https://i.pravatar.cc/120?img=5",  float: "anim-float-mid",  delay: "0.2s" },
+    { cx: 171, photo: "https://i.pravatar.cc/120?img=32", float: "anim-float-mid",  delay: "0.35s" },
+    { cx: 201, photo: "https://i.pravatar.cc/120?img=68", float: "anim-float-slow", delay: "0.7s" },
   ];
 
   return (
@@ -42,7 +41,7 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       />
 
-      {/* Clip silhouettes to the avatar circle so torso bottom blends into the disc */}
+      {/* Clip photos to avatar circle */}
       <defs>
         {avatars.map(({ cx }) => (
           <clipPath key={cx} id={`avatar-clip-${cx}`}>
@@ -52,33 +51,20 @@ const PersonalisedIllustration = ({ active }: { active: boolean }) => {
       </defs>
 
       {/* Avatars — back to front (z-order) */}
-      {avatars.map(({ cx, color, isCenter }) => (
+      {avatars.map(({ cx, photo }) => (
         <g key={cx}>
           <circle cx={cx} cy="90" r="26"
-            fill={color} fillOpacity="0.9"
-            stroke="white" strokeOpacity="0.2" strokeWidth="2"
+            fill="#1a1a1a"
+            stroke="white" strokeOpacity="0.85" strokeWidth="2"
           />
 
-          {/* Person silhouette: head + shoulders, clipped to disc */}
-          <g clipPath={`url(#avatar-clip-${cx})`}>
-            <circle cx={cx} cy="82" r="7"
-              fill="white" fillOpacity="0.92"
-            />
-            <path
-              d={`M ${cx - 14} 118 C ${cx - 14} 100, ${cx + 14} 100, ${cx + 14} 118 Z`}
-              fill="white" fillOpacity="0.92"
-            />
-          </g>
-
-          {isCenter && (
-            <motion.circle cx={cx} cy="90" r="29"
-              fill="none" stroke={SIG} strokeWidth="2"
-              vectorEffect="non-scaling-stroke"
-              style={{ transformOrigin: `${cx}px 90px` }}
-              animate={{ strokeOpacity: active ? 0.9 : 0.45, scale: active ? 31/29 : 1 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-            />
-          )}
+          {/* Real photo, clipped to disc */}
+          <image
+            href={photo}
+            x={cx - 26} y={64} width="52" height="52"
+            clipPath={`url(#avatar-clip-${cx})`}
+            preserveAspectRatio="xMidYMid slice"
+          />
         </g>
       ))}
 
@@ -574,11 +560,11 @@ const BentoCard = ({
         </div>
         <div className="h-px bg-foreground/[0.08]" />
         <div className="p-5 md:p-6">
-          <h3 className="font-display text-[1.15rem] md:text-[1.35rem] leading-[1.1] mb-2
+          <h3 className="font-display text-[1.4rem] md:text-[1.65rem] leading-[1.1] mb-2
                          group-hover:text-signal transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-mute-2 text-xs md:text-sm leading-relaxed">
+          <p className="text-mute-2 text-sm md:text-base leading-relaxed">
             {desc}
           </p>
         </div>
