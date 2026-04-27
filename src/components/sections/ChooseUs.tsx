@@ -560,7 +560,7 @@ const BentoCard = ({
         </div>
         <div className="h-px bg-foreground/[0.08]" />
         <div className="p-5 md:p-6">
-          <h3 className="font-display text-[1.4rem] md:text-[1.65rem] leading-[1.1] mb-2
+          <h3 className="font-display font-semibold text-[1.4rem] md:text-[1.65rem] leading-[1.1] mb-2
                          group-hover:text-signal transition-colors duration-300">
             {title}
           </h3>
