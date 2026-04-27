@@ -1,12 +1,12 @@
 # Graph Report - D:\Agency-Portfolio  (2026-04-27)
 
 ## Corpus Check
-- 49 files · ~234,087 words
+- 51 files · ~253,059 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 110 nodes · 62 edges · 53 communities detected
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- 114 nodes · 66 edges · 53 communities detected
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -71,13 +71,16 @@
 4. `toast()` - 3 edges
 5. `Primary Color #EC4899` - 3 edges
 6. `Typography System (Archivo + Space Grotesk)` - 3 edges
-7. `bh()` - 2 edges
-8. `by()` - 2 edges
-9. `genId()` - 2 edges
-10. `addToRemoveQueue()` - 2 edges
+7. `ScrollManager()` - 2 edges
+8. `LenisProvider()` - 2 edges
+9. `useLenis()` - 2 edges
+10. `bh()` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
-- None detected - all connections are within the same source files.
+- `ScrollManager()` --calls--> `useLenis()`  [INFERRED]
+  D:\Agency-Portfolio\src\App.tsx → D:\Agency-Portfolio\src\components\lenis-provider.tsx
+- `LenisProvider()` --calls--> `usePrefersReducedMotion()`  [INFERRED]
+  D:\Agency-Portfolio\src\components\lenis-provider.tsx → D:\Agency-Portfolio\src\hooks\use-prefers-reduced-motion.ts
 
 ## Communities
 
@@ -86,12 +89,12 @@ Cohesion: 0.17
 Nodes (12): Primary Button Spec, Secondary Button Spec, Card Component Spec, Background Color #FDF2F8, CTA/Accent Color #06B6D4, Color Palette Tokens, Primary Color #EC4899, Secondary Color #F472B6 (+4 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.48
-Nodes (5): addToRemoveQueue(), dispatch(), genId(), reducer(), toast()
+Cohesion: 0.18
+Nodes (4): ScrollManager(), LenisProvider(), useLenis(), usePrefersReducedMotion()
 
 ### Community 2 - "Community 2"
-Cohesion: 0.29
-Nodes (0): 
+Cohesion: 0.48
+Nodes (5): addToRemoveQueue(), dispatch(), genId(), reducer(), toast()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.5

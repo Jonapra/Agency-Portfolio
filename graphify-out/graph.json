@@ -45,26 +45,17 @@
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_app_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "app.tsx"
     },
     {
       "label": "ScrollManager()",
       "file_type": "code",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "id": "app_scrollmanager",
-      "community": 2,
+      "community": 1,
       "norm_label": "scrollmanager()"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L71",
-      "id": "app_app",
-      "community": 2,
-      "norm_label": "app()"
     },
     {
       "label": "main.tsx",
@@ -119,6 +110,33 @@
       "id": "layout_layout",
       "community": 10,
       "norm_label": "layout()"
+    },
+    {
+      "label": "lenis-provider.tsx",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_components_lenis_provider_tsx",
+      "community": 1,
+      "norm_label": "lenis-provider.tsx"
+    },
+    {
+      "label": "LenisProvider()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L23",
+      "id": "lenis_provider_lenisprovider",
+      "community": 1,
+      "norm_label": "lenisprovider()"
+    },
+    {
+      "label": "useLenis()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L65",
+      "id": "lenis_provider_uselenis",
+      "community": 1,
+      "norm_label": "uselenis()"
     },
     {
       "label": "Logo.tsx",
@@ -571,12 +589,30 @@
       "norm_label": "site.ts"
     },
     {
+      "label": "use-prefers-reduced-motion.ts",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\hooks\\use-prefers-reduced-motion.ts",
+      "source_location": "L1",
+      "id": "d_agency_portfolio_src_hooks_use_prefers_reduced_motion_ts",
+      "community": 1,
+      "norm_label": "use-prefers-reduced-motion.ts"
+    },
+    {
+      "label": "usePrefersReducedMotion()",
+      "file_type": "code",
+      "source_file": "D:\\Agency-Portfolio\\src\\hooks\\use-prefers-reduced-motion.ts",
+      "source_location": "L3",
+      "id": "use_prefers_reduced_motion_useprefersreducedmotion",
+      "community": 1,
+      "norm_label": "useprefersreducedmotion()"
+    },
+    {
       "label": "use-toast.ts",
       "file_type": "code",
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L1",
       "id": "src_hooks_use_toast_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "use-toast.ts"
     },
     {
@@ -585,7 +621,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L24",
       "id": "use_toast_genid",
-      "community": 1,
+      "community": 2,
       "norm_label": "genid()"
     },
     {
@@ -594,7 +630,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L55",
       "id": "use_toast_addtoremovequeue",
-      "community": 1,
+      "community": 2,
       "norm_label": "addtoremovequeue()"
     },
     {
@@ -603,7 +639,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L71",
       "id": "use_toast_reducer",
-      "community": 1,
+      "community": 2,
       "norm_label": "reducer()"
     },
     {
@@ -612,7 +648,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L128",
       "id": "use_toast_dispatch",
-      "community": 1,
+      "community": 2,
       "norm_label": "dispatch()"
     },
     {
@@ -621,7 +657,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L137",
       "id": "use_toast_toast",
-      "community": 1,
+      "community": 2,
       "norm_label": "toast()"
     },
     {
@@ -630,7 +666,7 @@
       "source_file": "src\\hooks\\use-toast.ts",
       "source_location": "L166",
       "id": "use_toast_usetoast",
-      "community": 1,
+      "community": 2,
       "norm_label": "usetoast()"
     },
     {
@@ -693,7 +729,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\pages\\Blog.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_pages_blog_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "blog.tsx"
     },
     {
@@ -702,7 +738,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\pages\\Index.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_pages_index_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "index.tsx"
     },
     {
@@ -711,7 +747,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\pages\\Index.tsx",
       "source_location": "L13",
       "id": "index_index",
-      "community": 2,
+      "community": 1,
       "norm_label": "index()"
     },
     {
@@ -738,7 +774,7 @@
       "source_file": "D:\\Agency-Portfolio\\src\\pages\\Project.tsx",
       "source_location": "L1",
       "id": "d_agency_portfolio_src_pages_project_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "project.tsx"
     },
     {
@@ -1111,7 +1147,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "d_agency_portfolio_src_pages_index_tsx",
@@ -1123,7 +1159,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "d_agency_portfolio_src_pages_blog_tsx",
@@ -1135,7 +1171,7 @@
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "d_agency_portfolio_src_pages_project_tsx",
@@ -1147,7 +1183,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_src": "d_agency_portfolio_src_app_tsx",
       "_tgt": "app_scrollmanager",
@@ -1156,16 +1192,16 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "D:\\Agency-Portfolio\\src\\App.tsx",
-      "source_location": "L71",
+      "source_location": "L17",
       "weight": 1.0,
-      "_src": "d_agency_portfolio_src_app_tsx",
-      "_tgt": "app_app",
-      "source": "d_agency_portfolio_src_app_tsx",
-      "target": "app_app",
-      "confidence_score": 1.0
+      "_src": "app_scrollmanager",
+      "_tgt": "lenis_provider_uselenis",
+      "source": "app_scrollmanager",
+      "target": "lenis_provider_uselenis"
     },
     {
       "relation": "contains",
@@ -1178,6 +1214,42 @@
       "source": "src_components_layout_tsx",
       "target": "layout_layout",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_components_lenis_provider_tsx",
+      "_tgt": "lenis_provider_lenisprovider",
+      "source": "d_agency_portfolio_src_components_lenis_provider_tsx",
+      "target": "lenis_provider_lenisprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_components_lenis_provider_tsx",
+      "_tgt": "lenis_provider_uselenis",
+      "source": "d_agency_portfolio_src_components_lenis_provider_tsx",
+      "target": "lenis_provider_uselenis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "D:\\Agency-Portfolio\\src\\components\\lenis-provider.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "lenis_provider_lenisprovider",
+      "_tgt": "use_prefers_reduced_motion_useprefersreducedmotion",
+      "source": "lenis_provider_lenisprovider",
+      "target": "use_prefers_reduced_motion_useprefersreducedmotion"
     },
     {
       "relation": "contains",
@@ -1417,6 +1489,18 @@
       "_tgt": "toaster_toaster",
       "source": "src_components_ui_toaster_tsx",
       "target": "toaster_toaster",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Agency-Portfolio\\src\\hooks\\use-prefers-reduced-motion.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "d_agency_portfolio_src_hooks_use_prefers_reduced_motion_ts",
+      "_tgt": "use_prefers_reduced_motion_useprefersreducedmotion",
+      "source": "d_agency_portfolio_src_hooks_use_prefers_reduced_motion_ts",
+      "target": "use_prefers_reduced_motion_useprefersreducedmotion",
       "confidence_score": 1.0
     },
     {
