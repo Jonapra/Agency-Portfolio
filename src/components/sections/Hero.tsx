@@ -80,8 +80,8 @@ export const Hero = () => {
           {...fadeIn}
           transition={{ ...fadeIn.transition, delay: 0.2 }}
         >
-          <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl text-mute-2 px-4 md:px-0">
-            We build identity systems, interfaces and websites for founders who refuse to blend in — and the teams that back them.
+          <p className="text-sm md:text-base lg:text-lg 2xl:text-xl text-mute-2 px-4 md:px-0">
+            Digital product design agency crafting UI/UX, Websites and SaaS that help business grow. We focus on user-friendly designs that look great and work smoothly.
           </p>
         </motion.div>
 
@@ -111,20 +111,21 @@ export const Hero = () => {
           transition={{ ...fadeIn.transition, delay: 0.4 }}
         >
           <div>
-            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">10<span className="text-signal font-bold">+</span></div>
+            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">15<span className="text-signal font-bold">+</span></div>
             <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">Websites shipped</div>
           </div>
           <div>
-            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">2<span className="text-signal italic-display">y</span></div>
-            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">In practice</div>
+            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">10<span className="text-signal font-bold">+</span></div>
+            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">INDUSTRIES SERVED</div>
           </div>
+          
           <div>
-            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">96<span className="italic-display text-signal font-bold">%</span></div>
-            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">Retain · re‑hire</div>
+            <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">4<span className="">.9</span></div>
+            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">Avg project rating</div>
           </div>
           <div>
             <div className="num font-display text-4xl md:text-5xl lg:text-6xl leading-none">100<span className="italic-display text-signal font-bold">%</span></div>
-            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">Satisfaction</div>
+            <div className="h-eyebrow text-mute mt-3 md:mt-4 text-[10px] md:text-xs">CLIENT Satisfaction</div>
           </div>
         </motion.div>
       </SectionContainer>

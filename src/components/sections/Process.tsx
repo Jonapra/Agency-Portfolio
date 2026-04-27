@@ -406,6 +406,11 @@ export const Process = () => (
               <span className="italic-display text-signal">Start‑to‑end.</span>
             </h2>
           </Reveal>
+          <Reveal>
+            <p className="text-mute-2 text-sm md:text-base lg:text-lg max-w-2xl mt-4 md:mt-5">
+              Four phases, one engagement. Brand <span className="text-signal">→</span> design <span className="text-signal">→</span> build <span className="text-signal">→</span> grow — same team start to end, no handoffs.
+            </p>
+          </Reveal>
         </div>
       </div>
 
