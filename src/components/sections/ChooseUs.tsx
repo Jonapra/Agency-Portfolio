@@ -13,7 +13,7 @@ const INK3 = "hsl(var(--ink-3))";
 
 const VP = { once: true, margin: "0px 0px -60px 0px" } as const;
 
-/* ================================================================
+/* Adding smooth scroll to entire webpage================================================================
    ILLUSTRATION 1 — Personalised Support
    Five overlapping avatar circles, signal ring on center.
 ================================================================ */
