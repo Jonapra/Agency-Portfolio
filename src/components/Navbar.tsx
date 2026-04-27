@@ -77,7 +77,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
           <div className="mx-auto flex items-center justify-between w-full max-w-[1400px] px-6 md:px-10">
             <Logo />
 
-            <nav className="hidden md:flex items-center gap-9 text-sm">
+            <nav className="hidden md:flex items-center gap-12 lg:gap-14 text-sm">
               {NAV_LINKS.map(l => (
                 <a key={l.href} href={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</a>
               ))}
@@ -89,10 +89,17 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
-                className="hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-[#25D366] text-white hover:bg-[#1ebe5d] cursor-pointer select-none"
+                className="group hidden md:inline-flex items-center gap-2 rounded-full pl-3.5 pr-4 py-2 text-sm font-medium bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] cursor-pointer select-none ring-1 ring-white/15 hover:ring-white/25"
               >
-                <WhatsAppIcon />
-                WhatsApp Us
+                <span className="relative flex h-5 w-5 items-center justify-center">
+                  <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/15 transition-colors duration-300" />
+                  <span className="relative transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
+                    <WhatsAppIcon />
+                  </span>
+                </span>
+                <span className="relative">
+                  <span className="block transition-transform duration-300 group-hover:-translate-y-0.5">WhatsApp Us</span>
+                </span>
               </a>
 
               <button

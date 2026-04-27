@@ -13,7 +13,9 @@ export const BRAND = {
 export const NAV_LINKS = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Projects", href: "#work" },
+  { label: "Work", href: "#work" },
+  { label: "Why Us", href: "#choose-us" },
+  { label: "Contact", href: "#contact" },
   { label: "Blog", href: "/blog" },
 ] as const;
 

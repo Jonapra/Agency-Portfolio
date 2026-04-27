@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal";
 import { SectionContainer } from "@/components/ui/section-container";
+import { NAV_LINKS, PROJECTS } from "@/constants/site";
 
 export const Footer = () => (
   <footer className="relative pt-12 pb-8">
@@ -23,19 +24,21 @@ export const Footer = () => (
           <Reveal delay={0.1} className="md:col-span-3">
             <div className="h-eyebrow text-mute mb-4">Studio</div>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="u-link">About</a></li>
-              <li><a href="/#work" className="u-link">Projects</a></li>
-              <li><a href="/#process" className="u-link">Process</a></li>
-              <li><a href="#" className="u-link">Careers</a></li>
+              {NAV_LINKS.map(l => (
+                <li key={l.href}>
+                  <a href={l.href.startsWith("#") ? `/${l.href}` : l.href} className="u-link">{l.label}</a>
+                </li>
+              ))}
             </ul>
           </Reveal>
           <Reveal delay={0.18} className="md:col-span-3">
             <div className="h-eyebrow text-mute mb-4">Work</div>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#work" className="u-link">Selected</a></li>
-              <li><a href="#" className="u-link">Archive</a></li>
-              <li><Link to="/projects/veldt" className="u-link">Case: Veldt</Link></li>
-              <li><Link to="/projects/flint-os" className="u-link">Case: Flint OS</Link></li>
+              {PROJECTS.map(p => (
+                <li key={p.slug}>
+                  <Link to={`/projects/${p.slug}`} className="u-link">{p.title}</Link>
+                </li>
+              ))}
             </ul>
           </Reveal>
         </div>
