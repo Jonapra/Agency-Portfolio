@@ -70,20 +70,6 @@ const ProjectCard = ({ p }: { p: Project }) => {
         >
           <ProjectArt p={p} />
         </div>
-
-        {/* View Project pill — appears on hover */}
-        <div className="pointer-events-none absolute inset-0 grid place-items-center">
-          <span
-            className={cn(
-              "px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.22em]",
-              "bg-background/30 backdrop-blur-md border border-foreground/25 text-foreground",
-              "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0",
-              "transition-all duration-300 ease-out"
-            )}
-          >
-            View Project
-          </span>
-        </div>
       </div>
 
       {/* Tags */}
