@@ -588,8 +588,8 @@ export const ChooseUs = () => (
         
         <div className="text-center max-w-5xl mx-auto">
           <Reveal delay={0.05}>
-            <h2 className="h-section font-display leading-[1.05]">
-              Why <span className="italic-display text-signal">Choose Us</span>
+            <h2 className="h-section font-sans font-semibold leading-[1.05]">
+              Why <span className="italic text-signal">Choose Us</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

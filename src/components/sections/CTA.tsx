@@ -13,8 +13,8 @@ export const CTA = () => {
           <div className="relative">
             <Reveal><div className="h-eyebrow text-signal mb-6">Let's make something that outlives the trend.</div></Reveal>
             <Reveal delay={0.05}>
-              <h2 className="font-display leading-[0.95]" style={{ fontSize: "clamp(50px,8vw,140px)", letterSpacing: "-0.04em" }}>
-                Start a<br /><span className="italic-display text-signal">project</span> with us.
+              <h2 className="font-sans font-semibold leading-[0.95]" style={{ fontSize: "clamp(40px,6vw,104px)", letterSpacing: "-0.03em" }}>
+                Start a<br /><span className="italic text-signal">project</span> with us.
               </h2>
             </Reveal>
             <Reveal delay={0.16}>

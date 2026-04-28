@@ -9,8 +9,8 @@ export const Testimonials = () => (
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 06 · TESTIMONIALS</div></div>
         <div className="md:col-span-9">
           <Reveal>
-            <h2 className="h-section font-display">
-              Kind words from <span className="italic-display text-signal">founders who loved</span> our works.
+            <h2 className="h-section font-sans font-semibold">
+              Kind words from <span className="italic text-signal">founders who loved</span> our works.
             </h2>
           </Reveal>
         </div>

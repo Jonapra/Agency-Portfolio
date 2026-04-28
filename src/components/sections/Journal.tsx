@@ -8,7 +8,7 @@ export const Journal = () => (
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 07 · Journal</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
-          <Reveal><h2 className="h-section font-display">From the <span className="italic-display text-signal">studio.</span></h2></Reveal>
+          <Reveal><h2 className="h-section font-sans font-semibold">From the <span className="italic text-signal">studio.</span></h2></Reveal>
           <a href="#" className="u-link hidden md:inline-block mb-4 text-sm">All dispatches →</a>
         </div>
       </div>

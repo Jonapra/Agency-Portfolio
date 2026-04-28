@@ -401,9 +401,9 @@ export const Process = () => (
         </div>
         <div className="md:col-span-9">
           <Reveal>
-            <h2 className="h-section font-display">
+            <h2 className="h-section font-sans font-semibold">
               Process from,{" "}
-              <span className="italic-display text-signal">Start‑to‑end.</span>
+              <span className="italic text-signal">Start‑to‑end.</span>
             </h2>
           </Reveal>
           <Reveal>

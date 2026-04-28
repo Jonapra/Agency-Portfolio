@@ -7,7 +7,7 @@ export const FAQ = () => (
     <SectionContainer className="grid md:grid-cols-12 gap-10">
       <aside className="md:col-span-4 md:sticky md:top-28 self-start">
         <div className="h-eyebrow text-mute mb-3">§ 08 · FAQ</div>
-        <Reveal><h2 className="h-section font-display">Questions we <span className="italic-display text-signal">hear a lot.</span></h2></Reveal>
+        <Reveal><h2 className="h-section font-sans font-semibold">Questions we <span className="italic text-signal">hear a lot.</span></h2></Reveal>
         <Reveal delay={0.16}><p className="text-mute-2 mt-6">Didn't answer yours? <a href="#contact" className="u-link">Ask directly →</a></p></Reveal>
       </aside>
 

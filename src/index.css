@@ -111,9 +111,9 @@
     letter-spacing: -0.04em;
   }
   .h-section {
-    font-size: clamp(36px, 6.2vw, 104px);
-    line-height: 0.95;
-    letter-spacing: -0.035em;
+    font-size: clamp(28px, 4.8vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
   .marquee-huge {
     font-size: clamp(80px, 16vw, 260px);

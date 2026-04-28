@@ -9,7 +9,7 @@ export const Pricing = () => (
       <div className="grid md:grid-cols-12 gap-10 mb-10">
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 05 · Engagements</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
-          <Reveal><h2 className="h-section font-display">Three ways <span className="italic-display text-signal">in.</span></h2></Reveal>
+          <Reveal><h2 className="h-section font-sans font-semibold">Three ways <span className="italic text-signal">in.</span></h2></Reveal>
           <div className="h-eyebrow text-mute hidden md:block">All figures EUR · ex. VAT</div>
         </div>
       </div>

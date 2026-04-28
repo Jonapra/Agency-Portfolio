@@ -97,8 +97,8 @@ export const Work = () => (
         <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Project</div></div>
         <div className="md:col-span-9 flex items-end justify-between">
           <Reveal>
-            <h2 className="h-section font-display">
-              Selected <span className="italic-display text-signal">Pieces</span>
+            <h2 className="h-section font-sans font-semibold">
+              Selected <span className="italic text-signal">Pieces</span>
             </h2>
           </Reveal>
         </div>
