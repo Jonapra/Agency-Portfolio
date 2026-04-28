@@ -107,17 +107,21 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
-                className="group relative inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] cursor-pointer select-none ring-1 ring-white/15 hover:ring-white/25"
+                className="group relative inline-flex items-center h-9 md:h-10 rounded-full bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-[box-shadow,transform] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] cursor-pointer select-none ring-1 ring-white/15 hover:ring-white/25 overflow-hidden"
               >
-                <span className="relative inline-flex transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
+                <span className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 shrink-0 transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
                   <span className="md:hidden"><WhatsAppIcon size={16} /></span>
                   <span className="hidden md:inline-flex"><WhatsAppIcon size={18} /></span>
                 </span>
                 <span
-                  role="tooltip"
-                  className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap rounded-full px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.18em] bg-ink text-cream border border-cream/15 shadow-[0_8px_22px_-6px_rgba(0,0,0,0.45)] opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                  className="grid grid-cols-[0fr] group-hover:grid-cols-[1fr] transition-[grid-template-columns] duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                  aria-hidden="true"
                 >
-                  Chat on WhatsApp
+                  <span className="overflow-hidden min-w-0">
+                    <span className="block whitespace-nowrap pr-4 text-[13px] font-medium tracking-tight opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out delay-100">
+                      Chat with Us
+                    </span>
+                  </span>
                 </span>
               </a>
 
