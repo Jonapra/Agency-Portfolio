@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/constants/site";
@@ -20,16 +20,34 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
+    const HIDE_THRESHOLD = 80;
+    const DELTA = 6;
+
     const handleScroll = () => {
       const hero = document.getElementById("top");
       const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
-      
-      setIsScrolled(window.scrollY > 2);
-      setIsPastHero(window.scrollY > heroHeight - 80);
+      const y = window.scrollY;
+      const last = lastScrollY.current;
+
+      setIsScrolled(y > 2);
+      setIsPastHero(y > heroHeight - 80);
+
+      if (Math.abs(y - last) < DELTA) return;
+
+      if (y < HIDE_THRESHOLD) {
+        setIsHidden(false);
+      } else if (y > last) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      lastScrollY.current = y;
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -60,7 +78,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[0.2,0.8,0.2,1] p-0 ${headerTextColor}`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-transform duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] p-0 ${headerTextColor} ${isHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"}`}
       >
         <div
           className={`
