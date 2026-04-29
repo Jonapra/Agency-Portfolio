@@ -101,8 +101,8 @@ const OrbitVisual = ({ inView }: { inView: boolean }) => {
           <motion.text x={cx} y={cy + 4.5}
             textAnchor="middle" fontSize={9} fill="currentColor"
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.08em"
-            initial={{ fillOpacity: 0.72 }}
-            variants={{ hover: { fillOpacity: 0.9 } }}
+            initial={{ fillOpacity: 1 }}
+            variants={{ hover: { fillOpacity: 1 } }}
             transition={{ duration: 0.3 }}
           >
             {label.toUpperCase()}
@@ -200,8 +200,8 @@ const FlowVisual = ({ inView }: { inView: boolean }) => {
             <motion.text x={px + pillW / 2} y={y + 5}
               textAnchor="middle" fontSize={9.5} fill="currentColor"
               fontFamily="'JetBrains Mono', monospace" letterSpacing="0.05em"
-              initial={{ fillOpacity: 0.72 }}
-              variants={{ hover: { fillOpacity: 0.9 } }}
+              initial={{ fillOpacity: 1 }}
+              variants={{ hover: { fillOpacity: 1 } }}
               transition={{ duration: 0.3 }}
             >
               {step.label.toUpperCase()}
@@ -252,7 +252,7 @@ const ArchVisual = ({ inView }: { inView: boolean }) => {
             <text x={160} y={y + lh / 2 + 4.5}
               textAnchor="middle" fontSize={9.5}
               fill={layer.signal ? "white" : "currentColor"}
-              fillOpacity={layer.signal ? 1 : 0.6}
+              fillOpacity={1}
               fontFamily="'JetBrains Mono', monospace" letterSpacing="0.14em"
             >
               {layer.label}
@@ -315,7 +315,7 @@ const MetricsVisual = ({ inView }: { inView: boolean }) => {
             {bar.pct}
           </motion.text>
           <text x={cxs[i]} y={base + 18}
-            textAnchor="middle" fontSize={8.5} fill="currentColor" fillOpacity={0.5}
+            textAnchor="middle" fontSize={8.5} fill="currentColor" fillOpacity={1}
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.06em"
           >
             {bar.label.toUpperCase()}
@@ -354,7 +354,7 @@ const ProcessReduced = () => (
   <section id="process" className="relative bg-ink text-cream py-20 md:py-24">
     <SectionContainer>
       <header className="mb-16 text-center">
-        <h2 className="font-display leading-[0.95] text-[clamp(2.75rem,8vw,7rem)]">
+        <h2 className="font-display leading-[0.95] text-[clamp(2.75rem,8vw,7rem)] [-webkit-text-stroke:0.4px_currentColor]">
           Process from,{" "}
           <span className="italic text-signal">Start‑to‑end.</span>
         </h2>
@@ -370,22 +370,22 @@ const ProcessReduced = () => (
               <div className="md:col-span-3 font-display leading-none text-[clamp(4rem,10vw,9rem)] text-cream/95">
                 {card.n}
               </div>
-              <div className="md:col-span-5 h-[44vh] text-cream/85">
+              <div className="md:col-span-5 h-[44vh] text-white">
                 <Visual inView />
               </div>
               <div className="md:col-span-4 max-w-[34ch]">
-                <div className="h-eyebrow text-mute mb-3">§ {card.n}</div>
-                <h3 className="font-display text-3xl md:text-4xl text-cream mb-3 leading-[1.05]">
+                <div className="h-eyebrow text-white mb-3">§ {card.n}</div>
+                <h3 className="font-display text-3xl md:text-4xl text-cream mb-3 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
                   {card.title}
                 </h3>
-                <p className="text-mute-2 text-sm md:text-base leading-relaxed mb-4">
+                <p className="text-white font-medium text-sm md:text-base leading-relaxed mb-4">
                   {card.desc}
                 </p>
                 <ul className="flex flex-wrap gap-1.5">
                   {card.tags.map((tag: string) => (
                     <li
                       key={tag}
-                      className="h-eyebrow text-mute border border-foreground/10 rounded-full px-2.5 py-1"
+                      className="h-eyebrow text-white border border-foreground/10 rounded-full px-2.5 py-1"
                     >
                       {tag}
                     </li>
@@ -500,7 +500,7 @@ export const Process = () => {
               data-index="0"
               className="md:absolute md:inset-0 flex items-center justify-center text-center px-4 py-24 md:py-0"
             >
-              <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,9vw,9rem)] max-w-[16ch]">
+              <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,9vw,9rem)] max-w-[16ch] [-webkit-text-stroke:0.5px_currentColor]">
                 Process from,
                 <br />
                 <span className="italic text-signal">Start‑to‑end.</span>
@@ -524,24 +524,24 @@ export const Process = () => {
                   </div>
 
                   {/* Diagram */}
-                  <div className="col-span-12 md:col-span-5 h-[40vh] md:h-[60vh] text-cream/85 flex items-center justify-center">
+                  <div className="col-span-12 md:col-span-5 h-[40vh] md:h-[60vh] text-white flex items-center justify-center">
                     <Visual inView={revealed.has(panelIdx)} />
                   </div>
 
                   {/* Text */}
                   <div className="col-span-12 md:col-span-4 max-w-[34ch] md:pr-4">
-                    <div className="h-eyebrow text-mute mb-3">§ {card.n}</div>
-                    <h3 className="font-display text-cream text-3xl md:text-4xl lg:text-5xl mb-4 leading-[1.05]">
+                    <div className="h-eyebrow text-white mb-3">§ {card.n}</div>
+                    <h3 className="font-display text-cream text-3xl md:text-4xl lg:text-5xl mb-4 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
                       {card.title}
                     </h3>
-                    <p className="text-mute-2 text-sm md:text-base leading-relaxed mb-5">
+                    <p className="text-white font-medium text-sm md:text-base leading-relaxed mb-5">
                       {card.desc}
                     </p>
                     <ul className="flex flex-wrap gap-1.5">
                       {card.tags.map((tag: string) => (
                         <li
                           key={tag}
-                          className="h-eyebrow text-mute border border-foreground/10 rounded-full px-2.5 py-1"
+                          className="h-eyebrow text-white border border-foreground/10 rounded-full px-2.5 py-1"
                         >
                           {tag}
                         </li>
