@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -407,6 +407,18 @@ export const Process = () => {
   // Latch SVG entrance: panel 0 = intro (no SVG); panels 1–4 reveal their visual on first activation.
   const [revealed, setRevealed] = useState<Set<number>>(() => new Set([0]));
 
+  // Mobile: stacked layout never triggers ScrollTrigger (gated to ≥768px). Pre-reveal all panels so SVGs render.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => {
+      if (mq.matches) setRevealed(new Set([0, 1, 2, 3, 4]));
+    };
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
   useGSAP(
     () => {
       if (reduced) return;
@@ -475,12 +487,29 @@ export const Process = () => {
           data-process-pin
           className="relative md:sticky md:top-0 md:h-screen md:overflow-hidden"
         >
-          {/* Halo glow — soft signal + cream blooms behind content */}
+          {/* Background depth — radial gradient base + signal/cream halos */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 hidden md:block"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 50% 45%, hsl(17 70% 18% / 0.55) 0%, hsl(240 6% 5% / 0) 60%), radial-gradient(ellipse 60% 80% at 85% 100%, hsl(17 80% 22% / 0.35) 0%, hsl(240 6% 5% / 0) 55%), radial-gradient(ellipse 70% 60% at 10% 0%, hsl(240 8% 12% / 0.6) 0%, hsl(240 6% 5% / 0) 60%)",
+            }}
+          />
           <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-            <span className="halo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-signal/[0.10]" />
-            <span className="halo absolute left-[15%] top-[25%] w-[28vw] h-[28vw] bg-cream/[0.04]" />
-            <span className="halo absolute right-[10%] bottom-[15%] w-[34vw] h-[34vw] bg-signal-2/[0.06]" />
+            <span className="halo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[65vw] h-[65vw] bg-signal/[0.18] animate-halo-drift-a" />
+            <span className="halo absolute left-[12%] top-[20%] w-[32vw] h-[32vw] bg-cream/[0.06] animate-halo-drift-b" />
+            <span className="halo absolute right-[8%] bottom-[12%] w-[38vw] h-[38vw] bg-signal-2/[0.12] animate-halo-drift-c" />
           </div>
+          {/* Vignette — deepens edges */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 hidden md:block"
+            style={{
+              background:
+                "radial-gradient(ellipse 100% 80% at 50% 50%, transparent 50%, hsl(240 8% 3% / 0.8) 100%)",
+            }}
+          />
 
           <SectionContainer className="relative h-full">
             {/* Panel 0 — Intro */}

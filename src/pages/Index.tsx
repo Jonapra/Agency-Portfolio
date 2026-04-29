@@ -14,8 +14,8 @@ const Index = () => (
   <Layout>
     <Hero />
     <Services />
+    <Process />
     <SectionContainer className="px-0 md:px-0">
-      <Process />
       <Work />
       <ChooseUs />
       {/* <Pricing /> */}
