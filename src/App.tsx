@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useRef } from "react";
 import { LenisProvider, useLenis } from "@/components/lenis-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import Index from "./pages/Index.tsx";
 import Blog from "./pages/Blog.tsx";
 import Project from "./pages/Project.tsx";
@@ -83,18 +84,20 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <LenisProvider>
-          <ScrollManager />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/projects/:slug" element={<Project />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </LenisProvider>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <LenisProvider>
+            <ScrollManager />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/projects/:slug" element={<Project />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </LenisProvider>
+        </BrowserRouter>
+      </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

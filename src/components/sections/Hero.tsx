@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
@@ -7,17 +6,11 @@ import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { SectionContainer } from "@/components/ui/section-container";
+import { useTheme } from "@/components/theme-provider";
 
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
-  const [theme, setTheme] = useState<"dark" | "light">(() => (localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTheme((localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
+  const { theme } = useTheme();
 
   // Fade-in animation for non-text elements to appear with the headline
   const fadeIn = {

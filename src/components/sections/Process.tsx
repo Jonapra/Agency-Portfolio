@@ -1,9 +1,14 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { Reveal } from "../Reveal";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { SectionContainer } from "@/components/ui/section-container";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /* ── Card data ───────────────────────────────────────────────── */
 const CARDS = [
@@ -341,84 +346,203 @@ const MetricsVisual = ({ inView }: { inView: boolean }) => {
   );
 };
 
-/* ── Card ────────────────────────────────────────────────────── */
-type CardData = (typeof CARDS)[number];
+/* ── Visual registry ─────────────────────────────────────────── */
 const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual] as const;
 
-const ServiceCard = ({ data, index }: { data: CardData; index: number }) => {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
-  const Visual = VISUALS[index];
-
-  return (
-    <motion.article
-      ref={ref}
-      initial={{ opacity: 0, y: 44 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 44 }}
-      whileHover="hover"
-      variants={{ hover: { y: -5, transition: { duration: 0.3, ease: [0.2, 0.8, 0.2, 1] } } }}
-      transition={{ duration: 0.75, delay: index * 0.09, ease: [0.2, 0.8, 0.2, 1] }}
-      className="group relative rounded-2xl border border-foreground/10 bg-foreground/[0.025]
-                 overflow-hidden cursor-pointer hover:border-signal/30
-                 hover:shadow-[0_20px_60px_-20px_hsl(17_100%_56%/0.18)]
-                 transition-[border-color,box-shadow] duration-500"
-    >
-      <div className="relative h-[180px] md:h-[220px] lg:h-[240px] text-foreground overflow-hidden">
-        <Visual inView={inView} />
-      </div>
-
-      <div className="h-px bg-foreground/[0.08]" />
-
-      <div className="p-4 md:p-5">
-        <div className="h-eyebrow text-mute mb-2">{data.n}</div>
-        <h3 className="font-display font-semibold text-[1.45rem] md:text-[1.75rem] leading-[1.08] mb-2
-                       group-hover:text-signal transition-colors duration-300">
-          {data.title}
-        </h3>
-        <p className="text-mute-2 text-xs md:text-sm leading-relaxed mb-3 max-w-[52ch]">{data.desc}</p>
-        <div className="flex flex-wrap gap-1.5">
-          {data.tags.map((tag: string) => (
-            <span key={tag}
-              className="h-eyebrow text-mute border border-foreground/10 rounded-full
-                         px-2 py-0.5 text-[9px]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.article>
-  );
-};
-
-/* ── Section ─────────────────────────────────────────────────── */
-export const Process = () => (
-  <section id="process" className="relative py-10 md:py-16">
+/* ── Reduced-motion fallback (stacked) ───────────────────────── */
+const ProcessReduced = () => (
+  <section id="process" className="relative bg-ink text-cream py-20 md:py-24">
     <SectionContainer>
-      <div className="grid md:grid-cols-12 gap-10 mb-14">
-        <div className="md:col-span-3">
-          <div className="h-eyebrow text-mute mb-3">§ 02 · Process</div>
-        </div>
-        <div className="md:col-span-9">
-          <Reveal>
-            <h2 className="h-section font-sans font-semibold">
-              Process from,{" "}
-              <span className="italic text-signal">Start‑to‑end.</span>
-            </h2>
-          </Reveal>
-          <Reveal>
-            <p className="text-mute-2 text-sm md:text-base lg:text-lg max-w-2xl mt-4 md:mt-5">
-              Four phases, one engagement. Brand <span className="text-signal">→</span> design <span className="text-signal">→</span> build <span className="text-signal">→</span> grow — same team start to end, no handoffs.
-            </p>
-          </Reveal>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-5 md:gap-6 font-semibold lg:px-32">
-        {CARDS.map((card, i) => (
-          <ServiceCard key={card.n} data={card} index={i} />
-        ))}
+      <header className="mb-16 text-center">
+        <h2 className="font-display leading-[0.95] text-[clamp(2.75rem,8vw,7rem)]">
+          Process from,{" "}
+          <span className="italic text-signal">Start‑to‑end.</span>
+        </h2>
+      </header>
+      <div className="space-y-20">
+        {CARDS.map((card, i) => {
+          const Visual = VISUALS[i];
+          return (
+            <article
+              key={card.n}
+              className="grid md:grid-cols-12 gap-6 md:gap-8 items-center border-t border-foreground/10 pt-12"
+            >
+              <div className="md:col-span-3 font-display leading-none text-[clamp(4rem,10vw,9rem)] text-cream/95">
+                {card.n}
+              </div>
+              <div className="md:col-span-5 h-[44vh] text-cream/85">
+                <Visual inView />
+              </div>
+              <div className="md:col-span-4 max-w-[34ch]">
+                <div className="h-eyebrow text-mute mb-3">§ {card.n}</div>
+                <h3 className="font-display text-3xl md:text-4xl text-cream mb-3 leading-[1.05]">
+                  {card.title}
+                </h3>
+                <p className="text-mute-2 text-sm md:text-base leading-relaxed mb-4">
+                  {card.desc}
+                </p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {card.tags.map((tag: string) => (
+                    <li
+                      key={tag}
+                      className="h-eyebrow text-mute border border-foreground/10 rounded-full px-2.5 py-1"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </SectionContainer>
   </section>
 );
+
+/* ── Section ─────────────────────────────────────────────────── */
+export const Process = () => {
+  const reduced = usePrefersReducedMotion();
+  const containerRef = useRef<HTMLElement>(null);
+  // Latch SVG entrance: panel 0 = intro (no SVG); panels 1–4 reveal their visual on first activation.
+  const [revealed, setRevealed] = useState<Set<number>>(() => new Set([0]));
+
+  useGSAP(
+    () => {
+      if (reduced) return;
+
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 768px)", () => {
+        const panels = gsap.utils.toArray<HTMLElement>("[data-process-panel]");
+        if (!panels.length) return;
+
+        gsap.set(panels[0], { autoAlpha: 1, y: 0 });
+        gsap.set(panels.slice(1), { autoAlpha: 0, y: 60 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "[data-process-track]",
+            start: "top top",
+            end: "bottom bottom",
+            pin: "[data-process-pin]",
+            scrub: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              const idx = Math.min(
+                panels.length - 1,
+                Math.floor(self.progress * panels.length)
+              );
+              setRevealed((prev) => {
+                if (prev.has(idx)) return prev;
+                const next = new Set(prev);
+                next.add(idx);
+                return next;
+              });
+            },
+          },
+        });
+
+        for (let i = 0; i < panels.length - 1; i++) {
+          tl.to(
+            panels[i],
+            { autoAlpha: 0, y: -60, duration: 0.45, ease: "power3.in" },
+            i
+          ).to(
+            panels[i + 1],
+            { autoAlpha: 1, y: 0, duration: 0.45, ease: "power3.out" },
+            i + 0.55
+          );
+        }
+      });
+    },
+    { scope: containerRef, dependencies: [reduced] }
+  );
+
+  if (reduced) return (
+    <div className="process-dark">
+      <ProcessReduced />
+    </div>
+  );
+
+  return (
+    <section
+      ref={containerRef}
+      id="process"
+      className="process-dark relative bg-ink text-cream"
+    >
+      <div data-process-track className="relative h-auto md:h-[500vh]">
+        <div
+          data-process-pin
+          className="relative md:sticky md:top-0 md:h-screen md:overflow-hidden"
+        >
+          {/* Halo glow — soft signal + cream blooms behind content */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+            <span className="halo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-signal/[0.10]" />
+            <span className="halo absolute left-[15%] top-[25%] w-[28vw] h-[28vw] bg-cream/[0.04]" />
+            <span className="halo absolute right-[10%] bottom-[15%] w-[34vw] h-[34vw] bg-signal-2/[0.06]" />
+          </div>
+
+          <SectionContainer className="relative h-full">
+            {/* Panel 0 — Intro */}
+            <article
+              data-process-panel
+              data-index="0"
+              className="md:absolute md:inset-0 flex items-center justify-center text-center px-4 py-24 md:py-0"
+            >
+              <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,9vw,9rem)] max-w-[16ch]">
+                Process from,
+                <br />
+                <span className="italic text-signal">Start‑to‑end.</span>
+              </h2>
+            </article>
+
+            {/* Panels 1–4 */}
+            {CARDS.map((card, i) => {
+              const Visual = VISUALS[i];
+              const panelIdx = i + 1;
+              return (
+                <article
+                  key={card.n}
+                  data-process-panel
+                  data-index={panelIdx}
+                  className="md:absolute md:inset-0 grid grid-cols-12 gap-4 md:gap-6 items-center px-2 py-16 md:py-0"
+                >
+                  {/* Numeral */}
+                  <div className="col-span-12 md:col-span-3 font-display text-cream leading-[0.85] tracking-tightest text-[clamp(5rem,15vw,14rem)] md:text-left text-center">
+                    {card.n}
+                  </div>
+
+                  {/* Diagram */}
+                  <div className="col-span-12 md:col-span-5 h-[40vh] md:h-[60vh] text-cream/85 flex items-center justify-center">
+                    <Visual inView={revealed.has(panelIdx)} />
+                  </div>
+
+                  {/* Text */}
+                  <div className="col-span-12 md:col-span-4 max-w-[34ch] md:pr-4">
+                    <div className="h-eyebrow text-mute mb-3">§ {card.n}</div>
+                    <h3 className="font-display text-cream text-3xl md:text-4xl lg:text-5xl mb-4 leading-[1.05]">
+                      {card.title}
+                    </h3>
+                    <p className="text-mute-2 text-sm md:text-base leading-relaxed mb-5">
+                      {card.desc}
+                    </p>
+                    <ul className="flex flex-wrap gap-1.5">
+                      {card.tags.map((tag: string) => (
+                        <li
+                          key={tag}
+                          className="h-eyebrow text-mute border border-foreground/10 rounded-full px-2.5 py-1"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
+          </SectionContainer>
+        </div>
+      </div>
+    </section>
+  );
+};

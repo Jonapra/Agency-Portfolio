@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { useTheme } from "@/components/theme-provider";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -16,7 +17,7 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
-  const [theme, setTheme] = useState<"dark" | "light">(() => (localStorage.getItem("agiton-theme") as "dark" | "light") || "dark");
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
@@ -51,13 +52,6 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("light", theme === "light");
-    root.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("agiton-theme", theme);
-  }, [theme]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -126,7 +120,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
               </a>
 
               <button
-                onClick={() => setTheme(t => (t === "dark" ? "light" : "dark"))}
+                onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
               >

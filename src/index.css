@@ -183,6 +183,21 @@
 .hero-section-text { color: hsl(var(--cream)); }
 .light .hero-section-text { color: hsl(var(--ink)); }
 
+/* Process section — always dark surface, lock tokens even in light theme */
+.process-dark,
+.light .process-dark {
+  --background: 240 6% 5%;
+  --foreground: 39 36% 92%;
+  --cream: 39 36% 92%;
+  --cream-2: 38 30% 87%;
+  --bone: 41 50% 97%;
+  --mute: 240 4% 56%;
+  --mute-2: 42 9% 60%;
+  --border: 0 0% 100%;
+  --card: 240 6% 9%;
+  --card-foreground: 39 36% 92%;
+}
+
 /* Marquee animation */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee-track { animation: marquee 38s linear infinite; }
