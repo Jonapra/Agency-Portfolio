@@ -487,28 +487,10 @@ export const Process = () => {
           data-process-pin
           className="relative md:sticky md:top-0 md:h-screen md:overflow-hidden"
         >
-          {/* Background depth — radial gradient base + signal/cream halos */}
+          {/* Background — fully black */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 hidden md:block"
-            style={{
-              background:
-                "radial-gradient(ellipse 80% 60% at 50% 45%, hsl(17 70% 18% / 0.55) 0%, hsl(240 6% 5% / 0) 60%), radial-gradient(ellipse 60% 80% at 85% 100%, hsl(17 80% 22% / 0.35) 0%, hsl(240 6% 5% / 0) 55%), radial-gradient(ellipse 70% 60% at 10% 0%, hsl(240 8% 12% / 0.6) 0%, hsl(240 6% 5% / 0) 60%)",
-            }}
-          />
-          <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-            <span className="halo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[65vw] h-[65vw] bg-signal/[0.18] animate-halo-drift-a" />
-            <span className="halo absolute left-[12%] top-[20%] w-[32vw] h-[32vw] bg-cream/[0.06] animate-halo-drift-b" />
-            <span className="halo absolute right-[8%] bottom-[12%] w-[38vw] h-[38vw] bg-signal-2/[0.12] animate-halo-drift-c" />
-          </div>
-          {/* Vignette — deepens edges */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 hidden md:block"
-            style={{
-              background:
-                "radial-gradient(ellipse 100% 80% at 50% 50%, transparent 50%, hsl(240 8% 3% / 0.8) 100%)",
-            }}
+            className="pointer-events-none absolute inset-0 hidden md:block bg-[#06060a]"
           />
 
           <SectionContainer className="relative h-full">
@@ -534,10 +516,10 @@ export const Process = () => {
                   key={card.n}
                   data-process-panel
                   data-index={panelIdx}
-                  className="md:absolute md:inset-0 grid grid-cols-12 gap-4 md:gap-6 items-center px-2 py-16 md:py-0"
+                  className="md:absolute md:inset-0 grid grid-cols-12 gap-4 md:gap-6 items-center px-2 py-8 md:py-0"
                 >
                   {/* Numeral */}
-                  <div className="col-span-12 md:col-span-3 font-display text-cream leading-[0.85] tracking-tightest text-[clamp(5rem,15vw,14rem)] md:text-left text-center">
+                  <div className="col-span-12 md:col-span-3 font-display text-cream leading-[0.85] tracking-tightest text-[clamp(2rem,8vw,14rem)] md:text-left text-center">
                     {card.n}
                   </div>
 
