@@ -22,7 +22,7 @@ const SERVICES: Service[] = [
     tags: "Wireframes, Prototypes, Design Systems",
     description:
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
-    image: "/assets/UIUX-video.mp4",
+    image: "/assets/service-videos/UIUX-video.mp4",
     imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
     poster: "/assets/service-poster/UIUX-alt.png",
   },
@@ -32,7 +32,7 @@ const SERVICES: Service[] = [
     tags: "React, Next.js, Vite",
     description:
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
-    image: "/assets/Webite-main.mp4",
+    image: "/assets/service-videos/website-video.mp4",
     imageAlt: "Website development — code editor and live browser preview side by side",
     poster: "/assets/service-poster/website-Alt.png",
   },
@@ -42,7 +42,7 @@ const SERVICES: Service[] = [
     tags: "Product, Auth, Dashboards",
     description:
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
-    image: "/assets/SaaS-video.mp4",
+    image: "/assets/service-videos/SaaS-video.mp4",
     imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
     poster: "/assets/service-poster/SaaS-alt.png",
   },
@@ -52,7 +52,7 @@ const SERVICES: Service[] = [
     tags: "Node, APIs, Databases",
     description:
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
-    image: "/assets/FullStack.mp4",
+    image: "/assets/service-videos/fullstack-vid.mp4",
     imageAlt: "Full stack system architecture diagram — client, frontend, API gateway, backend, database",
     poster: "/assets/service-poster/fullstack-alt.png",
   },
@@ -67,23 +67,77 @@ export const Services = () => {
     const videos = Array.from(root.querySelectorAll<HTMLVideoElement>("video"));
     if (!videos.length) return;
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const v = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting) {
-            v.currentTime = 0;
-            v.play().catch(() => { });
-          } else {
-            v.pause();
-          }
-        }
-      },
-      { threshold: 0.25 }
-    );
+    const touchMql = window.matchMedia("(pointer: coarse), (hover: none)");
+    let teardown: (() => void) | null = null;
 
-    videos.forEach((v) => io.observe(v));
-    return () => io.disconnect();
+    const setupAutoplay = () => {
+      const rowToVideo = new Map<HTMLElement, HTMLVideoElement>();
+      videos.forEach((v) => {
+        const row = v.closest<HTMLElement>("[data-services-row]");
+        if (row) rowToVideo.set(row, v);
+        v.pause();
+        v.currentTime = 0;
+      });
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const row = entry.target as HTMLElement;
+            const v = rowToVideo.get(row);
+            if (!v) continue;
+            if (entry.isIntersecting) {
+              v.play().catch(() => { });
+            } else {
+              v.pause();
+              v.currentTime = 0;
+            }
+          }
+        },
+        { threshold: 0.4 }
+      );
+      rowToVideo.forEach((_, row) => io.observe(row));
+      return () => io.disconnect();
+    };
+
+    const setupHover = () => {
+      const bindings: Array<{ row: HTMLElement; enter: () => void; leave: () => void }> = [];
+      videos.forEach((v) => {
+        v.pause();
+        v.currentTime = 0;
+        const row = v.closest<HTMLElement>("[data-services-row]");
+        if (!row) return;
+        const enter = () => {
+          v.currentTime = 0;
+          v.play().catch(() => { });
+        };
+        const leave = () => {
+          v.pause();
+          v.currentTime = 0;
+        };
+        row.addEventListener("mouseenter", enter);
+        row.addEventListener("mouseleave", leave);
+        bindings.push({ row, enter, leave });
+      });
+      return () => {
+        bindings.forEach(({ row, enter, leave }) => {
+          row.removeEventListener("mouseenter", enter);
+          row.removeEventListener("mouseleave", leave);
+        });
+      };
+    };
+
+    const apply = () => {
+      teardown?.();
+      teardown = touchMql.matches ? setupAutoplay() : setupHover();
+    };
+
+    apply();
+    touchMql.addEventListener("change", apply);
+
+    return () => {
+      touchMql.removeEventListener("change", apply);
+      teardown?.();
+    };
   }, []);
 
   useGSAP(
