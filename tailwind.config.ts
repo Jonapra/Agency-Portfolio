@@ -47,6 +47,9 @@ export default {
         },
       },
       letterSpacing: { tightest: "-0.045em" },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
