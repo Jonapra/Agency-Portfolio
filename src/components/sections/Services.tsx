@@ -12,6 +12,7 @@ type Service = {
   description: string;
   image: string;
   imageAlt: string;
+  poster?: string;
 };
 
 const SERVICES: Service[] = [
@@ -23,6 +24,7 @@ const SERVICES: Service[] = [
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
     image: "/assets/UIUX-video.mp4",
     imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
+    poster: "/assets/UIUX-alt.png",
   },
   {
     num: "02",
@@ -32,6 +34,7 @@ const SERVICES: Service[] = [
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
     image: "/assets/Webite-main.mp4",
     imageAlt: "Website development — code editor and live browser preview side by side",
+    poster: "/assets/website-Alt.png",
   },
   {
     num: "03",
@@ -41,6 +44,7 @@ const SERVICES: Service[] = [
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
     image: "/assets/SaaS-video.mp4",
     imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
+    poster: "/assets/SaaS-alt.png",
   },
   {
     num: "04",
@@ -50,6 +54,7 @@ const SERVICES: Service[] = [
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
     image: "/assets/FullStack.mp4",
     imageAlt: "Full stack system architecture diagram — client, frontend, API gateway, backend, database",
+    poster: "/assets/fullstack-alt.png",
   },
 ];
 
@@ -191,6 +196,7 @@ export const Services = () => {
                 {service.image.toLowerCase().endsWith(".mp4") ? (
                   <video
                     src={encodeURI(service.image)}
+                    poster={service.poster ? encodeURI(service.poster) : undefined}
                     aria-label={service.imageAlt}
                     muted
                     loop
