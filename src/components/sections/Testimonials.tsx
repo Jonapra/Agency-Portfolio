@@ -25,7 +25,11 @@ export const Testimonials = () => (
               </svg>
               <blockquote className="font-display text-xl md:text-2xl leading-tight">"{t.q}"</blockquote>
               <figcaption className="mt-6 flex items-center gap-3 text-sm">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-signal to-signal-2" />
+                <img
+                  src={t.avatar}
+                  alt={t.n}
+                  className="w-9 h-9 rounded-full object-cover object-top ring-1 ring-white/10"
+                />
                 <div><div className="font-medium">{t.n}</div><div className="text-mute">{t.r}</div></div>
               </figcaption>
             </figure>

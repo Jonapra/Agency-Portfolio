@@ -60,10 +60,10 @@ export const PLANS: Plan[] = [
 ];
 
 export const TESTIMONIALS = [
-  { q: "They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.", n: "Marion Lux", r: "COO, Hollow", col: "md:col-span-7" },
-  { q: "Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.", n: "Theo Mercer", r: "Founder, Mercer&Co.", col: "md:col-span-5" },
-  { q: "They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.", n: "Jamie O.", r: "Head of Design, Lantern", col: "md:col-span-5" },
-  { q: "A seamless rebuild process. Their team is highly collaborative, took our feedback to heart, and delivered a perfect website and there post launch support was incredible.", n: "Elena Qiu", r: "CEO, Kiln", col: "md:col-span-7" },
+  { q: "They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.", n: "Marion Lux", r: "COO, Hollow", col: "md:col-span-7", avatar: "/assets/avatars/marion.png" },
+  { q: "Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.", n: "Theo Mercer", r: "Founder, Mercer&Co.", col: "md:col-span-5", avatar: "/assets/avatars/theo.png" },
+  { q: "They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.", n: "Jamie O.", r: "Head of Design, Lantern", col: "md:col-span-5", avatar: "/assets/avatars/jamie.png" },
+  { q: "A seamless rebuild process. Their team is highly collaborative, took our feedback to heart, and delivered a perfect website and there post launch support was incredible.", n: "Elena Qiu", r: "CEO, Kiln", col: "md:col-span-7", avatar: "/assets/avatars/elena.png" },
 ];
 
 export const JOURNAL = [
