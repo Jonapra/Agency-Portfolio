@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-
+// usinng Gsap library for scroll animation
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type Service = {
