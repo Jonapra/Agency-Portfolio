@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -21,7 +21,7 @@ const SERVICES: Service[] = [
     tags: "Wireframes, Prototypes, Design Systems",
     description:
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
-    image: "/assets/UIUX image.png",
+    image: "/assets/UIUX-video.mp4",
     imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
   },
   {
@@ -30,7 +30,7 @@ const SERVICES: Service[] = [
     tags: "React, Next.js, Vite",
     description:
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
-    image: "/assets/webdev Image.png",
+    image: "/assets/Webite-main.mp4",
     imageAlt: "Website development — code editor and live browser preview side by side",
   },
   {
@@ -39,7 +39,7 @@ const SERVICES: Service[] = [
     tags: "Product, Auth, Dashboards",
     description:
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
-    image: "/assets/SaaS Image.png",
+    image: "/assets/SaaS-video.mp4",
     imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
   },
   {
@@ -48,13 +48,38 @@ const SERVICES: Service[] = [
     tags: "Node, APIs, Databases",
     description:
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
-    image: "/assets/FullStack Image.png",
+    image: "/assets/FullStack.mp4",
     imageAlt: "Full stack system architecture diagram — client, frontend, API gateway, backend, database",
   },
 ];
 
 export const Services = () => {
   const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const root = containerRef.current;
+    if (!root) return;
+    const videos = Array.from(root.querySelectorAll<HTMLVideoElement>("video"));
+    if (!videos.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const v = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            v.currentTime = 0;
+            v.play().catch(() => { });
+          } else {
+            v.pause();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    videos.forEach((v) => io.observe(v));
+    return () => io.disconnect();
+  }, []);
 
   useGSAP(
     () => {
@@ -163,13 +188,25 @@ export const Services = () => {
                 data-services-image
                 className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/10] w-full md:col-span-3 lg:col-span-1 bg-ink border border-foreground/10 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
               >
-                <img
-                  src={encodeURI(service.image)}
-                  alt={service.imageAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
+                {service.image.toLowerCase().endsWith(".mp4") ? (
+                  <video
+                    src={encodeURI(service.image)}
+                    aria-label={service.imageAlt}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={encodeURI(service.image)}
+                    alt={service.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           ))}
