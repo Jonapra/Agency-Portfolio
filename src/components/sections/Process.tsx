@@ -8,8 +8,6 @@ import { useGSAP } from "@gsap/react";
 import { SectionContainer } from "@/components/ui/section-container";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 /* ── Card data ───────────────────────────────────────────────── */
 const CARDS = [
   {

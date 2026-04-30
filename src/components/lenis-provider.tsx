@@ -10,8 +10,6 @@ import {
 } from "react";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
 type LenisContextValue = Lenis | null;
 
 const LenisContext = createContext<LenisContextValue>(null);

@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useRef } from "react";
 import { LenisProvider, useLenis } from "@/components/lenis-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ErrorBoundary } from "@/components/error-boundary";
 import Index from "./pages/Index.tsx";
 import Blog from "./pages/Blog.tsx";
 import Project from "./pages/Project.tsx";
@@ -45,8 +46,8 @@ function ScrollManager() {
         const id = hash.slice(1);
         const el = document.getElementById(id);
         if (el) {
-          window.setTimeout(() => scrollToEl(el), 100);
-          return;
+          const timerId = window.setTimeout(() => scrollToEl(el), 100);
+          return () => window.clearTimeout(timerId);
         }
       }
 
@@ -87,14 +88,16 @@ const App = () => (
       <ThemeProvider>
         <BrowserRouter>
           <LenisProvider>
-            <ScrollManager />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/projects/:slug" element={<Project />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <ErrorBoundary>
+              <ScrollManager />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/projects/:slug" element={<Project />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </ErrorBoundary>
           </LenisProvider>
         </BrowserRouter>
       </ThemeProvider>

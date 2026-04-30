@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
@@ -11,12 +11,12 @@ import { useTheme } from "@/components/theme-provider";
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   const { theme } = useTheme();
+  const prefersReduced = useReducedMotion();
 
-  // Fade-in animation for non-text elements to appear with the headline
   const fadeIn = {
-    initial: { opacity: 0, y: 10 },
+    initial: { opacity: prefersReduced ? 1 : 0, y: prefersReduced ? 0 : 10 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }
+    transition: { duration: prefersReduced ? 0 : 0.8, ease: [0.2, 0.8, 0.2, 1] }
   };
 
   return (

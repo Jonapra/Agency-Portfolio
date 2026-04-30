@@ -122,7 +122,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
-                className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
+                className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
               >
                 {theme === "dark" ? (
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -137,7 +137,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 onClick={() => setMenuOpen(o => !o)}
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
-                className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center border transition cursor-pointer z-[60] ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
+                className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center border transition cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
               >
                 <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
                 <span className="relative w-4 h-3 block">

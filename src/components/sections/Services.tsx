@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-// usinng Gsap library for scroll animation
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type Service = {
   num: string;
@@ -12,6 +9,7 @@ type Service = {
   description: string;
   image: string;
   imageAlt: string;
+  poster?: string;
 };
 
 const SERVICES: Service[] = [
@@ -23,6 +21,7 @@ const SERVICES: Service[] = [
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
     image: "/assets/service-videos/UIUX-video.mp4",
     imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
+    poster: "/assets/service-poster/uiux-alt.png",
   },
   {
     num: "02",
@@ -32,6 +31,7 @@ const SERVICES: Service[] = [
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
     image: "/assets/service-videos/website-video.mp4",
     imageAlt: "Website development — code editor and live browser preview side by side",
+    poster: "/assets/service-poster/website-alt.png",
   },
   {
     num: "03",
@@ -41,6 +41,7 @@ const SERVICES: Service[] = [
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
     image: "/assets/service-videos/SaaS-video.mp4",
     imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
+    poster: "/assets/service-poster/saas-alt.png",
   },
   {
     num: "04",
@@ -50,6 +51,7 @@ const SERVICES: Service[] = [
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
     image: "/assets/service-videos/fullstack-vid.mp4",
     imageAlt: "Full stack system architecture diagram — client, frontend, API gateway, backend, database",
+    poster: "/assets/service-poster/fullstack-alt.png",
   },
 ];
 
@@ -179,6 +181,7 @@ const ServiceRow = ({ service }: { service: Service }) => {
             <video
               ref={videoRef}
               src={encodeURI(service.image)}
+              poster={service.poster}
               aria-label={service.imageAlt}
               muted
               loop
