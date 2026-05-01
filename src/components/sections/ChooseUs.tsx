@@ -534,7 +534,7 @@ interface BentoCardProps {
 
 const BentoCard = ({
   title, desc, className, delay = 0,
-  illustrationHeight = "h-[160px] md:h-[190px]",
+  illustrationHeight = "h-[180px] md:h-[190px]",
   illustration,
 }: BentoCardProps) => {
   const [hovered, setHovered] = useState(false);
@@ -632,7 +632,7 @@ export const ChooseUs = () => (
           title="Future-Ready Solutions"
           desc="We build fast, secure, and scalable websites using modern technologies that keeps you competitive tomorrow."
           delay={0.07}
-          illustrationHeight="h-[190px] md:h-[220px]"
+          illustrationHeight="h-[220px] md:h-[220px]"
           illustration={(a) => <FutureReadyIllustration active={a} />}
         />
         <BentoCard
@@ -640,7 +640,7 @@ export const ChooseUs = () => (
           title="Transparent Process"
           desc="You'll always know what's happening with clear timelines, regular updates, and open communication."
           delay={0.14}
-          illustrationHeight="h-[190px] md:h-[220px]"
+          illustrationHeight="h-[220px] md:h-[220px]"
           illustration={(a) => <TransparentProcessIllustration active={a} />}
         />
 
