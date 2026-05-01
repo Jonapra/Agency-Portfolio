@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { SectionContainer } from "@/components/ui/section-container";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
@@ -309,19 +310,21 @@ const ProcessCard = ({
   index: number;
   reduced: boolean;
 }) => {
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
   const Visual = VISUALS[index];
 
   return (
     <motion.article
+      ref={ref}
       className="flex flex-col border border-cream/10 rounded-2xl overflow-hidden bg-ink-2"
       initial={reduced ? false : { opacity: 0, y: 40 }}
-      whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      animate={reduced ? undefined : (inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 })}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
     >
       {/* SVG diagram */}
       <div className="h-44 sm:h-48 w-full text-cream/70 p-4">
-        <Visual inView />
+        <Visual inView={reduced ? true : inView} />
       </div>
 
       {/* Text content */}
