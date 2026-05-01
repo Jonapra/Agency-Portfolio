@@ -127,10 +127,10 @@ export function StickySection() {
             <div
               key={card.title}
               className="bg-white border border-black/[0.08] rounded-2xl shadow-md flex flex-col p-6 md:p-8 w-[86vw] sm:w-[55vw] md:w-[480px] max-w-[90vw]"
-              style={{ minHeight: "min(72vh, 660px)" }}
+              style={{ height: "487px" }}
             >
               <div className="flex items-center justify-between mb-6 md:mb-8">
-                <span className="font-sans text-base md:text-lg font-medium text-black">
+                <span className="font-sans text-lg md:text-xl font-bold text-black">
                   {card.title}
                 </span>
                 <span
@@ -143,7 +143,7 @@ export function StickySection() {
 
               <div className="w-full rounded-xl bg-black/[0.04] mb-6 md:mb-8 flex-1 min-h-[200px]" />
 
-              <p className="font-sans text-sm md:text-base text-black/55 leading-relaxed">
+              <p className="font-sans text-base font-semibold text-black/80 leading-relaxed">
                 {card.desc}
               </p>
             </div>
