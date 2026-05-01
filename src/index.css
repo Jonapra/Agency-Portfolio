@@ -96,11 +96,11 @@
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--mute) / 0.4);
+    background: hsl(var(--signal) / 0.7);
     border-radius: 9999px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--mute) / 0.7); }
-  * { scrollbar-width: thin; scrollbar-color: hsl(var(--mute) / 0.4) transparent; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--signal)); }
+  * { scrollbar-width: thin; scrollbar-color: hsl(var(--signal) / 0.7) transparent; }
 }
 
 @layer components {
