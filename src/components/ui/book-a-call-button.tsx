@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Phone, User } from "lucide-react"
 
@@ -10,12 +10,20 @@ const spring = { type: "spring" as const, duration: 0.5, bounce: 0.2 }
 
 export function BookACallButton({ href = "#contact" }: BookACallButtonProps) {
   const [hovered, setHovered] = useState(false)
+  const [isLargeScreen, setIsLargeScreen] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsLargeScreen(window.innerWidth >= 1024)
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
+  }, [])
 
   return (
     <a href={href} className="inline-block">
       <motion.div
-        onHoverStart={() => setHovered(true)}
-        onHoverEnd={() => setHovered(false)}
+        onHoverStart={() => isLargeScreen && setHovered(true)}
+        onHoverEnd={() => isLargeScreen && setHovered(false)}
         className="inline-flex items-center bg-ink text-cream dark:bg-cream dark:text-ink rounded-full overflow-hidden cursor-pointer select-none h-[50px]"
       >
         {/* Left icon cluster */}
@@ -50,7 +58,7 @@ export function BookACallButton({ href = "#contact" }: BookACallButtonProps) {
           transition={spring}
           className="font-sans font-bold text-[17px] tracking-[-0.04em] whitespace-nowrap"
         >
-          {hovered ? "+91 9366279648" : "Book a call"}
+          Book a call
         </motion.span>
       </motion.div>
     </a>
