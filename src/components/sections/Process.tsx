@@ -2,15 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { SectionContainer } from "@/components/ui/section-container";
-import { Reveal } from "@/components/Reveal";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { cn } from "@/lib/utils";
 
 /* ── Data ──────────────────────────────────────────────────────── */
 const CARDS = [
   {
     n: "01", title: "Brand Identity",
-    desc: "We dig into who you are, what you stand for, and learn about you business and industry — then design a visual system that fits your business like it was always meant to look this way.",
+    desc: "We dig into who you are, what you stand for, and learn about your business and industry — then design a visual system that fits your business like it was always meant to look this way.",
     tags: ["Strategy", "Planning", "Identity", "Guidelines"],
   },
   {
@@ -20,21 +19,14 @@ const CARDS = [
   },
   {
     n: "03", title: "Development",
-    desc: "We plan before we build. Every decision , design, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
+    desc: "We plan before we build. Every decision — design, stack, content — is intentional, then executed to the highest standard. We do any changes required before and even after deployment.",
     tags: ["Architecture", "Development", "Testing", "Launch"],
   },
   {
     n: "04", title: "Performance",
-    desc: "We don't hand off and disappear. SEO, speed, maintainance, and post-launch support — we stay invested in how your site actually performs.",
+    desc: "We don't hand off and disappear. SEO, speed, maintenance, and post-launch support — we stay invested in how your site actually performs.",
     tags: ["SEO", "Analytics", "Speed", "Retention"],
   },
-] as const;
-
-const ARROW_COLORS = [
-  "#FF5A1F", // signal orange
-  "#A78BFA", // violet
-  "#38BDF8", // sky
-  "#34D399", // emerald
 ] as const;
 
 /* ── Dot grid bg ─────────────────────────────────────────────── */
@@ -308,133 +300,108 @@ const MetricsVisual = ({ inView }: { inView: boolean }) => {
 
 const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual];
 
-/* ── SpineArrow ───────────────────────────────────────────────── */
-const SpineArrow = ({
-  color,
-  inView,
-  reduced,
-  showArrow = false,
-}: {
-  color: string;
-  inView: boolean;
-  reduced: boolean;
-  showArrow?: boolean;
-}) => (
-  <motion.div
-    className="relative flex items-center justify-center w-8 h-8 rounded-full"
-    initial={reduced ? false : { opacity: 0, y: -10 }}
-    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0 }}
-    transition={{ type: "spring", stiffness: 300, damping: 18, delay: 0.2 }}
-  >
-    <div
-      className="absolute inset-0 rounded-full"
-      style={{ backgroundColor: color, opacity: 0.12 }}
-    />
-    <div
-      className="absolute inset-0 rounded-full"
-      style={{ border: `1.5px solid ${color}`, opacity: 0.45 }}
-    />
-    {showArrow ? (
-      <svg viewBox="0 0 16 16" className="relative z-10 w-3.5 h-3.5" aria-hidden>
-        <motion.path
-          d="M8 2.5 L8 12.5 M4.5 9 L8 12.5 L11.5 9"
-          stroke={color}
-          strokeWidth={1.8}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-          initial={reduced ? false : { pathLength: 0 }}
-          animate={inView ? { pathLength: 1 } : {}}
-          transition={{ duration: 0.4, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-        />
-      </svg>
-    ) : (
-      <motion.div
-        className="relative z-10 rounded-full"
-        style={{ width: 10, height: 10, backgroundColor: color, opacity: 0.8 }}
-        initial={reduced ? false : { scale: 0 }}
-        animate={inView ? { scale: 1 } : { scale: 0 }}
-        transition={{ duration: 0.35, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-      />
-    )}
-  </motion.div>
-);
-
 /* ── ProcessStep ─────────────────────────────────────────────── */
 const ProcessStep = ({
   card,
   index,
+  total,
+  progress,
   reduced,
 }: {
-  card: typeof CARDS[number];
+  card: (typeof CARDS)[number];
   index: number;
+  total: number;
+  progress: number;
   reduced: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const Visual = VISUALS[index];
+
+  const stepThreshold = (index + 0.5) / total;
+  const active = reduced || progress >= stepThreshold;
   const textLeft = index % 2 === 0;
-  const color = ARROW_COLORS[0];
+  const Visual = VISUALS[index];
   const resolvedInView = reduced ? true : inView;
 
+  const dotStyle = active
+    ? { boxShadow: "0 0 10px hsl(var(--signal) / 0.7), 0 0 20px hsl(var(--signal) / 0.3)" }
+    : undefined;
+
   const textBlock = (
-    <Reveal delay={0.05}>
-      <div className="flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="font-mono text-xs text-cream/30 tracking-[0.18em]">{card.n}</span>
-          <div className="h-px flex-1 bg-cream/10" aria-hidden />
-        </div>
-        <h3 className="font-display text-3xl md:text-[2.25rem] text-cream mb-3 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
-          {card.title}
-        </h3>
-        <p className="text-cream/60 text-base leading-relaxed mb-4">
-          {card.desc}
-        </p>
-        <ul className="flex flex-wrap gap-1.5">
-          {card.tags.map((tag: string) => (
-            <li
-              key={tag}
-              className="h-eyebrow text-cream/50 border border-cream/10 rounded-full px-2.5 py-1"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+    <div
+      className={cn(
+        "flex flex-col justify-center transition-all duration-700",
+        active ? "opacity-100 translate-y-0" : "opacity-50 translate-y-2"
+      )}
+    >
+      <div className="flex items-center gap-3 mb-4">
+        <span className="font-mono text-xs text-cream/30 tracking-[0.18em]">{card.n}</span>
+        <div className="h-px flex-1 bg-cream/10" aria-hidden />
       </div>
-    </Reveal>
+      <h3 className="font-display text-3xl md:text-[2.25rem] text-cream mb-3 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
+        {card.title}
+      </h3>
+      <p className="text-cream/60 text-base leading-relaxed mb-4">{card.desc}</p>
+      <ul className="flex flex-wrap gap-1.5">
+        {card.tags.map((tag) => (
+          <li
+            key={tag}
+            className="h-eyebrow text-cream/50 border border-cream/10 rounded-full px-2.5 py-1"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 
   const visualBlock = (
-    <Reveal delay={0.12}>
-      <div className="rounded-xl border border-cream/10 bg-ink-2 overflow-hidden">
-        <div className="h-52 sm:h-60 text-cream/70 p-4">
-          <Visual inView={resolvedInView} />
-        </div>
+    <div
+      className={cn(
+        "rounded-xl border border-cream/10 bg-ink-2 overflow-hidden transition-all duration-700",
+        active ? "opacity-100 translate-y-0" : "opacity-50 translate-y-2"
+      )}
+    >
+      <div className="h-52 sm:h-60 text-cream/70 p-4">
+        <Visual inView={resolvedInView} />
       </div>
-    </Reveal>
+    </div>
   );
 
   return (
     <div ref={ref} className="relative">
-      {/* Mobile: arrow on spine */}
-      <div className="absolute lg:hidden left-5 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-        <SpineArrow color={color} inView={resolvedInView} reduced={reduced} showArrow={false} />
+      {/* Mobile dot on rail */}
+      <div className="absolute lg:hidden left-5 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+        <div
+          className={cn(
+            "w-3 h-3 rounded-full transition-all duration-500",
+            active ? "bg-signal scale-125" : "bg-cream/20 scale-100"
+          )}
+          style={dotStyle}
+        />
       </div>
 
-      {/* Desktop: 3-col grid — left content | center arrow | right content */}
+      {/* Desktop: 3-col grid — text | dot | visual (alternating) */}
       <div className="hidden lg:grid lg:grid-cols-[1fr_72px_1fr] lg:items-center lg:py-14">
-        <div className="pr-12">
+        <div className={cn("pr-12", textLeft ? "" : "lg:[&>*]:order-none")}>
           {textLeft ? textBlock : visualBlock}
         </div>
+        {/* Center dot — sits on the rail line */}
         <div className="flex justify-center items-center">
-          <SpineArrow color={color} inView={resolvedInView} reduced={reduced} showArrow={false} />
+          <div
+            className={cn(
+              "w-3.5 h-3.5 rounded-full transition-all duration-500 relative z-20",
+              active ? "bg-signal scale-125" : "bg-cream/20 scale-100"
+            )}
+            style={dotStyle}
+          />
         </div>
         <div className="pl-12">
           {textLeft ? visualBlock : textBlock}
         </div>
       </div>
 
-      {/* Mobile: single column with left offset to clear spine */}
+      {/* Mobile: stacked, padded to clear the left rail */}
       <div className="lg:hidden pl-12 py-8 space-y-4">
         {textBlock}
         {visualBlock}
@@ -454,8 +421,12 @@ export const Process = () => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
       const rect = timelineRef.current.getBoundingClientRect();
-      const scrolled = window.innerHeight * 0.4 - rect.top;
-      setProgress(Math.max(0, Math.min(1, scrolled / rect.height)));
+      const vh = window.innerHeight;
+      const start = vh * 0.6;
+      const end = vh * 0.4;
+      const total = rect.height + (start - end);
+      const traveled = start - rect.top;
+      setProgress(Math.max(0, Math.min(1, traveled / total)));
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -467,63 +438,75 @@ export const Process = () => {
   }, [reduced]);
 
   return (
-    <section id="process" className="relative bg-ink text-cream py-16 md:py-24">
-      <SectionContainer>
+    <section id="process" className="relative bg-ink text-cream py-20 sm:py-28 md:py-32">
+      <div className="mx-auto w-full max-w-[1044px] px-5 sm:px-8">
+
+        {/* Header */}
         <motion.header
-          className="mb-14 md:mb-20"
+          className="mb-14 md:mb-20 text-center"
           initial={reduced ? false : { opacity: 0, y: 24 }}
           whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,8vw,7rem)] [-webkit-text-stroke:0.4px_currentColor]">
+          <p className="h-eyebrow text-signal tracking-[0.25em] mb-4">Our Process</p>
+          <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,8vw,7rem)] [-webkit-text-stroke:0.4px_currentColor] mb-6">
             Process from,{" "}
             <span className="italic text-signal">Start‑to‑end.</span>
           </h2>
+          <p className="text-cream/60 max-w-2xl mx-auto text-base leading-relaxed">
+            Four focused steps — from first conversation to live site — each one deliberate.
+          </p>
         </motion.header>
 
         {/* Timeline */}
         <div ref={timelineRef} className="relative lg:px-8">
-          {/* Spine line — left-5 on mobile, centered on desktop */}
+
+          {/* Vertical rail */}
           <div
             className="pointer-events-none absolute inset-y-0 left-5 lg:left-1/2 w-px -translate-x-1/2"
             aria-hidden
           >
+            {/* Static track */}
             <div className="absolute inset-0 bg-cream/10 rounded-full" />
+            {/* Accent fill */}
             <div
-              className="absolute top-0 left-0 right-0 bg-signal rounded-full"
+              className="absolute top-0 left-0 right-0 rounded-full bg-signal"
               style={{
                 height: `${progress * 100}%`,
-                transition: "height 0.15s linear",
-                boxShadow: progress > 0 ? "0 0 10px hsl(var(--signal) / 0.5)" : "none",
+                transition: "height 0.15s ease-out",
+                boxShadow: progress > 0 ? "0 0 8px hsl(var(--signal) / 0.5)" : "none",
               }}
-            >
-              {progress > 0.01 && progress < 0.99 && (
-                <svg
-                  viewBox="0 0 16 11"
-                  aria-hidden
-                  className="absolute bottom-0 left-1/2"
-                  style={{
-                    width: 16,
-                    height: 11,
-                    transform: "translateX(-50%) translateY(100%)",
-                    overflow: "visible",
-                    filter: "drop-shadow(0 0 5px hsl(var(--signal) / 0.7))",
-                    transition: "opacity 0.15s linear",
-                  }}
-                >
-                  <path d="M8 11 L0 0 L16 0 Z" fill="hsl(var(--signal))" />
-                </svg>
-              )}
-            </div>
+            />
+            {/* Traveling dot */}
+            {!reduced && progress > 0.01 && progress < 0.99 && (
+              <div
+                className="absolute left-1/2 w-3.5 h-3.5 rounded-full bg-signal"
+                style={{
+                  top: `${progress * 100}%`,
+                  transform: "translateX(-50%) translateY(-50%)",
+                  transition: "top 0.15s ease-out",
+                  boxShadow:
+                    "0 0 12px hsl(var(--signal) / 0.9), 0 0 24px hsl(var(--signal) / 0.5)",
+                }}
+              />
+            )}
           </div>
 
           {/* Steps */}
           {CARDS.map((card, i) => (
-            <ProcessStep key={card.n} card={card} index={i} reduced={reduced} />
+            <ProcessStep
+              key={card.n}
+              card={card}
+              index={i}
+              total={CARDS.length}
+              progress={progress}
+              reduced={reduced}
+            />
           ))}
         </div>
-      </SectionContainer>
+
+      </div>
     </section>
   );
 };

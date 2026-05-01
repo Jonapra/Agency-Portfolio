@@ -163,6 +163,18 @@
 /* Hero section text */
 .hero-section-text { color: hsl(var(--cream)); }
 
+/* Process Timeline Section */
+:root {
+  --process-bg: 260 25% 9%;
+  --process-muted: 250 20% 70%;
+  --process-accent: 260 85% 70%;
+  --process-line: 260 30% 30%;
+  --process-card-border: 260 25% 22%;
+  --process-card-bg: 260 28% 12%;
+  --process-icon-bg: 260 35% 22%;
+  --process-icon-fg: 260 70% 75%;
+}
+
 /* Marquee animation */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee-track { animation: marquee 38s linear infinite; }
