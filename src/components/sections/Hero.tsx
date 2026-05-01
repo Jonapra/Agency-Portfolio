@@ -3,7 +3,6 @@ import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { SectionContainer } from "@/components/ui/section-container";
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
@@ -20,9 +19,6 @@ export const Hero = () => {
       id="top"
       className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-20 2xl:pt-24 md:pb-16 lg:pb-20 2xl:pb-24 overflow-hidden hero-section-text flex flex-col"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-background" />
-      <BackgroundBeams className="opacity-50" />
-
       <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-12 md:mt-16 lg:mt-4 2xl:mt-6">
         {/* Top Pill */}
         <motion.div 
