@@ -186,7 +186,7 @@ const ArchVisual = ({ inView }: { inView: boolean }) => {
     { label: "LAUNCH",       w: 112, signal: true  },
   ];
   const lh = 34, gap = 7;
-  const baseY = 196;
+  const baseY = 182;
   const ys = layers.map((_, i) => baseY - i * (lh + gap));
 
   return (
