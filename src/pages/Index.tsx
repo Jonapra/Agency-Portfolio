@@ -16,10 +16,10 @@ const Index = () => (
     <Hero />
     <Services />
     <StickySection />
-    <Process />
     <SectionContainer className="px-0 md:px-0">
       <Work />
-      <ChooseUs />
+      <Process />
+      {/* <ChooseUs /> */}
       {/* <Pricing /> */}
       <Testimonials />
       <FAQ />
