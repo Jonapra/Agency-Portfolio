@@ -328,12 +328,7 @@ const ProcessStep = ({
     : undefined;
 
   const textBlock = (
-    <div
-      className={cn(
-        "flex flex-col justify-center transition-all duration-700",
-        active ? "opacity-100 translate-y-0" : "opacity-50 translate-y-2"
-      )}
-    >
+    <div className="flex flex-col justify-center">
       <div className="flex items-center gap-3 mb-4">
         <span className="font-mono text-xs text-cream/30 tracking-[0.18em]">{card.n}</span>
         <div className="h-px flex-1 bg-cream/10" aria-hidden />
@@ -356,12 +351,7 @@ const ProcessStep = ({
   );
 
   const visualBlock = (
-    <div
-      className={cn(
-        "rounded-xl border border-cream/10 bg-ink-2 overflow-hidden transition-all duration-700",
-        active ? "opacity-100 translate-y-0" : "opacity-50 translate-y-2"
-      )}
-    >
+    <div className="rounded-xl border border-cream/10 bg-ink-2 overflow-hidden">
       <div className="h-52 sm:h-60 text-cream/70 p-4">
         <Visual inView={resolvedInView} />
       </div>
