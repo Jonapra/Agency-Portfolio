@@ -60,7 +60,7 @@ export function StickySection() {
           trigger,
           start: "top top",
           end: "bottom top",
-          scrub: 0.6,
+          scrub: 1,
           invalidateOnRefresh: true,
           onRefreshInit: applyInitial,
         },
@@ -77,11 +77,11 @@ export function StickySection() {
   );
 
   return (
-    <div ref={triggerRef} className="relative w-full" style={{ height: "500vh" }}>
+    <div ref={triggerRef} className="relative w-full" style={{ height: "380vh" }}>
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-white">
 
         {/* Label — fixed at top of section */}
-        <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-30 font-sans text-xs md:text-sm tracking-[0.2em] text-black/45 flex items-center gap-2 select-none whitespace-nowrap">
+        <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-xs md:text-sm tracking-[0.2em] text-black/45 flex items-center gap-2 select-none whitespace-nowrap">
           <span aria-hidden>+</span>
           From concept to launch
         </p>
