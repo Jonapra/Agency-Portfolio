@@ -220,7 +220,7 @@ export const Services = () => {
   useEffect(() => {
     const mql = window.matchMedia("(pointer: coarse)");
     isTouchRef.current = mql.matches;
-    setActive(mql.matches ? null : 0);
+    setActive(0);
   }, []);
 
   return (
