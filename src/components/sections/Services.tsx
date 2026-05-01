@@ -142,7 +142,7 @@ const ServiceRow = ({ service }: { service: Service }) => {
     <div
       ref={rowRef}
       data-services-row
-      className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_0.9fr_140px_1fr_360px] items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-foreground/10 py-3 md:py-4 lg:py-0 transition-colors duration-300 hover:bg-foreground/[0.035] overflow-hidden"
+      className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_0.9fr_140px_1fr_240px] items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-foreground/10 py-3 md:py-4 lg:py-0 lg:h-[160px] transition-colors duration-300 hover:bg-foreground/[0.035] overflow-hidden"
     >
       <div
         data-services-text
@@ -190,7 +190,7 @@ const ServiceRow = ({ service }: { service: Service }) => {
           ) : null
         ) : (
           <img
-            src={encodeURI(service.image)}
+            src={encodeURI(service.poster ?? service.image)}
             alt={service.imageAlt}
             loading="lazy"
             decoding="async"
