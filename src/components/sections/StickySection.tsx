@@ -90,13 +90,13 @@ export function StickySection() {
         <div className="absolute inset-0 hidden md:flex items-center justify-center select-none pointer-events-none z-10">
           <div ref={leftRef} className="text-right shrink-0" style={{ paddingRight: "0.35em" }}>
             <p
-              className="font-serif font-normal leading-[1.05] text-black whitespace-nowrap"
+              className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
               style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
             >
               Your ideas
             </p>
             <p
-              className="font-serif font-normal leading-[1.05] text-black whitespace-nowrap"
+              className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
               style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
             >
               into <em>Brand</em>
@@ -104,13 +104,13 @@ export function StickySection() {
           </div>
           <div ref={rightRef} className="text-left shrink-0" style={{ paddingLeft: "0.35em" }}>
             <p
-              className="font-serif font-normal leading-[1.05] text-black whitespace-nowrap"
+              className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
               style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
             >
               transform
             </p>
             <p
-              className="font-serif font-normal leading-[1.05] text-black whitespace-nowrap"
+              className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
               style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
             >
               stories
