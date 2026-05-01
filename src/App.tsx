@@ -91,7 +91,7 @@ const App = () => (
           <LenisProvider>
             <ErrorBoundary>
               <ScrollManager />
-              <Suspense fallback={null}>
+              <Suspense fallback={<div aria-hidden="true" style={{ position: "fixed", inset: 0, background: "hsl(240 6% 5%)" }} />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/blog" element={<Blog />} />
