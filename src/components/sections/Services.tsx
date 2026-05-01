@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Reveal } from "@/components/Reveal";
 type Service = {
   num: string;
   name: string;
@@ -56,7 +57,7 @@ const ServiceRow = ({ service }: { service: Service }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [mounted, setMounted] = useState(false);
-  const isVideo = service.image.toLowerCase().endsWith(".mp4");
+  const isVideo = false; // temporarily disabled
 
   useEffect(() => {
     if (!isVideo || mounted) return;
@@ -213,8 +214,10 @@ export const Services = () => {
         </h2>
 
         <div className="border-t border-foreground/10">
-          {SERVICES.map((service) => (
-            <ServiceRow key={service.num} service={service} />
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.num} delay={i * 0.07} y={16}>
+              <ServiceRow service={service} />
+            </Reveal>
           ))}
         </div>
       </div>
