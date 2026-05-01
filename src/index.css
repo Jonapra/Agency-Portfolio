@@ -56,30 +56,6 @@
     --sidebar-ring: 17 100% 56%;
   }
 
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 240 6% 5%;
-    --cream: 0 0% 100%;
-    --cream-2: 0 0% 96%;
-    --bone: 0 0% 100%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 6% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 6% 5%;
-    --primary: 17 100% 56%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 240 6% 5%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 240 5% 40%;
-    --accent: 17 100% 56%;
-    --accent-foreground: 0 0% 100%;
-    --border: 240 6% 5%;
-    --input: 0 0% 96%;
-    --signal: 17 100% 56%;
-    --mute: 240 5% 35%;
-    --mute-2: 40 10% 30%;
-  }
 }
 
 @layer base {
@@ -131,8 +107,6 @@
   .plate {
     border: 1px solid hsl(var(--foreground) / 0.08);
   }
-  .light .plate { border-color: hsl(var(--ink) / 0.1); }
-
   .pill {
     display: inline-flex; align-items: center;
     border: 1px solid currentColor; border-radius: 9999px;
@@ -186,24 +160,8 @@
   .border-signal { border-color: hsl(var(--signal)); }
 }
 
-/* Hero section text — adapts per theme */
+/* Hero section text */
 .hero-section-text { color: hsl(var(--cream)); }
-.light .hero-section-text { color: hsl(var(--ink)); }
-
-/* Process section — always dark surface, lock tokens even in light theme */
-.process-dark,
-.light .process-dark {
-  --background: 240 6% 5%;
-  --foreground: 39 36% 92%;
-  --cream: 39 36% 92%;
-  --cream-2: 38 30% 87%;
-  --bone: 41 50% 97%;
-  --mute: 240 4% 56%;
-  --mute-2: 42 9% 60%;
-  --border: 0 0% 100%;
-  --card: 240 6% 9%;
-  --card-foreground: 39 36% 92%;
-}
 
 /* Marquee animation */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

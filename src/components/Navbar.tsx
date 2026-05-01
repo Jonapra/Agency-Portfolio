@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
-import { useTheme } from "@/components/theme-provider";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -17,7 +16,6 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
-  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
@@ -64,10 +62,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
     };
   }, [menuOpen]);
 
-  // Header text color logic: 
-  // 1. If menu is open, background is always dark, so text must be cream.
-  // 2. Otherwise, use cream for dark theme and ink (black) for light theme.
-  const headerTextColor = menuOpen ? "text-cream" : (theme === "dark" ? "text-cream" : "text-ink");
+  const headerTextColor = "text-cream";
 
   return (
     <>
@@ -120,24 +115,10 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
               </a>
 
               <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className={`rounded-full w-9 h-9 grid place-items-center border transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
-              >
-                {theme === "dark" ? (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                    <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
-                )}
-              </button>
-
-              <button
                 onClick={() => setMenuOpen(o => !o)}
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
-                className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center border transition cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${menuOpen || theme === "dark" ? "border-cream/25 hover:bg-cream/10" : "border-ink/20 hover:bg-ink/5"}`}
+                className="md:hidden relative rounded-full w-10 h-10 grid place-items-center border border-cream/25 hover:bg-cream/10 transition cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2"
               >
                 <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
                 <span className="relative w-4 h-3 block">
