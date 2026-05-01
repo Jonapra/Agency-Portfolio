@@ -1,7 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-
 type Service = {
   num: string;
   name: string;
@@ -144,37 +141,37 @@ const ServiceRow = ({ service }: { service: Service }) => {
     <div
       ref={rowRef}
       data-services-row
-      className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_0.9fr_140px_1fr_360px] items-start md:items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-foreground/10 py-5 md:py-5 lg:py-2 transition-colors duration-300 hover:bg-foreground/[0.02] overflow-hidden"
+      className="group grid grid-cols-1 md:grid-cols-[40px_1fr_140px] lg:grid-cols-[40px_0.9fr_140px_1fr_360px] items-center gap-y-3 md:gap-x-6 lg:gap-x-8 border-b border-foreground/10 py-3 md:py-4 lg:py-0 transition-colors duration-300 hover:bg-foreground/[0.035] overflow-hidden"
     >
       <div
         data-services-text
-        className="font-mono text-xs md:text-sm font-semibold text-foreground/55 md:self-start md:pt-2"
+        className="font-mono text-[11px] md:text-xs font-medium text-foreground/40 tabular-nums"
       >
         {service.num}
       </div>
 
-      <div data-services-text className="md:self-start md:pt-0">
-        <h3 className="font-sans font-bold text-3xl md:text-4xl lg:text-[44px] leading-[1.02] tracking-[-0.02em] text-foreground">
+      <div data-services-text>
+        <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-[36px] leading-[1.02] tracking-[-0.02em] text-foreground">
           {service.name}
         </h3>
       </div>
 
       <div
         data-services-text
-        className="font-mono text-[10px] md:text-xs uppercase font-semibold tracking-[0.12em] text-signal leading-relaxed md:self-start md:pt-2"
+        className="font-mono text-[10px] md:text-xs uppercase font-semibold tracking-[0.12em] text-signal leading-relaxed"
       >
-        {service.tags}
+        {service.tags.split(",").map((t) => t.trim()).join(" · ")}
       </div>
 
-      <div data-services-text className="md:col-span-2 lg:col-span-1 md:self-start md:pt-1">
-        <p className="text-sm md:text-[15px] leading-snug font-medium text-foreground/85 max-w-prose">
+      <div data-services-text className="md:col-span-2 lg:col-span-1">
+        <p className="text-sm md:text-[15px] leading-relaxed font-normal text-foreground/70 max-w-prose">
           {service.description}
         </p>
       </div>
 
       <div
         data-services-image
-        className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/10] w-full md:col-span-3 lg:col-span-1 bg-ink border border-foreground/10 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
+        className="block aspect-[3/2] sm:aspect-[16/9] md:aspect-[16/9] lg:aspect-[3/2] w-full md:col-span-3 lg:col-span-1 rounded-sm overflow-hidden mt-3 md:mt-4 lg:mt-0"
       >
         {isVideo ? (
           mounted ? (
@@ -205,68 +202,13 @@ const ServiceRow = ({ service }: { service: Service }) => {
 };
 
 export const Services = () => {
-  const containerRef = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce) return;
-
-      const rows = gsap.utils.toArray<HTMLElement>("[data-services-row]");
-
-      rows.forEach((row) => {
-        const items = row.querySelectorAll<HTMLElement>("[data-services-text]");
-        const image = row.querySelector<HTMLElement>("[data-services-image]");
-
-        if (items.length) {
-          gsap.fromTo(
-            items,
-            { y: 40, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              stagger: 0.05,
-              scrollTrigger: {
-                trigger: row,
-                start: "top 90%",
-                end: "top 60%",
-                scrub: 1,
-              },
-            }
-          );
-        }
-
-        if (image) {
-          gsap.fromTo(
-            image,
-            { y: 40, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: row,
-                start: "top 90%",
-                end: "top 60%",
-                scrub: 1,
-              },
-            }
-          );
-        }
-      });
-    },
-    { scope: containerRef }
-  );
-
   return (
     <section
-      ref={containerRef}
       id="services"
-      className="relative bg-background text-foreground py-16 md:py-20 lg:py-24 overflow-hidden"
+      className="relative bg-background text-foreground py-10 md:py-14 lg:py-16 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
-        <h2 className="mb-10 md:mb-14 font-sans font-black uppercase leading-[0.85] tracking-[-0.04em] text-foreground text-6xl md:text-8xl lg:text-[140px]">
+        <h2 className="mb-6 md:mb-10 font-sans font-black uppercase leading-[0.85] tracking-[-0.04em] text-foreground text-5xl md:text-7xl lg:text-[110px]">
           Services
         </h2>
 

@@ -52,7 +52,7 @@ export const Hero = () => {
           <div className="mt-2 md:mt-3 lg:mt-4">
             <SplitLine>
               <span className="italic-display font-normal tracking-tight block">
-                <SplitText text="into digital experiences" delay={0.3} />
+                <SplitText text="into digital experience" delay={0.3} />
               </span>
             </SplitLine>
           </div>
