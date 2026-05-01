@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
-import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -42,26 +41,18 @@ export const Hero = () => {
 
         {/* Headline */}
         <h1
-          className="font-display mb-6 md:mb-8 flex flex-col items-center text-[40px] md:text-[80px] lg:text-[clamp(48px,7vw,110px)] 2xl:text-[130px] leading-[0.95]"
+          className="font-display mb-6 md:mb-8 flex flex-col items-center text-[40px] md:text-[80px] lg:text-[clamp(48px,7vw,110px)] 2xl:text-[130px] leading-[0.95] max-w-[90vw] md:max-w-[80vw] lg:max-w-4xl xl:max-w-5xl"
           style={{ letterSpacing: "-0.03em" }}
         >
-          <div className="flex flex-wrap justify-center items-center gap-x-3 md:gap-x-4 lg:gap-x-5">
-            <SplitLine><SplitText text="We Build" /></SplitLine>
-            <div className="relative inline-flex justify-center min-w-[3em]">
-              <GooeyText
-                texts={["Modern", "Stunning", "Beautiful", "Awesome"]}
-                morphTime={1}
-                cooldownTime={1.5}
-                className="relative"
-                textClassName="font-display italic-display text-signal whitespace-nowrap"
-              />
-            </div>
-            <SplitLine><SplitText text="Websites" delay={0.15} /></SplitLine>
+          <div className="flex flex-wrap justify-center items-center">
+            <SplitLine>
+              <SplitText text="We Transform Ideas" className="text-signal font-bold" />
+            </SplitLine>
           </div>
           <div className="mt-2 md:mt-3 lg:mt-4">
             <SplitLine>
-              <span className="italic-display text-signal font-normal tracking-tight block">
-                <SplitText text="that shape your brand." delay={0.3} />
+              <span className="italic-display font-normal tracking-tight block">
+                <SplitText text="into digital experiences" delay={0.3} />
               </span>
             </SplitLine>
           </div>
