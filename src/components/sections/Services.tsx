@@ -19,7 +19,7 @@ const SERVICES: Service[] = [
       "We craft intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
     image: "/assets/service-videos/UIUX-video.mp4",
     imageAlt: "UI/UX design elements pack — typography, components, color palette, grid system",
-    poster: "/assets/service-poster/uiux-alt.png",
+    poster: "/assets/service-poster/UIUX-alt.png",
   },
   {
     num: "02",
@@ -29,7 +29,7 @@ const SERVICES: Service[] = [
       "We build fast, accessible, and visually precise websites — pixel-perfect implementations that load quick and convert.",
     image: "/assets/service-videos/website-video.mp4",
     imageAlt: "Website development — code editor and live browser preview side by side",
-    poster: "/assets/service-poster/website-alt.png",
+    poster: "/assets/service-poster/website-Alt.png",
   },
   {
     num: "03",
@@ -39,7 +39,7 @@ const SERVICES: Service[] = [
       "End-to-end SaaS builds: onboarding flows, auth, billing, and dashboards — everything needed to ship and grow a product.",
     image: "/assets/service-videos/SaaS-video.mp4",
     imageAlt: "SaaS dashboard interface with metrics, revenue chart, and user analytics",
-    poster: "/assets/service-poster/saas-alt.png",
+    poster: "/assets/service-poster/SaaS-alt.png",
   },
   {
     num: "04",
