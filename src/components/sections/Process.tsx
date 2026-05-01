@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { SectionContainer } from "@/components/ui/section-container";
+import { Reveal } from "@/components/Reveal";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
-/* ── Card data ───────────────────────────────────────────────── */
+/* ── Data ──────────────────────────────────────────────────────── */
 const CARDS = [
   {
     n: "01", title: "Brand Identity",
@@ -29,7 +30,14 @@ const CARDS = [
   },
 ] as const;
 
-/* ── Shared: dot grid bg ─────────────────────────────────────── */
+const ARROW_COLORS = [
+  "#FF5A1F", // signal orange
+  "#A78BFA", // violet
+  "#38BDF8", // sky
+  "#34D399", // emerald
+] as const;
+
+/* ── Dot grid bg ─────────────────────────────────────────────── */
 const DotBg = ({ id }: { id: string }) => (
   <>
     <defs>
@@ -37,13 +45,13 @@ const DotBg = ({ id }: { id: string }) => (
         <circle cx={0.9} cy={0.9} r={0.9} fill="currentColor" opacity={0.16} />
       </pattern>
     </defs>
-    <rect width={320} height={260} fill={`url(#${id})`} />
+    <rect width={320} height={220} fill={`url(#${id})`} />
   </>
 );
 
 /* ── 01 · Brand Identity — Orbital hub ──────────────────────── */
 const OrbitVisual = ({ inView }: { inView: boolean }) => {
-  const cx0 = 160, cy0 = 130, orbitR = 82;
+  const cx0 = 160, cy0 = 110, orbitR = 76;
   const items = [
     { label: "Strategy",   angle: -Math.PI / 2, pw: 78 },
     { label: "Planning",   angle: 0,            pw: 78 },
@@ -56,7 +64,7 @@ const OrbitVisual = ({ inView }: { inView: boolean }) => {
   });
 
   return (
-    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+    <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden>
       <DotBg id="db-orbit" />
       {items.map(({ cx, cy }, i) => (
         <motion.line key={i} x1={cx0} y1={cy0} x2={cx} y2={cy}
@@ -119,13 +127,13 @@ const FlowVisual = ({ inView }: { inView: boolean }) => {
     { label: "Handoff",     side: "left"  as const },
   ];
   const spineX = 160;
-  const yTop = 28, yBot = 234;
-  const ys    = [52, 108, 164, 218];
+  const yTop = 20, yBot = 210;
+  const ys = [42, 96, 152, 206];
   const pillW = 92, pillH = 28;
   const pillR = 170, pillL = 58;
 
   return (
-    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+    <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden>
       <DotBg id="db-flow" />
       <motion.path d={`M ${spineX} ${yTop} L ${spineX} ${yBot}`}
         fill="none" stroke="hsl(var(--signal))" strokeWidth={1.8} strokeLinecap="round"
@@ -177,7 +185,7 @@ const FlowVisual = ({ inView }: { inView: boolean }) => {
   );
 };
 
-/* ── 03 · Website — Architecture stack ──────────────────────── */
+/* ── 03 · Development — Architecture stack ──────────────────── */
 const ArchVisual = ({ inView }: { inView: boolean }) => {
   const layers = [
     { label: "ARCHITECTURE", w: 240, signal: false },
@@ -185,12 +193,12 @@ const ArchVisual = ({ inView }: { inView: boolean }) => {
     { label: "TESTING",      w: 152, signal: false },
     { label: "LAUNCH",       w: 112, signal: true  },
   ];
-  const lh = 36, gap = 8;
-  const baseY = 208;
+  const lh = 34, gap = 7;
+  const baseY = 196;
   const ys = layers.map((_, i) => baseY - i * (lh + gap));
 
   return (
-    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+    <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden>
       <DotBg id="db-arch" />
       <line x1={40} y1={baseY + lh + 4} x2={280} y2={baseY + lh + 4}
         stroke="currentColor" strokeWidth={0.5} opacity={0.18} />
@@ -227,21 +235,21 @@ const ArchVisual = ({ inView }: { inView: boolean }) => {
 /* ── 04 · Performance — Metrics bars ────────────────────────── */
 const MetricsVisual = ({ inView }: { inView: boolean }) => {
   const bars = [
-    { label: "SEO",       h: 74,  pct: "+42%" },
-    { label: "Analytics", h: 106, pct: "+58%" },
-    { label: "Speed",     h: 130, pct: "+76%" },
-    { label: "Retention", h: 154, pct: "+91%" },
+    { label: "SEO",       h: 68,  pct: "+42%" },
+    { label: "Analytics", h: 98,  pct: "+58%" },
+    { label: "Speed",     h: 122, pct: "+76%" },
+    { label: "Retention", h: 146, pct: "+91%" },
   ];
-  const base = 208, bw = 44;
+  const base = 196, bw = 44;
   const xs  = [48, 108, 172, 232];
   const cxs = xs.map((x) => x + bw / 2);
   const pts = bars.map((b, i) => ({ x: cxs[i], y: base - b.h }));
   const trendD = `M ${pts.map((p) => `${p.x},${p.y}`).join(" L ")}`;
 
   return (
-    <svg viewBox="0 0 320 260" className="w-full h-full" aria-hidden>
+    <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden>
       <DotBg id="db-metrics" />
-      {[60, 120, 180].map((y) => (
+      {[54, 110, 166].map((y) => (
         <line key={y} x1={34} y1={y} x2={290} y2={y}
           stroke="currentColor" strokeWidth={0.4} opacity={0.08} strokeDasharray="2 4" />
       ))}
@@ -270,7 +278,7 @@ const MetricsVisual = ({ inView }: { inView: boolean }) => {
           >
             {bar.pct}
           </motion.text>
-          <text x={cxs[i]} y={base + 18}
+          <text x={cxs[i]} y={base + 16}
             textAnchor="middle" fontSize={8.5} fill="currentColor" fillOpacity={1}
             fontFamily="'JetBrains Mono', monospace" letterSpacing="0.06em"
           >
@@ -298,10 +306,62 @@ const MetricsVisual = ({ inView }: { inView: boolean }) => {
   );
 };
 
-const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual] as const;
+const VISUALS = [OrbitVisual, FlowVisual, ArchVisual, MetricsVisual];
 
-/* ── Card ────────────────────────────────────────────────────── */
-const ProcessCard = ({
+/* ── SpineArrow ───────────────────────────────────────────────── */
+const SpineArrow = ({
+  color,
+  inView,
+  reduced,
+  showArrow = false,
+}: {
+  color: string;
+  inView: boolean;
+  reduced: boolean;
+  showArrow?: boolean;
+}) => (
+  <motion.div
+    className="relative flex items-center justify-center w-8 h-8 rounded-full"
+    initial={reduced ? false : { opacity: 0, y: -10 }}
+    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0 }}
+    transition={{ type: "spring", stiffness: 300, damping: 18, delay: 0.2 }}
+  >
+    <div
+      className="absolute inset-0 rounded-full"
+      style={{ backgroundColor: color, opacity: 0.12 }}
+    />
+    <div
+      className="absolute inset-0 rounded-full"
+      style={{ border: `1.5px solid ${color}`, opacity: 0.45 }}
+    />
+    {showArrow ? (
+      <svg viewBox="0 0 16 16" className="relative z-10 w-3.5 h-3.5" aria-hidden>
+        <motion.path
+          d="M8 2.5 L8 12.5 M4.5 9 L8 12.5 L11.5 9"
+          stroke={color}
+          strokeWidth={1.8}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+          initial={reduced ? false : { pathLength: 0 }}
+          animate={inView ? { pathLength: 1 } : {}}
+          transition={{ duration: 0.4, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+        />
+      </svg>
+    ) : (
+      <motion.div
+        className="relative z-10 rounded-full"
+        style={{ width: 10, height: 10, backgroundColor: color, opacity: 0.8 }}
+        initial={reduced ? false : { scale: 0 }}
+        animate={inView ? { scale: 1 } : { scale: 0 }}
+        transition={{ duration: 0.35, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+      />
+    )}
+  </motion.div>
+);
+
+/* ── ProcessStep ─────────────────────────────────────────────── */
+const ProcessStep = ({
   card,
   index,
   reduced,
@@ -310,58 +370,104 @@ const ProcessCard = ({
   index: number;
   reduced: boolean;
 }) => {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   const Visual = VISUALS[index];
+  const textLeft = index % 2 === 0;
+  const color = ARROW_COLORS[0];
+  const resolvedInView = reduced ? true : inView;
 
-  return (
-    <motion.article
-      ref={ref}
-      className="flex flex-col border border-cream/10 rounded-2xl overflow-hidden bg-ink-2"
-      initial={reduced ? false : { opacity: 0, y: 40 }}
-      animate={reduced ? undefined : (inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 })}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-    >
-      {/* SVG diagram */}
-      <div className="h-44 sm:h-48 w-full text-cream/70 p-4">
-        <Visual inView={reduced ? true : inView} />
-      </div>
-
-      {/* Text content */}
-      <div className="flex-1 flex flex-col p-5 border-t border-cream/10">
-        <div className="flex items-start justify-between mb-2">
-          <span className="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-none text-cream/20 select-none">
-            {card.n}
-          </span>
-          <span className="h-eyebrow text-cream/40 mt-1">§ {card.n}</span>
+  const textBlock = (
+    <Reveal delay={0.05}>
+      <div className="flex flex-col justify-center">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="font-mono text-xs text-cream/30 tracking-[0.18em]">{card.n}</span>
+          <div className="h-px flex-1 bg-cream/10" aria-hidden />
         </div>
-        <h3 className="font-display text-xl md:text-2xl text-cream mb-2 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
+        <h3 className="font-display text-3xl md:text-[2.25rem] text-cream mb-3 leading-[1.05] [-webkit-text-stroke:0.4px_currentColor]">
           {card.title}
         </h3>
-        <p className="text-cream/70 text-sm leading-relaxed mb-4 flex-1">
+        <p className="text-cream/60 text-base leading-relaxed mb-4">
           {card.desc}
         </p>
         <ul className="flex flex-wrap gap-1.5">
           {card.tags.map((tag: string) => (
             <li
               key={tag}
-              className="h-eyebrow text-cream/60 border border-cream/10 rounded-full px-2.5 py-1"
+              className="h-eyebrow text-cream/50 border border-cream/10 rounded-full px-2.5 py-1"
             >
               {tag}
             </li>
           ))}
         </ul>
       </div>
-    </motion.article>
+    </Reveal>
+  );
+
+  const visualBlock = (
+    <Reveal delay={0.12}>
+      <div className="rounded-xl border border-cream/10 bg-ink-2 overflow-hidden">
+        <div className="h-52 sm:h-60 text-cream/70 p-4">
+          <Visual inView={resolvedInView} />
+        </div>
+      </div>
+    </Reveal>
+  );
+
+  return (
+    <div ref={ref} className="relative">
+      {/* Mobile: arrow on spine */}
+      <div className="absolute lg:hidden left-5 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        <SpineArrow color={color} inView={resolvedInView} reduced={reduced} showArrow={false} />
+      </div>
+
+      {/* Desktop: 3-col grid — left content | center arrow | right content */}
+      <div className="hidden lg:grid lg:grid-cols-[1fr_72px_1fr] lg:items-center lg:py-14">
+        <div className="pr-12">
+          {textLeft ? textBlock : visualBlock}
+        </div>
+        <div className="flex justify-center items-center">
+          <SpineArrow color={color} inView={resolvedInView} reduced={reduced} showArrow={false} />
+        </div>
+        <div className="pl-12">
+          {textLeft ? visualBlock : textBlock}
+        </div>
+      </div>
+
+      {/* Mobile: single column with left offset to clear spine */}
+      <div className="lg:hidden pl-12 py-8 space-y-4">
+        {textBlock}
+        {visualBlock}
+      </div>
+    </div>
   );
 };
 
-/* ── Section ─────────────────────────────────────────────────── */
+/* ── Process section ─────────────────────────────────────────── */
 export const Process = () => {
   const reduced = usePrefersReducedMotion();
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (reduced) return;
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+      const rect = timelineRef.current.getBoundingClientRect();
+      const scrolled = window.innerHeight * 0.4 - rect.top;
+      setProgress(Math.max(0, Math.min(1, scrolled / rect.height)));
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [reduced]);
 
   return (
-    <section id="process" className="relative bg-ink text-cream py-20 md:py-28">
+    <section id="process" className="relative bg-ink text-cream py-16 md:py-24">
       <SectionContainer>
         <motion.header
           className="mb-14 md:mb-20"
@@ -376,9 +482,45 @@ export const Process = () => {
           </h2>
         </motion.header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+        {/* Timeline */}
+        <div ref={timelineRef} className="relative lg:px-8">
+          {/* Spine line — left-5 on mobile, centered on desktop */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-5 lg:left-1/2 w-px -translate-x-1/2"
+            aria-hidden
+          >
+            <div className="absolute inset-0 bg-cream/10 rounded-full" />
+            <div
+              className="absolute top-0 left-0 right-0 bg-signal rounded-full"
+              style={{
+                height: `${progress * 100}%`,
+                transition: "height 0.15s linear",
+                boxShadow: progress > 0 ? "0 0 10px hsl(var(--signal) / 0.5)" : "none",
+              }}
+            >
+              {progress > 0.01 && progress < 0.99 && (
+                <svg
+                  viewBox="0 0 16 11"
+                  aria-hidden
+                  className="absolute bottom-0 left-1/2"
+                  style={{
+                    width: 16,
+                    height: 11,
+                    transform: "translateX(-50%) translateY(100%)",
+                    overflow: "visible",
+                    filter: "drop-shadow(0 0 5px hsl(var(--signal) / 0.7))",
+                    transition: "opacity 0.15s linear",
+                  }}
+                >
+                  <path d="M8 11 L0 0 L16 0 Z" fill="hsl(var(--signal))" />
+                </svg>
+              )}
+            </div>
+          </div>
+
+          {/* Steps */}
           {CARDS.map((card, i) => (
-            <ProcessCard key={card.n} card={card} index={i} reduced={reduced} />
+            <ProcessStep key={card.n} card={card} index={i} reduced={reduced} />
           ))}
         </div>
       </SectionContainer>
