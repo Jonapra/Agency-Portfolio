@@ -18,7 +18,7 @@ const SERVICES: Service[] = [
     name: "UI/UX Design",
     description:
       "Intuitive interfaces grounded in user research — from early wireframes to production-ready design systems that scale.",
-    image: "/assets/service-poster/uiux-alt.png",
+    image: "/assets/service-poster/UIUX-image.webp",
     imageAlt: "UI/UX design elements — typography, components, color palette",
     features: ["User Research", "Wireframes & Prototypes", "Design Systems", "Usability Testing"],
   },
@@ -27,7 +27,7 @@ const SERVICES: Service[] = [
     name: "Website Development",
     description:
       "Fast, accessible, visually precise websites — pixel-perfect implementations that load quick and convert.",
-    image: "/assets/service-poster/website-alt.png",
+    image: "/assets/service-poster/website-image.webp",
     imageAlt: "Website development — code editor and live browser preview",
     features: ["React / Next.js", "Pixel-Perfect UI", "Fast & Accessible", "SEO Optimized"],
   },
@@ -36,7 +36,7 @@ const SERVICES: Service[] = [
     name: "SaaS Development",
     description:
       "End-to-end SaaS builds: onboarding, auth, billing, dashboards — everything needed to ship and grow a product.",
-    image: "/assets/service-poster/saas-alt.png",
+    image: "/assets/service-poster/SaaS-image.webp",
     imageAlt: "SaaS dashboard with metrics, revenue chart, and user analytics",
     features: ["Auth & Onboarding", "Billing Integration", "Analytics Dashboard", "Scalable Architecture"],
   },
@@ -45,7 +45,7 @@ const SERVICES: Service[] = [
     name: "Full Stack Development",
     description:
       "Full-stack systems from API design to database architecture — robust backends that power ambitious frontends.",
-    image: "/assets/service-poster/fullstack-alt.png",
+    image: "/assets/service-poster/fullstack-image.webp",
     imageAlt: "Full stack architecture — client, API gateway, backend, database",
     features: ["REST / GraphQL APIs", "Database Design", "Cloud Infrastructure", "CI/CD Pipelines"],
   },
