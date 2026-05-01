@@ -3,7 +3,6 @@ import { SectionContainer } from "@/components/ui/section-container";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
-import { ProcessTimeline } from "@/components/process/ProcessTimeline";
 import { ChooseUs } from "@/components/sections/ChooseUs";
 import { Work } from "@/components/sections/Work";
 import { Pricing } from "@/components/sections/Pricing";
@@ -16,7 +15,6 @@ const Index = () => (
     <Hero />
     <Services />
     <Process />
-    <ProcessTimeline />
     <SectionContainer className="px-0 md:px-0">
       <Work />
       <ChooseUs />
