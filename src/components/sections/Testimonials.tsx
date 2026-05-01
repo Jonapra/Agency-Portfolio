@@ -28,7 +28,7 @@ export const Testimonials = () => (
                 <img
                   src={t.avatar}
                   alt={t.n}
-                  className="w-9 h-9 rounded-full object-cover object-top ring-1 ring-white/10"
+                  className="w-[34px] h-[34px] rounded-full object-cover object-top ring-1 ring-white/10"
                 />
                 <div><div className="font-medium">{t.n}</div><div className="text-mute">{t.r}</div></div>
               </figcaption>
