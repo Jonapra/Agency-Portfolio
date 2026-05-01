@@ -164,7 +164,7 @@ const ServiceRow = ({ service }: { service: Service }) => {
       </div>
 
       <div data-services-text className="md:col-span-2 lg:col-span-1">
-        <p className="text-sm md:text-[15px] leading-relaxed font-normal text-foreground/70 max-w-prose">
+        <p className="text-sm md:text-[15px] leading-relaxed font-medium text-foreground/70 max-w-prose">
           {service.description}
         </p>
       </div>

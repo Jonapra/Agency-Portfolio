@@ -92,6 +92,15 @@
     overflow-x: hidden;
   }
   ::selection { background: hsl(var(--signal)); color: hsl(var(--ink)); }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--mute) / 0.4);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--mute) / 0.7); }
+  * { scrollbar-width: thin; scrollbar-color: hsl(var(--mute) / 0.4) transparent; }
 }
 
 @layer components {
