@@ -27,7 +27,7 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative pt-16 md:pt-24 lg:pt-32 pb-4 md:pb-8 lg:pb-20 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
+      className="relative min-h-[90dvh] lg:min-h-screen pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-12 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
     >
       <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-6 md:mt-8 lg:mt-0 2xl:mt-2">
         {/* Top Pill */}
@@ -89,6 +89,29 @@ export const Hero = () => {
             />
           </a>
           <BookACallButton href="#contact" />
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="mt-16 md:mt-24 lg:mt-32 pt-4 flex flex-col items-center gap-4 opacity-50 hover:opacity-100 transition-opacity"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ delay: 0.8, duration: 1 }}
+        >
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-mono text-mute-2">Explore</span>
+          <div className="w-[1px] h-16 md:h-24 bg-current/20 relative overflow-hidden">
+            <motion.div
+              className="w-full h-1/3 bg-signal absolute top-0"
+              animate={{
+                y: ["-100%", "300%"],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          </div>
         </motion.div>
 
       </SectionContainer>
