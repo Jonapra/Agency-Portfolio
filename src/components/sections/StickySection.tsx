@@ -9,14 +9,17 @@ const CARDS = [
   {
     title: "Discover & Define",
     desc: "We dive deep into your goals, audience, and brand to uncover insights and define a clear direction.",
+    image: "/assets/journey/Discover-define.webp",
   },
   {
     title: "Design & Build",
     desc: "With strategy in place, we craft stunning visuals and high-performing digital solutions tailored to your needs.",
+    image: "/assets/journey/Design-Build.webp",
   },
   {
     title: "Launch & Grow",
     desc: "We deploy, optimize, and support — ensuring your site performs and scales after it goes live.",
+    image: "/assets/journey/Launch-grow.webp",
   },
 ] as const;
 
@@ -185,7 +188,13 @@ export function StickySection() {
                     + + +
                   </span>
                 </div>
-                <div className="w-full rounded-xl bg-black/[0.04] mb-5 lg:mb-8 min-[2560px]:mb-12 flex-1 min-h-[140px] lg:min-h-[200px] min-[2560px]:min-h-[300px]" />
+                <div className="w-full rounded-xl bg-black/[0.04] mb-5 lg:mb-8 min-[2560px]:mb-12 flex-1 min-h-[140px] lg:min-h-[200px] min-[2560px]:min-h-[300px] overflow-hidden">
+                  <img 
+                    src={card.image} 
+                    alt={card.title} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <p className="font-sans text-xs lg:text-base min-[2560px]:text-2xl font-semibold text-black/80 leading-relaxed">
                   {card.desc}
                 </p>
@@ -224,7 +233,13 @@ export function StickySection() {
                   + + +
                 </span>
               </div>
-              <div className="w-full rounded-xl bg-black/[0.04] mb-5 h-36 sm:h-44" />
+              <div className="w-full rounded-xl bg-black/[0.04] mb-5 h-52 sm:h-64 overflow-hidden">
+                <img 
+                  src={card.image} 
+                  alt={card.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="font-sans text-sm font-semibold text-black/80 leading-relaxed">
                 {card.desc}
               </p>
