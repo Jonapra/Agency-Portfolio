@@ -26,14 +26,13 @@ export function StickySection() {
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
   const stackRef = useRef<HTMLDivElement>(null);
-  const mobileCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const reducedMotion = usePrefersReducedMotion();
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
-      const buildStickyAnim = (startY: () => number) => {
+      const buildStickyAnim = (startY: () => number, extraSplit: () => number = () => 40) => {
         const left = leftRef.current;
         const right = rightRef.current;
         const stack = stackRef.current;
@@ -42,7 +41,7 @@ export function StickySection() {
 
         const splitPx = () => {
           const card = stack.firstElementChild as HTMLElement | null;
-          return (card?.offsetWidth ?? 480) / 2 + 40;
+          return (card?.offsetWidth ?? 480) / 2 + extraSplit();
         };
         const cardH = () => {
           const card = stack.firstElementChild as HTMLElement | null;
@@ -94,32 +93,12 @@ export function StickySection() {
         buildStickyAnim(() => window.innerHeight * 0.25);
       });
 
-      // ── Mobile only (<md): staggered fade-up per card ──────────
+      // ── Mobile (<md): same sticky scroll ──
       mm.add("(max-width: 767px)", () => {
-        if (reducedMotion) {
-          mobileCardRefs.current.forEach((card) => {
-            if (card) gsap.set(card, { opacity: 1, y: 0 });
-          });
-          return;
-        }
-        mobileCardRefs.current.forEach((card) => {
-          if (!card) return;
-          gsap.fromTo(
-            card,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 88%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
+        buildStickyAnim(
+          () => window.innerHeight * 0.6 + (stackRef.current?.offsetHeight ?? 0) * 0.5,
+          () => window.innerWidth * 0.6,
+        );
       });
 
       return () => mm.revert();
@@ -131,15 +110,15 @@ export function StickySection() {
     <div ref={sectionRef} className="w-full">
 
       {/* ── Desktop + Tablet (md+): sticky scroll ── */}
-      <div ref={desktopRef} className="hidden md:block relative w-full h-[260vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
+      <div ref={desktopRef} className="block relative w-full h-[220vh] md:h-[260vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
         <div className="sticky top-0 w-full h-screen overflow-hidden bg-white">
 
-          <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-black/45 flex items-center gap-2 select-none whitespace-nowrap">
+          <p className="absolute top-10 md:top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-black/45 flex items-center gap-2 select-none whitespace-nowrap">
             <span aria-hidden>+</span>
             From concept to launch
           </p>
 
-          <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-10">
+          <div className="absolute inset-0 flex items-center justify-center translate-y-[8vh] md:translate-y-0 select-none pointer-events-none z-10">
             <div ref={leftRef} className="text-right shrink-0" style={{ paddingRight: "0.35em" }}>
               <p
                 className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
@@ -195,43 +174,6 @@ export function StickySection() {
         </div>
       </div>
 
-      {/* ── Mobile only (<md): stacked layout ── */}
-      <div className="md:hidden bg-white px-5 py-16">
-        <p className="text-center font-sans text-xs tracking-[0.2em] text-black/45 flex items-center justify-center gap-2 select-none mb-8">
-          <span aria-hidden>+</span>
-          From concept to launch
-        </p>
-
-        <h2
-          className="font-serif font-semibold text-center text-black leading-[1.1] mb-12 sm:mb-16"
-          style={{ fontSize: "clamp(1.75rem, 6vw, 2.75rem)" }}
-        >
-          Your ideas transform
-          <br />
-          into <em>Brand stories</em>
-        </h2>
-
-        <div className="flex flex-col gap-5 sm:gap-6 max-w-xl mx-auto">
-          {CARDS.map((card, i) => (
-            <div
-              key={card.title}
-              ref={(el) => { mobileCardRefs.current[i] = el; }}
-              className="bg-white border border-black/[0.08] rounded-2xl shadow-md flex flex-col p-6 sm:p-7 opacity-0"
-            >
-              <div className="flex items-center justify-between mb-5">
-                <span className="font-sans text-base font-bold text-black">{card.title}</span>
-                <span className="font-sans text-black/25 tracking-widest text-sm select-none" aria-hidden>
-                  + + +
-                </span>
-              </div>
-              <div className="w-full rounded-xl bg-black/[0.04] mb-5 h-36 sm:h-44" />
-              <p className="font-sans text-sm font-semibold text-black/80 leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
 
     </div>
   );
