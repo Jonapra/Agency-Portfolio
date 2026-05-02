@@ -32,8 +32,10 @@ function ScrollManager() {
     };
 
     const scrollToEl = (el: HTMLElement) => {
-      if (lenis) lenis.scrollTo(el, { offset: 0 });
-      else el.scrollIntoView({ behavior: "smooth" });
+      if (lenis) lenis.resize();
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      if (lenis) lenis.scrollTo(top, { immediate: true });
+      else window.scrollTo(0, top);
     };
 
     if (pathname.startsWith("/projects/")) {
@@ -45,11 +47,25 @@ function ScrollManager() {
       const hash = window.location.hash;
       if (hash) {
         const id = hash.slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          const timerId = window.setTimeout(() => scrollToEl(el), 100);
-          return () => window.clearTimeout(timerId);
-        }
+        let cancelled = false;
+        let timerId: number | undefined;
+        let attempts = 0;
+        const tryScroll = () => {
+          if (cancelled) return;
+          const el = document.getElementById(id);
+          if (el) {
+            scrollToEl(el);
+            return;
+          }
+          if (attempts++ < 60) {
+            timerId = window.setTimeout(tryScroll, 50);
+          }
+        };
+        tryScroll();
+        return () => {
+          cancelled = true;
+          if (timerId !== undefined) window.clearTimeout(timerId);
+        };
       }
 
       const saved = scrollPositions.current[pathname];
