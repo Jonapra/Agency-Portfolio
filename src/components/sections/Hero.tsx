@@ -91,28 +91,6 @@ export const Hero = () => {
           <BookACallButton href="#contact" />
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="mt-16 md:mt-24 lg:mt-32 pt-4 flex flex-col items-center gap-4 opacity-50 hover:opacity-100 transition-opacity"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ delay: 0.8, duration: 1 }}
-        >
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-mono text-mute-2">Explore</span>
-          <div className="w-[1px] h-16 md:h-24 bg-current/20 relative overflow-hidden">
-            <motion.div
-              className="w-full h-1/3 bg-signal absolute top-0"
-              animate={{
-                y: ["-100%", "300%"],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          </div>
-        </motion.div>
 
       </SectionContainer>
     </section>
