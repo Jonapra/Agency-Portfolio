@@ -15,49 +15,9 @@ export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   const prefersReduced = useReducedMotion();
   
-  const statsRef = useRef<HTMLDivElement>(null);
-  const num4Ref = useRef<HTMLSpanElement>(null);
-
   useGSAP(() => {
     if (prefersReduced) return;
-    
-    // Number count-up animation (only for the last stat)
-    const animateNum = (ref: React.RefObject<HTMLSpanElement>, endValue: number, isFloat: boolean = false) => {
-      const obj = { val: 0 };
-      gsap.to(obj, {
-        val: endValue,
-        duration: 2.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: "top 95%",
-        },
-        onUpdate: () => {
-          if (ref.current) {
-            ref.current.innerText = isFloat ? obj.val.toFixed(1) : Math.floor(obj.val).toString();
-          }
-        }
-      });
-    };
-
-    animateNum(num4Ref, 100);
-
-    // Subtle parallax bridge effect on the whole stats pill
-    gsap.fromTo(statsRef.current, 
-      { y: 0 },
-      {
-        y: -30, // Moves slightly up as user scrolls down, enhancing the bridge feel
-        ease: "none",
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        }
-      }
-    );
-  }, { scope: statsRef });
-
+  }, {});
   const fadeIn = {
     initial: { opacity: prefersReduced ? 1 : 0, y: prefersReduced ? 0 : 10 },
     animate: { opacity: 1, y: 0 },
@@ -67,9 +27,9 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-20 2xl:pt-24 pb-20 md:pb-32 lg:pb-36 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
+      className="relative pt-16 md:pt-24 lg:pt-32 pb-4 md:pb-8 lg:pb-20 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
     >
-      <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-12 md:mt-16 lg:mt-4 2xl:mt-6">
+      <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-6 md:mt-8 lg:mt-0 2xl:mt-2">
         {/* Top Pill */}
         <motion.div 
           className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-current/10 bg-current/5 mb-6 md:mb-8 backdrop-blur-sm"
@@ -114,7 +74,7 @@ export const Hero = () => {
 
         {/* CTAs */}
         <motion.div 
-          className="flex flex-wrap justify-center items-center gap-4 mb-20 md:mb-28 lg:mb-32"
+          className="flex flex-wrap justify-center items-center gap-4 mb-0"
           {...fadeIn}
           transition={{ ...fadeIn.transition, delay: 0.3 }}
         >
@@ -131,47 +91,6 @@ export const Hero = () => {
           <BookACallButton href="#contact" />
         </motion.div>
 
-        {/* Bottom row: premium glassmorphic social proof */}
-        <motion.div 
-          ref={statsRef}
-          className="w-full max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-4 px-4 md:py-5 md:px-8 lg:py-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_16px_48px_-12px_rgba(0,0,0,0.5)] mt-auto md:mt-0 z-20 translate-y-1/2 md:translate-y-[60%]"
-          {...fadeIn}
-          transition={{ ...fadeIn.transition, delay: 0.4 }}
-        >
-          {/* Subtle animated gradient background inside the pill */}
-          <div className="absolute inset-0 bg-gradient-to-r from-signal/0 via-signal/5 to-signal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
-
-          {/* Wrapper for mobile grid, flex on desktop */}
-          <div className="w-full grid grid-cols-2 md:flex md:flex-row md:justify-around gap-x-2 gap-y-4 md:gap-y-0 md:gap-x-0 md:divide-x divide-white/10">
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                15<span className="text-signal font-sans font-light ml-1">+</span>
-              </div>
-              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Websites shipped</div>
-            </div>
-            
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                10<span className="text-signal font-sans font-light ml-1">+</span>
-              </div>
-              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Industries Served</div>
-            </div>
-            
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                4<span className="text-signal font-sans font-light">.9</span>
-              </div>
-              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Avg project rating</div>
-            </div>
-            
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                <span ref={num4Ref}>0</span><span className="text-signal font-sans font-light ml-1">%</span>
-              </div>
-              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
-            </div>
-          </div>
-        </motion.div>
       </SectionContainer>
     </section>
   );
