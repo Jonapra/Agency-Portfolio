@@ -391,8 +391,8 @@ const ProcessStep = ({
         </div>
       </div>
 
-      {/* Mobile: stacked, padded to clear the left rail */}
-      <div className="lg:hidden pl-12 py-8 space-y-4">
+      {/* Mobile & Tablet: stacked on mobile, side-by-side on tablet */}
+      <div className="lg:hidden pl-12 py-8 space-y-4 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 md:items-center md:py-12">
         {textBlock}
         {visualBlock}
       </div>
