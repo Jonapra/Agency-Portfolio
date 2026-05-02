@@ -83,7 +83,7 @@ export const Hero = () => {
 
         {/* Bottom row: premium glassmorphic social proof */}
         <motion.div 
-          className="w-full max-w-5xl mx-auto rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] mt-auto md:mt-0"
+          className="w-full max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-4 px-4 md:py-5 md:px-8 lg:py-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] mt-auto md:mt-0"
           {...fadeIn}
           transition={{ ...fadeIn.transition, delay: 0.4 }}
         >
@@ -91,33 +91,33 @@ export const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-signal/0 via-signal/5 to-signal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
 
           {/* Wrapper for mobile grid, flex on desktop */}
-          <div className="w-full grid grid-cols-2 md:flex md:flex-row md:justify-around gap-y-10 md:gap-y-0 md:divide-x divide-white/10">
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
-              <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
+          <div className="w-full grid grid-cols-2 md:flex md:flex-row md:justify-around gap-x-2 gap-y-4 md:gap-y-0 md:gap-x-0 md:divide-x divide-white/10">
+            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
+              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
                 15<span className="text-signal font-sans font-light ml-1">+</span>
               </div>
-              <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Websites shipped</div>
+              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Websites shipped</div>
             </div>
             
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
-              <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
+            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
+              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
                 10<span className="text-signal font-sans font-light ml-1">+</span>
               </div>
-              <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Industries Served</div>
+              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Industries Served</div>
             </div>
             
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
-              <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
+            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
+              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
                 4<span className="text-signal font-sans font-light">.9</span>
               </div>
-              <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Avg project rating</div>
+              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Avg project rating</div>
             </div>
             
-            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
-              <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
+            <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
+              <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
                 100<span className="text-signal font-sans font-light ml-1">%</span>
               </div>
-              <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
+              <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
             </div>
           </div>
         </motion.div>
