@@ -135,9 +135,9 @@ export function StickySection() {
 
       {/* ── Desktop + Tablet (md+): sticky scroll ── */}
       <div ref={desktopRef} className="hidden md:block relative w-full h-[260vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
-        <div className="sticky top-0 w-full h-screen overflow-hidden bg-white">
+        <div className="sticky top-0 w-full h-screen overflow-hidden bg-ink">
 
-          <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-black/45 flex items-center gap-2 select-none whitespace-nowrap">
+          <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-cream/45 flex items-center gap-2 select-none whitespace-nowrap">
             <span aria-hidden>+</span>
             From concept to launch
           </p>
@@ -145,13 +145,13 @@ export function StickySection() {
           <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-10">
             <div ref={leftRef} className="text-right shrink-0" style={{ paddingRight: "0.35em" }}>
               <p
-                className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
+                className="font-serif font-semibold leading-[1.05] text-cream whitespace-nowrap"
                 style={{ fontSize: "clamp(1.4rem, 3.8vw, 10rem)" }}
               >
                 Your ideas
               </p>
               <p
-                className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
+                className="font-serif font-semibold leading-[1.05] text-cream whitespace-nowrap"
                 style={{ fontSize: "clamp(1.4rem, 3.8vw, 10rem)" }}
               >
                 into <em>Brand</em>
@@ -159,13 +159,13 @@ export function StickySection() {
             </div>
             <div ref={rightRef} className="text-left shrink-0" style={{ paddingLeft: "0.35em" }}>
               <p
-                className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
+                className="font-serif font-semibold leading-[1.05] text-cream whitespace-nowrap"
                 style={{ fontSize: "clamp(1.4rem, 3.8vw, 10rem)" }}
               >
                 transform
               </p>
               <p
-                className="font-serif font-semibold leading-[1.05] text-black whitespace-nowrap"
+                className="font-serif font-semibold leading-[1.05] text-cream whitespace-nowrap"
                 style={{ fontSize: "clamp(1.4rem, 3.8vw, 10rem)" }}
               >
                 stories
@@ -180,22 +180,22 @@ export function StickySection() {
             {CARDS.map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-black/[0.08] rounded-2xl shadow-md flex flex-col p-6 lg:p-8 min-[2560px]:p-12 w-[300px] md:w-[320px] lg:w-[480px] min-[2560px]:w-[720px] h-[360px] md:h-[380px] lg:h-[487px] min-[2560px]:h-[730px]"
+                className="bg-ink-2 border border-cream/10 rounded-2xl shadow-2xl shadow-black/40 flex flex-col p-6 lg:p-8 min-[2560px]:p-12 w-[300px] md:w-[320px] lg:w-[480px] min-[2560px]:w-[720px] h-[360px] md:h-[380px] lg:h-[487px] min-[2560px]:h-[730px]"
               >
                 <div className="flex items-center justify-between mb-5 lg:mb-8 min-[2560px]:mb-12">
-                  <span className="font-sans text-base lg:text-xl min-[2560px]:text-3xl font-bold text-black">{card.title}</span>
-                  <span className="font-sans text-black/25 tracking-widest text-sm lg:text-base min-[2560px]:text-xl select-none" aria-hidden>
+                  <span className="font-sans text-base lg:text-xl min-[2560px]:text-3xl font-bold text-cream">{card.title}</span>
+                  <span className="font-sans text-cream/25 tracking-widest text-sm lg:text-base min-[2560px]:text-xl select-none" aria-hidden>
                     + + +
                   </span>
                 </div>
-                <div className="w-full rounded-xl bg-black/[0.04] mb-5 lg:mb-8 min-[2560px]:mb-12 flex-1 min-h-[140px] lg:min-h-[200px] min-[2560px]:min-h-[300px] overflow-hidden">
+                <div className="w-full rounded-xl bg-white/5 mb-5 lg:mb-8 min-[2560px]:mb-12 flex-1 min-h-[140px] lg:min-h-[200px] min-[2560px]:min-h-[300px] overflow-hidden border border-white/5">
                   <img 
                     src={card.image} 
                     alt={card.title} 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="font-sans text-xs lg:text-base min-[2560px]:text-2xl font-semibold text-black/80 leading-relaxed">
+                <p className="font-sans text-xs lg:text-base min-[2560px]:text-2xl font-semibold text-cream/80 leading-relaxed">
                   {card.desc}
                 </p>
               </div>
@@ -205,14 +205,14 @@ export function StickySection() {
       </div>
 
       {/* ── Mobile only (<md): stacked layout ── */}
-      <div className="md:hidden bg-white px-5 py-16">
-        <p className="text-center font-sans text-xs tracking-[0.2em] text-black/45 flex items-center justify-center gap-2 select-none mb-8">
+      <div className="md:hidden bg-ink px-5 py-16">
+        <p className="text-center font-sans text-xs tracking-[0.2em] text-cream/45 flex items-center justify-center gap-2 select-none mb-8">
           <span aria-hidden>+</span>
           From concept to launch
         </p>
 
         <h2
-          className="font-serif font-semibold text-center text-black leading-[1.1] mb-12 sm:mb-16"
+          className="font-serif font-semibold text-center text-cream leading-[1.1] mb-12 sm:mb-16"
           style={{ fontSize: "clamp(1.75rem, 6vw, 2.75rem)" }}
         >
           Your ideas transform
@@ -225,22 +225,22 @@ export function StickySection() {
             <div
               key={card.title}
               ref={(el) => { mobileCardRefs.current[i] = el; }}
-              className="bg-white border border-black/[0.08] rounded-2xl shadow-md flex flex-col p-6 sm:p-7 opacity-0"
+              className="bg-ink-2 border border-cream/10 rounded-2xl shadow-xl shadow-black/40 flex flex-col p-6 sm:p-7 opacity-0"
             >
               <div className="flex items-center justify-between mb-5">
-                <span className="font-sans text-base font-bold text-black">{card.title}</span>
-                <span className="font-sans text-black/25 tracking-widest text-sm select-none" aria-hidden>
+                <span className="font-sans text-base font-bold text-cream">{card.title}</span>
+                <span className="font-sans text-cream/25 tracking-widest text-sm select-none" aria-hidden>
                   + + +
                 </span>
               </div>
-              <div className="w-full rounded-xl bg-black/[0.04] mb-5 h-52 sm:h-64 overflow-hidden">
+              <div className="w-full rounded-xl bg-white/5 mb-5 h-52 sm:h-64 overflow-hidden border border-white/5">
                 <img 
                   src={card.image} 
                   alt={card.title} 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="font-sans text-sm font-semibold text-black/80 leading-relaxed">
+              <p className="font-sans text-sm font-semibold text-cream/80 leading-relaxed">
                 {card.desc}
               </p>
             </div>
