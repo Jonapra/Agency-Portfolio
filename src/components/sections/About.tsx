@@ -71,11 +71,11 @@ export const About = () => {
       {/* Tall scroll container drives the pin + scrub */}
       <div
         ref={scrollRef}
-        className="h-[200vh] md:h-[220vh] lg:h-[240vh]"
+        className="lg:h-[240vh]"
       >
         {/* Sticky panel — uses svh so mobile browser chrome doesn't cause jumps */}
         <div
-          className="sticky top-0 h-[100svh] min-h-[560px] flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8 md:px-16"
+          className="lg:sticky lg:top-0 lg:h-[100svh] min-h-[560px] flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8 md:px-16 py-16 lg:py-0"
           style={{ backgroundColor: "hsl(var(--background))" }}
         >
           <p className="font-sans text-[10px] md:text-xs tracking-[0.3em] text-white/30 uppercase mb-6 sm:mb-8 md:mb-12 select-none">
