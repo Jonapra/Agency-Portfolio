@@ -134,7 +134,7 @@ export function StickySection() {
     <div ref={sectionRef} className="w-full">
 
       {/* ── Desktop + Tablet (md+): sticky scroll ── */}
-      <div ref={desktopRef} className="hidden md:block relative w-full h-[260vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
+      <div ref={desktopRef} className="hidden md:block relative w-full h-[200vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
         <div className="sticky top-0 w-full h-screen overflow-hidden bg-ink">
 
           <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-cream/45 flex items-center gap-2 select-none whitespace-nowrap">
@@ -189,9 +189,9 @@ export function StickySection() {
                   </span>
                 </div>
                 <div className="w-full rounded-xl bg-white/5 mb-5 lg:mb-8 min-[2560px]:mb-12 flex-1 min-h-[140px] lg:min-h-[200px] min-[2560px]:min-h-[300px] overflow-hidden border border-white/5">
-                  <img 
-                    src={card.image} 
-                    alt={card.title} 
+                  <img
+                    src={card.image}
+                    alt={card.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -234,9 +234,9 @@ export function StickySection() {
                 </span>
               </div>
               <div className="w-full rounded-xl bg-white/5 mb-5 h-52 sm:h-64 overflow-hidden border border-white/5">
-                <img 
-                  src={card.image} 
-                  alt={card.title} 
+                <img
+                  src={card.image}
+                  alt={card.title}
                   className="w-full h-full object-cover"
                 />
               </div>
