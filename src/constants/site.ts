@@ -73,12 +73,11 @@ export const JOURNAL = [
 ];
 
 export const FAQ_ITEMS: [string, string][] = [
-  ["What does a typical engagement look like?", "Most clients start on Partner — an 8 to 12 week arc covering strategy, identity and launch site. We scope live on our first call and email the number within 48h."],
+  ["How long does a typical project take?", "While timelines depend on the scope of the work, we typically spend the first week on planning and strategy, and complete the build by the second week. Most projects are fully delivered within a maximum of two weeks."],
+  ["What is your typical tech stack?", "We use a modern stack to ensure seamless delivery. We design in Figma and Framer, and build using Next.js paired with robust backend solutions like MongoDB."],
+  ["Do you take on design-only projects?", "Yes. While we often build projects from start to finish, we frequently partner with teams to handle just the design phase, delivering polished UI/UX and branding."],
   ["Can you work inside our existing team?", "Yes. Our Embedded engagement places two to four of us into your Slack, Figma and Linear on a quarterly basis. It is how we work with most public-company design teams."],
-  ["Do you take equity?", "Rarely, and only as a top-up to fair cash. We've done it three times in seven years; all three are still in our portfolio."],
-  ["Where are you based?", "Lisbon and remote, with a small room in Brooklyn. We travel for kickoffs and launches."],
-  ["What tools do you use?", "Figma for design, Framer or Next.js for build, Linear for ops, a lot of pen and paper for thinking."],
-  ["Do you do logos only?", "No. We took logo-only work off the table in 2023 — it was rarely the actual problem."],
+  ["Is the price fixed for every project?", "Pricing depends entirely on the project's complexity and scope. We pride ourselves on offering fair, reasonable rates without ever overcharging, and our clients are consistently happy with the value we provide."],
 ];
 
 export const LOGOS: [string, string][] = [
