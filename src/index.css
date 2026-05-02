@@ -180,6 +180,10 @@
 .marquee-track { animation: marquee 38s linear infinite; }
 .marquee-track.reverse { animation-direction: reverse; animation-duration: 46s; }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
 /* Slow spin */
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 .spin-slow { animation: spin-slow 22s linear infinite; transform-origin: center; }

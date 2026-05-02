@@ -27,9 +27,9 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[90dvh] lg:min-h-screen pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-12 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
+      className="relative min-h-fit lg:min-h-screen pt-20 md:pt-28 lg:pt-32 pb-0 md:pb-0 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
     >
-      <SectionContainer className="px-[2px] md:px-10 max-w-none md:max-w-[1400px] relative w-full flex-1 flex flex-col items-center justify-center text-center mt-6 md:mt-8 lg:mt-0 2xl:mt-2">
+      <SectionContainer className="px-[2px] md:px-10 max-w-none md:max-w-[1400px] relative w-full flex flex-col items-center justify-center text-center mt-2 md:mt-8 lg:mt-0 2xl:mt-2 lg:flex-1 pb-12 md:pb-16 lg:pb-0">
         {/* Top Pill */}
         <motion.div 
           className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-current/10 bg-current/5 mb-6 md:mb-8 backdrop-blur-sm"
@@ -93,6 +93,28 @@ export const Hero = () => {
 
 
       </SectionContainer>
+
+      {/* AGITON brand band — fills mobile gap, anchors Hero, signals scroll */}
+      <div
+        aria-hidden="true"
+        className="relative mx-auto w-full max-w-[1400px] lg:px-10 overflow-hidden h-20 md:h-24 lg:h-28 mt-10 md:mt-12 xl:mt-16 flex items-center select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+      >
+        <div className="flex w-max marquee-track" style={{ animationDuration: "32s" }}>
+          {[0, 1].map((dup) => (
+            <div key={dup} className="flex items-center shrink-0">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="flex items-center font-display italic-display text-mute-2/40 text-[56px] md:text-[80px] lg:text-[104px] leading-none tracking-[-0.02em] px-6 md:px-10"
+                >
+                  Agiton
+                  <span className="mx-6 md:mx-10 text-signal/40 text-[28px] md:text-[36px] lg:text-[44px]">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
