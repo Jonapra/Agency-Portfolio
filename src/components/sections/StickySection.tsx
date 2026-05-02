@@ -39,8 +39,14 @@ export function StickySection() {
         const card = stack.firstElementChild as HTMLElement | null;
         return (card?.offsetWidth ?? 480) / 2 + 40;
       };
+      const cardH = () => {
+        const card = stack.firstElementChild as HTMLElement | null;
+        return card?.offsetHeight ?? 487;
+      };
       const startY = () => window.innerHeight / 2 + stack.offsetHeight / 2;
-      const endY = () => -(window.innerHeight / 2 + stack.offsetHeight / 2);
+      // End when LAST card centered in viewport (stack bottom-edge offset from stack center).
+      // Prevents empty gap after anim that caused ugly scroll on mobile/tablet.
+      const endY = () => -(stack.offsetHeight - cardH()) / 2;
 
       const applyInitial = () => {
         gsap.set(stack, { xPercent: -50, yPercent: -50, y: startY(), opacity: 1 });
@@ -59,7 +65,7 @@ export function StickySection() {
         scrollTrigger: {
           trigger,
           start: "top top",
-          end: "bottom top",
+          end: "bottom bottom",
           scrub: 1,
           invalidateOnRefresh: true,
           onRefreshInit: applyInitial,

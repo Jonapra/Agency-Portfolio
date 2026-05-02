@@ -31,3 +31,7 @@ claude-usage/
 
 # Extracted reusable components
 src/components/LineAnime/
+
+# MCP and Playwright directories
+mcp-right/
+.playwright-mcp/
