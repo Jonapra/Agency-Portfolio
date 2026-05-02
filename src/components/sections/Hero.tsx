@@ -94,28 +94,28 @@ export const Hero = () => {
           <div className="w-full grid grid-cols-2 md:flex md:flex-row md:justify-around gap-y-10 md:gap-y-0 md:divide-x divide-white/10">
             <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
               <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                15<span className="text-signal font-sans text-3xl md:text-4xl font-light mt-1 md:mt-2 ml-1">+</span>
+                15<span className="text-signal font-sans font-light ml-1">+</span>
               </div>
               <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Websites shipped</div>
             </div>
             
             <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
               <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                10<span className="text-signal font-sans text-3xl md:text-4xl font-light mt-1 md:mt-2 ml-1">+</span>
+                10<span className="text-signal font-sans font-light ml-1">+</span>
               </div>
               <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Industries Served</div>
             </div>
             
             <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
               <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                4<span className="text-signal font-sans text-3xl md:text-4xl font-light mt-1 md:mt-2">.9</span>
+                4<span className="text-signal font-sans font-light">.9</span>
               </div>
               <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Avg project rating</div>
             </div>
             
             <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out">
               <div className="num font-display text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                100<span className="text-signal font-sans text-3xl md:text-4xl font-light mt-1 md:mt-2 ml-1">%</span>
+                100<span className="text-signal font-sans font-light ml-1">%</span>
               </div>
               <div className="h-eyebrow text-mute mt-4 md:mt-5 text-[10px] md:text-xs group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
             </div>
