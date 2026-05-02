@@ -99,18 +99,23 @@ export const Hero = () => {
         aria-hidden="true"
         className="relative mx-auto w-full max-w-[1400px] lg:px-10 overflow-hidden h-20 md:h-24 lg:h-28 mt-10 md:mt-12 xl:mt-16 flex items-center select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
       >
-        <div className="flex w-max marquee-track" style={{ animationDuration: "32s" }}>
+        <div className="flex w-max marquee-track [animation-duration:14s] md:[animation-duration:30s] lg:[animation-duration:40s]">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex items-center shrink-0">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <span
-                  key={i}
-                  className="flex items-center font-display italic-display text-mute-2/40 text-[56px] md:text-[80px] lg:text-[104px] leading-none tracking-[-0.02em] px-6 md:px-10"
-                >
-                  Agiton
-                  <span className="mx-6 md:mx-10 text-signal/40 text-[28px] md:text-[36px] lg:text-[44px]">✦</span>
-                </span>
-              ))}
+              {["UI/UX", "Design", "SaaS", "Web Development", "Full-Stack", "SEO"].map((word, i) => {
+                const isItalic = i % 2 === 1;
+                return (
+                  <span
+                    key={i}
+                    className="flex items-center font-display text-signal/80 text-[44px] md:text-[72px] lg:text-[104px] leading-none tracking-[-0.02em] px-2 md:px-5 lg:px-8"
+                  >
+                    <span className={isItalic ? "italic-display font-normal" : "font-normal"}>
+                      {word}
+                    </span>
+                    <span className="mx-2 md:mx-5 lg:mx-8 text-signal/40 text-[18px] md:text-[28px] lg:text-[40px]">✦</span>
+                  </span>
+                );
+              })}
             </div>
           ))}
         </div>
