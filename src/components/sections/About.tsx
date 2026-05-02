@@ -12,7 +12,6 @@ export const About = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const num4Ref = useRef<HTMLSpanElement>(null);
 
   useGSAP(() => {
     if (prefersReduced) return;
@@ -37,25 +36,6 @@ export const About = () => {
       );
     }
 
-    // Reviews fade in
-    const reviews = containerRef.current?.querySelectorAll(".review-pill");
-    if (reviews) {
-      gsap.fromTo(
-        reviews,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: "top 90%",
-          },
-        }
-      );
-    }
 
     // Stats card subtle fade in
     gsap.fromTo(
@@ -73,26 +53,7 @@ export const About = () => {
       }
     );
 
-    // Number count-up animation
-    const animateNum = (ref: React.RefObject<HTMLSpanElement>, endValue: number, isFloat: boolean = false) => {
-      const obj = { val: 0 };
-      gsap.to(obj, {
-        val: endValue,
-        duration: 2.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".stats-card",
-          start: "top 95%",
-        },
-        onUpdate: () => {
-          if (ref.current) {
-            ref.current.innerText = isFloat ? obj.val.toFixed(1) : Math.floor(obj.val).toString();
-          }
-        }
-      });
-    };
 
-    animateNum(num4Ref, 100);
 
   }, { scope: containerRef });
 
@@ -122,70 +83,38 @@ export const About = () => {
           </div>
 
           <div ref={statsRef} className="w-full">
-            {/* Review Pills */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-12 md:mb-20 lg:mb-24 relative">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-12 bg-white/10 hidden sm:block"></div>
-              
-              {/* Clutch Review */}
-              <div className="review-pill flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 pr-6 backdrop-blur-sm shadow-xl">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold text-black text-xl">
-                  C
-                </div>
-                <div className="text-left">
-                  <div className="flex text-white/90 text-[10px] mb-1">
-                    ★ ★ ★ ★ ★
-                  </div>
-                  <div className="text-xs font-medium text-white">4.9/5 <span className="text-white/50 font-normal">Based on 250 reviews</span></div>
-                </div>
-              </div>
-
-              {/* Other Review */}
-              <div className="review-pill flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 pr-6 backdrop-blur-sm shadow-xl">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-black">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div className="text-left">
-                  <div className="flex text-white/90 text-[10px] mb-1">
-                    ★ ★ ★ ★ <span className="opacity-50">★</span>
-                  </div>
-                  <div className="text-xs font-medium text-white">4.0/5 <span className="text-white/50 font-normal">Based on 186 reviews</span></div>
-                </div>
-              </div>
-            </div>
-
             {/* Stats */}
-            <div className="stats-card w-full rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-8 px-4 md:py-10 md:px-8 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_16px_48px_-12px_rgba(0,0,0,0.5)]">
-              <div className="absolute inset-0 bg-gradient-to-r from-signal/0 via-signal/5 to-signal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+            <div className="stats-card w-full max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 lg:gap-6 mt-8 md:mt-12">
+              {/* Stat 1 */}
+              <div className="flex w-[260px] sm:w-auto items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 pr-6 backdrop-blur-sm shadow-xl">
+                <div className="w-12 h-12 shrink-0 bg-white rounded-lg flex items-center justify-center font-display font-bold text-black text-xl">
+                  15<span className="text-signal font-sans font-light ml-[1px]">+</span>
+                </div>
+                <div className="text-left flex flex-col justify-center">
+                  <div className="text-xs font-bold text-white tracking-widest uppercase">Websites</div>
+                  <div className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5">Shipped</div>
+                </div>
+              </div>
 
-              <div className="w-full grid grid-cols-2 md:flex md:flex-row md:justify-around gap-x-2 gap-y-10 md:gap-y-0 md:gap-x-0 md:divide-x divide-white/10">
-                <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-                  <div className="num font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                    15<span className="text-signal font-sans font-light ml-1">+</span>
-                  </div>
-                  <div className="h-eyebrow whitespace-normal text-mute mt-3 md:mt-4 text-[10px] sm:text-xs text-center group-hover/stat:text-white/80 transition-colors duration-300">Websites shipped</div>
+              {/* Stat 2 */}
+              <div className="flex w-[260px] sm:w-auto items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 pr-6 backdrop-blur-sm shadow-xl">
+                <div className="w-12 h-12 shrink-0 bg-white rounded-lg flex items-center justify-center font-display font-bold text-black text-xl">
+                  4.9
                 </div>
-                
-                <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-                  <div className="num font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                    10<span className="text-signal font-sans font-light ml-1">+</span>
-                  </div>
-                  <div className="h-eyebrow whitespace-normal text-mute mt-3 md:mt-4 text-[10px] sm:text-xs text-center group-hover/stat:text-white/80 transition-colors duration-300">Industries Served</div>
+                <div className="text-left flex flex-col justify-center">
+                  <div className="text-xs font-bold text-white tracking-widest uppercase">Avg Project</div>
+                  <div className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5">Rating</div>
                 </div>
-                
-                <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-                  <div className="num font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                    4<span className="text-signal font-sans font-light">.9</span>
-                  </div>
-                  <div className="h-eyebrow whitespace-normal text-mute mt-3 md:mt-4 text-[10px] sm:text-xs text-center group-hover/stat:text-white/80 transition-colors duration-300">Avg project rating</div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex w-[260px] sm:w-auto items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 pr-6 backdrop-blur-sm shadow-xl">
+                <div className="w-12 h-12 shrink-0 bg-white rounded-lg flex items-center justify-center font-display font-bold text-black text-lg">
+                  100<span className="text-signal font-sans font-light ml-[1px]">%</span>
                 </div>
-                
-                <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
-                  <div className="num font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                    <span ref={num4Ref}>0</span><span className="text-signal font-sans font-light ml-1">%</span>
-                  </div>
-                  <div className="h-eyebrow whitespace-normal text-mute mt-3 md:mt-4 text-[10px] sm:text-xs text-center group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
+                <div className="text-left flex flex-col justify-center">
+                  <div className="text-xs font-bold text-white tracking-widest uppercase">Client</div>
+                  <div className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5">Satisfaction</div>
                 </div>
               </div>
             </div>
