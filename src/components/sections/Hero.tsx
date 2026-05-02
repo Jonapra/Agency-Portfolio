@@ -1,12 +1,62 @@
+import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText, SplitLine } from "../SplitHeading";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { BookACallButton } from "@/components/ui/book-a-call-button";
 import { SectionContainer } from "@/components/ui/section-container";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const Hero = () => {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0);
   const prefersReduced = useReducedMotion();
+  
+  const statsRef = useRef<HTMLDivElement>(null);
+  const num4Ref = useRef<HTMLSpanElement>(null);
+
+  useGSAP(() => {
+    if (prefersReduced) return;
+    
+    // Number count-up animation (only for the last stat)
+    const animateNum = (ref: React.RefObject<HTMLSpanElement>, endValue: number, isFloat: boolean = false) => {
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: endValue,
+        duration: 2.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 95%",
+        },
+        onUpdate: () => {
+          if (ref.current) {
+            ref.current.innerText = isFloat ? obj.val.toFixed(1) : Math.floor(obj.val).toString();
+          }
+        }
+      });
+    };
+
+    animateNum(num4Ref, 100);
+
+    // Subtle parallax bridge effect on the whole stats pill
+    gsap.fromTo(statsRef.current, 
+      { y: 0 },
+      {
+        y: -30, // Moves slightly up as user scrolls down, enhancing the bridge feel
+        ease: "none",
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      }
+    );
+  }, { scope: statsRef });
 
   const fadeIn = {
     initial: { opacity: prefersReduced ? 1 : 0, y: prefersReduced ? 0 : 10 },
@@ -17,7 +67,7 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-20 2xl:pt-24 md:pb-16 lg:pb-20 2xl:pb-24 overflow-hidden hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background"
+      className="relative min-h-[100svh] md:min-h-0 pt-16 md:pt-20 lg:pt-20 2xl:pt-24 pb-20 md:pb-32 lg:pb-36 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
     >
       <SectionContainer className="relative w-full flex-1 flex flex-col items-center justify-center text-center mt-12 md:mt-16 lg:mt-4 2xl:mt-6">
         {/* Top Pill */}
@@ -64,7 +114,7 @@ export const Hero = () => {
 
         {/* CTAs */}
         <motion.div 
-          className="flex flex-wrap justify-center items-center gap-4 mb-16 md:mb-20 lg:mb-24"
+          className="flex flex-wrap justify-center items-center gap-4 mb-20 md:mb-28 lg:mb-32"
           {...fadeIn}
           transition={{ ...fadeIn.transition, delay: 0.3 }}
         >
@@ -83,7 +133,8 @@ export const Hero = () => {
 
         {/* Bottom row: premium glassmorphic social proof */}
         <motion.div 
-          className="w-full max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-4 px-4 md:py-5 md:px-8 lg:py-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] mt-auto md:mt-0"
+          ref={statsRef}
+          className="w-full max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl py-4 px-4 md:py-5 md:px-8 lg:py-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden group shadow-[0_16px_48px_-12px_rgba(0,0,0,0.5)] mt-auto md:mt-0 z-20 translate-y-1/2 md:translate-y-[60%]"
           {...fadeIn}
           transition={{ ...fadeIn.transition, delay: 0.4 }}
         >
@@ -115,7 +166,7 @@ export const Hero = () => {
             
             <div className="flex flex-col items-center justify-center w-full group/stat hover:scale-105 transition-transform duration-500 ease-out px-2">
               <div className="num font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 flex items-start drop-shadow-sm">
-                100<span className="text-signal font-sans font-light ml-1">%</span>
+                <span ref={num4Ref}>0</span><span className="text-signal font-sans font-light ml-1">%</span>
               </div>
               <div className="h-eyebrow whitespace-normal text-mute mt-1 md:mt-2 lg:mt-3 text-[8px] sm:text-[9px] md:text-[10px] text-center group-hover/stat:text-white/80 transition-colors duration-300">Client Satisfaction</div>
             </div>
