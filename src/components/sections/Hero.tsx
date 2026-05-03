@@ -99,7 +99,7 @@ export const Hero = () => {
         aria-hidden="true"
         className="relative mx-auto w-full max-w-[1400px] lg:px-10 overflow-hidden h-20 md:h-24 lg:h-28 mt-10 md:mt-12 xl:mt-16 flex items-center select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
       >
-        <div className="flex w-max marquee-track [animation-duration:14s] md:[animation-duration:30s] lg:[animation-duration:40s]">
+        <div className="flex w-max marquee-track [animation-duration:8s] md:[animation-duration:18s] lg:[animation-duration:25s]">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex items-center shrink-0">
               {["UI/UX", "Design", "SaaS", "Web Development", "Full-Stack", "SEO"].map((word, i) => {
