@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TextRise } from "../TextRise";
 
@@ -52,8 +51,8 @@ const SERVICES: Service[] = [
   },
 ];
 
-// image is 320px wide at 16:9 → 180px tall
-const IMG_H = 180;
+// expanded image: 440 wide × 330 tall (4:3) on desktop
+const IMG_W = 440;
 const ease = [0.25, 0, 0, 1] as const;
 
 const ServiceRow = ({
@@ -75,75 +74,86 @@ const ServiceRow = ({
       onMouseEnter={!isTouch ? onActivate : undefined}
       onClick={isTouch ? (isActive ? onDeactivate : onActivate) : undefined}
     >
-      {/* ── DESKTOP (lg+): all inline, one row ─────────────────────── */}
-      <div className="hidden lg:flex items-center gap-8">
+      {/* ── DESKTOP (lg+) ──────────────────────────────────────────── */}
+      <div className="hidden lg:flex items-start py-8">
         {/* Number */}
-        <span
-          className={cn(
-            "w-[52px] flex-shrink-0 font-mono text-xs font-medium tabular-nums transition-colors duration-300",
-            isActive ? "text-signal" : "text-foreground/40"
-          )}
-        >
-          ({service.num})
-        </span>
-
-        {/* Name + description */}
-        <div className="flex-1 min-h-[72px] flex flex-col justify-center py-4">
-          <h3
+        <div className="w-[140px] flex-shrink-0 pr-6">
+          <span
             className={cn(
-              "font-sans font-bold text-[40px] leading-none tracking-[-0.02em] transition-colors duration-300",
-              isActive ? "text-signal" : "text-foreground"
+              "font-sans font-bold text-[72px] leading-none tracking-[-0.04em] tabular-nums transition-colors duration-300",
+              isActive ? "text-foreground/45" : "text-foreground/25"
             )}
           >
-            {service.name}
-          </h3>
-          <AnimatePresence>
-            {isActive && (
-              <motion.p
-                key="desc"
-                initial={{ opacity: 0, y: -6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.3, ease }}
-                className="mt-2 text-sm leading-relaxed text-foreground/55 max-w-xs"
-              >
-                {service.description}
-              </motion.p>
-            )}
-          </AnimatePresence>
+            {service.num}
+            <span
+              className={cn(
+                "transition-colors duration-300",
+                isActive ? "text-signal" : "text-foreground/25"
+              )}
+            >
+              .
+            </span>
+          </span>
         </div>
 
-        {/* Image — height animates 0 → IMG_H */}
+        {/* Image — width animates 0 → IMG_W */}
         <motion.div
-          className="w-[320px] flex-shrink-0 rounded-sm overflow-hidden"
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: isActive ? IMG_H : 0, opacity: isActive ? 1 : 0 }}
-          transition={{ duration: 0.4, ease }}
+          className="flex-shrink-0 rounded-md overflow-hidden bg-foreground/5"
+          style={{ aspectRatio: "4 / 3" }}
+          initial={false}
+          animate={{
+            width: isActive ? IMG_W : 0,
+            opacity: isActive ? 1 : 0,
+            marginRight: isActive ? 56 : 0,
+          }}
+          transition={{ duration: 0.5, ease }}
         >
           <img
             src={service.image}
             alt={service.imageAlt}
             loading="lazy"
             decoding="async"
-            style={{ height: IMG_H }}
-            className="w-full object-cover"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
-        {/* Features — fade in/out */}
-        <motion.div
-          className="w-[200px] flex-shrink-0 flex flex-col gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isActive ? 1 : 0 }}
-          transition={{ duration: 0.35, ease }}
-        >
-          {service.features.map((f) => (
-            <div key={f} className="flex items-center gap-2.5">
-              <CheckCircle2 size={14} className="text-signal flex-shrink-0" aria-hidden />
-              <span className="text-sm font-medium text-foreground/80">{f}</span>
-            </div>
-          ))}
-        </motion.div>
+        {/* Content */}
+        <div className="flex-1 min-w-0 flex flex-col justify-center min-h-[120px]">
+          <h3
+            className={cn(
+              "font-sans font-bold text-[44px] leading-[1.05] tracking-[-0.02em] transition-colors duration-300",
+              isActive ? "text-foreground" : "text-foreground/85"
+            )}
+          >
+            {service.name}
+          </h3>
+          <AnimatePresence initial={false}>
+            {isActive && (
+              <motion.div
+                key="desk-body"
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.35, ease }}
+                className="flex flex-col gap-6 mt-4"
+              >
+                <p className="text-base leading-relaxed text-foreground/55 max-w-md">
+                  {service.description}
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  {service.features.map((f) => (
+                    <span
+                      key={f}
+                      className="rounded-full border border-foreground/20 px-4 py-1.5 text-sm font-medium text-foreground/80"
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* ── MOBILE / TABLET (< lg): accordion below ─────────────────── */}
@@ -152,16 +162,24 @@ const ServiceRow = ({
         <div className="flex items-center gap-4 py-5">
           <span
             className={cn(
-              "font-mono text-[11px] md:text-xs font-medium tabular-nums flex-shrink-0 transition-colors duration-300",
-              isActive ? "text-signal" : "text-foreground/40"
+              "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.04em] tabular-nums flex-shrink-0 transition-colors duration-300",
+              isActive ? "text-foreground/50" : "text-foreground/30"
             )}
           >
-            ({service.num})
+            {service.num}
+            <span
+              className={cn(
+                "transition-colors duration-300",
+                isActive ? "text-signal" : "text-foreground/30"
+              )}
+            >
+              .
+            </span>
           </span>
           <h3
             className={cn(
-              "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.02em] transition-colors duration-300",
-              isActive ? "text-signal" : "text-foreground"
+              "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.02em] transition-colors duration-300 flex-1",
+              isActive ? "text-foreground" : "text-foreground/85"
             )}
           >
             {service.name}
@@ -179,9 +197,9 @@ const ServiceRow = ({
               transition={{ duration: 0.4, ease }}
               className="overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-5 pb-6">
+              <div className="flex flex-col md:flex-row gap-6 pb-6">
                 {/* Image */}
-                <div className="w-full md:w-[300px] flex-shrink-0 aspect-[16/9] rounded-sm overflow-hidden">
+                <div className="w-full md:w-[340px] flex-shrink-0 aspect-[4/3] rounded-md overflow-hidden bg-foreground/5">
                   <img
                     src={service.image}
                     alt={service.imageAlt}
@@ -191,17 +209,19 @@ const ServiceRow = ({
                   />
                 </div>
 
-                {/* Description + features */}
+                {/* Description + tag pills */}
                 <div className="flex flex-col gap-4">
                   <p className="text-sm leading-relaxed text-foreground/55">
                     {service.description}
                   </p>
-                  <div className="flex flex-col gap-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {service.features.map((f) => (
-                      <div key={f} className="flex items-center gap-2.5">
-                        <CheckCircle2 size={13} className="text-signal flex-shrink-0" aria-hidden />
-                        <span className="text-sm font-medium text-foreground/80">{f}</span>
-                      </div>
+                      <span
+                        key={f}
+                        className="rounded-full border border-foreground/20 px-3.5 py-1.5 text-xs md:text-sm font-medium text-foreground/80"
+                      >
+                        {f}
+                      </span>
                     ))}
                   </div>
                 </div>
