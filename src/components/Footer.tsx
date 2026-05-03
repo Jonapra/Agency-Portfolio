@@ -4,9 +4,9 @@ import { SectionContainer } from "@/components/ui/section-container";
 import { NAV_LINKS, PROJECTS } from "@/constants/site";
 
 export const Footer = () => (
-  <footer className="relative pt-12 pb-8">
+  <footer className="relative pt-12">
     <SectionContainer>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-10 border-b border-foreground/10">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-10">
         <Reveal className="md:col-span-6">
           <div className="flex items-center gap-2 mb-6">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -44,12 +44,20 @@ export const Footer = () => (
         </div>
       </div>
 
-      <Reveal delay={0.1} y={40} className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div className="italic-display leading-[0.9]" style={{ fontSize: "clamp(48px, 10vw, 180px)" }}>
-          Agiton<span className="text-signal">.</span>
-        </div>
-      </Reveal>
-
     </SectionContainer>
+
+    {/* New Brand Bar Section */}
+    <div className="mt-4 bg-[#FF4925] text-black w-full overflow-hidden">
+      <SectionContainer className="py-2 md:py-4 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-4">
+        <div className="font-sans font-black leading-none text-[clamp(40px,10vw,180px)] uppercase select-none" style={{ letterSpacing: "-0.09em" }}>
+          Agiton
+        </div>
+        
+        <div className="flex flex-col items-center md:items-end text-center md:text-right font-sans font-bold text-lg md:text-[clamp(14px,1.8vw,28px)] leading-[1.1] uppercase" style={{ letterSpacing: "-0.03em" }}>
+          <span>Beyond Visuals</span>
+          <span>Built With Vision</span>
+        </div>
+      </SectionContainer>
+    </div>
   </footer>
 );
