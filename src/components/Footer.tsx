@@ -48,12 +48,12 @@ export const Footer = () => (
 
     {/* New Brand Bar Section */}
     <div className="mt-4 bg-[#FF4925] text-black w-full overflow-hidden">
-      <SectionContainer className="py-2 md:py-4 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-4">
-        <div className="font-sans font-black leading-none text-[clamp(40px,10vw,180px)] uppercase select-none" style={{ letterSpacing: "-0.09em" }}>
+      <SectionContainer className="py-2 md:py-4 flex flex-row items-center justify-between gap-4">
+        <div className="font-sans font-black leading-none text-[clamp(32px,12vw,180px)] uppercase select-none" style={{ letterSpacing: "-0.09em" }}>
           Agiton
         </div>
         
-        <div className="flex flex-col items-center md:items-end text-center md:text-right font-sans font-bold text-lg md:text-[clamp(14px,1.8vw,28px)] leading-[1.1] uppercase" style={{ letterSpacing: "-0.03em" }}>
+        <div className="flex flex-col items-end text-right font-sans font-bold text-[clamp(10px,2.2vw,28px)] leading-[1.1] uppercase" style={{ letterSpacing: "-0.03em" }}>
           <span>Beyond Visuals</span>
           <span>Built With Vision</span>
         </div>
