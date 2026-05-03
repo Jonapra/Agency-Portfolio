@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TextRise } from "../TextRise";
 
 type Service = {
   num: string;
@@ -231,7 +232,7 @@ export const Services = () => {
     >
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
         <h2 className="mb-6 md:mb-10 font-sans font-black uppercase leading-[0.85] tracking-[-0.04em] text-foreground text-5xl md:text-7xl lg:text-[110px]">
-          Services
+          <TextRise>Services</TextRise>
         </h2>
 
         <div className="border-t border-foreground/10">

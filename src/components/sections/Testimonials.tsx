@@ -6,7 +6,7 @@ export const Testimonials = () => (
   <section id="testimonials" className="relative py-10 md:py-16">
     <SectionContainer>
       <div className="grid md:grid-cols-12 gap-10 mb-10">
-        <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 06 · TESTIMONIALS</div></div>
+        <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">TESTIMONIALS</div></div>
         <div className="md:col-span-9">
           <Reveal>
             <h2 className="h-section font-sans font-semibold">

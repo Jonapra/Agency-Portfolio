@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
+import { TextRise } from "../TextRise";
 
 /* ── Data ──────────────────────────────────────────────────────── */
 const CARDS = [
@@ -441,8 +442,10 @@ export const Process = () => {
         >
           <p className="h-eyebrow text-signal tracking-[0.25em] mb-4">Our Process</p>
           <h2 className="font-display font-normal leading-[0.95] tracking-tightest text-[clamp(2.75rem,8vw,7rem)] [-webkit-text-stroke:0.4px_currentColor] mb-6">
-            Process from,{" "}
-            <span className="italic text-signal">Start‑to‑end.</span>
+            <TextRise>
+              Process from,{" "}
+              <span className="italic text-signal">Start‑to‑end.</span>
+            </TextRise>
           </h2>
           <p className="text-cream/60 max-w-2xl mx-auto text-base leading-relaxed">
             Four focused steps — from first conversation to live site — each one deliberate.

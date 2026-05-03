@@ -79,7 +79,7 @@ export const About = () => {
           style={{ backgroundColor: "hsl(var(--background))" }}
         >
           <p className="font-sans text-[10px] md:text-xs tracking-[0.3em] text-white/30 uppercase mb-6 sm:mb-8 md:mb-12 select-none">
-            § 02 · About
+            About
           </p>
 
           <h3

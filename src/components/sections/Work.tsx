@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../Reveal";
+import { TextRise } from "../TextRise";
 import { PROJECTS, type Project } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
 import { SectionContainer } from "@/components/ui/section-container";
@@ -93,16 +94,15 @@ const ProjectCard = ({ p }: { p: Project }) => {
 export const Work = () => (
   <section id="work" className="relative py-10 md:py-16">
     <SectionContainer>
-      <div className="grid md:grid-cols-12 gap-8 mb-12 md:mb-16">
-        <div className="md:col-span-3"><div className="h-eyebrow text-mute mb-3">§ 03 · Project</div></div>
-        <div className="md:col-span-9 flex items-end justify-between">
-          <Reveal>
-            <h2 className="h-section font-sans font-semibold">
-              Selected <span className="italic text-signal">Pieces</span>
-            </h2>
-          </Reveal>
-        </div>
-      </div>
+
+
+      <h2
+        aria-label="Our Work"
+        className="font-sans font-black text-foreground leading-[0.82] tracking-[-0.045em] text-center whitespace-nowrap mb-12 md:mb-16 select-none"
+        style={{ fontSize: "clamp(56px, 16.5vw, 240px)" }}
+      >
+        <TextRise>OUR WORK</TextRise>
+      </h2>
 
       {/* Zigzag two-column grid — odd items offset down on md+ */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-12 md:gap-y-20">
