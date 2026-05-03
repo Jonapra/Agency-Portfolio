@@ -20,6 +20,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -63,84 +64,125 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   }, [menuOpen]);
 
   const headerTextColor = "text-cream";
+  const plateBase =
+    "rounded-full border border-cream/10 backdrop-blur-xl shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_8px_30px_-12px_rgba(0,0,0,0.5)] transition-colors duration-500";
+  const plateTone = isScrolled || isPastHero ? "bg-ink-2/75" : "bg-ink-2/40";
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-transform duration-300 ease-smooth p-0 ${headerTextColor} ${isHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"}`}
+        className={`fixed top-0 left-0 right-0 z-50 ${headerTextColor} transition-transform duration-500 ease-smooth ${
+          isHidden && !menuOpen ? "-translate-y-[120%]" : "translate-y-0"
+        } ${isScrolled || isPastHero ? "pt-3 md:pt-4" : "pt-5 md:pt-6"}`}
       >
-        <div
-          className={`
-            transition-all duration-500 ease-smooth w-full lg:px-5
-            ${isPastHero && !menuOpen
-              ? "w-full md:w-[calc(100%-4rem)] max-w-[1400px] md:rounded-b-2xl md:border-x border-b bg-background/80 backdrop-blur-xl py-3"
-              : isScrolled || menuOpen
-                ? `w-full border-b backdrop-blur-xl py-3 ${menuOpen ? "bg-ink border-white/10" : "bg-background/80 border-foreground/10"}`
-                : "w-full border-b border-transparent py-5"
-            }
-            ${isPastHero && !menuOpen ? "border-foreground/10" : ""}
-          `}
-        >
-          <div className="mx-auto flex items-center justify-between w-full max-w-[1400px] px-6 md:px-10">
+        <div className="mx-auto flex items-center justify-between gap-3 md:gap-4 px-4 md:px-6 max-w-[1500px]">
+          {/* LEFT — Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative inline-flex items-center"
+          >
             <Logo />
+          </motion.div>
 
-            <nav className="hidden md:flex items-center gap-12 lg:gap-14 text-sm">
-              {NAV_LINKS.map(l => (
-                <a key={l.href} href={`${anchorPrefix}${l.href}`} className="u-link">{l.label}</a>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-3">
+          {/* CENTER — Nav pill (desktop) */}
+          <motion.nav
+            aria-label="Primary"
+            initial={{ opacity: 0, y: -14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            onMouseLeave={() => setHoveredIdx(null)}
+            className={`hidden md:flex items-center p-1 ${plateBase} ${plateTone}`}
+          >
+            {NAV_LINKS.map((l, i) => (
               <a
-                href="https://wa.me/917042607942"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-                className="group relative inline-flex items-center h-9 md:h-10 rounded-full bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] lg:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer select-none ring-1 ring-white/15 lg:hover:ring-white/25 overflow-hidden"
+                key={l.href}
+                href={`${anchorPrefix}${l.href}`}
+                onMouseEnter={() => setHoveredIdx(i)}
+                onFocus={() => setHoveredIdx(i)}
+                className="group relative inline-flex items-center rounded-full px-3 lg:px-3.5 py-1.5 text-[13px] font-medium tracking-tight cursor-pointer focus-visible:outline-none"
               >
-                <span className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 shrink-0 transition-transform duration-300 lg:group-hover:scale-110 group-active:scale-95">
-                  <span className="md:hidden"><WhatsAppIcon size={16} /></span>
-                  <span className="hidden md:inline-flex"><WhatsAppIcon size={18} /></span>
-                </span>
-                <span
-                  className="grid grid-cols-[0fr] lg:group-hover:grid-cols-[1fr] transition-[grid-template-columns] duration-500 ease-smooth"
-                  aria-hidden="true"
-                >
-                  <span className="overflow-hidden min-w-0">
-                    <span className="block whitespace-nowrap pr-4 text-[13px] font-medium tracking-tight opacity-0 -translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition-all duration-300 ease-out delay-100">
-                      Chat with Us
-                    </span>
+                {hoveredIdx === i && (
+                  <motion.span
+                    layoutId="nav-hover"
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-cream/[0.08] ring-1 ring-cream/10"
+                    transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10 overflow-hidden inline-block leading-[1.15]">
+                  <span className="block transition-transform duration-500 ease-smooth group-hover:-translate-y-full">
+                    {l.label}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="block absolute inset-0 transition-transform duration-500 ease-smooth translate-y-full group-hover:translate-y-0 text-signal"
+                  >
+                    {l.label}
                   </span>
                 </span>
               </a>
+            ))}
+          </motion.nav>
 
-              <button
-                onClick={() => setMenuOpen(o => !o)}
-                aria-label={menuOpen ? "Close menu" : "Open menu"}
-                aria-expanded={menuOpen}
-                className="md:hidden relative rounded-full w-10 h-10 grid place-items-center border border-cream/25 hover:bg-cream/10 transition cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2"
+          {/* RIGHT — Status + WhatsApp + Burger */}
+          <motion.div
+            initial={{ opacity: 0, y: -14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-2 md:gap-2.5"
+          >
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/917042607942"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="group relative inline-flex items-center h-10 rounded-full bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] lg:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer select-none ring-1 ring-white/15 lg:hover:ring-white/25 overflow-hidden"
+            >
+              <span className="flex items-center justify-center w-10 h-10 shrink-0 transition-transform duration-300 lg:group-hover:scale-110 group-active:scale-95">
+                <WhatsAppIcon size={18} />
+              </span>
+              <span
+                className="grid grid-cols-[0fr] lg:group-hover:grid-cols-[1fr] transition-[grid-template-columns] duration-500 ease-smooth"
+                aria-hidden="true"
               >
-                <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
-                <span className="relative w-4 h-3 block">
-                  <motion.span
-                    className="absolute left-0 right-0 h-px bg-current origin-center"
-                    animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
-                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                  <motion.span
-                    className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
-                    animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                  <motion.span
-                    className="absolute left-0 right-0 h-px bg-current origin-center"
-                    animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
-                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  />
+                <span className="overflow-hidden min-w-0">
+                  <span className="block whitespace-nowrap pr-4 text-[13px] font-medium tracking-tight opacity-0 -translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition-all duration-300 ease-out delay-100">
+                    Chat with Us
+                  </span>
                 </span>
-              </button>
-            </div>
-          </div>
+              </span>
+            </a>
+
+            {/* Burger (mobile) */}
+            <button
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink ${plateBase} ${plateTone}`}
+            >
+              <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+              <span className="relative w-4 h-3 block">
+                <motion.span
+                  className="absolute left-0 right-0 h-px bg-current origin-center"
+                  animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                />
+                <motion.span
+                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
+                  animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+                <motion.span
+                  className="absolute left-0 right-0 h-px bg-current origin-center"
+                  animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                />
+              </span>
+            </button>
+          </motion.div>
         </div>
       </header>
 
