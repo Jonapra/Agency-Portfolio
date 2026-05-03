@@ -107,12 +107,12 @@ export const Hero = () => {
                 return (
                   <span
                     key={i}
-                    className="flex items-center font-display text-signal/80 text-[44px] md:text-[72px] lg:text-[104px] leading-none tracking-[-0.02em] px-2 md:px-5 lg:px-8"
+                    className="flex items-center font-sans font-medium text-white text-[44px] md:text-[72px] lg:text-[104px] leading-none tracking-tight px-2 md:px-5 lg:px-8"
                   >
-                    <span className={isItalic ? "italic-display font-normal" : "font-normal"}>
+                    <span className="font-medium">
                       {word}
                     </span>
-                    <span className="mx-2 md:mx-5 lg:mx-8 text-signal/40 text-[18px] md:text-[28px] lg:text-[40px]">✦</span>
+                    <span className="mx-2 md:mx-5 lg:mx-8 text-white text-[24px] md:text-[36px] lg:text-[48px] opacity-90">●</span>
                   </span>
                 );
               })}
