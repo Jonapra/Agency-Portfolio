@@ -75,93 +75,88 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
           isHidden && !menuOpen ? "-translate-y-[120%]" : "translate-y-0"
         } ${isScrolled || isPastHero ? "pt-3 md:pt-4" : "pt-5 md:pt-6"}`}
       >
-        <div className="mx-auto flex items-center justify-between gap-3 md:gap-4 px-4 md:px-6 max-w-[1500px]">
-          {/* LEFT — Logo */}
+        <div className="mx-auto flex items-center justify-between md:justify-center gap-3 md:gap-4 px-4 md:px-6 max-w-[1500px]">
+          {/* Mobile-only Logo (left) */}
           <motion.div
             initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative inline-flex items-center"
+            className="relative inline-flex items-center md:hidden"
           >
             <Logo />
           </motion.div>
 
-          {/* CENTER — Nav pill (desktop) */}
-          <motion.nav
-            aria-label="Primary"
+          {/* CENTER — Unified pill: Logo + Nav + WhatsApp (desktop) */}
+          <motion.div
             initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
             onMouseLeave={() => setHoveredIdx(null)}
-            className={`hidden md:flex items-center p-1 ${plateBase} ${plateTone}`}
+            className={`hidden md:flex items-center p-1.5 pl-5 gap-3 ${plateBase} ${plateTone}`}
           >
-            {NAV_LINKS.map((l, i) => (
-              <a
-                key={l.href}
-                href={`${anchorPrefix}${l.href}`}
-                onMouseEnter={() => setHoveredIdx(i)}
-                onFocus={() => setHoveredIdx(i)}
-                className="group relative inline-flex items-center rounded-full px-3 lg:px-3.5 py-1.5 text-[13px] font-medium tracking-tight cursor-pointer focus-visible:outline-none"
-              >
-                {hoveredIdx === i && (
-                  <motion.span
-                    layoutId="nav-hover"
-                    aria-hidden="true"
-                    className="absolute inset-0 rounded-full bg-cream/[0.08] ring-1 ring-cream/10"
-                    transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10 overflow-hidden inline-block leading-[1.15]">
-                  <span className="block transition-transform duration-500 ease-smooth group-hover:-translate-y-full">
-                    {l.label}
+            <div className="flex items-center">
+              <Logo small />
+            </div>
+            <span aria-hidden="true" className="h-6 w-px bg-cream/10" />
+            <nav aria-label="Primary" className="flex items-center gap-1">
+              {NAV_LINKS.map((l, i) => (
+                <a
+                  key={l.href}
+                  href={`${anchorPrefix}${l.href}`}
+                  onMouseEnter={() => setHoveredIdx(i)}
+                  onFocus={() => setHoveredIdx(i)}
+                  className="group relative inline-flex items-center rounded-full px-3.5 lg:px-4 py-2 text-[13px] font-medium tracking-tight cursor-pointer focus-visible:outline-none"
+                >
+                  {hoveredIdx === i && (
+                    <motion.span
+                      layoutId="nav-hover"
+                      aria-hidden="true"
+                      className="absolute inset-0 rounded-full bg-cream/[0.08] ring-1 ring-cream/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.6 }}
+                    />
+                  )}
+                  <span className="relative z-10 overflow-hidden inline-block leading-[1.15]">
+                    <span className="block transition-transform duration-500 ease-smooth group-hover:-translate-y-full">
+                      {l.label}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="block absolute inset-0 transition-transform duration-500 ease-smooth translate-y-full group-hover:translate-y-0 text-signal"
+                    >
+                      {l.label}
+                    </span>
                   </span>
-                  <span
-                    aria-hidden="true"
-                    className="block absolute inset-0 transition-transform duration-500 ease-smooth translate-y-full group-hover:translate-y-0 text-signal"
-                  >
-                    {l.label}
-                  </span>
-                </span>
-              </a>
-            ))}
-          </motion.nav>
-
-          {/* RIGHT — Status + WhatsApp + Burger */}
-          <motion.div
-            initial={{ opacity: 0, y: -14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2 md:gap-2.5"
-          >
-            {/* WhatsApp CTA */}
+                </a>
+              ))}
+            </nav>
+            <span aria-hidden="true" className="h-6 w-px bg-cream/10" />
             <a
               href="https://wa.me/917042607942"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              className="group relative inline-flex items-center h-10 rounded-full bg-[#25D366] text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_8px_22px_-4px_rgba(37,211,102,0.6)] lg:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer select-none ring-1 ring-white/15 lg:hover:ring-white/25 overflow-hidden"
+              className="group relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_2px_10px_-2px_rgba(37,211,102,0.5)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_6px_16px_-4px_rgba(37,211,102,0.7)] lg:hover:scale-[1.06] active:scale-[0.95] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer"
             >
-              <span className="flex items-center justify-center w-10 h-10 shrink-0 transition-transform duration-300 lg:group-hover:scale-110 group-active:scale-95">
-                <WhatsAppIcon size={18} />
-              </span>
-              <span
-                className="grid grid-cols-[0fr] lg:group-hover:grid-cols-[1fr] transition-[grid-template-columns] duration-500 ease-smooth"
-                aria-hidden="true"
-              >
-                <span className="overflow-hidden min-w-0">
-                  <span className="block whitespace-nowrap pr-4 text-[13px] font-medium tracking-tight opacity-0 -translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition-all duration-300 ease-out delay-100">
-                    Chat with Us
-                  </span>
-                </span>
-              </span>
+              <WhatsAppIcon size={15} />
             </a>
+          </motion.div>
 
-            {/* Burger (mobile) */}
+          {/* Mobile-only right cluster: WhatsApp + Burger */}
+          <div className="flex items-center gap-2 md:hidden">
+            <a
+              href="https://wa.me/917042607942"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] active:scale-[0.97] transition-transform duration-300 ease-smooth cursor-pointer"
+            >
+              <WhatsAppIcon size={16} />
+            </a>
             <button
               onClick={() => setMenuOpen(o => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
-              className={`md:hidden relative rounded-full w-10 h-10 grid place-items-center cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink ${plateBase} ${plateTone}`}
+              className={`relative rounded-full w-10 h-10 grid place-items-center cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink ${plateBase} ${plateTone}`}
             >
               <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
               <span className="relative w-4 h-3 block">
@@ -182,7 +177,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                 />
               </span>
             </button>
-          </motion.div>
+          </div>
         </div>
       </header>
 
