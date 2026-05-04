@@ -76,14 +76,50 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
         } ${isScrolled || isPastHero ? "pt-3 md:pt-4" : "pt-5 md:pt-6"}`}
       >
         <div className="mx-auto flex items-center justify-between md:justify-center gap-3 md:gap-4 px-4 md:px-6 max-w-[1500px]">
-          {/* Mobile-only Logo (left) */}
+          {/* MOBILE — Unified glass bar */}
           <motion.div
             initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative inline-flex items-center md:hidden"
+            className={`flex md:hidden items-center justify-between w-full p-1.5 px-4 ${plateBase} ${plateTone}`}
           >
-            <Logo />
+            <Logo small />
+            <div className="flex items-center gap-2">
+              <a
+                href="https://wa.me/919366279647"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] active:scale-[0.97] transition-transform duration-300 ease-smooth cursor-pointer"
+              >
+                <WhatsAppIcon size={15} />
+              </a>
+              <button
+                onClick={() => setMenuOpen(o => !o)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                className="relative rounded-full w-10 h-10 grid place-items-center cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+                <span className="relative w-4 h-3 block">
+                  <motion.span
+                    className="absolute left-0 right-0 h-px bg-current origin-center"
+                    animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                  <motion.span
+                    className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
+                    animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                  <motion.span
+                    className="absolute left-0 right-0 h-px bg-current origin-center"
+                    animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                </span>
+              </button>
+            </div>
           </motion.div>
 
           {/* CENTER — Unified pill: Logo + Nav + WhatsApp (desktop) */}
@@ -131,53 +167,27 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
             </nav>
             <span aria-hidden="true" className="h-6 w-px bg-cream/10" />
             <a
-              href="https://wa.me/917042607942"
+              href="https://wa.me/919366279647"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              className="group relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_2px_10px_-2px_rgba(37,211,102,0.5)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_6px_16px_-4px_rgba(37,211,102,0.7)] lg:hover:scale-[1.06] active:scale-[0.95] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer"
+              className="group relative inline-flex items-center h-9 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_2px_10px_-2px_rgba(37,211,102,0.5)] lg:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_6px_16px_-4px_rgba(37,211,102,0.7)] lg:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] transition-[box-shadow,transform] duration-300 ease-smooth cursor-pointer overflow-hidden"
             >
-              <WhatsAppIcon size={15} />
+              <span className="flex items-center justify-center w-9 h-9 shrink-0 transition-transform duration-300 lg:group-hover:scale-110 group-active:scale-95">
+                <WhatsAppIcon size={15} />
+              </span>
+              <span
+                className="grid grid-cols-[0fr] lg:group-hover:grid-cols-[1fr] transition-[grid-template-columns] duration-500 ease-smooth"
+                aria-hidden="true"
+              >
+                <span className="overflow-hidden min-w-0">
+                  <span className="block whitespace-nowrap pr-3.5 text-[12.5px] font-medium tracking-tight opacity-0 -translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 transition-all duration-300 ease-out delay-100">
+                    Chat with Us
+                  </span>
+                </span>
+              </span>
             </a>
           </motion.div>
-
-          {/* Mobile-only right cluster: WhatsApp + Burger */}
-          <div className="flex items-center gap-2 md:hidden">
-            <a
-              href="https://wa.me/917042607942"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp"
-              className="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white ring-1 ring-white/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_14px_-2px_rgba(37,211,102,0.45)] active:scale-[0.97] transition-transform duration-300 ease-smooth cursor-pointer"
-            >
-              <WhatsAppIcon size={16} />
-            </a>
-            <button
-              onClick={() => setMenuOpen(o => !o)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              className={`relative rounded-full w-10 h-10 grid place-items-center cursor-pointer z-[60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink ${plateBase} ${plateTone}`}
-            >
-              <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
-              <span className="relative w-4 h-3 block">
-                <motion.span
-                  className="absolute left-0 right-0 h-px bg-current origin-center"
-                  animate={menuOpen ? { top: "50%", rotate: 45, y: "-50%" } : { top: 0, rotate: 0, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                />
-                <motion.span
-                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-current"
-                  animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-                <motion.span
-                  className="absolute left-0 right-0 h-px bg-current origin-center"
-                  animate={menuOpen ? { bottom: "50%", rotate: -45, y: "50%" } : { bottom: 0, rotate: 0, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                />
-              </span>
-            </button>
-          </div>
         </div>
       </header>
 
