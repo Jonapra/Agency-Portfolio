@@ -14,10 +14,10 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { target: 300, suffix: "", accent: "+", label: "Successful projects completed" },
-  { target: 10,  suffix: "", accent: "+", label: "Years of experience in creative industry" },
-  { target: 99,  suffix: "", accent: "%", label: "Customer satisfaction rate" },
-  { target: 25,  suffix: "", accent: "M", label: "In Client revenue growth" },
+  { target: 26,  suffix: "", accent: "+", label: "WEBSITES SHIPPED" },
+  { target: 10,  suffix: "", accent: "+", label: "INDUSTRIES SERVED" },
+  { target: 4.9, suffix: "", accent: "",  label: "AVG PROJECT RATING" },
+  { target: 100, suffix: "", accent: "%", label: "CLIENT SATISFACTION" },
 ];
 
 export const ChooseUs = () => {
@@ -80,7 +80,7 @@ export const ChooseUs = () => {
           <div className="col-span-12 md:col-span-8">
             <div className="h-eyebrow text-mute mb-4">(WHY US)</div>
             <h2 className="font-sans font-black leading-[0.85] text-[clamp(3rem,11vw,9rem)] uppercase tracking-tight text-white">
-              Numbers<br />don't lie
+              WHY CHOOSE<br />US
             </h2>
           </div>
           <p className="col-span-12 md:col-span-4 text-base md:text-lg text-mute-2 leading-snug md:text-right">
