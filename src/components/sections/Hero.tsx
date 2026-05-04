@@ -27,7 +27,7 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-fit lg:min-h-screen pt-20 md:pt-28 lg:pt-32 pb-0 md:pb-0 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
+      className="relative min-h-fit lg:min-h-screen pt-28 md:pt-28 lg:pt-32 pb-0 md:pb-0 hero-section-text flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-signal/15 via-background to-background z-10"
     >
       <SectionContainer className="px-[2px] md:px-10 max-w-none md:max-w-[1400px] relative w-full flex flex-col items-center justify-center text-center mt-2 md:mt-8 lg:mt-0 2xl:mt-2 lg:flex-1 pb-12 md:pb-16 lg:pb-0">
         {/* Top Pill */}

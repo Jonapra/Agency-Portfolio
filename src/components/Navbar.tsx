@@ -73,7 +73,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 ${headerTextColor} transition-transform duration-500 ease-smooth ${
           isHidden && !menuOpen ? "-translate-y-[120%]" : "translate-y-0"
-        } ${isScrolled || isPastHero ? "pt-3 md:pt-4" : "pt-5 md:pt-6"}`}
+        } ${isScrolled || isPastHero ? "pt-2 md:pt-4" : "pt-4 md:pt-6"}`}
       >
         <div className="mx-auto flex items-center justify-between md:justify-center gap-3 md:gap-4 px-4 md:px-6 max-w-[1500px]">
           {/* MOBILE — Unified glass bar */}

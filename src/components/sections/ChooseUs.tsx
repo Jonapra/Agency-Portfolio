@@ -1,98 +1,124 @@
+"use client";
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
-/* ── Data ──────────────────────────────────────────────────────── */
-const DATA = [
-  {
-    title: "Personalised Support",
-    desc: "You get a dedicated team who understands your business goals and plan it accordingly.",
-    span: "md:col-span-4",
-  },
-  {
-    title: "With You Every Step",
-    desc: "Weekly check-ins, consistent updates, We stay with you from the first consultation to the final launch.",
-    span: "md:col-span-4",
-  },
-  {
-    title: "Measurable Impact",
-    desc: "We bake analytics into every ship, providing clear benchmarks so you can track your success from day one.",
-    span: "md:col-span-4",
-  },
-  {
-    title: "Future-Ready Solutions",
-    desc: "We build fast, secure, and scalable websites using modern technologies that keeps you competitive tomorrow.",
-    span: "md:col-span-5",
-  },
-  {
-    title: "Transparent Process",
-    desc: "You'll always know what's happening with clear timelines, regular updates, and open communication.",
-    span: "md:col-span-7",
-  },
-];
-
-/* ── BentoCard ─────────────────────────────────────────────────── */
-interface BentoCardProps {
-  title: string;
-  desc: string;
-  className?: string;
-}
-
-const BentoCard = ({ title, desc, className }: BentoCardProps) => {
-  return (
-    <article
-      className={cn(
-        "group relative rounded-2xl border border-foreground/10",
-        "bg-foreground/[0.025] overflow-hidden h-full",
-        className
-      )}
-    >
-      {/* Placeholder for the new UI / Illustration */}
-      <div className="h-[180px] md:h-[200px] bg-foreground/[0.03] flex items-center justify-center">
-        <span className="text-foreground/10 font-mono text-xs uppercase tracking-widest">
-          Placeholder
-        </span>
-      </div>
-      
-      <div className="h-px bg-foreground/[0.08]" />
-      
-      <div className="p-5 md:p-6">
-        <h3 className="font-display font-semibold text-[1.4rem] md:text-[1.65rem] leading-[1.1] mb-2">
-          {title}
-        </h3>
-        <p className="text-mute-2 text-sm md:text-base leading-relaxed">
-          {desc}
-        </p>
-      </div>
-    </article>
-  );
+type Stat = {
+  target: number;
+  suffix: string;
+  accent: string;
+  label: string;
 };
 
-/* ── Section ───────────────────────────────────────────────────── */
+const STATS: Stat[] = [
+  { target: 300, suffix: "", accent: "+", label: "Successful projects completed" },
+  { target: 10,  suffix: "", accent: "+", label: "Years of experience in creative industry" },
+  { target: 99,  suffix: "", accent: "%", label: "Customer satisfaction rate" },
+  { target: 25,  suffix: "", accent: "M", label: "In Client revenue growth" },
+];
+
 export const ChooseUs = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const numRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const reduced = usePrefersReducedMotion();
+
+  useGSAP(
+    () => {
+      if (reduced) {
+        STATS.forEach((s, i) => {
+          const el = numRefs.current[i];
+          if (el) el.textContent = s.target.toString() + s.suffix;
+        });
+        return;
+      }
+
+      const trigger = cardRef.current;
+      if (!trigger) return;
+
+      const obj = { val: 0 };
+      const tw = gsap.to(obj, {
+        val: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: { trigger, start: "top 80%", once: true },
+        onUpdate: () => {
+          STATS.forEach((s, i) => {
+            const el = numRefs.current[i];
+            if (!el) return;
+            const v = Math.floor(obj.val * s.target);
+            el.textContent = v.toString() + s.suffix;
+          });
+        },
+        onComplete: () => {
+          STATS.forEach((s, i) => {
+            const el = numRefs.current[i];
+            if (el) el.textContent = s.target.toString() + s.suffix;
+          });
+        },
+      });
+
+      return () => {
+        tw.scrollTrigger?.kill();
+        tw.kill();
+      };
+    },
+    { scope: sectionRef, dependencies: [reduced] }
+  );
+
+  const initialText = (s: Stat) =>
+    reduced ? s.target.toString() + s.suffix : "0" + s.suffix;
+
   return (
-    <section id="choose-us" className="relative py-10 md:py-16">
+    <section ref={sectionRef} id="choose-us" className="relative py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
-        
-        {/* Header */}
-        <div className="mb-8 md:mb-12 text-center">
-          <div className="h-eyebrow text-mute mb-5">§ 04 · Why Choose Us</div>
-          <h2 className="h-section font-sans font-semibold leading-[1.05]">
-            Why <span className="italic text-signal">Choose Us</span>
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-mute-2 leading-relaxed max-w-3xl mx-auto">
-            Built To <span className="italic-display font-bold">Grow</span>,{" "}
-            <span className="italic-display text-signal font-bold">Ship High-Quality</span> Websites Faster
+
+        <div className="mb-10 md:mb-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
+          <div className="col-span-12 md:col-span-8">
+            <div className="h-eyebrow text-mute mb-4">(WHY US)</div>
+            <h2 className="font-sans font-black leading-[0.85] text-[clamp(3rem,11vw,9rem)] uppercase tracking-tight text-mute-2">
+              Numbers<br />don't lie
+            </h2>
+          </div>
+          <p className="col-span-12 md:col-span-4 text-base md:text-lg text-mute-2 leading-snug md:text-right">
+            With a decade of expertise, we craft bold brands and high-impact digital experiences that get results.
           </p>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
-          {DATA.map((item, i) => (
-            <BentoCard
-              key={i}
-              title={item.title}
-              desc={item.desc}
-              className={item.span}
-            />
+        <div
+          aria-hidden
+          className="h-3 w-full bg-[length:8px_100%] bg-repeat-x"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, hsl(var(--foreground) / 0.35) 1px, transparent 1px)",
+          }}
+        />
+
+        <div
+          ref={cardRef}
+          className="grid grid-cols-2 md:grid-cols-4"
+        >
+          {STATS.map((s, i) => (
+            <div
+              key={s.label}
+              className={cn(
+                "py-10 md:py-14 px-4 md:px-8 flex flex-col items-start border-foreground/10",
+                i % 2 === 0 && "border-r md:border-r-0",
+                i < STATS.length - 1 && "md:border-r",
+                i < 2 && "border-b md:border-b-0"
+              )}
+            >
+              <div className="font-sans font-semibold text-mute-2 leading-none text-[clamp(3rem,7vw,5.5rem)] tabular-nums">
+                <span ref={(el) => (numRefs.current[i] = el)}>{initialText(s)}</span>
+                <span className="text-signal">{s.accent}</span>
+              </div>
+              <div className="font-sans text-sm md:text-base text-mute-2 mt-6 leading-snug max-w-[14rem]">
+                {s.label}
+              </div>
+            </div>
           ))}
         </div>
 
@@ -100,3 +126,5 @@ export const ChooseUs = () => {
     </section>
   );
 };
+
+export default ChooseUs;
