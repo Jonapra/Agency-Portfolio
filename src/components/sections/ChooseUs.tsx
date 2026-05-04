@@ -79,7 +79,7 @@ export const ChooseUs = () => {
         <div className="mb-10 md:mb-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="col-span-12 md:col-span-8">
             <div className="h-eyebrow text-mute mb-4">(WHY US)</div>
-            <h2 className="font-sans font-black leading-[0.85] text-[clamp(3rem,11vw,9rem)] uppercase tracking-tight text-mute-2">
+            <h2 className="font-sans font-black leading-[0.85] text-[clamp(3rem,11vw,9rem)] uppercase tracking-tight text-white">
               Numbers<br />don't lie
             </h2>
           </div>
@@ -111,11 +111,11 @@ export const ChooseUs = () => {
                 i < 2 && "border-b md:border-b-0"
               )}
             >
-              <div className="font-sans font-semibold text-mute-2 leading-none text-[clamp(3rem,7vw,5.5rem)] tabular-nums">
+              <div className="font-sans font-semibold text-white leading-none text-[clamp(3rem,7vw,5.5rem)] tabular-nums">
                 <span ref={(el) => (numRefs.current[i] = el)}>{initialText(s)}</span>
                 <span className="text-signal">{s.accent}</span>
               </div>
-              <div className="font-sans text-sm md:text-base text-mute-2 mt-6 leading-snug max-w-[14rem]">
+              <div className="font-sans text-sm md:text-base text-white mt-6 leading-snug max-w-[14rem]">
                 {s.label}
               </div>
             </div>
