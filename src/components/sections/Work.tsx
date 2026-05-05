@@ -13,7 +13,6 @@ const ProjectArt = ({ p }: { p: Project }) => {
         Veldt<span className="not-italic font-display text-white/60">◐</span>
       </div>
     );
-    // ada
   if (p.title === "Flint OS")
     return (
       <div className="grid grid-cols-4 gap-2 w-[55%] h-[55%]">
