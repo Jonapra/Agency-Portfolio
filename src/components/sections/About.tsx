@@ -33,7 +33,7 @@ const WORDS = [
 export const About = () => {
   const prefersReduced = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
-  const scrollRef  = useRef<HTMLDivElement>(null);
+  const panelRef   = useRef<HTMLDivElement>(null);
   const textRef    = useRef<HTMLHeadingElement>(null);
 
   useGSAP(
@@ -48,36 +48,55 @@ export const About = () => {
 
       gsap.set(words, { color: "rgba(255,255,255,0.16)" });
 
-      gsap.to(words, {
-        color: "rgba(255,255,255,1)",
-        stagger: { each: 0.16, ease: "none" },
-        ease: "none",
-        scrollTrigger: {
-          trigger: scrollRef.current,
-          start: "top top",
-          // Finish reveal at 75% of scroll travel — leaves a held "fully lit"
-          // beat before the pin releases, so the section feels resolved.
-          end: "75% bottom",
-          scrub: 1.2,
-          invalidateOnRefresh: true,
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          isDesktop: "(min-width: 1024px)",
+          isMobile:  "(max-width: 1023px)",
         },
-      });
+        (ctx) => {
+          const { isDesktop } = ctx.conditions as { isDesktop: boolean };
+          // Mobile/tablet: pin 80vh, reveal completes at 60% (48vh) — leaves
+          // a short held beat before unpin. Desktop: pin 140vh, reveal at 75%.
+          const pinEnd    = isDesktop ? "+=140%" : "+=80%";
+          const revealEnd = isDesktop ? "+=105%" : "+=48%";
+
+          gsap.to(words, {
+            color: "rgba(255,255,255,1)",
+            stagger: { each: 0.16, ease: "none" },
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: revealEnd,
+              scrub: 1.2,
+              invalidateOnRefresh: true,
+            },
+          });
+
+          ScrollTrigger.create({
+            trigger: sectionRef.current,
+            start: "top top",
+            end: pinEnd,
+            pin: panelRef.current,
+            pinSpacing: true,
+            invalidateOnRefresh: true,
+          });
+        }
+      );
     },
     { scope: sectionRef, dependencies: [prefersReduced] }
   );
 
   return (
     <section id="about" ref={sectionRef} className="relative">
-      {/* Tall scroll container drives the pin + scrub */}
+      {/* GSAP ScrollTrigger pins this panel; pinSpacing handles layout */}
       <div
-        ref={scrollRef}
-        className="lg:h-[240vh]"
+        ref={panelRef}
+        className="h-[100svh] min-h-[560px] flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8 md:px-16"
+        style={{ backgroundColor: "hsl(var(--background))" }}
       >
-        {/* Sticky panel — uses svh so mobile browser chrome doesn't cause jumps */}
-        <div
-          className="lg:sticky lg:top-0 lg:h-[100svh] min-h-[560px] flex flex-col items-center justify-center overflow-hidden px-5 sm:px-8 md:px-16 py-16 lg:py-0"
-          style={{ backgroundColor: "hsl(var(--background))" }}
-        >
           <p className="font-sans text-[10px] md:text-xs tracking-[0.3em] text-white/30 uppercase mb-6 sm:mb-8 md:mb-12 select-none">
             About
           </p>
@@ -97,7 +116,6 @@ export const About = () => {
               </span>
             ))}
           </h3>
-        </div>
       </div>
     </section>
   );

@@ -75,7 +75,7 @@ const ServiceRow = ({
       onClick={isTouch ? (isActive ? onDeactivate : onActivate) : undefined}
     >
       {/* ── DESKTOP (lg+) ──────────────────────────────────────────── */}
-      <div className="hidden lg:flex items-start py-8">
+      <div className="hidden lg:flex items-start py-6">
         {/* Number */}
         <div className="w-[140px] flex-shrink-0 pr-6">
           <span
@@ -159,7 +159,7 @@ const ServiceRow = ({
       {/* ── MOBILE / TABLET (< lg): accordion below ─────────────────── */}
       <div className="lg:hidden">
         {/* Header */}
-        <div className="flex items-center gap-4 py-5">
+        <div className="flex items-center gap-4 py-4">
           <span
             className={cn(
               "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.04em] tabular-nums flex-shrink-0 transition-colors duration-300",
@@ -247,7 +247,7 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="relative bg-background text-foreground py-10 md:py-14 lg:py-16 overflow-hidden"
+      className="relative bg-background text-foreground py-8 md:py-12 lg:py-14 overflow-hidden"
       onMouseLeave={!isTouchRef.current ? () => setActive(0) : undefined}
     >
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
