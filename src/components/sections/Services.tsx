@@ -51,8 +51,8 @@ const SERVICES: Service[] = [
   },
 ];
 
-// expanded image: 440 wide × 330 tall (4:3) on desktop
-const IMG_W = 440;
+// expanded image: 380 wide × 285 tall (4:3) on desktop
+const IMG_W = 380;
 const ease = [0.25, 0, 0, 1] as const;
 
 const ServiceRow = ({
@@ -75,7 +75,7 @@ const ServiceRow = ({
       onClick={isTouch ? (isActive ? onDeactivate : onActivate) : undefined}
     >
       {/* ── DESKTOP (lg+) ──────────────────────────────────────────── */}
-      <div className="hidden lg:flex items-start py-6">
+      <div className="hidden lg:flex items-start py-5">
         {/* Number */}
         <div className="w-[140px] flex-shrink-0 pr-6">
           <span
@@ -118,7 +118,7 @@ const ServiceRow = ({
         </motion.div>
 
         {/* Content */}
-        <div className="flex-1 min-w-0 flex flex-col justify-center min-h-[120px]">
+        <div className="flex-1 min-w-0 flex flex-col justify-center min-h-[100px]">
           <h3
             className={cn(
               "font-sans font-bold text-[44px] leading-[1.05] tracking-[-0.02em] transition-colors duration-300",
@@ -159,7 +159,7 @@ const ServiceRow = ({
       {/* ── MOBILE / TABLET (< lg): accordion below ─────────────────── */}
       <div className="lg:hidden">
         {/* Header */}
-        <div className="flex items-center gap-4 py-4">
+        <div className="flex items-center gap-4 py-3">
           <span
             className={cn(
               "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.04em] tabular-nums flex-shrink-0 transition-colors duration-300",
@@ -197,9 +197,9 @@ const ServiceRow = ({
               transition={{ duration: 0.4, ease }}
               className="overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-6 pb-6">
+              <div className="flex flex-col md:flex-row gap-4 pb-4">
                 {/* Image */}
-                <div className="w-full md:w-[340px] flex-shrink-0 aspect-[4/3] rounded-md overflow-hidden bg-foreground/5">
+                <div className="w-full md:w-[260px] flex-shrink-0 aspect-[3/2] rounded-md overflow-hidden bg-foreground/5">
                   <img
                     src={service.image}
                     alt={service.imageAlt}
@@ -247,7 +247,7 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="relative bg-background text-foreground py-8 md:py-12 lg:py-14 overflow-hidden"
+      className="relative bg-background text-foreground py-5 md:py-8 lg:py-10 overflow-hidden"
       onMouseLeave={!isTouchRef.current ? () => setActive(0) : undefined}
     >
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
