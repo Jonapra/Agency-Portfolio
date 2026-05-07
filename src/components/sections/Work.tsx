@@ -64,8 +64,7 @@ export const Work = () => {
       <SectionContainer className="pt-12 md:pt-20">
         <h2
           aria-label="Our Work"
-          className="font-sans font-black text-foreground leading-[0.82] tracking-[-0.045em] whitespace-nowrap select-none"
-          style={{ fontSize: "clamp(56px, 14vw, 220px)" }}
+          className="font-sans font-black uppercase leading-[0.85] tracking-[-0.04em] text-foreground text-6xl md:text-8xl lg:text-[140px] text-center select-none"
         >
           <TextRise>OUR WORK</TextRise>
         </h2>
@@ -76,11 +75,11 @@ export const Work = () => {
         <SectionContainer className="hidden md:block mt-16 lg:mt-24">
           <div className="grid grid-cols-[34%_66%] gap-x-[6vw] items-start">
             {/* LEFT — sticky single panel */}
-            <div className="sticky top-[120px] self-start flex flex-col justify-between min-h-[calc(100vh-160px)] py-6">
-              {/* Big number */}
+            <div className="sticky top-[100px] self-start flex flex-col h-[calc(100vh-140px)] pb-6">
+              {/* Big ghost number */}
               <div
                 className="overflow-hidden"
-                style={{ fontSize: "clamp(96px,12vw,200px)", lineHeight: 1 }}
+                style={{ fontSize: "clamp(110px,11.5vw,190px)", lineHeight: 1 }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -89,30 +88,29 @@ export const Work = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -18 }}
                     transition={SWAP_TRANSITION}
-                    className="font-sans font-black text-foreground tracking-[-0.045em] leading-none"
+                    className="font-sans font-black tracking-[-0.045em] leading-none text-cream/15"
                   >
-                    {String(active + 1).padStart(2, "0")}
-                    <span className="text-signal">.</span>
+                    {String(active + 1).padStart(2, "0")}.
                   </motion.div>
                 </AnimatePresence>
               </div>
 
-              {/* Mini-list (always mounted, classes toggle) */}
-              <ul className="flex flex-col gap-2.5 font-mono uppercase tracking-[0.18em] text-sm">
+              {/* Mini-list — sits just below the number */}
+              <ul className="mt-10 flex flex-col gap-3 text-base">
                 {PROJECTS.map((p, i) => {
                   const isActive = i === active;
                   return (
-                    <li key={p.slug} className="flex items-center gap-3">
+                    <li key={p.slug} className="flex items-center gap-4">
                       <span
                         className={cn(
                           "h-px transition-all duration-500 ease-smooth",
-                          isActive ? "w-8 bg-signal" : "w-4 bg-mute/40"
+                          isActive ? "w-10 bg-cream" : "w-6 bg-mute/35"
                         )}
                       />
                       <span
                         className={cn(
-                          "transition-colors duration-300 ease-smooth",
-                          isActive ? "text-foreground" : "text-mute/45"
+                          "font-display transition-colors duration-300 ease-smooth",
+                          isActive ? "text-cream" : "text-mute/45"
                         )}
                       >
                         {p.title}
@@ -122,8 +120,8 @@ export const Work = () => {
                 })}
               </ul>
 
-              {/* Active project info */}
-              <div className="overflow-hidden" style={{ minHeight: "10em" }}>
+              {/* Active project info — pushed to bottom */}
+              <div className="mt-auto overflow-hidden" style={{ minHeight: "8em" }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`info-${active}`}
@@ -133,16 +131,13 @@ export const Work = () => {
                     transition={SWAP_TRANSITION}
                   >
                     <h3
-                      className="font-display font-semibold tracking-[-0.01em] text-foreground"
-                      style={{ fontSize: "clamp(28px,3.4vw,52px)", lineHeight: 1.05 }}
+                      className="font-display tracking-[-0.01em] text-cream"
+                      style={{ fontSize: "clamp(40px,4.2vw,68px)", lineHeight: 1.02 }}
                     >
                       {current.title}
                     </h3>
-                    <p className="mt-3 text-mute text-base lg:text-lg max-w-md leading-relaxed">
+                    <p className="mt-4 text-mute text-base max-w-[320px] leading-relaxed">
                       {current.sub}
-                    </p>
-                    <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-mute/70">
-                      {current.meta} <span className="text-mute/40">·</span> {current.year}
                     </p>
                   </motion.div>
                 </AnimatePresence>
