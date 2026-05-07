@@ -39,18 +39,31 @@ export const ChooseUs = () => {
       const trigger = cardRef.current;
       if (!trigger) return;
 
+      const decimalsFor = (n: number) =>
+        (n.toString().split(".")[1] || "").length;
+
+      const format = (raw: number, target: number) => {
+        const d = decimalsFor(target);
+        if (d > 0) return Math.min(raw, target).toFixed(d);
+        return Math.min(Math.floor(raw), target).toString();
+      };
+
       const obj = { val: 0 };
       const tw = gsap.to(obj, {
         val: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: { trigger, start: "top 80%", once: true },
+        duration: 1.4,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger,
+          start: "top 75%",
+          once: true,
+          invalidateOnRefresh: true,
+        },
         onUpdate: () => {
           STATS.forEach((s, i) => {
             const el = numRefs.current[i];
             if (!el) return;
-            const v = Math.floor(obj.val * s.target);
-            el.textContent = v.toString() + s.suffix;
+            el.textContent = format(obj.val * s.target, s.target) + s.suffix;
           });
         },
         onComplete: () => {
