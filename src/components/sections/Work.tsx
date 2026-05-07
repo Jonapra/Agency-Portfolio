@@ -46,8 +46,33 @@ export const Work = () => {
         onUpdate: update,
       });
       update();
+
+      const cardScaleTriggers: ScrollTrigger[] = [];
+      cardRefs.current.forEach((card) => {
+        if (!card) return;
+        gsap.set(card, { transformOrigin: "50% 50%", willChange: "transform" });
+        const tl = gsap.timeline({
+          defaults: { ease: "none" },
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.1,
+          },
+        });
+        tl.fromTo(
+          card,
+          { scale: 0.86 },
+          { scale: 1.04, ease: "power2.out", duration: 0.5 }
+        ).to(card, { scale: 0.86, ease: "power2.in", duration: 0.5 });
+        if (tl.scrollTrigger) cardScaleTriggers.push(tl.scrollTrigger);
+      });
+
       ScrollTrigger.refresh();
-      return () => st.kill();
+      return () => {
+        st.kill();
+        cardScaleTriggers.forEach((t) => t.kill());
+      };
     },
     { scope: sectionRef, dependencies: [reduced] }
   );
