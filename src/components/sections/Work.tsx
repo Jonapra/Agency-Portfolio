@@ -70,9 +70,9 @@ export const Work = () => {
         </h2>
       </SectionContainer>
 
-      {/* Desktop ≥ md (skipped when reduced motion) */}
+      {/* Desktop ≥ lg (skipped when reduced motion) */}
       {!showStacked && (
-        <SectionContainer className="hidden md:block mt-16 lg:mt-24">
+        <SectionContainer className="hidden lg:block mt-16 lg:mt-24">
           <div className="grid grid-cols-[34%_66%] gap-x-[6vw] items-start">
             {/* LEFT — sticky single panel */}
             <div className="sticky top-[100px] self-start flex flex-col h-[calc(100vh-140px)] pb-6">
@@ -144,8 +144,8 @@ export const Work = () => {
               </div>
             </div>
 
-            {/* RIGHT — stacked cards in normal flow */}
-            <div className="flex flex-col gap-[16vh] py-[10vh]">
+            {/* RIGHT — stacked cards in normal flow, capped width on huge screens */}
+            <div className="flex flex-col gap-[14vh] py-[8vh] items-start">
               {PROJECTS.map((p, i) => (
                 <div
                   key={p.slug}
@@ -153,6 +153,7 @@ export const Work = () => {
                     cardRefs.current[i] = el;
                   }}
                   data-index={i}
+                  className="w-full max-w-[680px]"
                 >
                   <WorkCard p={p} />
                 </div>
@@ -162,8 +163,8 @@ export const Work = () => {
         </SectionContainer>
       )}
 
-      {/* Mobile < md OR reduced-motion at any width */}
-      <div className={cn(showStacked ? "block" : "md:hidden")}>
+      {/* Mobile + tablet (< lg) OR reduced-motion at any width */}
+      <div className={cn(showStacked ? "block" : "lg:hidden")}>
         <SectionContainer className="pb-8 mt-10 md:mt-16">
           <div className="flex flex-col gap-14">
             {PROJECTS.map((p, i) => (
