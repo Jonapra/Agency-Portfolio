@@ -162,7 +162,7 @@ const ServiceRow = ({
         <div className="flex items-center gap-4 py-3">
           <span
             className={cn(
-              "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.04em] tabular-nums flex-shrink-0 transition-colors duration-300",
+              "font-sans font-bold text-2xl leading-none tracking-[-0.04em] tabular-nums flex-shrink-0 transition-colors duration-300",
               isActive ? "text-foreground/50" : "text-foreground/30"
             )}
           >
@@ -178,7 +178,7 @@ const ServiceRow = ({
           </span>
           <h3
             className={cn(
-              "font-sans font-bold text-2xl md:text-3xl leading-none tracking-[-0.02em] transition-colors duration-300 flex-1",
+              "font-sans font-bold text-2xl leading-none tracking-[-0.02em] transition-colors duration-300 flex-1",
               isActive ? "text-foreground" : "text-foreground/85"
             )}
           >
@@ -197,9 +197,9 @@ const ServiceRow = ({
               transition={{ duration: 0.4, ease }}
               className="overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-4 pb-4">
+              <div className="flex flex-col gap-4 pb-4">
                 {/* Image */}
-                <div className="w-full md:w-[260px] flex-shrink-0 aspect-[3/2] rounded-md overflow-hidden bg-foreground/5">
+                <div className="w-full md:max-w-[460px] aspect-[3/2] rounded-md overflow-hidden bg-foreground/5">
                   <img
                     src={service.image}
                     alt={service.imageAlt}
@@ -218,7 +218,7 @@ const ServiceRow = ({
                     {service.features.map((f) => (
                       <span
                         key={f}
-                        className="rounded-full border border-foreground/20 px-3.5 py-1.5 text-xs md:text-sm font-medium text-foreground/80"
+                        className="rounded-full border border-foreground/20 px-3.5 py-1.5 text-xs font-medium text-foreground/80"
                       >
                         {f}
                       </span>

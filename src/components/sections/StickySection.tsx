@@ -92,13 +92,8 @@ export function StickySection() {
         buildStickyAnim(() => window.innerHeight * 0.18);
       });
 
-      // ── Tablet (md–lg): reduced startY so cards appear without huge gap ──
-      mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
-        buildStickyAnim(() => window.innerHeight * 0.25);
-      });
-
-      // ── Mobile only (<md): staggered fade-up per card ──────────
-      mm.add("(max-width: 767px)", () => {
+      // ── Mobile + Tablet (<lg): staggered fade-up per card ──────────
+      mm.add("(max-width: 1023px)", () => {
         if (reducedMotion) {
           mobileCardRefs.current.forEach((card) => {
             if (card) gsap.set(card, { opacity: 1, y: 0 });
@@ -133,8 +128,8 @@ export function StickySection() {
   return (
     <div ref={sectionRef} className="w-full">
 
-      {/* ── Desktop + Tablet (md+): sticky scroll ── */}
-      <div ref={desktopRef} className="hidden md:block relative w-full h-[200vh] lg:h-[380vh] min-[2560px]:h-[220vh]">
+      {/* ── Desktop only (lg+): sticky scroll ── */}
+      <div ref={desktopRef} className="hidden lg:block relative w-full lg:h-[380vh] min-[2560px]:h-[220vh]">
         <div className="sticky top-0 w-full h-screen overflow-hidden bg-ink">
 
           <p className="absolute top-[7%] left-1/2 -translate-x-1/2 z-0 font-sans text-sm min-[2560px]:text-xl tracking-[0.2em] text-cream/45 flex items-center gap-2 select-none whitespace-nowrap">
@@ -204,8 +199,8 @@ export function StickySection() {
         </div>
       </div>
 
-      {/* ── Mobile only (<md): stacked layout ── */}
-      <div className="md:hidden bg-ink px-5 py-16">
+      {/* ── Mobile + Tablet (<lg): stacked layout ── */}
+      <div className="lg:hidden bg-ink px-5 md:px-10 py-16 md:py-20">
         <p className="text-center font-sans text-xs tracking-[0.2em] text-cream/45 flex items-center justify-center gap-2 select-none mb-8">
           <span aria-hidden>+</span>
           From concept to launch
@@ -220,27 +215,27 @@ export function StickySection() {
           into <em>Brand stories</em>
         </h2>
 
-        <div className="flex flex-col gap-5 sm:gap-6 max-w-xl mx-auto">
+        <div className="flex flex-col gap-5 sm:gap-6 md:gap-8 max-w-xl md:max-w-2xl mx-auto">
           {CARDS.map((card, i) => (
             <div
               key={card.title}
               ref={(el) => { mobileCardRefs.current[i] = el; }}
-              className="bg-ink-2 border border-cream/10 rounded-2xl shadow-xl shadow-black/40 flex flex-col p-6 sm:p-7 opacity-0"
+              className="bg-ink-2 border border-cream/10 rounded-2xl shadow-xl shadow-black/40 flex flex-col p-6 sm:p-7 md:p-8 opacity-0"
             >
-              <div className="flex items-center justify-between mb-5">
-                <span className="font-sans text-base font-bold text-cream">{card.title}</span>
+              <div className="flex items-center justify-between mb-5 md:mb-6">
+                <span className="font-sans text-base md:text-lg font-bold text-cream">{card.title}</span>
                 <span className="font-sans text-cream/25 tracking-widest text-sm select-none" aria-hidden>
                   + + +
                 </span>
               </div>
-              <div className="w-full rounded-xl bg-white/5 mb-5 h-52 sm:h-64 overflow-hidden border border-white/5">
+              <div className="w-full rounded-xl bg-white/5 mb-5 md:mb-6 h-52 sm:h-64 md:h-72 overflow-hidden border border-white/5">
                 <img
                   src={card.image}
                   alt={card.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="font-sans text-sm font-semibold text-cream/80 leading-relaxed">
+              <p className="font-sans text-sm md:text-base font-semibold text-cream/80 leading-relaxed">
                 {card.desc}
               </p>
             </div>
