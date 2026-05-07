@@ -31,10 +31,9 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  { slug: "veldt", tag: "01 · Identity", title: "Veldt", sub: "A restaurant with a garden problem.", c1: "#FF5A1F", c2: "#2A1F0F", year: "2026", meta: "Identity · Menu · Site" },
-  { slug: "flint-os", tag: "02 · Product", title: "Flint OS", sub: "Private equity, made legible.", c1: "#0E1E3A", c2: "#05080C", year: "2025", meta: "Product · Brand · Ops" },
-  { slug: "paperbound", tag: "03 · Editorial", title: "Paperbound", sub: "An independent press gets louder.", c1: "#F2EDE4", c2: "#E8E1D3", year: "2025", meta: "Editorial · Type · Web", invert: true },
-  { slug: "aero-90", tag: "04 · Motion", title: "Aero/90", sub: "A launch film for the fastest bike of 1990, in 2026.", c1: "#1A1D22", c2: "#0A0A0B", year: "2025", meta: "Direction · Motion · Sound" },
+  { slug: "veldt", tag: "01 · Identity", title: "Veldt", sub: "Identity and site for a restaurant with a garden problem.", c1: "#FF5A1F", c2: "#2A1F0F", year: "2026", meta: "Identity · Menu · Site" },
+  { slug: "flint-os", tag: "02 · Product", title: "Flint OS", sub: "An operating layer for private-equity teams. Built to be legible at scale.", c1: "#0E1E3A", c2: "#05080C", year: "2025", meta: "Product · Brand · Ops" },
+  { slug: "paperbound", tag: "03 · Editorial", title: "Paperbound", sub: "Editorial system and quarterly site for an independent press.", c1: "#F2EDE4", c2: "#E8E1D3", year: "2025", meta: "Editorial · Type · Web", invert: true },
 ];
 
 export const SERVICES = [
