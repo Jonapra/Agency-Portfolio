@@ -30,10 +30,17 @@ export const useCustomCursor = () => {
       const el = e.target as HTMLElement;
       const t = el.closest("[data-cursor]") as HTMLElement | null;
       if (t) {
-        ring.classList.remove("off");
-        dot.classList.remove("off");
-        if (t.dataset.cursor === "view") { ring.classList.add("view"); ring.classList.remove("hover"); }
-        else { ring.classList.add("hover"); ring.classList.remove("view"); }
+        const v = t.dataset.cursor;
+        ring.classList.remove("view", "hover");
+        if (v === "none") {
+          ring.classList.add("off");
+          dot.classList.add("off");
+        } else {
+          ring.classList.remove("off");
+          dot.classList.remove("off");
+          if (v === "view") ring.classList.add("view");
+          else ring.classList.add("hover");
+        }
         return;
       }
       if (el.closest("button, a")) {
@@ -43,9 +50,13 @@ export const useCustomCursor = () => {
     };
     const onOut = (e: MouseEvent) => {
       const el = e.target as HTMLElement;
-      const t = el.closest("[data-cursor]");
+      const t = el.closest("[data-cursor]") as HTMLElement | null;
       if (t) {
         ring.classList.remove("hover", "view");
+        if (t.dataset.cursor === "none") {
+          ring.classList.remove("off");
+          dot.classList.remove("off");
+        }
         return;
       }
       if (el.closest("button, a")) {

@@ -6,7 +6,7 @@ export const BRAND = {
   name: "Agiton",
   tagline: "A design studio building brands that move.",
   email: "hello@agiton.studio",
-  location: "Lisbon · Brooklyn",
+  location: "STUDIO · REMOTE",
   founded: "2019",
 } as const;
 
