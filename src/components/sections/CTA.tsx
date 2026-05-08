@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "../Reveal";
@@ -10,7 +10,28 @@ const CAL_NAMESPACE = "30min";
 const CAL_LINK = "ankit-pradhan/30min";
 
 export const CTA = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  // Trigger only when section scrolls into view
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsReady(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isReady) return;
     (async () => {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
       cal("ui", {
@@ -35,10 +56,10 @@ export const CTA = () => {
         },
       });
     })();
-  }, []);
+  }, [isReady]);
 
   return (
-    <section id="contact" data-cursor="none" className="relative py-8 md:py-10 lg:py-6">
+    <section ref={sectionRef} id="contact" data-cursor="none" className="relative py-8 md:py-10 lg:py-6">
       <SectionContainer>
         <div className="relative overflow-hidden rounded-2xl plate p-6 md:p-8 lg:p-6">
           <div
@@ -80,14 +101,14 @@ export const CTA = () => {
                   </p>
                 </Reveal>
 
-                {/* Mobile + tablet — opens Cal popup (desktop shows inline embed instead) */}
+                {/* Mobile only — tablet + desktop shows inline embed below */}
                 <Reveal delay={0.18}>
                   <button
                     type="button"
                     data-cal-namespace={CAL_NAMESPACE}
                     data-cal-link={CAL_LINK}
                     data-cal-config='{"layout":"month_view"}'
-                    className="lg:hidden mt-7 inline-flex w-fit items-center gap-3 rounded-full bg-signal text-ink h-[58px] pl-6 pr-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+                    className="md:hidden mt-7 inline-flex w-fit items-center gap-3 rounded-full bg-signal text-ink h-[58px] pl-6 pr-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
                   >
                     <span className="font-sans font-semibold text-[16px] tracking-[-0.02em]">
                       Book a 20-minute call
@@ -124,16 +145,18 @@ export const CTA = () => {
               </Reveal>
             </div>
 
-            {/* Right — Cal embed (desktop only; mobile/tablet uses the pill button above) */}
-            <div className="hidden lg:block">
+            {/* Right — Cal embed (tablet + desktop) */}
+            <div className="hidden md:block md:w-[60%] md:mx-auto lg:w-auto lg:mx-0">
               <Reveal delay={0.1}>
                 <div className="relative rounded-xl border border-foreground/10 bg-black overflow-hidden">
-                  <Cal
-                    namespace={CAL_NAMESPACE}
-                    calLink={CAL_LINK}
-                    style={{ width: "100%", overflow: "hidden" }}
-                    config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
-                  />
+                  {isReady && (
+                    <Cal
+                      namespace={CAL_NAMESPACE}
+                      calLink={CAL_LINK}
+                      style={{ width: "100%", overflow: "hidden" }}
+                      config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+                    />
+                  )}
                 </div>
               </Reveal>
             </div>
