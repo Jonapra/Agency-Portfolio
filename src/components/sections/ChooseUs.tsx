@@ -97,7 +97,7 @@ export const ChooseUs = () => {
             </h2>
           </div>
           <p className="col-span-12 md:col-span-4 text-base md:text-lg text-mute-2 leading-snug md:text-right">
-            With a decade of expertise, we craft bold brands and high-impact digital experiences that get results.
+            We focus on user friendly interface , Focus on one client at a time and create high-impact digital experiences that get results.
           </p>
         </div>
 
