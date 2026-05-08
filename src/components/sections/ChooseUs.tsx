@@ -92,7 +92,7 @@ export const ChooseUs = () => {
         <div className="mb-10 md:mb-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
           <div className="col-span-12 md:col-span-8">
             <div className="h-eyebrow text-mute mb-4">(WHY US)</div>
-            <h2 className="font-sans font-black leading-[0.85] text-[clamp(3rem,11vw,9rem)] uppercase tracking-tight text-white">
+            <h2 className="font-sans font-black leading-[0.85] text-[clamp(2.5rem,7.5vw,7rem)] uppercase tracking-tight text-white">
               WHY CHOOSE<br />US
             </h2>
           </div>
