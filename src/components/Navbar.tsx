@@ -58,10 +58,15 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   };
 
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    // On non-home pages let anchor links fall through naturally (they use anchorPrefix="/#")
-    if (anchorPrefix !== "") return;
     e.preventDefault();
     setMenuOpen(false);
+
+    if (anchorPrefix !== "") {
+      // Non-home page: show transition then navigate to the prefixed target
+      const target = href.startsWith("/") ? href : `${anchorPrefix}${href}`;
+      runTransition(() => navigate(target));
+      return;
+    }
 
     if (href.startsWith("#")) {
       const el = document.getElementById(href.slice(1));
