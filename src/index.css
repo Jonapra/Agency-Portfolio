@@ -70,11 +70,11 @@
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: #000;
+    background: hsl(var(--signal));
     border-radius: 9999px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: #000; }
-  * { scrollbar-width: thin; scrollbar-color: #000 transparent; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--signal-2)); }
+  * { scrollbar-width: thin; scrollbar-color: hsl(var(--signal)) transparent; }
 }
 
 @layer components {
