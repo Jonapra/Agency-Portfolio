@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/constants/site";
@@ -22,6 +22,16 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [isHidden, setIsHidden] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const lastScrollY = useRef(0);
+
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (anchorPrefix !== "" || !href.startsWith("#")) return;
+    e.preventDefault();
+    const el = document.getElementById(href.slice(1));
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  };
 
   useEffect(() => {
     const HIDE_THRESHOLD = 80;
@@ -141,6 +151,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
                   href={`${anchorPrefix}${l.href}`}
                   onMouseEnter={() => setHoveredIdx(i)}
                   onFocus={() => setHoveredIdx(i)}
+                  onClick={(e) => handleNavClick(e, l.href)}
                   className="group relative inline-flex items-center rounded-full px-3.5 lg:px-4 py-2 text-[13px] font-medium tracking-tight cursor-pointer focus-visible:outline-none"
                 >
                   {hoveredIdx === i && (
@@ -195,6 +206,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         anchorPrefix={anchorPrefix}
+        onNavClick={handleNavClick}
       />
     </>
   );
@@ -204,6 +216,7 @@ interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
   anchorPrefix: string;
+  onNavClick: (e: MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
 const panelVariants = {
@@ -221,7 +234,7 @@ const itemVariants = {
   exit: { y: 20, opacity: 0, transition: { duration: 0.2 } },
 };
 
-const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
+const MobileMenu = ({ open, onClose, anchorPrefix, onNavClick }: MobileMenuProps) => {
   return (
     <AnimatePresence>
       {open && (
@@ -241,7 +254,7 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
                 <motion.div key={l.href} variants={itemVariants} className="overflow-hidden">
                   <a
                     href={`${anchorPrefix}${l.href}`}
-                    onClick={onClose}
+                    onClick={(e) => { onNavClick(e, l.href); onClose(); }}
                     className="group relative block font-serif text-[clamp(2.75rem,12vw,5rem)] leading-[1.05] tracking-tight text-cream transition-colors duration-300"
                   >
                     <span className="inline-flex items-baseline gap-4">
@@ -257,7 +270,7 @@ const MobileMenu = ({ open, onClose, anchorPrefix }: MobileMenuProps) => {
             </nav>
 
             <motion.div variants={itemVariants} className="mt-14">
-              <a href={`${anchorPrefix}#contact`} onClick={onClose}>
+              <a href={`${anchorPrefix}#contact`} onClick={(e) => { onNavClick(e, "#contact"); onClose(); }}>
                 <ButtonWithIcon
                   text="Start a project"
                   className="bg-signal text-ink"

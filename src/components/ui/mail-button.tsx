@@ -18,30 +18,36 @@ export function MailButton({ email }: MailButtonProps) {
         onHoverEnd={() => setHovered(false)}
         className="inline-flex items-center bg-ink text-cream dark:bg-cream dark:text-ink rounded-full overflow-hidden cursor-pointer select-none h-[50px]"
       >
-        {/* Left icon cluster */}
+        {/* Left icon cluster — Mail exits, Send enters */}
         <div className="flex items-center shrink-0 pl-1.5">
-          <motion.div
-            animate={{ width: hovered ? 34 : 38, height: hovered ? 34 : 38 }}
-            transition={spring}
-            className="rounded-full bg-white/10 dark:bg-ink/10 flex items-center justify-center shrink-0"
-          >
-            <Mail size={15} strokeWidth={2} />
-          </motion.div>
-
-          <AnimatePresence>
-            {hovered && (
-              <motion.div
-                key="send-icon"
-                initial={{ width: 0, opacity: 0, marginLeft: 0 }}
-                animate={{ width: 34, height: 34, opacity: 1, marginLeft: 4 }}
-                exit={{ width: 0, opacity: 0, marginLeft: 0 }}
-                transition={spring}
-                className="rounded-full bg-signal text-ink flex items-center justify-center shrink-0 overflow-hidden"
-              >
-                <Send size={13} strokeWidth={2} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="relative" style={{ width: 38, height: 38 }}>
+            <AnimatePresence initial={false}>
+              {!hovered && (
+                <motion.div
+                  key="mail-icon"
+                  initial={{ scale: 0.6, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.6, opacity: 0 }}
+                  transition={spring}
+                  className="absolute inset-0 rounded-full bg-white/10 dark:bg-ink/10 flex items-center justify-center"
+                >
+                  <Mail size={15} strokeWidth={2} />
+                </motion.div>
+              )}
+              {hovered && (
+                <motion.div
+                  key="send-icon"
+                  initial={{ scale: 0.6, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.6, opacity: 0 }}
+                  transition={spring}
+                  className="absolute inset-0 rounded-full bg-signal text-ink flex items-center justify-center"
+                >
+                  <Send size={13} strokeWidth={2} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Label */}
