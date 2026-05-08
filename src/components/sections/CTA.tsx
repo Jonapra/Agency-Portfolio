@@ -23,10 +23,10 @@ export const CTA = () => {
             "cal-text": "#F2EDE4",
             "cal-text-emphasis": "#FBF8F2",
             "cal-text-muted": "#8A8A92",
-            "cal-bg": "#141417",
-            "cal-bg-emphasis": "#1C1C21",
-            "cal-bg-muted": "#1C1C21",
-            "cal-bg-info": "#1C1C21",
+            "cal-bg": "#000000",
+            "cal-bg-emphasis": "#0a0a0a",
+            "cal-bg-muted": "#0a0a0a",
+            "cal-bg-info": "#0a0a0a",
             "cal-border": "rgba(242, 237, 228, 0.10)",
             "cal-border-default": "rgba(242, 237, 228, 0.12)",
             "cal-border-emphasis": "rgba(242, 237, 228, 0.20)",
@@ -38,9 +38,9 @@ export const CTA = () => {
   }, []);
 
   return (
-    <section id="contact" data-cursor="none" className="relative py-10 md:py-14">
+    <section id="contact" data-cursor="none" className="relative py-8 md:py-10 lg:py-6">
       <SectionContainer>
-        <div className="relative overflow-hidden rounded-2xl plate p-6 md:p-10 lg:p-12">
+        <div className="relative overflow-hidden rounded-2xl plate p-6 md:p-8 lg:p-6">
           <div
             className="halo"
             style={{
@@ -53,9 +53,9 @@ export const CTA = () => {
             }}
           />
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-10 items-stretch">
+          <div className="relative grid grid-cols-1 lg:grid-cols-[35%_65%] gap-8 lg:gap-10 items-stretch">
             {/* Left — invitation copy */}
-            <div className="lg:col-span-6 flex flex-col justify-between">
+            <div className="flex flex-col justify-between">
               <div>
                 <Reveal>
                   <div className="h-eyebrow text-signal mb-4">
@@ -75,7 +75,7 @@ export const CTA = () => {
 
                 <Reveal delay={0.12}>
                   <p className="mt-4 max-w-md text-mute-2 text-[14px] leading-relaxed">
-                    Pick a slot — 30 minutes, no pitch deck, no pressure. We'll talk
+                    Pick a slot — 20 minutes, no pitch deck, no pressure. We'll talk
                     through your project and see if we're the right fit.
                   </p>
                 </Reveal>
@@ -87,12 +87,12 @@ export const CTA = () => {
                     data-cal-namespace={CAL_NAMESPACE}
                     data-cal-link={CAL_LINK}
                     data-cal-config='{"layout":"month_view"}'
-                    className="lg:hidden group mt-7 flex w-full items-center justify-between gap-3 rounded-full bg-signal text-ink h-[58px] pl-6 pr-2 cursor-pointer transition-colors duration-200 hover:bg-signal-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink motion-reduce:transition-none"
+                    className="lg:hidden mt-7 inline-flex w-fit items-center gap-3 rounded-full bg-signal text-ink h-[58px] pl-6 pr-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
                   >
                     <span className="font-sans font-semibold text-[16px] tracking-[-0.02em]">
-                      Book a 30-min call
+                      Book a 20-minute call
                     </span>
-                    <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-ink text-signal transition-transform duration-300 ease-out group-hover:-rotate-45 motion-reduce:transition-none">
+                    <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-ink text-signal">
                       <ArrowUpRight size={18} strokeWidth={2.2} />
                     </span>
                   </button>
@@ -125,13 +125,13 @@ export const CTA = () => {
             </div>
 
             {/* Right — Cal embed (desktop only; mobile/tablet uses the pill button above) */}
-            <div className="hidden lg:block lg:col-span-4">
+            <div className="hidden lg:block">
               <Reveal delay={0.1}>
-                <div className="relative rounded-xl border border-foreground/10 bg-ink-2 overflow-hidden h-[80vh] min-h-[560px]">
+                <div className="relative rounded-xl border border-foreground/10 bg-black overflow-hidden">
                   <Cal
                     namespace={CAL_NAMESPACE}
                     calLink={CAL_LINK}
-                    style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                    style={{ width: "100%", overflow: "hidden" }}
                     config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
                   />
                 </div>
