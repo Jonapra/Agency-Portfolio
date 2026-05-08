@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
 import { Logo } from "./Logo";
 import { NAV_LINKS } from "@/constants/site";
 import { ButtonWithIcon } from "@/components/ui/button-with-icon";
+import { useLenis } from "@/components/lenis-provider";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -22,14 +26,67 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const [isHidden, setIsHidden] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const lastScrollY = useRef(0);
+  const lenis = useLenis();
+  const navigate = useNavigate();
+  const reduced = usePrefersReducedMotion();
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const overlayTextRef = useRef<HTMLSpanElement>(null);
+
+  const runTransition = (action: () => void) => {
+    if (reduced || !overlayRef.current) {
+      action();
+      return;
+    }
+    const overlay = overlayRef.current;
+    const text = overlayTextRef.current;
+
+    gsap.set(overlay, { display: "flex", yPercent: 100 });
+    if (text) gsap.set(text, { y: 24, opacity: 0 });
+
+    gsap.timeline()
+      .to(overlay, { yPercent: 0, duration: 0.55, ease: "power3.inOut" })
+      .to(text, { y: 0, opacity: 1, duration: 0.28, ease: "power2.out" }, "-=0.18")
+      .add(action)
+      .to({}, { duration: 0.18 })
+      .to(text, { y: -16, opacity: 0, duration: 0.18, ease: "power2.in" })
+      .to(overlay, {
+        yPercent: -100,
+        duration: 0.55,
+        ease: "power3.inOut",
+        onComplete: () => gsap.set(overlay, { display: "none" }),
+      }, "-=0.1");
+  };
 
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (anchorPrefix !== "" || !href.startsWith("#")) return;
+    // On non-home pages let anchor links fall through naturally (they use anchorPrefix="/#")
+    if (anchorPrefix !== "") return;
     e.preventDefault();
-    const el = document.getElementById(href.slice(1));
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+
+    if (href.startsWith("#")) {
+      const el = document.getElementById(href.slice(1));
+      if (!el) return;
       history.replaceState(null, "", window.location.pathname + window.location.search);
+      runTransition(() => {
+        if (lenis) lenis.scrollTo(el, { immediate: true });
+        else window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY });
+      });
+    } else {
+      // Page navigation (e.g. /blog)
+      runTransition(() => navigate(href));
+    }
+  };
+
+  const handleLogoClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (window.location.pathname === "/") {
+      runTransition(() => {
+        if (lenis) lenis.scrollTo(0, { immediate: true });
+        else window.scrollTo(0, 0);
+      });
+    } else {
+      runTransition(() => navigate("/"));
     }
   };
 
@@ -93,7 +150,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className={`flex md:hidden items-center justify-between w-full p-1.5 px-4 ${plateBase} ${plateTone}`}
           >
-            <Logo small />
+            <Logo small onClick={handleLogoClick} />
             <div className="flex items-center gap-2">
               <a
                 href="https://wa.me/919366279647"
@@ -141,7 +198,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
             className={`hidden md:flex items-center p-1.5 pl-5 gap-3 ${plateBase} ${plateTone}`}
           >
             <div className="flex items-center">
-              <Logo small />
+              <Logo small onClick={handleLogoClick} />
             </div>
             <span aria-hidden="true" className="h-6 w-px bg-cream/10" />
             <nav aria-label="Primary" className="flex items-center gap-1">
@@ -208,6 +265,22 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
         anchorPrefix={anchorPrefix}
         onNavClick={handleNavClick}
       />
+
+      {/* Nav transition overlay */}
+      <div
+        ref={overlayRef}
+        className="fixed inset-0 z-[200] bg-ink items-center justify-center pointer-events-none"
+        style={{ display: "none" }}
+        aria-hidden="true"
+      >
+        <span
+          ref={overlayTextRef}
+          className="font-sans font-black text-cream select-none"
+          style={{ fontSize: "clamp(4rem, 14vw, 11rem)", letterSpacing: "-0.045em" }}
+        >
+          AGITON
+        </span>
+      </div>
     </>
   );
 };

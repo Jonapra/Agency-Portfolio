@@ -12,6 +12,7 @@ const CAL_LINK = "ankit-pradhan/30min";
 export const CTA = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isReady, setIsReady] = useState(false);
+  const [calLoaded, setCalLoaded] = useState(false);
 
   // Trigger only when section scrolls into view
   useEffect(() => {
@@ -34,6 +35,7 @@ export const CTA = () => {
     if (!isReady) return;
     (async () => {
       const cal = await getCalApi({ namespace: CAL_NAMESPACE });
+      cal("on", { action: "linkReady", callback: () => setCalLoaded(true) });
       cal("ui", {
         hideEventTypeDetails: false,
         layout: "month_view",
@@ -148,14 +150,24 @@ export const CTA = () => {
             {/* Right — Cal embed (tablet + desktop) */}
             <div className="hidden md:block md:w-[60%] md:mx-auto lg:w-auto lg:mx-0">
               <Reveal delay={0.1}>
-                <div className="relative rounded-xl border border-foreground/10 bg-black overflow-hidden">
+                <div className="relative rounded-xl border border-foreground/10 overflow-hidden min-h-[560px] bg-gradient-to-br from-signal/[0.07] via-black to-black">
+                  {!calLoaded && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none">
+                      <span className="font-sans font-semibold text-cream/60" style={{ fontSize: "clamp(20px,2vw,28px)", letterSpacing: "-0.03em" }}>
+                        Pick a slot.
+                      </span>
+                      <span className="text-xs text-mute/40 font-sans">30 min · no prep needed</span>
+                    </div>
+                  )}
                   {isReady && (
-                    <Cal
-                      namespace={CAL_NAMESPACE}
-                      calLink={CAL_LINK}
-                      style={{ width: "100%", overflow: "hidden" }}
-                      config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
-                    />
+                    <div style={{ opacity: calLoaded ? 1 : 0, transition: "opacity 0.4s ease" }}>
+                      <Cal
+                        namespace={CAL_NAMESPACE}
+                        calLink={CAL_LINK}
+                        style={{ width: "100%", overflow: "hidden" }}
+                        config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+                      />
+                    </div>
                   )}
                 </div>
               </Reveal>

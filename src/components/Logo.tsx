@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 
-export const Logo = ({ small = false }: { small?: boolean }) => {
-  const handleClick = (e: React.MouseEvent) => {
+interface LogoProps {
+  small?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
+
+export const Logo = ({ small = false, onClick }: LogoProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) {
+      onClick(e);
+      return;
+    }
     if (window.location.pathname === "/") {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
