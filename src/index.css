@@ -210,8 +210,23 @@
 }
 .cursor-ring::after { content: ""; }
 .cursor-ring.hover { width: 72px; height: 72px; background: hsl(var(--signal) / 0.9); border-color: transparent; }
-.cursor-ring.view { width: 96px; height: 96px; background: hsl(var(--signal)); border-color: transparent; }
-.cursor-ring.view::after { content: "View Project"; }
+.cursor-ring.view {
+  width: auto;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 9999px;
+  background: hsl(var(--signal));
+  border-color: transparent;
+  color: hsl(var(--ink));
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+  box-shadow: 0 12px 32px -8px hsl(var(--signal) / 0.55), 0 0 0 1px hsl(var(--ink) / 0.08);
+  white-space: nowrap;
+}
+.cursor-ring.view::after { content: "View Project  \2197"; }
 .cursor-ring.off, .cursor-dot.off { opacity: 0; }
 @media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
 

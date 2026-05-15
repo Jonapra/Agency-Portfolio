@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { FooterBrand } from "./FooterBrand";
 import { Cursor } from "./Cursor";
 import { useCustomCursor } from "@/hooks/useCustomCursor";
 
@@ -12,9 +13,12 @@ export const Layout = ({ children, anchorPrefix }: Props) => {
   return (
     <div className="grain-overlay min-h-screen">
       <Cursor />
-      <Navbar anchorPrefix={anchorPrefix} />
-      <main>{children}</main>
-      <Footer />
+      <div className="relative z-10 bg-background">
+        <Navbar anchorPrefix={anchorPrefix} />
+        <main>{children}</main>
+        <Footer />
+      </div>
+      <FooterBrand />
     </div>
   );
 };
