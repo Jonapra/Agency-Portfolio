@@ -19,8 +19,16 @@ export function BookACallButton({ href = "#contact" }: BookACallButtonProps) {
     return () => window.removeEventListener("resize", check)
   }, [])
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!href.startsWith("#") && !href.startsWith("/")) return
+    e.preventDefault()
+    window.dispatchEvent(
+      new CustomEvent("nav:transition", { detail: { href } })
+    )
+  }
+
   return (
-    <a href={href} className="inline-block">
+    <a href={href} onClick={handleClick} className="inline-block">
       <motion.div
         onHoverStart={() => isLargeScreen && setHovered(true)}
         onHoverEnd={() => isLargeScreen && setHovered(false)}
