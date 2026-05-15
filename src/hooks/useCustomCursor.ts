@@ -26,6 +26,10 @@ export const useCustomCursor = () => {
     };
     raf = requestAnimationFrame(tick);
 
+    // Dot is hidden only inside the navbar header and the Work section.
+    const shouldHideDot = (el: HTMLElement) =>
+      !!(el.closest("header") || el.closest("#work"));
+
     const onOver = (e: MouseEvent) => {
       const el = e.target as HTMLElement;
       const t = el.closest("[data-cursor]") as HTMLElement | null;
@@ -37,18 +41,17 @@ export const useCustomCursor = () => {
           dot.classList.add("off");
         } else {
           ring.classList.remove("off");
-          dot.classList.remove("off");
-          if (v === "view") {
-            ring.classList.add("view");
-            // Hide the small dot over project cards in the Work section only.
-            if (t.closest("#work")) dot.classList.add("off");
-          } else ring.classList.add("hover");
+          if (v === "view") ring.classList.add("view");
+          else ring.classList.add("hover");
+          if (shouldHideDot(t)) dot.classList.add("off");
+          else dot.classList.remove("off");
         }
         return;
       }
       if (el.closest("button, a")) {
         ring.classList.add("off");
-        dot.classList.add("off");
+        if (shouldHideDot(el)) dot.classList.add("off");
+        else dot.classList.remove("off");
       }
     };
     const onOut = (e: MouseEvent) => {
@@ -56,7 +59,8 @@ export const useCustomCursor = () => {
       const t = el.closest("[data-cursor]") as HTMLElement | null;
       if (t) {
         ring.classList.remove("hover", "view");
-        if (t.dataset.cursor === "none") {
+        const v = t.dataset.cursor;
+        if (v === "none" || v === "view" || shouldHideDot(t)) {
           ring.classList.remove("off");
           dot.classList.remove("off");
         }
