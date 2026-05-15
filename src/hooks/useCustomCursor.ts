@@ -38,8 +38,11 @@ export const useCustomCursor = () => {
         } else {
           ring.classList.remove("off");
           dot.classList.remove("off");
-          if (v === "view") ring.classList.add("view");
-          else ring.classList.add("hover");
+          if (v === "view") {
+            ring.classList.add("view");
+            // Hide the small dot over project cards in the Work section only.
+            if (t.closest("#work")) dot.classList.add("off");
+          } else ring.classList.add("hover");
         }
         return;
       }
