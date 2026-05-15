@@ -81,9 +81,15 @@ export const Hero = () => {
           <a
             ref={ctaRef}
             href="#work"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(
+                new CustomEvent("nav:transition", { detail: { href: "#work" } })
+              );
+            }}
             className="inline-block"
           >
-            <ButtonWithIcon 
+            <ButtonWithIcon
               text="Projects"
               className="bg-signal hover:bg-signal-2 text-bold transition-colors duration-300"
             />

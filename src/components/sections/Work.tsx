@@ -220,12 +220,14 @@ export const Work = () => {
         </SectionContainer>
       </div>
 
-      {/* Bottom CTA */}
+      {/* Bottom CTA — temporarily hidden */}
+      {/*
       <div className="flex justify-center pb-20 md:pb-28 pt-10">
         <a href="#contact">
           <ButtonWithIcon text="More Projects" className="bg-signal text-ink" />
         </a>
       </div>
+      */}
     </section>
   );
 };

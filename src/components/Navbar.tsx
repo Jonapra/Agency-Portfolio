@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
@@ -32,7 +32,7 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const overlayTextRef = useRef<HTMLSpanElement>(null);
 
-  const runTransition = (action: () => void) => {
+  const runTransition = useCallback((action: () => void) => {
     if (reduced || !overlayRef.current) {
       action();
       return;
@@ -55,14 +55,10 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
         ease: "power3.inOut",
         onComplete: () => gsap.set(overlay, { display: "none" }),
       }, "-=0.1");
-  };
+  }, [reduced]);
 
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMenuOpen(false);
-
+  const navigateToHref = useCallback((href: string) => {
     if (anchorPrefix !== "") {
-      // Non-home page: show transition then navigate to the prefixed target
       const target = href.startsWith("/") ? href : `${anchorPrefix}${href}`;
       runTransition(() => navigate(target));
       return;
@@ -77,10 +73,25 @@ export const Navbar = ({ anchorPrefix = "" }: NavbarProps) => {
         else window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY });
       });
     } else {
-      // Page navigation (e.g. /blog)
       runTransition(() => navigate(href));
     }
+  }, [anchorPrefix, lenis, navigate, runTransition]);
+
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    navigateToHref(href);
   };
+
+  // Allow other components (e.g., Hero CTA) to trigger the same overlay transition.
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const href = (e as CustomEvent<{ href: string }>).detail?.href;
+      if (href) navigateToHref(href);
+    };
+    window.addEventListener("nav:transition", handler);
+    return () => window.removeEventListener("nav:transition", handler);
+  }, [navigateToHref]);
 
   const handleLogoClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
