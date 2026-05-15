@@ -33,9 +33,9 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  { slug: "veldt", tag: "01 · Identity", title: "Veldt", sub: "Identity and site for a restaurant with a garden problem.", c1: "#FF5A1F", c2: "#2A1F0F", year: "2026", meta: "Identity · Menu · Site" },
+  { slug: "veldt", tag: "01 · Hospitality", title: "omaivillas", sub: "Site for a curator of architect-designed private villas across St. Barth and Ibiza.", c1: "#D4B896", c2: "#1F1A15", year: "2026", meta: "Brand · Hospitality · Web", image: "/assets/project-images/projectDisplay-1.webp", url: "https://omaivillas.com/" },
   { slug: "flint-os", tag: "02 · E-commerce", title: "twoleavestea", sub: "Brand and e-commerce site for a single-origin tea — built leaf-first.", c1: "#3B5F3B", c2: "#0E1A0D", year: "2025", meta: "Brand · E-commerce · Web", image: "/assets/project-images/projectDisplay-2.webp", url: "https://twoleavestea.com/" },
-  { slug: "paperbound", tag: "03 · Editorial", title: "Paperbound", sub: "Editorial system and quarterly site for an independent press.", c1: "#F2EDE4", c2: "#E8E1D3", year: "2025", meta: "Editorial · Type · Web", invert: true },
+  { slug: "paperbound", tag: "03 · Fintech", title: "tuyo", sub: "Brand and site for a self-custodial crypto card — buy now, pay maybe.", c1: "#7B5CFF", c2: "#0A0A12", year: "2025", meta: "Brand · Fintech · Web", image: "/assets/project-images/projectDisplay-3.webp", url: "https://tuyo.com/" },
 ];
 
 export const SERVICES = [
