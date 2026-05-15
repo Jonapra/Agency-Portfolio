@@ -10,7 +10,9 @@ import { ErrorBoundary } from "@/components/error-boundary";
 
 const Index = lazy(() => import("./pages/Index.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
-const Project = lazy(() => import("./pages/Project.tsx"));
+// Detail-page route disabled — project cards link to live external sites for now.
+// Re-enable the Route below and uncomment this import when bringing case studies back.
+// const Project = lazy(() => import("./pages/Project.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -111,7 +113,7 @@ const App = () => (
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/blog" element={<Blog />} />
-                  <Route path="/projects/:slug" element={<Project />} />
+                  {/* <Route path="/projects/:slug" element={<Project />} /> */}
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

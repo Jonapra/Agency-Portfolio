@@ -28,11 +28,13 @@ export interface Project {
   year: string;
   meta: string;
   invert?: boolean;
+  image?: string;
+  url?: string;
 }
 
 export const PROJECTS: Project[] = [
   { slug: "veldt", tag: "01 · Identity", title: "Veldt", sub: "Identity and site for a restaurant with a garden problem.", c1: "#FF5A1F", c2: "#2A1F0F", year: "2026", meta: "Identity · Menu · Site" },
-  { slug: "flint-os", tag: "02 · Product", title: "Flint OS", sub: "An operating layer for private-equity teams. Built to be legible at scale.", c1: "#0E1E3A", c2: "#05080C", year: "2025", meta: "Product · Brand · Ops" },
+  { slug: "flint-os", tag: "02 · E-commerce", title: "twoleavestea", sub: "Brand and e-commerce site for a single-origin tea — built leaf-first.", c1: "#3B5F3B", c2: "#0E1A0D", year: "2025", meta: "Brand · E-commerce · Web", image: "/assets/project-images/projectDisplay-2.webp", url: "https://twoleavestea.com/" },
   { slug: "paperbound", tag: "03 · Editorial", title: "Paperbound", sub: "Editorial system and quarterly site for an independent press.", c1: "#F2EDE4", c2: "#E8E1D3", year: "2025", meta: "Editorial · Type · Web", invert: true },
 ];
 
