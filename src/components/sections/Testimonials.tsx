@@ -204,7 +204,7 @@ const FeaturedStage = ({
               <img
                 src={t.avatar}
                 alt={t.n}
-                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover object-top ring-1 ring-cream/15"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain bg-ink-2 p-1 ring-1 ring-cream/15"
               />
               <span
                 aria-hidden="true"

@@ -61,9 +61,9 @@ export const PLANS: Plan[] = [
 ];
 
 export const TESTIMONIALS = [
-  { q: "They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.", n: "Alice Omai", r: "Founder, Twoleavestea", col: "md:col-span-7", avatar: "/assets/avatars/marion.webp" },
-  { q: "Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.", n: "Theo Mercer", r: "Founder, omaivillas", col: "md:col-span-5", avatar: "/assets/avatars/theo.webp" },
-  { q: "They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.", n: "Jamie O.", r: "Founder, tuyo", col: "md:col-span-5", avatar: "/assets/avatars/jamie.webp" },
+  { q: "They didn't just rebuild our website — they transformed our digital presence. The new site is stunning and directly helped our business grow.", n: "Alice Omai", r: "Founder, Twoleavestea", col: "md:col-span-7", avatar: "/assets/avatars/twoleaves-testomonials.webp" },
+  { q: "Incredibly collaborative from day one. They were always open to our feedback, making the entire process feel effortless.", n: "Theo Mercer", r: "Founder, omaivillas", col: "md:col-span-5", avatar: "/assets/avatars/omai-testomonials.webp" },
+  { q: "They built the website exactly like the design — clean, pixel-perfect, and flawlessly executed without any technical compromises.", n: "Jamie O.", r: "Founder, tuyo", col: "md:col-span-5", avatar: "/assets/avatars/tuyo-testomonials.webp" },
 ];
 
 export const JOURNAL = [
