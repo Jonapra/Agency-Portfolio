@@ -5,7 +5,7 @@
 export const BRAND = {
   name: "Agiton",
   tagline: "A design studio building brands that move.",
-  email: "hello@agiton.studio",
+  email: "callgrow6@gmail.com",
   location: "STUDIO · REMOTE",
   founded: "2019",
 } as const;
@@ -15,7 +15,7 @@ export const NAV_LINKS = [
   { label: "Process", href: "#process" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" },
 ] as const;
 
 export interface Project {

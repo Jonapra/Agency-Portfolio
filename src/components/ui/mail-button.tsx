@@ -12,7 +12,7 @@ export function MailButton({ email }: MailButtonProps) {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <a href={`mailto:${email}`} className="inline-block">
+    <a href={`https://mail.google.com/mail/?view=cm&to=${email}`} target="_blank" rel="noopener noreferrer" className="inline-block">
       <motion.div
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
