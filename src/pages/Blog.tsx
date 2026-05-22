@@ -8,6 +8,7 @@ const Blog = () => (
     <section className="relative px-6 md:px-10 pt-36 pb-16">
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
+          <h1 className="sr-only">Agiton Blog</h1>
           <nav className="h-eyebrow text-mute mb-10 flex items-center gap-3">
             <Link to="/" className="u-link">Agiton</Link><span>/</span>
             <span>Blog</span>

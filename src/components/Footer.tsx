@@ -36,7 +36,14 @@ export const Footer = () => (
             <ul className="space-y-2 text-sm">
               {PROJECTS.map(p => (
                 <li key={p.slug}>
-                  <Link to={`/projects/${p.slug}`} className="u-link">{p.title}</Link>
+                  <a 
+                    href={p.url || "#work"} 
+                    target={p.url ? "_blank" : undefined} 
+                    rel={p.url ? "noopener noreferrer" : undefined} 
+                    className="u-link"
+                  >
+                    {p.title}
+                  </a>
                 </li>
               ))}
             </ul>
